@@ -545,24 +545,23 @@ Validation.addAllThese([
                 }
                 return !(pass.length < 7);
             }],
-    ['validate-cpassword', 'Please make sure your passwords match.', function(v) {
-                var conf = $('confirmation') ? $('confirmation') : $$('.validate-cpassword')[0];
-                var pass = false;
-                if ($('password')) {
-                    pass = $('password');
-                }
-                var passwordElements = $$('.validate-password');
-                for (var i = 0; i < passwordElements.size(); i++) {
-                    var passwordElement = passwordElements[i];
-                    if (passwordElement.up('form').id == conf.up('form').id) {
-                        pass = passwordElement;
-                    }
-                }
-                if ($$('.validate-admin-password').size()) {
-                    pass = $$('.validate-admin-password')[0];
-                }
-                return (pass.value == conf.value);
-            }],
+			
+	['validate-cemail', 'Please make sure your emails match.', function(v) {  
+                var conf = $('confirmation') ? $('confirmation') : $$('.validate-cemail')[0];  
+                var pass = false;  
+				var confirm;  
+                if ($('email')) { 
+					alert("in email....");
+                    pass = $('email');  
+                }  
+				  confirm =conf.value;  
+				  if(!confirm && $('email2'))  
+				  {  
+					confirm = $('email2').value;  
+				  }  
+				return (pass.value == confirm);  
+            }],  		
+
     ['validate-both-passwords', 'Please make sure your passwords match.', function(v, input) {
                 var dependentInput = $(input.form[input.name == 'password' ? 'confirmation' : 'password']),
                     isEqualValues  = input.value == dependentInput.value;

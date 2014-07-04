@@ -990,6 +990,8 @@ class Mage_Sales_Model_Quote extends Mage_Core_Model_Abstract
             $stickWithinParent = $candidate->getParentProductId() ? $parentItem : null;
             $candidate->setStickWithinParent($stickWithinParent);
             $item = $this->_addCatalogProduct($candidate, $candidate->getCartQty());
+			//$item->setOriginalCustomPrice('custom value goes here');
+			
             if($request->getResetCount() && !$stickWithinParent && $item->getId() === $request->getId()) {
                 $item->setData('qty', 0);
             }

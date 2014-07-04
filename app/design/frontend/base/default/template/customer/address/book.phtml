@@ -31,17 +31,17 @@
  */
 ?>
 <div class="page-title title-buttons">
-    <h1><?php echo $this->__('Address Book') ?></h1>
+    <h3><?php echo $this->__('Address Book') ?></h3>
     <button type="button" title="<?php echo $this->__('Add New Address') ?>" class="button" onclick="window.location='<?php echo $this->getAddAddressUrl() ?>';"><span><span><?php echo $this->__('Add New Address') ?></span></span></button>
 </div>
 <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
 <div class="col2-set addresses-list">
     <div class="col-1 addresses-primary">
-        <h2><?php echo $this->__('Default Addresses') ?></h2>
+        <h3><?php echo $this->__('Default Addresses') ?></h3>
         <ol>
         <?php if($_pAddsses = Mage::getSingleton('customer/session')->getCustomer()->getDefaultBilling()): ?>
             <li class="item">
-                <h3><?php echo $this->__('Default Billing Address') ?></h3>
+                <h3 style="font-size: 1.3em"><?php echo $this->__('Default Billing Address') ?></h3>
                 <address>
                     <?php echo $this->getAddressHtml(Mage::getSingleton('customer/session')->getCustomer()->getAddressById($_pAddsses)) ?>
                 </address>
@@ -56,7 +56,7 @@
 
         <?php if($_pAddsses = Mage::getSingleton('customer/session')->getCustomer()->getDefaultShipping()): ?>
             <li class="item">
-                <h3><?php echo $this->__('Default Shipping Address') ?></h3>
+                <h3 style="font-size: 1.3em"><?php echo $this->__('Default Shipping Address') ?></h3>
                 <address>
                     <?php echo $this->getAddressHtml(Mage::getSingleton('customer/session')->getCustomer()->getAddressById($_pAddsses)) ?>
                 </address>
@@ -71,7 +71,7 @@
         </ol>
     </div>
     <div class="col-2 addresses-additional">
-        <h2><?php echo $this->__('Additional Address Entries') ?></h2>
+        <h3><?php echo $this->__('Additional Address Entries') ?></h3>
         <ol>
         <?php if($_pAddsses = $this->getAdditionalAddresses()): ?>
             <?php foreach($_pAddsses as $_address): ?>

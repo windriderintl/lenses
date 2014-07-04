@@ -217,6 +217,9 @@ class Mage_Customer_AccountController extends Mage_Core_Controller_Front_Action
                 $session->setAfterAuthUrl($session->getBeforeAuthUrl());
             }
             if ($session->isLoggedIn()) {
+            	$inputMessage = 'show';
+				Mage::getSingleton('core/session')->setShowWizard($inputMessage);
+	
                 $session->setBeforeAuthUrl($session->getAfterAuthUrl(true));
             }
         }
@@ -231,7 +234,9 @@ class Mage_Customer_AccountController extends Mage_Core_Controller_Front_Action
         $this->_getSession()->logout()
             ->renewSession()
             ->setBeforeAuthUrl($this->_getRefererUrl());
-
+		//custom value clear 
+		Mage::getSingleton('core/session')->clear();
+        
         $this->_redirect('*/*/logoutSuccess');
     }
 

@@ -56,12 +56,13 @@ class Mage_Contacts_IndexController extends Mage_Core_Controller_Front_Action
 
         $this->_initLayoutMessages('customer/session');
         $this->_initLayoutMessages('catalog/session');
-        $this->renderLayout();
+        $this->renderLayout(); 
     }
 
     public function postAction()
     {
         $post = $this->getRequest()->getPost();
+		echo $post['name'];
         if ( $post ) {
             $translate = Mage::getSingleton('core/translate');
             /* @var $translate Mage_Core_Model_Translate */

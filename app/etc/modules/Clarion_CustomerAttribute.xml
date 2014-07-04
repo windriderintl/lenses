@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Clarion_CustomerAttribute>
+            <active>false</active>
+            <codePool>local</codePool>
+        </Clarion_CustomerAttribute>
+    </modules>
+</config> 

@@ -1,0 +1,1164 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2013 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+
+	<?php $outputMessage = Mage::getSingleton('core/session')->getShowWizard(); ?>
+		   
+          <div style="display: none;" id="wizardId">
+                <div id="form-3" class="wizard clearfix" >
+					
+					<h1>Lenses</h1>
+					<fieldset>
+						
+						<h3 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;margin-bottom: 3%;"><?php echo Mage::helper('contacts')->__('Please select Type') ?></h3> 
+						<div style="width:100%;float: left;margin-bottom: 2%;">
+							<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: 'Bitter', georgia, serif;" >Lenses</h6>
+							<input type="radio" name="lenses_type" title="Plases Select One Value" value="normalLenses" name="normalLenses"  id="normalLenses" onclick="lensesTab('normalLenses')" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">
+						</div>
+						<div style="width:100%;float: left;margin-bottom: 2%;">
+							<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: 'Bitter', georgia, serif;" >Normal/No Correction</h6>
+							<input type="radio" name="lenses_type" title="Plases Select One Value" value="no_correction" id="no_correction" onclick="lensesTab('no_correction')" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">
+						</div>
+						<div style="width:100%;float: left;margin-bottom: 2%;">
+							<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: 'Bitter', georgia, serif;" >Sunglasses</h6>
+							<input type="radio" name="lenses_type" title="Plases Select One Value" value="sunglasses" id="sunglasses" onclick="lensesTab('sunglasses')" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">
+						</div>
+						
+					</fieldset>
+				
+					<h1>Glass</h1>
+					<fieldset>
+						<h3 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;margin-bottom: 3%;"><?php echo Mage::helper('contacts')->__('Please select glass') ?></h3> 
+						<div style="width:100%;float: left;margin-bottom: 2%;">
+							<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: 'Bitter', georgia, serif;">Single Vision Lenses</h6>
+							<input type="radio" name="glass" value="singleVision" title="Plases Select One Value" id="singleVision" onclick="isTableSingle(true)" value="single" class="checkbox required" style="margin-top: 0.5%;float: left;" >
+						</div>
+						<div style="width:100%;float: left;margin-bottom: 2%;">
+							<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: 'Bitter', georgia, serif;" >Progress Lenses</h6>
+							<input type="radio" name="glass" value="progress" title="Plases Select One Value" id="progress" onclick="isTableSingle(false)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">
+						</div>
+					</fieldset>
+					
+					<h1>Photochrom</h1>
+					<fieldset>
+						<h3 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;margin-bottom: 3%;"><?php echo Mage::helper('contacts')->__('Please select Photochromic') ?></h3> 
+						<div id="yesDiv" style="width:100%;float: left;margin-bottom: 2%;">
+							<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: 'Bitter', georgia, serif;">Yes</h6>
+							<input type="radio" name="photochromic" title="Plases Select One Value" value="yes" id="yes" onclick="yesTab()" value="single" class="checkbox required" style="margin-top: 0.5%;float: left;">
+						</div>
+						<div id="noDiv" style="width:100%;float: left;margin-bottom: 2%;">
+							<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: 'Bitter', georgia, serif;" >No</h6>
+							<input type="radio" name="photochromic" title="Plases Select One Value" value="no" id="no" onclick="noTab()" class="checkbox required"style="margin-top: 0.5%;float: left;">
+						</div>
+						<div id="polorizedDiv" style="width:100%;float: left;margin-bottom: 2%;display: none;">
+							<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: 'Bitter', georgia, serif;">Polorized Lenses</h6>
+							<input type="radio" name="photochromic" title="Plases Select One Value" value="polorized" id="polorized" value="single" class="checkbox required" style="margin-top: 0.5%;float: left;">
+						</div>
+						<div id="nonPolorizedDiv" style="width:100%;float: left;margin-bottom: 2%;display: none;">
+							<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: 'Bitter', georgia, serif;" >Non polorized lenses</h6>
+							<input type="radio" name="photochromic" title="Plases Select One Value" value="nonPolorized" id="nonPolorized"class="checkbox required" style="margin-top: 0.5%;float: left;">
+						</div>
+					</fieldset>
+				 
+					<h1>Correction</h1>
+					<fieldset>
+						<h3 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;margin-bottom: 3%;padding-bottom: 7px;"><?php echo Mage::helper('contacts')->__('Please select correction') ?></h3> 
+						<div style="width:100%;float: left;margin-bottom: 2%;">
+							<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: 'Bitter', georgia, serif;">1.57 (Low correction)</h6>
+							<input type="radio" name="correction" value="low" title="Plases Select One Value" id="low" value="single" class="checkbox required" style="margin-top: 0.5%;float: left;">
+						</div>
+						<div style="width:100%;float: left;margin-bottom: 2%;">
+							<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: 'Bitter', georgia, serif;" >1.6 (Medium correction)</h6>
+							<input type="radio" name="correction" value="medium" title="Plases Select One Value" id="medium" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">
+						</div>
+						<div style="width:100%;float: left;margin-bottom: 2%;">
+							<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: 'Bitter', georgia, serif;" >1.67 (High correction)</h6>
+							<input type="radio" name="correction" value="high" title="Plases Select One Value" id="high" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">
+						</div>
+					</fieldset>
+	 
+					<h1>Color</h1>
+					<fieldset>
+						<h3 class="legend" style="border-bottom: 1px solid #e5e5e5; margin-bottom: 3%;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper('contacts')->__('Please select lenses color') ?></h3> 
+						<div style="width:100%;float: left;margin-bottom: 2%;">
+							<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: 'Bitter', georgia, serif;">No color</h6>
+							<input type="radio" name="color" title="Plases Select One Value" value="noColor" id="noColor" onclick="noColorTab(false)" value="single" class="checkbox required" style="margin-top: 0.5%;float: left;">
+						</div>
+						<div style="width:100%;float: left;margin-bottom: 2%;">
+							<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: 'Bitter', georgia, serif;" >Grey</h6>
+							<input type="radio" name="color" title="Plases Select One Value" value="grey" id="grey" onclick="noColorTab(true)" class="checkbox required" style="margin-top: 0.5%;float: left;">
+						</div>
+						<div style="width:100%;float: left;margin-bottom: 2%;">
+							<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: 'Bitter', georgia, serif;" >Marron</h6>
+							<input type="radio" name="color" title="Plases Select One Value" value="marron" id="marron" onclick="noColorTab(true)" class="checkbox required" style="margin-top: 0.5%;float: left;">
+						</div>
+						<div style="width:100%;float: left;margin-bottom: 2%;">
+							<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: 'Bitter', georgia, serif;" >Blue</h6>
+							<input type="radio" name="color" title="Plases Select One Value" value="blue" id="blue" onclick="noColorTab(true)" class="checkbox required" style="margin-top: 0.5%;float: left;">
+						</div>
+						<div style="width:100%;float: left;margin-bottom: 2%;">
+							<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: 'Bitter', georgia, serif;" >Green</h6>
+							<input type="radio" name="color" title="Plases Select One Value" value="green" id="green" onclick="noColorTab(true)" class="checkbox required" style="margin-top: 0.5%;float: left;">
+						</div>
+						<div style="width:100%;float: left;margin-bottom: 2%;">
+							<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: 'Bitter', georgia, serif;" >Black</h6>
+							<input type="radio" name="color" title="Plases Select One Value" value="black" id="black" onclick="noColorTab(true)" class="checkbox required" style="margin-top: 0.5%;float: left;">
+						</div>
+						<div style="width:100%;float: left;margin-bottom: 2%;">
+							<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: 'Bitter', georgia, serif;" >Yellow</h6>
+							<input type="radio" name="color" title="Plases Select One Value" value="yellow" id="yellow" onclick="noColorTab(true)" class="checkbox required" style="margin-top: 0.5%;float: left;">
+						</div>
+						<div style="width:100%;float: left;margin-bottom: 2%;">
+							<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: 'Bitter', georgia, serif;" >Pink</h6>
+							<input type="radio" name="color" title="Plases Select One Value" id="pink" onclick="noColorTab(true)" class="checkbox required" style="margin-top: 0.5%;float: left;">
+						</div>
+					
+					</fieldset>
+					
+					<h1>Tinted Level</h1>
+					<fieldset>
+						<h3 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;margin-bottom: 3%;padding-bottom: 7px;"><?php echo Mage::helper('contacts')->__('Please select tinte') ?></h3> 
+						<div style="width:100%;float: left;margin-bottom: 2%;">
+							<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: 'Bitter', georgia, serif;">25% (Light)</h6>
+							<input type="radio" name="tinte" title="Plases Select One Value" id="lightTinte" value="single" class="checkbox required" style="margin-top: 0.5%;float: left;">
+						</div>
+						<div style="width:100%;float: left;margin-bottom: 2%;">
+							<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: 'Bitter', georgia, serif;" >50% (Medium)</h6>
+							<input type="radio" name="tinte" title="Plases Select One Value" id="mediumTinte" class="checkbox required" style="margin-top: 0.5%;float: left;">
+						</div>
+						<div style="width:100%;float: left;margin-bottom: 2%;">
+							<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: 'Bitter', georgia, serif;" >80% (high)</h6>
+							<input type="radio" name="tinte" title="Plases Select One Value" value="highTinte" id="highTinte" class="checkbox required" style="margin-top: 0.5%;float: left;">
+						</div>
+					</fieldset>
+					
+					<h1>Member</h1>
+					<fieldset>
+						<div >
+							<?php $userId = Mage::helper('customer')->getCustomer()->getId();
+									$connection = Mage::getModel('mymod/family')->getCollection()
+												->addFieldToFilter('user_id', array('eq' => $userId))
+												->load(); ?> 
+							<h3 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;margin-bottom: 3%;padding-bottom: 7px;"><?php echo Mage::helper('contacts')->__('Please select family member') ?></h3> 
+							<table class="fieldset table_custom" style="width: 100%;">
+								<tr>
+									  <th style="width: 20%;" class="th_custom table_custom">Select</th>
+									  <th class="tableHead" class="th_custom table_custom">Name</th>
+									  <th class="th_custom table_custom">Relation</th>		
+									  
+								</tr>
+								
+								<?php foreach($connection as $arr_row): ?>
+											<tr>
+												  <td style="padding: 1%;" class="td_custom table_custom"><input type="radio" value="<?php echo $arr_row['family_id'];?>" onclick="selectMember('+<?php echo $arr_row["family_id"];?>+')" name="familyMember" class="checkbox required" style="width: 100%;"></td>
+												  <td class="td_custom table_custom"><?php echo $arr_row['name'];?></td>
+												  <td class="td_custom table_custom"><?php echo $arr_row['relation'];?></td>		
+											</tr>
+								<?php endforeach; ?>
+							</table>
+						</div>
+					</fieldset>
+					
+					<h1>Prescription</h1>
+					<fieldset >
+						
+							<h3 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper('contacts')->__('Please select prescription') ?></h3> 
+							<table class="fieldset table_custom" id="progressiveTableId" cellspacing="10" style="display: none;border: 0px solid black;" >
+								<tr>
+									  <td colspan="2" class="tD_custom table_custom"></td>
+									  <th class="th_custom table_custom">Sphere</th>
+									  <th class="th_custom table_custom">Cylinder</th>
+									  <th class="th_custom table_custom">Axis</th>
+								</tr>
+								<tr>
+									  <th rowspan="2" style="padding-top: 6%;" class="th_custom table_custom">Distance</th>
+									  <th class="th_custom table_custom">Right Eye</th>		
+									  <td class="th_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="drs" name="drs" type="number" min="-10" max="10" step="0.25" value="0"></td>
+									  <td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="drc" name="drc" type="number" min="-4" max="4" step="0.25" value="0"></td>
+									  <td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;" id="dra" name="dra" type="number" min="0" max="180" step="1" value="0"></td>
+								</tr>
+								<tr>
+									  <th class="th_custom table_custom">Left Eye</th>
+									  <td class="th_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="dls" name="dls" type="number" min="-10" max="10" step="0.25" value="0"></td>		
+									  <td class="th_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="dlc" name="dlc" type="number" min="-4" max="4" step="0.25" value="0"></td>
+									  <td class="th_custom table_custom"><input class="input-text required-entry" style="float:left;" id="dla" name="dla" type="number" min="0" max="180" step="1" value="0"></td>
+								</tr>
+								<tr id="reading">
+									  <th rowspan="2" style="padding-top: 6%;" class="th_custom table_custom">Reading</th>
+									  <th class="th_custom table_custom">Right Eye</th>
+									  <td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="rrs" name="rrs" type="number" min="-10" max="10" step="0.25" value="0"></td>		
+									  <td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="rrc" name="rrc" type="number" min="-4" max="4" step="0.25" value="0"></td>
+									  <td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;" id="rra" name="rra" type="number" min="0" max="180" step="1" value="0"></td>
+								</tr>
+								<tr id="readingLeft">
+									  <th class="th_custom table_custom">Left Eye</th>
+									  <td class="th_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="rls" name="rls" type="number" min="-10" max="10" step="0.25" value="0"></td>		
+									  <td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="rlc" name="rlc" type="number" min="-4" max="4" step="0.25" value="0"></td>
+									  <td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;" id="rla" name="rla" type="number" min="0" max="180" step="1" value="0"></td>
+								</tr>
+								<tr>
+									  <th class="th_custom table_custom">Addition</th>
+									  <th class="th_custom table_custom">Right Eye</th>
+									  <td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="ars" name="ars" type="number" min="0.75" max="3.5" step="0.25" value="0.75"></td>	
+									  <th class="th_custom table_custom">Left Eye</th>
+									  <td class="th_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="ala" name="ala"  type="number" min="0.75" max="3.5" step="0.25" value="0.75"></td>
+								</tr>
+								<tr>
+									  <th colspan="2" class="th_custom table_custom">Pupillary distance</th>
+									  <td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;" id="pd" name="pd" type="number" value="0"  min="0" max="100" step="0.5"></td>	
+									  <td class="td_custom table_custom" colspan="2"></td>
+								</tr>
+							</table>
+							<table id="singleTableId" class="fieldset th_custom " cellspacing="10" style="display: none;border: 0px solid black;" >
+								<tr>
+									  <td class="td_custom table_custom" colspan="2" ></td>
+									  <th class="th_custom table_custom">Sphere</th>	
+									  <th class="th_custom table_custom">Cylinder</th>
+									  <th class="th_custom table_custom">Axis</th>
+								</tr>
+								<tr>
+									  <th rowspan="2" style="padding-top: 6%;" class="th_custom table_custom">Distance</th>
+									  <th class="th_custom table_custom">Right Eye</th>		
+									  <td class="th_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" value="drs" id="drs" name="drs" type="number" min="-10" max="10" step="0.25" value="0"></td>
+									  <td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" value="drc" id="drc" name="drc" type="number" min="-4" max="4" step="0.25" value="0"></td>
+									  <td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;" id="dra" value="dra" name="dra" type="number" min="0" max="180" step="1" value="0"></td>
+								</tr>
+								<tr>
+									  <th class="th_custom table_custom">Left Eye</th>
+									  <td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" value="dls" id="dls" name="dls" type="number" min="-10" max="10" step="0.25" value="0"></td>		
+									  <td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" value="dlc" id="dlc" name="dlc" type="number" min="-4" max="4" step="0.25" value="0"></td>
+									  <td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;" id="dla" value="dla" name="dla" type="number" min="0" max="180" step="1" value="0"></td>
+								</tr>
+								<tr>
+									  <th class="th_custom table_custom">Addition</th>
+									  <th class="th_custom table_custom">Right Eye</th>
+									  <td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="ars" value="ars" name="ars" type="number" min="0.75" max="3.5" step="0.25" value="0.75"></td>	
+									  <th class="th_custom table_custom">Left Eye</th>
+									  <td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="ala" value="ala" name="ala" type="number" min="0.75" max="3.5" step="0.25" value="0.75"></td>	
+								</tr>
+								<tr>
+									  <th colspan="2" class="th_custom table_custom">Pupillary distance</th>
+									  <td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;" id="pd" name="pd" value="pd" type="number" value="0"  min="0" max="100" step="0.5"></td>	
+									  <td class="td_custom table_custom" colspan="2"></td>
+								</tr>
+							</table>
+					</fieldset>
+				</div>
+				</div>
+ 			
+ 	
+<style>
+
+	.table_custom{
+			border:1px solid black;
+			border-collapse:collapse;
+		}
+		.th_custom{
+			padding:5px;
+			width: 50%;
+			text-align: center;
+			font-weight: bold;
+			font-size: 14px;
+			background-color: #DBDBDB;
+		}
+		.td_custom{
+			text-align: center;
+		}
+	
+</style> 
+			
+			
+			
+<script type="text/javascript">
+		var checkNoCorrection = false;
+		var checkCorrection = true;
+		var checkSunglasses = false;
+		var checkPhotoChromic = false;
+		var checkSunColor = true;
+		var checkUserLogged = false;
+		var checkVision = false;
+		
+		// new variables
+		var checkColor = false;
+		var checkLenses = false;
+		var checkNoCorrection = false;
+		var checkPrescrip = false;
+		var checkSingleVision = false;
+		
+		function isTableSingle(element){
+			if(element){
+				//alert("in single "+element);
+				checkSingleVision = true;
+				$('progressiveTableId').style.display = 'none';
+				$('singleTableId').style.display = 'block';
+			}else{
+				checkSingleVision =false;
+				//alert("in progressive "+element);
+				$('progressiveTableId').style.display = 'block';
+				$('singleTableId').style.display = 'none';
+			}
+		}
+		
+		
+		function selectMember(element){
+			<?php foreach($connection as $arr_row): ?>
+			if('<?php echo $arr_row['family_id'];?>' == element){
+				if(checkSingleVision){
+					$("drs4").value = <?php echo $arr_row['drs'];?>; 
+					$("drc4").value = <?php echo $arr_row['drc'];?>; 
+					$("dra4").value = <?php echo $arr_row['dra'];?>; 
+					$("dls4").value = <?php echo $arr_row['dls'];?>;  
+					$("dlc4").value = <?php echo $arr_row['dlc'];?>; 
+					$("dla4").value = <?php echo $arr_row['dla'];?>; 
+					
+					$("ars4").value = <?php echo $arr_row['ars'];?>;  
+					$("ala4").value = <?php echo $arr_row['ala'];?>; 
+					$("pd4").value = <?php echo $arr_row['pd'];?>;  
+								
+				}else{
+					$("drs3").value = <?php echo $arr_row['drs'];?>;  
+					$("drc3").value = <?php echo $arr_row['drc'];?>;  
+					$("dra3").value = <?php echo $arr_row['dra'];?>;  
+					$("dls3").value = <?php echo $arr_row['dls'];?>;  
+					$("dlc3").value = <?php echo $arr_row['dlc'];?>; 
+					$("dla3").value = <?php echo $arr_row['dla'];?>;  
+				
+					$("rrs3").value = <?php echo $arr_row['rrs'];?>;  
+					$("rrc3").value = <?php echo $arr_row['rrc'];?>;  
+					$("rra3").value = <?php echo $arr_row['rra'];?>; 
+					$("rls3").value = <?php echo $arr_row['rls'];?>;  
+					$("rlc3").value = <?php echo $arr_row['rlc'];?>; 
+					$("rla3").value = <?php echo $arr_row['rla'];?>;  
+					
+					$("ars3").value = <?php echo $arr_row['ars'];?>; 
+					$("ala3").value = <?php echo $arr_row['ala'];?>;  
+					$("pd3").value = <?php echo $arr_row['pd'];?>;  
+				}
+			}
+			<?php endforeach; ?>
+		}
+		
+		function sunSelectMember(element){
+			<?php foreach($connection as $arr_row): ?>
+			if('<?php echo $arr_row['family_id'];?>' == element){
+					$("drs").value = <?php echo $arr_row['drs'];?>; 
+					$("drc").value = <?php echo $arr_row['drc'];?>; 
+					$("dra").value = <?php echo $arr_row['dra'];?>; 
+					$("dls").value = <?php echo $arr_row['dls'];?>;  
+					$("dlc").value = <?php echo $arr_row['dlc'];?>; 
+					$("dla").value = <?php echo $arr_row['dla'];?>; 
+					
+					$("ars").value = <?php echo $arr_row['ars'];?>;  
+					$("ala").value = <?php echo $arr_row['ala'];?>; 
+					$("pd").value = <?php echo $arr_row['pd'];?>;  
+			}
+			<?php endforeach; ?>
+		}
+		
+		function lensesTab(element) {	
+			
+			if(element == 'normalLenses'){
+				jQuery('#form-3').steps('remove', 1, {});
+				jQuery('#form-3').steps('remove', 1, {});
+				jQuery('#form-3').steps('remove', 1, {});
+				jQuery('#form-3').steps('remove', 1, {});
+				jQuery('#form-3').steps('remove', 1, {});
+				jQuery('#form-3').steps('remove', 1, {});
+				jQuery('#form-3').steps('remove', 1, {});
+				jQuery('#form-3').steps('remove', 1, {});
+				
+				jQuery('#form-3').steps("insert",1, {
+							title: "Glass",
+							content: '<fieldset>'+
+										'<h3 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;margin-bottom: 3%;"><?php echo Mage::helper("contacts")->__("Please select glass") ?></h3>'+ 
+										'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+											'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;">Single Vision Lenses</h6>'+
+											'<input type="radio" name="glass" title="Plases Select One Value" onclick="isTableSingle(true)" id="singleVision"  value="singleVision" class="checkbox required" style="margin-top: 0.5%;float: left;" >'+
+										'</div>'+
+										'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+											'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Progress Lenses</h6>'+
+											'<input type="radio" name="glass" title="Plases Select One Value" id="progress" value="progress" onclick="isTableSingle(false)" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+										'</div>'+
+									'</fieldset>'
+							})
+							//add  Photochromic step
+							jQuery('#form-3').steps("insert",2, {
+							title: "Photochrom",
+							content: '<fieldset>'+
+										'<h3 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;margin-bottom: 3%;"><?php echo Mage::helper("contacts")->__("Please select Photochromic") ?></h3>'+ 
+										'<div id="yesDiv" style="width:100%;float: left;margin-bottom: 2%;">'+
+											'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;">Yes</h6>'+
+											'<input type="radio" name="photochromic" title="Plases Select One Value" value="yes" id="yes" onclick="yesTab()" value="single" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+										'</div>'+
+										'<div id="noDiv" style="width:100%;float: left;margin-bottom: 2%;">'+
+											'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;" >No</h6>'+
+											'<input type="radio" name="photochromic" title="Plases Select One Value" id="no" value="no" onclick="noTab()" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+										'</div>'+
+										'<div id="polorizedDiv" style="width:100%;float: left;margin-bottom: 2%;display: none;">'+
+											'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;">Polorized Lenses</h6>'+
+											'<input type="radio" name="photochromic" title="Plases Select One Value" id="polorized" value="polorized" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+										'</div>'+
+										'<div id="nonPolorizedDiv" style="width:100%;float: left;margin-bottom: 2%;display: none;">'+
+											'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Non polorized lenses</h6>'+
+											'<input type="radio" name="photochromic" title="Plases Select One Value" id="nonPolorized" value="nonPolorized" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+										'</div>'+
+									'</fieldset>'
+							})
+							jQuery('#form-3').steps("insert",3, {
+							title: "Correction",
+							content: '<fieldset>'+
+										'<h3 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;margin-bottom: 3%;"><?php echo Mage::helper('contacts')->__('Please select correction') ?></h3>'+
+										'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+											'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;">1.57 (Low correction)</h6>'+
+											'<input type="radio" name="correction" title="Plases Select One Value" id="low" value="low"  class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+										'</div>'+
+										'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+											'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;" >1.6 (Medium correction)</h6>'+
+											'<input type="radio" name="correction" title="Plases Select One Value" id="medium" value="medium" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+										'</div>'+
+										'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+											'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;" >1.67 (High correction)</h6>'+
+											'<input type="radio" name="correction" title="Plases Select One Value" id="high" value="high" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+										'</div>'+
+									'</fieldset>'
+							})
+							jQuery('#form-3').steps("insert",4, {
+							title: "Color",
+							content: '<fieldset>'+ 
+											'<h3 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;margin-bottom: 3%;"><?php echo Mage::helper("contacts")->__("Please select lenses color") ?></h3>'+
+											'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;">No color</h6>'+
+												'<input type="radio" name="color" title="Plases Select One Value" id="noColor" value="noColor" onclick="noColorTab(false)" value="single" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+											'</div>'+
+											'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Grey</h6>'+
+												'<input type="radio" name="color" title="Plases Select One Value" id="grey" value="grey" onclick="noColorTab(true)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+											'</div>'+
+											'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Marron</h6>'+
+												'<input type="radio" name="color" title="Plases Select One Value" value="marron" id="marron" onclick="noColorTab(true)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+											'</div>'+
+											'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Blue</h6>'+
+												'<input type="radio" name="color" title="Plases Select One Value" value="blue" id="blue" onclick="noColorTab(true)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+											'</div>'+
+											'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Green</h6>'+
+												'<input type="radio" name="color" title="Plases Select One Value" value="green" id="green" onclick="noColorTab(true)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+											'</div>'+
+											'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Black</h6>'+
+												'<input type="radio" name="color" title="Plases Select One Value" value="black" id="black" onclick="noColorTab(true)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+											'</div>'+
+											'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Yellow</h6>'+
+												'<input type="radio" name="color" title="Plases Select One Value" value="yellow" id="yellow" onclick="noColorTab(true)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+											'</div>'+
+											'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Pink</h6>'+
+												'<input type="radio" name="color" title="Plases Select One Value" id="pink" value="pink" onclick="noColorTab(true)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+											'</div>'+
+									'</fieldset>'
+						})
+						
+						jQuery('#form-3').steps("insert",5, {
+							title: "Tinted Level",
+							content: '<fieldset>'+
+										'<h3 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;margin-bottom: 3%;"><?php echo Mage::helper('contacts')->__('Please select tinte') ?></h3>'+ 
+										'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+											'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;">25% (Light)</h6>'+
+											'<input type="radio" name="tinte" title="Plases Select One Value" id="lightTinte" value="lightTinte" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+										'</div>'+
+										'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+											'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;" >50% (Medium)</h6>'+
+											'<input type="radio" name="tinte" title="Plases Select One Value" id="mediumTinte" value="mediumTinte" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+										'</div>'+
+										'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+											'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;" >80% (high)</h6>'+
+											'<input type="radio" name="tinte" title="Plases Select One Value" id="highTinte" value="highTinte" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+										'</div>'+
+									'</fieldset>'
+						})
+						var showMember = '<?php echo Mage::helper('customer')->getCustomer()->getId(); ?>';
+						if(showMember != ''){
+							jQuery('#form-3').steps("insert",6, {
+							title: "Member",
+							content: '<fieldset>'+
+										'<div >'+
+											'<?php $userId = Mage::helper("customer")->getCustomer()->getId(); $connection = Mage::getModel("mymod/family")->getCollection()->addFieldToFilter("user_id", array("eq" => $userId))->load(); ?>'+ 
+											'<h3 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;margin-bottom: 3%;"><?php echo Mage::helper("contacts")->__("Please select family member") ?></h3>'+ 
+											'<table class="fieldset table_custom" style="width: 100%;">'+
+												'<tr><th style="width: 20%;" class="th_custom table_custom">Select</th><th class="th_custom table_custom tableHead" >Name</th><th class="th_custom table_custom">Relation</th></tr>'+
+												'<?php foreach($connection as $arr_row): ?>'+
+															'<tr><td style="padding: 1%;" class="td_custom table_custom"><input type="radio" name="familyMember" value="<?php echo $arr_row['family_id'];?>" onclick="selectMember('+<?php echo $arr_row["family_id"];?>+')" class="checkbox required" style="width: 100%;"></td>'+
+																'<td class="td_custom table_custom"><?php echo $arr_row["name"];?></td><td class="td_custom table_custom"><?php echo $arr_row["relation"];?></td></tr>'+
+												'<?php endforeach; ?>'+
+											'</table>'+
+										'</div>'+
+									'</fieldset>'
+							})
+							
+						}
+									
+							jQuery('#form-3').steps("add", {
+								title: "Prescription",
+								content:'<h3 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper('contacts')->__('Please select prescription') ?></h3>'+
+										'<table class="fieldset table_custom" id="progressiveTableId" cellspacing="10" style="display: none;border: 0px solid black;" >'+
+										'<tr>'+
+											  '<td colspan="2" class="td_custom table_custom" ></td>'+
+											  '<th class="th_custom table_custom">Sphere</th>'+	
+											  '<th class="th_custom table_custom">Cylinder</th>'+
+											  '<th class="th_custom table_custom">Axis</th>'+
+										'</tr>'+
+										'<tr>'+
+											  '<th rowspan="2" class="th_custom table_custom" style="padding-top: 6%;">Distance</th>'+
+											  '<th class="th_custom table_custom">Right Eye</th>'+		
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="drs3" name="drs3" type="number" min="-10" max="10" step="0.25" value="0"></td>'+
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="drc3" name="drc3" type="number" min="-4" max="4" step="0.25" value="0"></td>'+
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;" id="dra3" name="dra3" type="number"  min="0" max="180" step="1" value="0"></td>'+
+										'</tr>'+
+										'<tr>'+
+											  '<th class="th_custom table_custom">Left Eye</th>'+
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="dls3" name="dls3" type="number" min="-10" max="10" step="0.25" value="0"></td>'+		
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="dlc3" name="dlc3" type="number" min="-4" max="4" step="0.25" value="0"></td>'+
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;" id="dla3" name="dla3" type="number" min="0" max="180" step="1" value="0"></td>'+
+										'</tr>'+
+										'<tr id="reading">'+
+											  '<th rowspan="2" class="th_custom table_custom" style="padding-top: 6%;">Reading</th>'+
+											  '<th class="th_custom table_custom">Right Eye</th>'+	
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="rrs3" name="rrs3" type="number" min="-10" max="10" step="0.25" value="0"></td>'+		
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="rrc3" name="rrc3" type="number" min="-4" max="4" step="0.25" value="0"></td>'+
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;" id="rra3" name="rra3" type="number" min="0" max="180" step="1" value="0"></td>'+
+										'</tr>'+
+										'<tr id="readingLeft">'+
+											  '<th class="th_custom table_custom">Left Eye</th>'+
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="rls3" name="rls3" type="number" min="-10" max="10" step="0.25" value="0"></td>'+			
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="rlc3" name="rlc3" type="number" min="-4" max="4" step="0.25" value="0"></td>'+
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;" id="rla3" name="rla3" type="number" min="0" max="180" step="1" value="0"></td>'+
+										'</tr>'+
+										'<tr>'+
+											  '<th class="th_custom table_custom">Addition</th>'+
+											  '<th class="th_custom table_custom">Right Eye</th>'+
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="ars3" name="ars3" type="number" min="0.75" max="3.5" step="0.25" value="0.75"></td>'+		
+											  '<th class="th_custom table_custom">Left Eye</th>'+
+											  '<td class="th_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="ala3" name="ala3" type="number" min="0.75" max="3.5" step="0.25" value="0.75"></td>'+	
+										'</tr>'+
+										'<tr>'+
+											  '<th class="th_custom table_custom" colspan="2">Pupillary distance</th>'+
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;" id="pd3" name="pd3" type="number" value="0"  min="0" max="100" step="0.5"></td>'+	
+											  '<td class="td_custom table_custom" colspan="2"></td>'+
+										'</tr>'+
+									'</table>'+
+									'<table id="singleTableId" class="fieldset table_custom" cellspacing="10" style="display: none;border: 0px solid black;" >'+
+										'<tr>'+
+											  '<td class="td_custom table_custom" colspan="2" ></td>'+
+											  '<th class="th_custom table_custom">Sphere</th>'+	
+											  '<th class="th_custom table_custom">Cylinder</th>'+
+											  '<th class="th_custom table_custom">Axis</th>'+
+										'</tr>'+
+										'<tr>'+
+											  '<th rowspan="2" class="th_custom table_custom" style="padding-top: 6%;">Distance</th>'+
+											  '<th class="th_custom table_custom">Right Eye</th>'+		
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="drs4" name="drs4" type="number" min="-10" max="10" step="0.25" value="0"></td>'+
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="drc4" name="drc4" type="number" min="-4" max="4" step="0.25" value="0"></td>'+
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;" id="dra4" name="dra4" type="number" min="0" max="180" step="1" value="0"></td>'+
+										'</tr>'+
+										'<tr>'+
+											  '<th class="th_custom table_custom">Left Eye</th>'+
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="dls4" name="dls4" type="number" min="-10" max="10" step="0.25" value="0"></td>'+		
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="dlc4" name="dlc4" type="number" min="-4" max="4" step="0.25" value="0"></td>'+
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;" id="dla4" name="dla4" type="number" min="0" max="180" step="1" value="0"></td>'+
+										'</tr>'+
+										'<tr>'+
+											  '<th class="th_custom table_custom">Addition</th>'+
+											  '<th class="th_custom table_custom">Right Eye</th>'+
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="ars4" name="ars4" type="number" min="0.75" max="3.5" step="0.25" value="0.75"></td>'+		
+											  '<th class="th_custom table_custom">Left Eye</th>'+
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="ala4" name="ala4" type="number" min="0.75" max="3.5" step="0.25" value="0.75"></td>'+	
+										'</tr>'+
+										'<tr>'+
+											  '<th class="th_custom table_custom" colspan="2">Pupillary distance</th>'+
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;" id="pd4" name="pd4" type="number" value="0"  min="0" max="100" step="0.5"></td>'+	
+											  '<td class="td_custom table_custom" colspan="2"></td>'+
+										'</tr>'+
+									'</table>'
+							})
+			}else if(element == 'no_correction'){
+				jQuery('#form-3').steps('remove', 1, {});
+				jQuery('#form-3').steps('remove', 1, {});
+				jQuery('#form-3').steps('remove', 1, {});
+				jQuery('#form-3').steps('remove', 1, {});
+				jQuery('#form-3').steps('remove', 1, {});
+				jQuery('#form-3').steps('remove', 1, {});
+				jQuery('#form-3').steps('remove', 1, {});
+				jQuery('#form-3').steps('remove', 1, {});
+				
+					jQuery('#form-3').steps("insert",1, {
+					title: "Color",
+					content: '<fieldset>'+ 
+									'<h3 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;margin-bottom: 3%;padding-bottom: 7px;"><?php echo Mage::helper("contacts")->__("Please select lenses color") ?></h3>'+
+									'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;">No color</h6>'+
+										'<input type="radio" name="color" title="Plases Select One Value" id="noColor" value="noColor" onclick="noColorTab(false)" value="single" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+									'</div>'+
+									'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Grey</h6>'+
+										'<input type="radio" name="color" title="Plases Select One Value" value="grey" id="grey" onclick="noColorTab(true)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+									'</div>'+
+									'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Marron</h6>'+
+										'<input type="radio" name="color" title="Plases Select One Value" value="marron" id="marron" onclick="noColorTab(true)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+									'</div>'+
+									'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Blue</h6>'+
+										'<input type="radio" name="color" title="Plases Select One Value" value="blue" id="blue" onclick="noColorTab(true)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+									'</div>'+
+									'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Green</h6>'+
+										'<input type="radio" name="color" title="Plases Select One Value" value="green" id="green" onclick="noColorTab(true)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+									'</div>'+
+									'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Black</h6>'+
+										'<input type="radio" name="color" title="Plases Select One Value" value="black" id="black" onclick="noColorTab(true)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+									'</div>'+
+									'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Yellow</h6>'+
+										'<input type="radio" name="color" title="Plases Select One Value" value="yellow" id="yellow" onclick="noColorTab(true)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+									'</div>'+
+									'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Pink</h6>'+
+										'<input type="radio" name="color" title="Plases Select One Value" value="pink" id="pink" onclick="noColorTab(true)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+									'</div>'+
+							'</fieldset>'
+					})
+					jQuery('#form-3').steps("insert",2, {
+					title: "Tinted Level",
+					content: '<fieldset>'+
+								'<h3 class="legend" style="border-bottom: 1px solid #e5e5e5;margin-bottom: 3%;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper('contacts')->__('Please select tinte') ?></h3>'+ 
+								'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+									'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;">25% (Light)</h6>'+
+									'<input type="radio" name="tinte" title="Plases Select One Value" id="lightTinte" value="lightTinte" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+								'</div>'+
+								'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+									'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;" >50% (Medium)</h6>'+
+									'<input type="radio" name="tinte" title="Plases Select One Value" id="mediumTinte" value="mediumTinte" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+								'</div>'+
+								'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+									'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;" >80% (high)</h6>'+
+									'<input type="radio" name="tinte" title="Plases Select One Value" id="highTinte" value="highTinte" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+								'</div>'+
+							'</fieldset>'
+					})
+					var showMember = '<?php echo Mage::helper('customer')->getCustomer()->getId(); ?>';
+						if(showMember != ''){
+							jQuery('#form-3').steps("insert",3, {
+							title: "Member",
+							content: '<fieldset>'+
+										'<div >'+
+											'<?php $userId = Mage::helper("customer")->getCustomer()->getId(); $connection = Mage::getModel("mymod/family")->getCollection()->addFieldToFilter("user_id", array("eq" => $userId))->load(); ?>'+ 
+											'<h3 class="legend" style="border-bottom: 1px solid #e5e5e5;margin-bottom: 3%;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper("contacts")->__("Please select family member") ?></h3>'+ 
+											'<table class="fieldset table_custom" style="width: 100%;" >'+
+												'<tr><th style="width: 20%;">Select</th><th class="tableHead th_custom table_custom" >Name</th><th class="th_custom table_custom">Relation</th></tr>'+
+												'<?php foreach($connection as $arr_row): ?>'+
+															'<tr><td class="td_custom table_custom" style="padding: 1%;"><input type="radio" name="familyMember" value="<?php echo $arr_row['family_id'];?>" onclick="selectMember('+<?php echo $arr_row["family_id"];?>+')" class="checkbox required" style="width: 100%;"></td>'+
+																'<td class="td_custom table_custom"><?php echo $arr_row["name"];?></td><td class="td_custom table_custom"><?php echo $arr_row["relation"];?></td></tr>'+
+												'<?php endforeach; ?>'+
+											'</table>'+
+										'</div>'+
+									'</fieldset>'
+							})
+							
+						}
+					
+				
+			}else if(element == 'sunglasses'){
+				jQuery('#form-3').steps('remove', 1, {});
+				jQuery('#form-3').steps('remove', 1, {});
+				jQuery('#form-3').steps('remove', 1, {});
+				jQuery('#form-3').steps('remove', 1, {});
+				jQuery('#form-3').steps('remove', 1, {});
+				jQuery('#form-3').steps('remove', 1, {});
+				jQuery('#form-3').steps('remove', 1, {});
+				jQuery('#form-3').steps('remove', 1, {});	
+				
+								jQuery('#form-3').steps("insert",1, {
+								title: "Type",
+								content: '<fieldset>'+
+											'<h3 class="legend" style="border-bottom: 1px solid #e5e5e5;margin-bottom: 3%;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper("contacts")->__("Please select Type") ?></h3>'+
+											'<div id="noPrescDiv" style="width:100%;float: left;margin-bottom: 2%;">'+
+												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;">No Prescription </h6>'+
+												'<input type="radio" name="is_Fix" value="isNot_Prescrip" title="Plases Select One Value" onclick="isNotPres()" id="isNot_Prescrip" value="single" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+											'</div>'+
+											'<div id="with_prescDiv" style="width:100%;float: left;margin-bottom: 2%;">'+
+												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;" >With Prescription</h6>'+
+												'<input type="radio" name="is_Fix" value="is_Prescrip" title="Plases Select One Value" id="is_Prescrip" onclick="isPres()" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+											'</div>'+
+										'</fieldset>'
+								})
+								jQuery('#form-3').steps("insert",2, {
+									title: "Photochrom",
+									content: '<fieldset>'+
+												'<h3 class="legend" style="border-bottom: 1px solid #e5e5e5;margin-bottom: 3%;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper("contacts")->__("Please select Photochromic") ?></h3>'+ 
+												'<div id="polorizedDiv" style="width:100%;float: left;margin-bottom: 2%;">'+
+													'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;">Polorized Lenses</h6>'+
+													'<input type="radio" name="photochromic" value="polorized" title="Plases Select One Value" id="polorized" value="single" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+												'</div>'+
+												'<div id="nonPolorizedDiv" style="width:100%;float: left;margin-bottom: 2%;">'+
+													'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Non polorized lenses</h6>'+
+													'<input type="radio" name="photochromic" title="Plases Select One Value" value="nonPolorized" id="nonPolorized" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+												'</div>'+
+											'</fieldset>'
+								})
+								jQuery('#form-3').steps("insert",3, {
+								title: "Correction",
+								content: '<fieldset>'+
+											'<h3 class="legend" style="border-bottom: 1px solid #e5e5e5;margin-bottom: 3%;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper('contacts')->__('Please select correction') ?></h3>'+
+											'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;">1.57 (Low correction)</h6>'+
+												'<input type="radio" name="correction" title="Plases Select One Value" id="low" value="low" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+											'</div>'+
+											'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;" >1.6 (Medium correction)</h6>'+
+												'<input type="radio" name="correction" title="Plases Select One Value" id="medium" value="medium" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+											'</div>'+
+											'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;" >1.67 (High correction)</h6>'+
+												'<input type="radio" name="correction" title="Plases Select One Value" id="high" value="high" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+											'</div>'+
+										'</fieldset>'
+								})
+								
+								
+								var showMember = '<?php echo Mage::helper('customer')->getCustomer()->getId(); ?>';
+								if(showMember != ''){
+									jQuery('#form-3').steps("insert",4, {
+									title: "Member",
+									content: '<fieldset>'+
+												'<div >'+
+													'<?php $userId = Mage::helper("customer")->getCustomer()->getId(); $connection = Mage::getModel("mymod/family")->getCollection()->addFieldToFilter("user_id", array("eq" => $userId))->load(); ?>'+ 
+													'<h3 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;margin-bottom: 3%;padding-bottom: 7px;"><?php echo Mage::helper("contacts")->__("Please select family member") ?></h3>'+ 
+													'<table class="fieldset table_custom" style="width: 100%;">'+
+														'<tr><th style="width: 20%;" class="th_custom table_custom">Select</th><th class="tableHead th_custom table_custom" >Name</th><th class="th_custom table_custom">Relation</th></tr>'+
+														'<?php foreach($connection as $arr_row): ?>'+
+																	'<tr><td class="td_custom table_custom" style="padding: 1%;"><input type="radio" name="familyMember" value="<?php echo $arr_row['family_id'];?>" onclick="sunSelectMember('+<?php echo $arr_row["family_id"];?>+')" class="checkbox required" style="width: 100%;"></td>'+
+																		'<td class="td_custom table_custom"><?php echo $arr_row["name"];?></td><td class="td_custom table_custom"><?php echo $arr_row["relation"];?></td></tr>'+
+														'<?php endforeach; ?>'+
+													'</table>'+
+												'</div>'+
+											'</fieldset>'
+									})
+									
+								}
+								
+								jQuery('#form-3').steps("add", {
+								title: "Prescription",
+								content:'<h3 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper('contacts')->__('Please select prescription') ?></h3>'+
+										'<table class="fieldset table_custom" cellspacing="10" style="border: 0px solid black;" >'+
+										'<tr>'+
+											  '<td class="th_custom table_custom" colspan="2" ></td>'+
+											  '<th class="th_custom table_custom">Sphere</th>'+	
+											  '<th class="th_custom table_custom">Cylinder</th>'+
+											  '<th class="th_custom table_custom">Axis</th>'+
+										'</tr>'+
+										'<tr>'+
+											  '<th rowspan="2" class="th_custom table_custom" style="padding-top: 6%;">Distance</th>'+
+											  '<th class="th_custom table_custom">Right Eye</th>'+		
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="drs" name="drs" type="number" min="-10" max="10" step="0.25" value="0"></td>'+
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="drc" name="drc" type="number" min="-4" max="4" step="0.25" value="0"></td>'+
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;" id="dra" name="dra" type="number" min="0" max="180" step="1" value="0"></td>'+
+										'</tr>'+
+										'<tr>'+
+											  '<th class="th_custom table_custom">Left Eye</th>'+
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="dls" name="dls" type="number" min="-10" max="10" step="0.25" value="0"></td>'+		
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="dlc" name="dlc" type="number" min="-4" max="4" step="0.25" value="0"></td>'+
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;" id="dla" name="dla" type="number" min="0" max="180" step="1" value="0"></td>'+
+										'</tr>'+
+										'<tr>'+
+											  '<th class="th_custom table_custom">Addition</th>'+
+											  '<th class="th_custom table_custom">Right Eye</th>'+
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="ars" name="ars" type="number" min="0.75" max="3.5" step="0.25" value="0.75"></td>'+		
+											  '<th class="th_custom table_custom">Left Eye</th>'+
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="ala" name="ala" type="number" min="0.75" max="3.5" step="0.25" value="0.75"></td>'+	
+										'</tr>'+
+										'<tr>'+
+											  '<th class="th_custom table_custom" colspan="2">Pupillary distance</th>'+
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;" id="pd" name="pd" type="number" value="0"  min="0" max="100" step="0.5"></td>'+	
+											  '<td class="td_custom table_custom" colspan="2"></td>'+
+										'</tr>'+
+									'</table>'
+							})
+				
+			}
+		}
+		function isNotPres() {
+			if(!checkPrescrip){
+				checkPrescrip = true;
+				jQuery('#form-3').steps('remove', 2, {});
+				jQuery('#form-3').steps('remove', 2, {});
+				jQuery('#form-3').steps('remove', 2, {});
+				jQuery('#form-3').steps('remove', 2, {});
+						jQuery('#form-3').steps("insert",2, {
+							title: "Photochrom",
+							content: '<fieldset>'+
+										'<h3 class="legend" style="margin-bottom: 3%;border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper("contacts")->__("Please select Photochromic") ?></h3>'+ 
+										'<div id="polorizedDiv" style="width:100%;float: left;margin-bottom: 2%;">'+
+											'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;">Polorized Lenses</h6>'+
+											'<input type="radio" name="photochromic" title="Plases Select One Value" id="polorized" value="polorized" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+										'</div>'+
+										'<div id="nonPolorizedDiv" style="width:100%;float: left;margin-bottom: 2%;">'+
+											'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Non polorized lenses</h6>'+
+											'<input type="radio" name="photochromic" title="Plases Select One Value" id="nonPolorized" value="nonPolorized" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+										'</div>'+
+									'</fieldset>'
+						})
+						var showMember = '<?php echo Mage::helper('customer')->getCustomer()->getId(); ?>';
+								if(showMember != ''){
+									jQuery('#form-3').steps("insert",3, {
+									title: "Member",
+									content: '<fieldset>'+
+												'<div >'+
+													'<?php $userId = Mage::helper("customer")->getCustomer()->getId(); $connection = Mage::getModel("mymod/family")->getCollection()->addFieldToFilter("user_id", array("eq" => $userId))->load(); ?>'+ 
+													'<h3 class="legend" style="margin-bottom: 3%;border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper("contacts")->__("Please select family member") ?></h3>'+ 
+													'<table class="fieldset table_custom" style="width: 100%;">'+
+														'<tr><th style="width: 20%;" class="th_custom table_custom">Select</th><th class="tableHead th_custom table_custom" >Name</th><th class="th_custom table_custom">Relation</th></tr>'+
+														'<?php foreach($connection as $arr_row): ?>'+
+																	'<tr><td class="td_custom table_custom" style="padding: 1%;"><input type="radio" name="familyMember" value="<?php echo $arr_row['family_id'];?>" onclick="selectMember('+<?php echo $arr_row["family_id"];?>+')" class="checkbox required" style="width: 100%;"></td>'+
+																		'<td class="td_custom table_custom"><?php echo $arr_row["name"];?></td><td class="td_custom table_custom"><?php echo $arr_row["relation"];?></td></tr>'+
+														'<?php endforeach; ?>'+
+													'</table>'+
+												'</div>'+
+											'</fieldset>'
+									})
+									
+								}
+			}
+		}
+		function isPres() {
+			if(checkPrescrip){
+				checkPrescrip = false;
+				jQuery('#form-3').steps('remove', 2, {});
+				jQuery('#form-3').steps('remove', 2, {});
+				jQuery('#form-3').steps('remove', 2, {});
+				jQuery('#form-3').steps('remove', 2, {});
+				jQuery('#form-3').steps("insert",2, {
+									title: "Photochrom",
+									content: '<fieldset>'+
+												'<h3 class="legend" style="margin-bottom: 3%; border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper("contacts")->__("Please select Photochromic") ?></h3>'+ 
+												'<div id="polorizedDiv" style="width:100%;float: left;margin-bottom: 2%;">'+
+													'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;">Polorized Lenses</h6>'+
+													'<input type="radio" name="photochromic" title="Plases Select One Value" value="polorized" id="polorized" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+												'</div>'+
+												'<div id="nonPolorizedDiv" style="width:100%;float: left;margin-bottom: 2%;">'+
+													'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Non polorized lenses</h6>'+
+													'<input type="radio" name="photochromic" title="Plases Select One Value" id="nonPolorized" value="nonPolorized" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+												'</div>'+
+											'</fieldset>'
+								})
+								jQuery('#form-3').steps("insert",3, {
+								title: "Correction",
+								content: '<fieldset>'+
+											'<h3 class="legend" style="margin-bottom: 3%; border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper('contacts')->__('Please select correction') ?></h3>'+
+											'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;">1.57 (Low correction)</h6>'+
+												'<input type="radio" name="correction" title="Plases Select One Value" id="low" value="low" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+											'</div>'+
+											'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;" >1.6 (Medium correction)</h6>'+
+												'<input type="radio" name="correction" title="Plases Select One Value" id="medium" value="medium" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+											'</div>'+
+											'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;" >1.67 (High correction)</h6>'+
+												'<input type="radio" name="correction" title="Plases Select One Value" id="high" value="high" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+											'</div>'+
+										'</fieldset>'
+								})
+								
+								
+								var showMember = '<?php echo Mage::helper('customer')->getCustomer()->getId(); ?>';
+								if(showMember != ''){
+									jQuery('#form-3').steps("insert",4, {
+									title: "Member",
+									content: '<fieldset>'+
+												'<div >'+
+													'<?php $userId = Mage::helper("customer")->getCustomer()->getId(); $connection = Mage::getModel("mymod/family")->getCollection()->addFieldToFilter("user_id", array("eq" => $userId))->load(); ?>'+ 
+													'<h3 class="legend" style="margin-bottom: 3%;border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper("contacts")->__("Please select family member") ?></h3>'+ 
+													'<table class="fieldset table_custom" style="width: 100%;">'+
+														'<tr><th style="width: 20%;" class="th_custom table_custom">Select</th><th class="tableHead th_custom table_custom" >Name</th><th class="th_custom table_custom">Relation</th></tr>'+
+														'<?php foreach($connection as $arr_row): ?>'+
+																	'<tr><td class="td_custom table_custom" style="padding: 1%;"><input type="radio" name="familyMember" value="<?php echo $arr_row['family_id'];?>" onclick="sunSelectMember('+<?php echo $arr_row["family_id"];?>+')" class="checkbox required" style="width: 100%;"></td>'+
+																		'<td class="td_custom table_custom"><?php echo $arr_row["name"];?></td><td class="td_custom table_custom"><?php echo $arr_row["relation"];?></td></tr>'+
+														'<?php endforeach; ?>'+
+													'</table>'+
+												'</div>'+
+											'</fieldset>'
+									})
+									
+								}
+								
+								jQuery('#form-3').steps("add", {
+								title: "Prescription",
+								content:'<h3 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper('contacts')->__('Please select prescription') ?></h3>'+
+										'<table class="fieldset table_custom" cellspacing="10" style="border: 0px solid black;" >'+
+										'<tr>'+
+											  '<td class="td_custom table_custom" colspan="2" ></td>'+
+											  '<th class="th_custom table_custom">Sphere</th>'+	
+											  '<th class="th_custom table_custom">Cylinder</th>'+
+											  '<th class="th_custom table_custom">Axis</th>'+
+										'</tr>'+
+										'<tr>'+
+											  '<th class="th_custom table_custom" rowspan="2" style="padding-top: 6%;">Distance</th>'+
+											  '<th class="th_custom table_custom">Right Eye</th>'+		
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="drs5" name="drs5" type="number" min="-10" max="10" step="0.25" value="0"></td>'+
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="drc5" name="drc5" type="number" min="-4" max="4" step="0.25" value="0"></td>'+
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;" id="dra5" name="dra5" type="number" min="0" max="180" step="1" value="0"></td>'+
+										'</tr>'+
+										'<tr>'+
+											  '<th class="th_custom table_custom">Left Eye</th>'+
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="dls5" name="dls5" type="number" min="-10" max="10" step="0.25" value="0"></td>'+		
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="dlc5" name="dlc5" type="number" min="-4" max="4" step="0.25" value="0"></td>'+
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;" id="dla5" name="dla5" type="number" min="0" max="180" step="1" value="0"></td>'+
+										'</tr>'+
+										'<tr>'+
+											  '<th class="th_custom table_custom">Addition</th>'+
+											  '<th class="th_custom table_custom">Right Eye</th>'+
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="ars5" name="ars5" type="number" min="0.75" max="3.5" step="0.25" value="0.75"></td>'+		
+											  '<th class="th_custom table_custom">Left Eye</th>'+
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="ala5" name="ala5" type="number" min="0.75" max="3.5" step="0.25" value="0.75"></td>'+	
+										'</tr>'+
+										'<tr>'+
+											  '<th class="th_custom table_custom" colspan="2">Pupillary distance</th>'+
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;" id="pd5" name="pd5" type="number" value="0"  min="0" max="100" step="0.5"></td>'+	
+											  '<td class="td_custom table_custom" colspan="2"></td>'+
+										'</tr>'+
+									'</table>'
+							})
+			}
+		}
+	
+		function noColorTab(element) {
+			
+			var count = jQuery('#form-3').steps('getCurrentIndex', {});
+			count++;
+			if(element == false){
+				if(checkColor == false){
+					checkColor = true;
+					jQuery('#form-3').steps('remove', count, {});
+				}
+			}else{
+				if(checkColor == true){
+					checkColor = false;
+					jQuery('#form-3').steps("insert",count, {
+					title: "Tinted Level",
+					content: '<fieldset>'+
+								'<h3 class="legend" style="margin-bottom: 3%;border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper('contacts')->__('Please select tinte') ?></h3>'+ 
+								'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+									'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;">25% (Light)</h6>'+
+									'<input type="radio" name="tinte" title="Plases Select One Value" value="lightTinte" id="lightTinte" value="single" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+								'</div>'+
+								'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+									'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;" >50% (Medium)</h6>'+
+									'<input type="radio" name="tinte" title="Plases Select One Value" value="mediumTinte" id="mediumTinte" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+								'</div>'+
+								'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+									'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;" >80% (high)</h6>'+
+									'<input type="radio" name="tinte" title="Plases Select One Value" value="highTinte" id="highTinte" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+								'</div>'+
+							'</fieldset>'
+				})
+				}
+			}
+		}
+		
+		function yesTab(element) {	
+			if(checkPhotoChromic == false){
+				checkPhotoChromic = true;
+				jQuery('#form-3').steps('remove', 4, {});
+				jQuery('#form-3').steps('remove', 4, {});
+			}
+		}
+		function noTab(element) {	
+			if(checkPhotoChromic == true){
+				checkPhotoChromic = false;
+				jQuery('#form-3').steps("insert",4, {
+					title: "Color",
+					content: '<fieldset>'+ 
+									'<h3 class="legend" style="margin-bottom: 3%;border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper("contacts")->__("Please select lenses color") ?></h3>'+
+									'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;">No color</h6>'+
+										'<input type="radio" name="color" title="Plases Select One Value" id="noColor" value="noColor" onclick="noColorTab(false)" value="single" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+									'</div>'+
+									'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Grey</h6>'+
+										'<input type="radio" name="color" title="Plases Select One Value" id="grey" value="grey" onclick="noColorTab(true)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+									'</div>'+
+									'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Marron</h6>'+
+										'<input type="radio" name="color" title="Plases Select One Value" id="marron" value="marron" onclick="noColorTab(true)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+									'</div>'+
+									'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Blue</h6>'+
+										'<input type="radio" name="color" title="Plases Select One Value" id="blue" value="blue" onclick="noColorTab(true)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+									'</div>'+
+									'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Green</h6>'+
+										'<input type="radio" name="color" title="Plases Select One Value" id="green" value="green" onclick="noColorTab(true)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+									'</div>'+
+									'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Black</h6>'+
+										'<input type="radio" name="color" title="Plases Select One Value" id="black" value="black" onclick="noColorTab(true)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+									'</div>'+
+									'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Yellow</h6>'+
+										'<input type="radio" name="color" title="Plases Select One Value" id="yellow" value="yellow" onclick="noColorTab(true)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+									'</div>'+
+									'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Pink</h6>'+
+										'<input type="radio" name="color" title="Plases Select One Value" id="pink" value="pink" onclick="noColorTab(true)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+									'</div>'+
+							'</fieldset>'
+				})
+				
+				jQuery('#form-3').steps("insert",5, {
+					title: "Tinted Level",
+					content: '<fieldset>'+
+								'<h3 class="legend" style="margin-bottom: 3%;border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper('contacts')->__('Please select tinte') ?></h3>'+ 
+								'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+									'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;">25% (Light)</h6>'+
+									'<input type="radio" name="tinte" title="Plases Select One Value" id="lightTinte" value="lightTinte" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+								'</div>'+
+								'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+									'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;" >50% (Medium)</h6>'+
+									'<input type="radio" name="tinte" title="Plases Select One Value" id="mediumTinte" value="mediumTinte" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+								'</div>'+
+								'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+									'<h6 for="userName" style="float: left;width: 50%;font-size: 1.4em;font-family: Bitter, georgia, serif;" >80% (high)</h6>'+
+									'<input type="radio" name="tinte" title="Plases Select One Value" id="highTinte" value="highTinte" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+								'</div>'+
+							'</fieldset>'
+				})
+			}
+		}
+		
+		
+	jQuery(document).ready(function(){
+		
+			jQuery(location).attr('href');
+ 			
+ 			var showWizard = '<?php echo Mage::helper('customer')->getCustomer()->getId(); ?>';
+ 			if(showWizard != ''){
+				$('wizardId').style.display = 'block';
+ 			}else {
+ 				$('wizardId').style.display = 'none';
+ 			}
+ 				
+		    //pure javascript
+		    var pathname = window.location.pathname;
+		     
+		    // to show it in an alert window
+		    //alert(window.location);	    	
+		    jQuery('#afterLoginUrl').val(window.location);
+		    
+			jQuery("#form-3").steps({
+				bodyTag: "fieldset",
+				onStepChanging: function (event, currentIndex, newIndex)
+				{
+					// Always allow going backward even if the current step contains invalid fields!
+					if (currentIndex > newIndex)
+					{
+						return true;
+					}
+			 
+					// Forbid suppressing "Warning" step if the user is to young
+					if (newIndex === 3 && Number(jQuery("#age").val()) < 18)
+					{
+						return false;
+					}
+			 
+					var form = jQuery("#product_addtocart_form");
+			 
+					// Clean up if user went backward before
+					if (currentIndex < newIndex)
+					{
+						// To remove error styles
+						jQuery(".body:eq(" + newIndex + ") label.error", form).remove();
+						jQuery(".body:eq(" + newIndex + ") .error", form).removeClass("error");
+					}
+			 
+					// Disable validation on fields that are disabled or hidden.
+					form.validate().settings.ignore = ":disabled,:hidden";
+			 
+					// Start validation; Prevent going forward if false
+					return form.valid();
+				},
+				onStepChanged: function (event, currentIndex, priorIndex)
+				{
+					// Suppress (skip) "Warning" step if the user is old enough.
+					if (currentIndex === 2 && Number(jQuery("#age").val()) >= 18)
+					{
+						jQuery(this).steps("next");
+					}
+			 
+					// Suppress (skip) "Warning" step if the user is old enough and wants to the previous step.
+					if (currentIndex === 2 && priorIndex === 3)
+					{
+						jQuery(this).steps("previous");
+					}
+				},
+				onFinishing: function (event, currentIndex)
+				{
+					var form = jQuery("#product_addtocart_form");
+			 
+					// Disable validation on fields that are disabled.
+					// At this point it's recommended to do an overall check (mean ignoring only disabled fields)
+					form.validate().settings.ignore = ":disabled";
+			 
+					// Start validation; Prevent form submission if false
+					return form.valid();
+				},
+				onFinished: function (event, currentIndex)
+				{
+					var form = jQuery("#product_addtocart_form");
+			
+					// Submit form input
+					form.submit();
+				}
+			});
+			jQuery("#product_addtocart_form").validate({
+							errorPlacement: function (error, element)
+							{
+								element.before(error);
+							},
+							rules: {
+								confirm: {
+									equalTo: "#password"
+								}
+							}
+						});
+			 jQuery("#addToCartBtn").colorbox({width:"580px",inline:true, href:"#homepage_popup"});			
+					
+	});
+
+</script>

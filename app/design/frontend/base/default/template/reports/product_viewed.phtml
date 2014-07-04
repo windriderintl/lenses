@@ -26,15 +26,17 @@
 /* @var $this Mage_Reports_Block_Product_Viewed */
 ?>
 <?php if ($_products = $this->getRecentlyViewedProducts()): ?>
-<div class="block block-list block-viewed">
-    <div class="block-title">
-        <strong><span><?php echo $this->__('Recently Viewed Products') ?></span></strong>
+<div class="block block-list block-viewed" style="margin-bottom: 5%;">
+    <div class="block-title" style="width: 100%; float: left;">
+        <strong style="width: 85%; float: left"><span><?php echo $this->__('Recently Viewed Products') ?></span></strong>
+    	<div style="width: 10%; float: right;margin-top: 5%;"><img id="dropDownImgDiv" src="<?php echo $this->getSkinUrl('images/down-arrow.png') ?>" onclick="showRecentlyView()" style="width: 80%;cursor: pointer;" /></div>
     </div>
-    <div class="block-content">
+    <div id="recentDiv" class="block-content" style="display: none;width: 100%;float: left;">
         <ol id="recently-viewed-items">
         <?php foreach ($_products as $_item): ?>
             <li class="item">
                 <p class="product-name"><a href="<?php echo $this->getProductUrl($_item) ?>"><?php echo $this->helper('catalog/output')->productAttribute($_item, $_item->getName() , 'name') ?></a></p>
+            	
             </li>
         <?php endforeach; ?>
         </ol>
@@ -42,3 +44,16 @@
     </div>
 </div>
 <?php endif; ?>
+
+<script type="text/javascript">
+	function showRecentlyView(){
+		var isVisible = jQuery('#recentDiv').is(':visible');
+		if(isVisible){
+			jQuery('#recentDiv').hide();
+			jQuery('#dropDownImgDiv').attr('src','http://localhost/onlinesales/skin/frontend/base/default/images/down-arrow.png' );
+		}else{
+			jQuery('#recentDiv').show();
+			jQuery('#dropDownImgDiv').attr('src','http://localhost/onlinesales/skin/frontend/base/default/images/up-arrow.png' );
+		}
+	}
+</script>

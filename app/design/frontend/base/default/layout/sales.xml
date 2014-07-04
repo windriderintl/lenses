@@ -47,6 +47,7 @@ Customer account pages, rendered for all tabs in dashboard
         </reference>
     </checkout_onepage_reorder>
 
+	<remove>
     <customer_account>
         <!-- Mage_Sales -->
         <reference name="customer_account_navigation">
@@ -57,7 +58,7 @@ Customer account pages, rendered for all tabs in dashboard
         </reference>
 
     </customer_account>
-
+	</remove>
 <!--
 Customer account home dashboard layout
 -->
@@ -518,9 +519,9 @@ Guest
     </sales_guest_printcreditmemo>
 
      <default>
-        <reference name="footer_links">
+    <!--    <reference name="footer_links">
             <block type="sales/guest_links" name="return_link"/>
             <action method="addLinkBlock"><blockName>return_link</blockName></action>
-        </reference>
+        </reference> --> 	
     </default>
 </layout>

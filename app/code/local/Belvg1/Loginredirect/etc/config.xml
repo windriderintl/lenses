@@ -1,0 +1,17 @@
+<config>    
+    <modules>
+        <Alanstormdotcom_Helloworld>
+            <version>0.1.0</version>
+        </Alanstormdotcom_Helloworld>
+    </modules>
+	<events>
+           <customer_login>
+               <observers>
+                   <loginredirect>
+                       <class>loginredirect/observer_customer</class>
+                       <method>customerLogin</method>
+                   </loginredirect>
+               </observers>
+           </customer_login>
+       </events>
+</config>   

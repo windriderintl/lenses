@@ -40,6 +40,7 @@ class Mage_Catalog_CategoryController extends Mage_Core_Controller_Front_Action
      */
     protected function _initCatagory()
     {
+	
         Mage::dispatchEvent('catalog_controller_category_init_before', array('controller_action' => $this));
         $categoryId = (int) $this->getRequest()->getParam('id', false);
         if (!$categoryId) {
@@ -56,7 +57,7 @@ class Mage_Catalog_CategoryController extends Mage_Core_Controller_Front_Action
         Mage::getSingleton('catalog/session')->setLastVisitedCategoryId($category->getId());
         Mage::register('current_category', $category);
         Mage::register('current_entity_key', $category->getPath());
-
+		
         try {
             Mage::dispatchEvent(
                 'catalog_controller_category_init_after',
@@ -69,7 +70,7 @@ class Mage_Catalog_CategoryController extends Mage_Core_Controller_Front_Action
             Mage::logException($e);
             return false;
         }
-
+		//echo 'here category controller 1....';
         return $category;
     }
 

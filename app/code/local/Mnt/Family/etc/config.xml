@@ -1,0 +1,18 @@
+<config>    
+    <modules>
+        <Alanstormdotcom_Helloworld>
+            <version>0.1.0</version>
+        </Alanstormdotcom_Helloworld>
+    </modules>
+	<frontend>
+        <routers>
+            <family>
+                <use>standard</use>
+                <args>
+                    <module>Mnt_Family</module>
+                    <frontName>family</frontName>
+                </args>
+            </family>
+        </routers>  
+    </frontend>
+</config>   

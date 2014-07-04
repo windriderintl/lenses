@@ -1,0 +1,206 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2013 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<!-- <div id="messages_product_view"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div> -->
+<div class="page-title">
+   <!-- <h1><?php echo Mage::helper('contacts')->__('Information') ?></h1>-->
+</div>
+
+    <div class="fieldset">
+        <h2 class="legend"><?php echo Mage::helper('contacts')->__('Information French') ?></h2> 
+    </div>
+    <div class="buttons-set">
+			<div>
+				<button class="open_popup button "><span><span><?php echo Mage::helper('contacts')->__('Style Finder French') ?></span></span></button>
+			</div>	
+		<!--	<form  action="<?php echo Mage::getUrl('apparel/shoes.html') ?>" method="post" >
+					<input type="text" style='display:none' name="clearSearch" id="clearSearch" value="clear" title="<?php echo $this->__('Clear Search') ?>" class="input-text validate-email required-entry" />
+					<button type="submit" title="<?php echo Mage::helper('contacts')->__('Clear Custom Search') ?>" class="button"><span><span><?php echo Mage::helper('contacts')->__('Clear Custom Search') ?></span></span></button>
+			</form>
+		-->	
+			<div style='display:none'>
+				<div id='homepage_popup' style='padding:10px;'> 
+					<!-- BEGIN #homepage-container --> 
+						<form  action="<?php echo Mage::getUrl('spectacles.html') ?>" id="infoForm" method="post">
+							<div id="formId1">
+								<div class="fieldset">
+									<h2 class="legend"><?php echo Mage::helper('contacts')->__("What gender are you ?") ?></h2> 
+									<ul class="form-list">
+										<li class="fields">	
+											<label for="gender" style="display: none; color: red;" id="validation1" class="required"><?php echo Mage::helper('contacts')->__("Please select Gender ") ?></label>
+										</li>
+										<li class="fields">
+												<?php $optionValues = Mage::registry('optionValues'); ?>
+											<div class="field">
+												<label for="gender" class="required"><em>*</em><?php echo Mage::helper('contacts')->__('Gender') ?></label>
+												<div class="input-box">
+													<div> <select name="gender" id="gender" class="validate-select" style="float: left;"> 
+														<option value="0">Select your option </option>  
+														<option value="66" >Mens</option> 
+														<option value="65">Womens</option> 
+													</select> </div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+								
+								<div class="buttons-set">
+									<p class="required"><?php echo Mage::helper('contacts')->__('* Required Fields') ?></p>
+									<input type="text" name="hideit" id="hideit" value="" style="display:none !important;" />
+									<button type="button" id="submitBtn1" title="<?php echo Mage::helper('contacts')->__('Next') ?>" class="button"><span><span><?php echo Mage::helper('contacts')->__('Next') ?></span></span></button>
+								</div>
+							</div>
+							
+							<div id="formId2" style="display: none;">
+								<div class="fieldset">
+									<h2 class="legend"><?php echo Mage::helper('contacts')->__("What is your clothing style ?") ?></h2> 
+									<ul class="form-list">
+										<li class="fields">	
+											<label for="price" style="display: none; color: red;" id="validation2" class="required"><?php echo Mage::helper('contacts')->__("Please select clothing style") ?></label>
+										</li>
+										<li class="fields">
+											<div class="field">
+												<label for="price" class="required"><em>*</em><?php echo Mage::helper('contacts')->__('Clothing Style') ?></label>
+												<div class="input-box">
+													<div> <select name="price" id="price" class="validate-select" style="float: left;"> 
+													<option value="0">Select your option</option>  
+													<option value="0-99">Business</option> 
+													<option value="100-199">Trend</option> 
+													<option value="200-299">Sports</option> 
+													<option value="300-100000">Retro</option> 
+													<option value="300-100000">Casual</option> 
+													<option value="300-100000">Excentrique</option> 
+													</select> </div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<div class="buttons-set">
+									<p class="required"><?php echo Mage::helper('contacts')->__('* Required Fields') ?></p>
+									<input type="text" name="hideit" id="hideit" value="" style="display:none !important;" />
+									<button type="button" id="submitBtn2" title="<?php echo Mage::helper('contacts')->__('Next') ?>" class="button"><span><span><?php echo Mage::helper('contacts')->__('Next') ?></span></span></button>
+									<button type="button" id="backBtn1" title="<?php echo Mage::helper('contacts')->__('Back') ?>" class="button"><span><span><?php echo Mage::helper('contacts')->__('Back') ?></span></span></button>
+								</div>
+							</div>
+							
+							<div id="formId3" style="display: none;">
+								<div class="fieldset">
+									<h2 class="legend"><?php echo Mage::helper('contacts')->__("What is the shape of your face ?") ?></h2> 
+									<ul class="form-list">
+										<li class="fields">	
+											<label for="frame_shape" style="display: none; color: red;" id="validation3" class="required"><?php echo Mage::helper('contacts')->__("Please select shape of your face") ?></label>
+										</li>
+										<li class="fields">
+											<div class="field">
+												<label for="frame_shape" class="required"><em>*</em><?php echo Mage::helper('contacts')->__('Shape of your face') ?></label>
+												<div class="input-box">
+													<div> <select name="frame_shape" id="frame_shape" class="validate-select" style="float: left;"> 
+													<option value="">Sélectionnez votre option</option>  
+													<option value="127">Voyageur</option> 
+													<option value="128">Tour</option> 
+													<option value="129">Rectangle</option>  
+													<option value="126">Aviateur</option> 
+													<option value="125">Cat Eye</option> 
+													</select> </div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<div class="buttons-set">
+									<p class="required"><?php echo Mage::helper('contacts')->__('* Required Fields') ?></p>
+									<input type="text" name="hideit" id="hideit" value="" style="display:none !important;" />
+									<button type="submit" title="<?php echo Mage::helper('contacts')->__('Next') ?>" class="button"><span><span><?php echo Mage::helper('contacts')->__('Submit') ?></span></span></button>
+									<button type="button" id="backBtn2" title="<?php echo Mage::helper('contacts')->__('Back') ?>" class="button"><span><span><?php echo Mage::helper('contacts')->__('Back') ?></span></span></button>
+								</div>
+							</div>
+							
+						</form>
+				</div>
+			</div>
+    </div>
+	
+<style>
+	#colorbox{
+		box-shadow: 0 0 0px rgba(0,0,0,24.2);
+	}
+</style>	
+	
+
+<script type="text/javascript">
+//<![CDATA[
+    var contactForm = new VarienForm('infoForm', true);
+//]]>
+
+		$('submitBtn1').observe('click', function(event) {
+			
+			var val1 = document.getElementById("gender").value.length;
+			//alert(document.getElementById("gender").value.length);
+			if(val1 == 1){
+				$('validation1').style.display = 'block';
+			}else{
+				$('validation1').style.display = 'none';
+				$('formId1').style.display = 'none';
+				$('formId2').style.display = 'block';
+			}
+		});
+		
+		$('backBtn1').observe('click', function(event) {
+			$('formId1').style.display = 'block';
+			$('formId2').style.display = 'none';
+		});
+		
+		$('submitBtn2').observe('click', function(event) {
+			var val1 = document.getElementById("price").value.length;
+			//alert(document.getElementById("price").value.length);
+			if(val1 == 1){
+				$('validation2').style.display = 'block';
+			}else{
+				$('validation2').style.display = 'none';
+				$('formId2').style.display = 'none';
+				$('formId3').style.display = 'block';
+			}
+		});
+		
+		$('backBtn2').observe('click', function(event) {
+			$('formId2').style.display = 'block';
+			$('formId3').style.display = 'none';
+		});
+
+
+	jQuery(document).ready(function(){
+	 //if (document.cookie.indexOf('visited=true') == -1){
+		  var fifteenDays = 1000*60*60*24*15; 
+		  var expires = new Date((new Date()).valueOf() + fifteenDays);
+		  document.cookie = "visited=true;expires=" + expires.toUTCString(); 
+		  jQuery.colorbox({width:"600px",height:"350px", inline:true, href:"#homepage_popup"});
+	//	}
+		  jQuery(".open_popup").colorbox({width:"580px", inline:true, href:"#homepage_popup"});
+	});
+
+</script>

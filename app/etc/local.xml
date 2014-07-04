@@ -28,22 +28,22 @@
 <config>
     <global>
         <install>
-            <date><![CDATA[Fri, 04 Jul 2014 07:05:33 -0400]]></date>
+            <date><![CDATA[Mon, 14 Apr 2014 06:23:35 +0000]]></date>
         </install>
         <crypt>
-            <key><![CDATA[dcdyydfkgezrbe3kh7wq6zgwofgukxof]]></key>
+            <key><![CDATA[cdd6ac29efbfffebaaa2dee32fa80da2]]></key>
         </crypt>
         <disable_local_modules>false</disable_local_modules>
         <resources>
             <db>
-                <table_prefix><![CDATA[mg_]]></table_prefix>
+                <table_prefix><![CDATA[]]></table_prefix>
             </db>
             <default_setup>
                 <connection>
                     <host><![CDATA[localhost]]></host>
-                    <username><![CDATA[chouette_lenses]]></username>
-                    <password><![CDATA[XG5SZ]24P(]]></password>
-                    <dbname><![CDATA[chouette_lenses]]></dbname>
+                    <username><![CDATA[root]]></username>
+                    <password><![CDATA[]]></password>
+                    <dbname><![CDATA[shopping]]></dbname>
                     <initStatements><![CDATA[SET NAMES utf8]]></initStatements>
                     <model><![CDATA[mysql4]]></model>
                     <type><![CDATA[pdo_mysql]]></type>
@@ -52,13 +52,13 @@
                 </connection>
             </default_setup>
         </resources>
-        <session_save><![CDATA[db]]></session_save>
+        <session_save><![CDATA[files]]></session_save>
     </global>
     <admin>
         <routers>
             <adminhtml>
                 <args>
-                    <frontName><![CDATA[admin1]]></frontName>
+                    <frontName><![CDATA[admin]]></frontName>
                 </args>
             </adminhtml>
         </routers>

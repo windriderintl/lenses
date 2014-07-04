@@ -1,0 +1,33 @@
+<?php
+// Get only products from category "11" - Drains
+$category = Mage::getModel('catalog/category')->load();
+$products = Mage::getResourceModel('catalog/product_collection')->addCategoryFilter($category);
+
+// Add a filter for each parameter
+foreach ( $_GET as $attribute=>$value )
+{
+	$products->addAttributeToFilter($attribute, $value);
+}
+
+// Construct an array of the parts we care about
+$productList = array();
+foreach ( $products as $productModel )
+{
+	$product = Mage::getModel('catalog/product')->load($productModel->getId());
+	
+	$attributes = array();
+	$attributes['manufacturer'] = $product->getAttributeText('manufacturer');
+	$attributes['color'] = $product->getAttributeText('color');
+	$attributes['attachement'] = $product->getAttributeText('attachement');
+	$attributes['hole_number'] = $product->getAttributeText('hole_number');
+	$attributes['hole_type'] = $product->getAttributeText('hole_type');
+	$attributes['bolt_type'] = $product->getAttributeText('bolt_type');
+	$attributes['inner_diameter'] = array($product->getAttributeText('inner_diameter'), $product->getInner_diameter());
+	$attributes['outer_diameter'] = array($product->getAttributeText('outer_diameter'), $product->getOuter_diameter());
+	$attributes['bolt_diameter'] = array($product->getAttributeText('bolt_diameter'), $product->getBolt_diameter());
+
+	$productList[$product->getName()] = $attributes;
+}
+
+// Return the JSON string
+echo json_encode($productList);

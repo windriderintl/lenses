@@ -1,0 +1,18 @@
+<config>    
+    <modules>
+        <Alanstormdotcom1_Helloworld1>
+            <version>0.1.0</version>
+        </Alanstormdotcom1_Helloworld1>
+    </modules>
+	<frontend>
+        <routers>
+            <helloworld1>
+                <use>standard</use>
+                <args>
+                    <module>Alanstormdotcom1_Helloworld1</module>
+                    <frontName>helloworld1</frontName>
+                </args>
+            </helloworld1>
+        </routers>  
+    </frontend>
+</config>   

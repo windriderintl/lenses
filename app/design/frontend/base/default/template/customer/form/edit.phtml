@@ -25,7 +25,7 @@
  */
 ?>
 <div class="page-title">
-    <h1><?php echo $this->__('Edit Account Information') ?></h1>
+    <h3><?php echo $this->__('Edit Account Information') ?></h3>
 </div>
 <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
 <form action="<?php echo $this->getUrl('customer/account/editPost') ?>" method="post" id="form-validate" autocomplete="off">
@@ -36,16 +36,22 @@
             <li class="fields">
                 <?php echo $this->getLayout()->createBlock('customer/widget_name')->setObject($this->getCustomer())->toHtml() ?>
             </li>
-            <li>
-                <label for="email" class="required"><em>*</em><?php echo $this->__('Email Address') ?></label>
-                <div class="input-box">
-                    <input type="text" name="email" id="email" value="<?php echo $this->escapeHtml($this->getCustomer()->getEmail()) ?>" title="<?php echo $this->__('Email Address') ?>" class="input-text required-entry validate-email" />
-                </div>
+            <li class="fields">
+            	<div class="field">
+	                <label for="email" class="required"><em>*</em><?php echo $this->__('Email Address') ?></label>
+	                <div class="input-box">
+	                    <input type="text" name="email" id="email" value="<?php echo $this->escapeHtml($this->getCustomer()->getEmail()) ?>" title="<?php echo $this->__('Email Address') ?>" class="input-text required-entry validate-email" />
+	                </div>
+	            </div>
+	            <div class="field">
+	            	<?php $_dob = $this->getLayout()->createBlock('customer/widget_dob') ?>
+			        <?php if ($_dob->isEnabled()): ?>
+			            <?php echo $_dob->setDate($this->getCustomer()->getDob())->toHtml() ?>
+			        <?php endif ?>
+	            </div>    
             </li>
-        <?php $_dob = $this->getLayout()->createBlock('customer/widget_dob') ?>
-        <?php if ($_dob->isEnabled()): ?>
-            <li><?php echo $_dob->setDate($this->getCustomer()->getDob())->toHtml() ?></li>
-        <?php endif ?>
+			
+        
         <?php $_taxvat = $this->getLayout()->createBlock('customer/widget_taxvat') ?>
         <?php if ($_taxvat->isEnabled()): ?>
             <li><?php echo $_taxvat->setTaxvat($this->getCustomer()->getTaxvat())->toHtml() ?></li>
@@ -86,15 +92,99 @@
             </li>
         </ul>
     </div>
+	<!--
+	<a style="margin-left: 2%;" href="/onlinesales/index.php/default/pre-prescription"><button class="button" type="button"><span><span><?php echo Mage::helper('contacts')->__('Add Prescription') ?></span></span></button> </a>
+		<a href="/onlinesales/index.php/default/mymodule_customerpage/index/index/"><button class="button" type="button"><span><span><?php echo Mage::helper('contacts')->__('Edit Prescription') ?></span></span></button> </a>-->
+	
+	<!--	<button class="open_popup button"><span><span><?php echo Mage::helper('contacts')->__('Add Family Members') ?></span></span></button> -->
+			
     <div class="buttons-set">
         <p class="required"><?php echo $this->__('* Required Fields') ?></p>
-        <p class="back-link"><a href="<?php echo $this->escapeUrl($this->getBackUrl()) ?>"><small>&laquo; </small><?php echo $this->__('Back') ?></a></p>
+        <p style="margin-top: 5px;" class="back-link"><a href="<?php echo $this->escapeUrl($this->getBackUrl()) ?>"><small>&laquo; </small><?php echo $this->__('Back') ?></a></p>
+        <a style="margin-left: 2%; float: left;" href="/onlinesales/index.php/default/pre-prescription"><button class="button" type="button"><span><span><?php echo Mage::helper('contacts')->__('Add Prescription') ?></span></span></button> </a>
+		<a style="margin-left: 2%; float: left;"  href="/onlinesales/index.php/default/mymodule_customerpage/index/index/"><button class="button" type="button"><span><span><?php echo Mage::helper('contacts')->__('Edit Prescription') ?></span></span></button> </a>
         <button type="submit" title="<?php echo $this->__('Save') ?>" class="button"><span><span><?php echo $this->__('Save') ?></span></span></button>
     </div>
 </form>
+
+	<div style='display:none'>
+				<div id='homepage_popup' style='padding:10px;'> 
+					<!-- BEGIN #homepage-container --> 
+					<form id='familyForm' action="<?php echo Mage::getUrl('family') ?>" method="post">
+					<div id="formId1">
+						<div class="fieldset">
+							<h2 class="legend"><?php echo Mage::helper('contacts')->__('Information') ?></h2> 
+							<ul class="form-list">
+								<li class="fields">
+									<div class="field">
+										<label class="required" for="userName"><em>*</em>Profile Name </label>
+											<div class="input-box"> 
+												<input class="input-text required-entry" class="input-text required-entry" style="float:left;" title="Profile Name" value="" id="userName" name="userName" type="text">
+											</div>
+									</div>
+								</li>
+								
+								<li class="fields">
+									<div class="field">
+										<label class="required" for="sphere"><em>*</em>Sphere </label>
+											<div class="input-box"> 
+												<input class="input-text required-entry" style="float:left;" id="sphere" name="sphere" type="number" min="-10" max="10" step="0.25">
+											</div>
+									</div>
+								</li>
+								
+								<li class="fields">
+									<div class="field">
+										<label class="required" for="cylinder"><em>*</em>Cylinder </label>
+											<div class="input-box"> 
+												<input class="input-text required-entry" style="float:left;" id="cylinder" name="cylinder" type="number" min="-4" max="4" step="0.25">
+											</div>
+									</div>
+								</li>
+								
+								<li class="fields">
+									<div class="field">
+										<label class="required" for="axis"><em>*</em>Axis </label>
+											<div class="input-box"> 
+												<input class="input-text required-entry" style="float:left;" id="axis" name="axis" type="number" min="0" max="180" step="1">
+											</div>
+									</div>
+								</li>
+								<li class="fields">
+									<div class="field">
+										<label class="required" for="addition"><em>*</em>Addition (Add) </label>
+											<div class="input-box"> 
+												<input class="input-text required-entry" style="float:left;" id="addition" name="addition" type="number" min="0.75" max="3.5" step="0.25">
+											</div>
+									</div>
+								</li>
+								<li class="fields">
+									<div class="field">
+										<label class="required" for="pupillary"><em>*</em>Pupillary distance </label>
+											<div class="input-box"> 
+												<input class="input-text required-entry" style="float:left;" id="pupillary" name="pupillary" type="number" value="31.5"  min="23" max="43" step="0.5">
+											</div>
+									</div>
+								</li>
+								
+							</ul>
+						</div>
+						
+						<div class="buttons-set">
+							<p class="required"><?php echo Mage::helper('contacts')->__('* Required Fields') ?></p>
+							<input type="text" name="hideit" id="hideit" value="" style="display:none !important;" />
+							<button type="submit" id="closePopUp" title="<?php echo Mage::helper('contacts')->__('Save') ?>" class="button"><span><span><?php echo Mage::helper('contacts')->__('Save') ?></span></span></button>
+						</div>
+					</div>
+					</form>
+				</div>
+			</div>		
+
 <script type="text/javascript">
 //<![CDATA[
     var dataForm = new VarienForm('form-validate', true);
+	var dataFormFamily = new VarienForm('familyForm', true);
+	
     function setPasswordForm(arg){
         if(arg){
             $('current_password').up(3).show();
@@ -113,5 +203,25 @@
     <?php if($this->getCustomer()->getChangePassword()): ?>
         setPasswordForm(true);
     <?php endif; ?>
+	
 //]]>
+	
+		
+	jQuery(document).ready(function(){
+		
+		// $('closePopUp').observe('click', function(event) {
+			// parent.jQuery.fn.colorbox.close();
+		// });	
+
+		if (document.cookie.indexOf('visited=true') == -1){
+		  var fifteenDays = 1000*60*60*24*15; 
+		  var expires = new Date((new Date()).valueOf() + fifteenDays);
+		  document.cookie = "visited=true;expires=" + expires.toUTCString(); 
+		  jQuery.colorbox({width:"600px", inline:true, href:"#homepage_popup"});
+		  }
+		  jQuery(".open_popup").colorbox({width:"580px", inline:true, href:"#homepage_popup"});
+	});
+	
+
+
 </script>

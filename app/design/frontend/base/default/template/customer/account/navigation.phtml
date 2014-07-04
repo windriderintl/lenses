@@ -26,9 +26,15 @@
 ?>
 <div class="block block-account">
     <div class="block-title">
-        <strong><span><?php echo $this->__('My Account'); ?></span></strong>
+        <strong>
+        	<span>
+        		<?php echo $this->__('My Account'); ?>
+        		<img id="imgAccountDiv" src="<?php echo $this->getSkinUrl('images/up-arrow.png') ?>" onclick="showAccountView()" style="width: 10%;cursor: pointer;float: right;
+margin-right: 2%;" />
+        	</span>
+        </strong>
     </div>
-    <div class="block-content">
+    <div class="block-content" id="accountDiv">
         <ul>
             <?php $_links = $this->getLinks(); ?>
             <?php $_index = 1; ?>
@@ -44,3 +50,18 @@
         </ul>
     </div>
 </div>
+
+<script type="text/javascript">
+
+	function showAccountView(){
+		var isVisible = jQuery('#accountDiv').is(':visible');
+		if(isVisible){
+			jQuery('#accountDiv').hide();
+			jQuery('#imgAccountDiv').attr('src','http://localhost/onlinesales/skin/frontend/base/default/images/down-arrow.png' );
+		}else{
+			jQuery('#accountDiv').show();
+			jQuery('#imgAccountDiv').attr('src','http://localhost/onlinesales/skin/frontend/base/default/images/up-arrow.png' );
+		}
+	}
+</script>	
+

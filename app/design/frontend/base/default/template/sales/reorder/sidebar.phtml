@@ -35,11 +35,16 @@
 <?php if($_items): ?>
 <div class="block block-reorder">
     <div class="block-title">
-        <strong><span><?php echo $this->__('My Orders') ?></span></strong>
+        <strong>
+        	<span>
+        		<?php echo $this->__('My Orders') ?>
+        		<img id="imgOrderDiv" src="<?php echo $this->getSkinUrl('images/down-arrow.png') ?>" onclick="showOrderView()" style="width: 8%;cursor: pointer;float: right;margin-right: 2%;" />
+        	</span>
+        </strong>
     </div>
     <form method="post" action="<?php echo $this->getFormActionUrl() ?>" id="reorder-validate-detail">
         <?php echo $this->getBlockHtml('formkey'); ?>
-        <div class="block-content">
+        <div id="ordersDiv" class="block-content" style="display: none;">
             <p class="block-subtitle"><?php echo $this->__('Last Ordered Items') ?></p>
             <ol id="cart-sidebar-reorder">
             <?php $_showAddButtonFlag = false ?>
@@ -73,6 +78,17 @@
 <script type="text/javascript">
 //<![CDATA[
     var reorderFormDetail = new VarienForm('reorder-validate-detail');
+    
+    function showOrderView(element){
+    	var isVisible = jQuery('#ordersDiv').is(':visible');
+		if(isVisible){
+			jQuery('#ordersDiv').hide();
+			jQuery('#imgOrderDiv').attr('src','http://localhost/onlinesales/skin/frontend/base/default/images/down-arrow.png' );
+		}else{
+			jQuery('#ordersDiv').show();
+			jQuery('#imgOrderDiv').attr('src','http://localhost/onlinesales/skin/frontend/base/default/images/up-arrow.png' );
+		}
+	}
 //]]>
 </script>
 <?php endif ?>

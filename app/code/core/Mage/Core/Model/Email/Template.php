@@ -141,6 +141,24 @@ class Mage_Core_Model_Email_Template extends Mage_Core_Model_Template
             $this->_mail = new Zend_Mail('utf-8');
         }
         return $this->_mail;
+		
+		// if (is_null($this->_mail)) {
+        // /* changes begin */
+       // $my_smtp_host = Mage::getStoreConfig('system/smtp/host');
+       // $my_smtp_port = Mage::getStoreConfig('system/smtp/port');
+       // $config = array(
+                // 'port' => $my_smtp_port,
+                // 'auth' => 'login',
+                // 'username' => 'pankajashokmuneshwar@gmail.com',
+                // 'password' => 'pankajam'
+            // );
+        // $transport = new Zend_Mail_Transport_Smtp($my_smtp_host, $config);
+        // Zend_Mail::setDefaultTransport($transport);
+        // /* Changes End */
+        // $this->_mail = new Zend_Mail('utf-8');
+    // }
+    // return $this->_mail;
+		
     }
 
     /**
