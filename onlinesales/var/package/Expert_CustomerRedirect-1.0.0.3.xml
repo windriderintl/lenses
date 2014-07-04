@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package>
+    <name>Expert_CustomerRedirect</name>
+    <version>1.0.0.3</version>
+    <stability>stable</stability>
+    <license uri="http://opensource.org/licenses/osl-3.0.php">OSL</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>The Extension Provide function to redirect Customer after login or Create account.</summary>
+    <description>The Extension Provide function to redirect Customer after login or Create account.&amp;&#xD;
+In admin there is two tab Under System-&amp;gt;Configuration-&amp;gt;Customer Configuration (Customer Section).&#xD;
+ Please refer Image &#xD;
+For More Info : www.expertsofttechsolution.com&amp;#xD;&#xD;
+Email: support@expertsofttechsolution.com</description>
+    <notes>Customer Redirect to Link/Page After Login and Create Accounts</notes>
+    <authors><author><name>Suraj Kumawat</name><user>coderz_expert</user><email>coderz.expert@gmail.com</email></author><author><name>Sharad Patel</name><user>coderz_expert</user><email>coderz.expert@gmail.com</email></author></authors>
+    <date>2013-09-03</date>
+    <time>12:16:34</time>
+    <contents><target name="magelocal"><dir name="Expert"><dir name="CustomerRedirect"><dir name="Helper"><file name="Data.php" hash="c4b4aa249af0a84c79703474950919b8"/></dir><dir name="controllers"><file name="AccountController.php" hash="35c4b3c026c18c81a3de7d0b12756b32"/></dir><dir name="etc"><file name="config.xml" hash="289d2e2a0ba540492ad5fe4c648d04a8"/><file name="system.xml" hash="a915a426d13bb747497dac86b67e1b98"/></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Expert_CustomerRedirect.xml" hash="67117d17099a061bb0cb66362547369b"/></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.1.0</min><max>5.5.0</max></php></required></dependencies>
+</package>
