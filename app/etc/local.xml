@@ -43,7 +43,7 @@
                     <host><![CDATA[localhost]]></host>
                     <username><![CDATA[chouette_lenses]]></username>
                     <password><![CDATA[SJ-P4s.2g4]]></password>
-                    <dbname><![CDATA[chouette_shop]]></dbname>
+                    <dbname><![CDATA[chouette_lenses]]></dbname>
                     <initStatements><![CDATA[SET NAMES utf8]]></initStatements>
                     <model><![CDATA[mysql4]]></model>
                     <type><![CDATA[pdo_mysql]]></type>
