@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<config>
-    <modules>
-        <Mnt_Family>
-            <active>true</active>
-            <codePool>local</codePool>
-        </Mnt_Family>
-    </modules>
-</config> 
