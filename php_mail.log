@@ -1,1 +1,0 @@
-mail() on [/home/chouette/public_html/lib/Zend/Mail/Transport/Sendmail.php:106]: To: =?utf-8?B?Rmlyc3QgIFVzZXI=?= <mindnervestech@gmail.com> -- Headers: From: Owner <owner@example.com> Date: Sat, 05 Jul 2014 08:48:58 +0000 Content-Type: text/html; charset=utf-8 Content-Transfer-Encoding: quoted-printable Content-Disposition: inline MIME-Version: 1.0
