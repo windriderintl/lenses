@@ -68,6 +68,7 @@ class Mage_Catalog_Block_Product_List extends Mage_Catalog_Block_Product_Abstrac
                 $categories = Mage::registry('product')->getCategoryCollection()
                     ->setPage(1, 1)
                     ->load();
+					
                 // if the product is associated with any category
                 if ($categories->count()) {
                     // show products from this category
@@ -134,13 +135,13 @@ class Mage_Catalog_Block_Product_List extends Mage_Catalog_Block_Product_Abstrac
      * Need use as _prepareLayout - but problem in declaring collection from
      * another block (was problem with search result)
      */
-    protected function _beforeToHtml()
+   protected function _beforeToHtml()
     {
         $toolbar = $this->getToolbarBlock();
 
         // called prepare sortable parameters
         $collection = $this->_getProductCollection();
-
+		
         // use sortable parameters
         if ($orders = $this->getAvailableOrders()) {
             $toolbar->setAvailableOrders($orders);
@@ -373,9 +374,10 @@ class Mage_Catalog_Block_Product_List extends Mage_Catalog_Block_Product_Abstrac
         ));
 
         $this->_getProductCollection()->load();
-
+		echo $this->_getProductCollection()->load();
         return parent::_beforeToHtml();
     }
+	
 
     /**
      * Retrieve Toolbar block

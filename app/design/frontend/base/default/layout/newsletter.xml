@@ -44,7 +44,7 @@ Default layout, loads most of the pages
 <!--
 Customer account pages, rendered for all tabs in dashboard
 -->
-
+	<remove>
     <customer_account>
         <!-- Mage_Newsletter -->
         <reference name="customer_account_navigation">
@@ -52,7 +52,7 @@ Customer account pages, rendered for all tabs in dashboard
         </reference>
         <remove name="left.newsletter"/>
     </customer_account>
-
+	</remove>
     <newsletter_manage_index translate="label">
         <label>Customer My Account Newsletter Subscriptions</label>
         <update handle="customer_account"/>
