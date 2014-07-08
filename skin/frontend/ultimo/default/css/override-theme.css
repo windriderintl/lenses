@@ -12,7 +12,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
 
 .wrapper { border-top-style:solid; border-top-width:5px; }
-.main { padding:30px 0 40px; }
+.main { padding:5px 0 5px; }
 
 /* Additional margin for main sidebars
 -------------------------------------------------------------- */
@@ -34,19 +34,19 @@
 .multiple-checkout .col2-set,
 .multiple-checkout .col3-set,
 .info-set {
-    margin:0 0 10px;
-    padding:0 15px 15px;
+    margin:0 0 1px;
+    padding:0 15px 1px;
 }
 .fieldset .legend,
 .multiple-checkout .col2-set h2.legend,
 .info-set h2.legend {
-	margin:0 -15px 10px -15px;
+	margin:0 -15px 4px -15px;
 	padding-left:15px; padding-right:15px;
 }
 
 /* Buttons set
 -------------------------------------------------------------- */
-.buttons-set { margin:10px 15px; }
+.buttons-set { margin:1px 15px; }
 /* Note: buttons and "required" have equal right margin */
 .buttons-set button.button { margin-left:0; margin-right:5px; margin-bottom:5px; }
 .buttons-set p.required { margin:0 5px 5px 0; }
@@ -161,7 +161,7 @@
 /* Block: Account
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 */
-.block-account .block-title { background:url(../images/img/ic-account.png) 5px 2px no-repeat; padding-left:42px !important; }
+.block-account .block-title { background:url(../images/img/ic-account.png) 5px 2px no-repeat; padding-left:42px !important; background-size: 8%; }
 .block-account .block-content { padding:10px 0 0; }
 .block-account li > * { padding: 2px; }
 .block-account li.current strong { font-weight:bold; }
@@ -208,8 +208,8 @@
 .product-view .product-type-data > .price-box {
 	border-top-style:solid;
 	border-top-width:1px;
-	margin:15px 0 0;
-	padding:10px 0;
+	margin:5px 0 0;
+	padding:2px 0;
 }
 
 /* Other
@@ -250,7 +250,7 @@
 /* Footer primary
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 */
-.footer-primary .section { padding-top: 20px; padding-bottom: 20px; }
+.footer-primary .section { padding-top: 5px; padding-bottom: 5px; }
 
 
 
@@ -388,7 +388,7 @@
 
 .block_footer_primary_bottom_left {}
 .block_footer_primary_bottom_right {}*/
-.block_footer_payment { margin-right:10px; margin-bottom:10px; margin-left:20px; }
+.block_footer_payment { margin-right:10px; margin-bottom:0px; margin-left:20px; }
 
 /* Sample block content
 -------------------------------------------------------------- */

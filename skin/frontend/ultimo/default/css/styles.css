@@ -14,7 +14,7 @@ a:hover       { text-decoration:none; color:#ca0413; }
 
 /* Headings */
 h1,h2,h3,
-h4,h5,h6      { margin:0 0 10px; font-weight:normal; }
+h4,h5,h6      { margin:0 0 1px; font-weight:normal; }
 h1            { font-size:2.6666em;	line-height:1.25em;		/*32px, 40px*/		margin-bottom:20px; }
 h2            { font-size:2em;		line-height:1.25em;		/*24px, 30px*/ }
 h3            { font-size:1.6666em;	line-height:1.2em;		/*20px, 24px*/ }
@@ -77,10 +77,10 @@ ul,ol         { list-style:none; }
 .page-popup { padding:20px; text-align:left; background:#fff; }
 
 .main-container { background-repeat:repeat; background-position:center top; }
-.main { padding:20px 0; min-height:370px; }
+.main { padding:20px 0; min-height:360px; }
 /* Decrease padding on home page */
 body.cms-index-index .main,
-body.cms-index-defaultindex .main { padding-top:20px; padding-bottom:20px; }
+body.cms-index-defaultindex .main { padding-top:5px; padding-bottom:0px; }
 
 /* Base Columns */
 .col-left { float:left; }
@@ -226,7 +226,7 @@ p.control input.radio { margin-right:6px; }
 
 /* Form lists */
 /* Grouped fields */
-.form-list li { margin:0 0 8px; }
+.form-list li { margin:0 0 4px; }
 .form-list label { float:left; font-weight:bold; position:relative; z-index:0; margin:0 0 2px 0; }
 .form-list label.required {}
 .form-list label.required em { float:right; font-style:normal; position:absolute; top:0; right:-8px; }
@@ -235,10 +235,10 @@ p.control input.radio { margin-right:6px; }
 .form-list li.control input.checkbox { margin-right:6px; }
 .form-list li.control .input-box { clear:none; display:inline; width:auto; }
 .form-list .input-box { display:block; clear:both; }
-.form-list .field { float:left; width:275px; margin-bottom:5px; }
-.form-list input.input-text { width:262px; /*244px;*/ }
+.form-list .field { float:left; width:275px; margin-bottom:0px; }
+.form-list input.input-text { width:200px; /*244px;*/ }
 .form-list textarea { width:244px; height:10em; }
-.form-list select { width:262px; }
+.form-list select { width:200px; }
 .form-list li.wide .input-box { /*width:535px;*/ }
 .form-list li.wide input.input-text { /*width:529px;*/ }
 .form-list li.wide textarea { /*width:529px;*/ }
@@ -301,7 +301,7 @@ p.control input.radio { margin-right:6px; }
 .form-list .customer-dob .dob-day input.input-text,
 .form-list .customer-dob .dob-month input.input-text { width:46px; }
 .form-list .customer-dob .dob-year { width:140px; }
-.form-list .customer-dob .dob-year input.input-text { width:134px; }
+.form-list .customer-dob .dob-year input.input-text { width:80px; }
 
 /* Orders and Returns form
 -------------------------------------------------------------- */
@@ -452,7 +452,7 @@ p.required,
 */
 .page-title h1,
 .page-title h2 { margin-bottom:0; }
-.page-title { margin-bottom:20px; }
+.page-title { margin-bottom: 10px; }
 /*.category-title { margin-bottom:10px; }*/
 
 /* Links in page title */
@@ -486,7 +486,7 @@ p.required,
 
 /* Sorter
 -------------------------------------------------------------- */
-.sorter { padding:5px 0; }
+.sorter { padding:0px 0; }
 
 /* View mode */
 .sorter .view-mode { float:right; }
@@ -1412,14 +1412,14 @@ h3.product-name {
 -------------------------------------------------------------- */
 .products-grid {}
 .products-grid .item {
-	padding-top:20px;
-	padding-bottom:20px;
+	padding-top:5px;
+	padding-bottom:1px;
 	position:relative; /* For hover effect */
 }
-.products-grid .product-name { margin:15px 0 0; }
+.products-grid .product-name { margin:1px 0 0; }
 .products-grid .product-image-wrapper { margin:0 auto; position:relative; }
 .products-grid .product-image { display:block; }
-.products-grid .price-box { margin:5px 0 10px; font-size:1em; }
+.products-grid .price-box { margin:1px 0 1px; font-size:1em; }
 .products-grid .ratings { margin:10px 0; }
 .products-grid .actions { margin:10px 0 0; }
 .products-grid .availability { float:none; margin:5px 0; }
@@ -1571,7 +1571,7 @@ h3.product-name {
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 */
 .ratings,
-.no-rating { line-height:1.0833em; margin:15px 0 15px; }
+.no-rating { line-height:1.0833em; margin:2px 0 2px; }
 .ratings a { line-height:1.0833em; }
 .ratings strong { float:left; margin:1px 5px 0 0; }
 .ratings .rating-links .separator {
@@ -1840,7 +1840,7 @@ a.availability-only { cursor:pointer; }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 */
 /* Generic wrapper for product page collaterals */
-.product-view .box-additional { margin-top:20px; }
+.product-view .box-additional { margin-top:0px; }
 .product-view .box-tabs {}
 .product-view .box-sidebar {}
 .product-view .box-up-sell {}
@@ -1860,7 +1860,7 @@ a.availability-only { cursor:pointer; }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 */
 .product-view .product-shop { float:left; }
-.product-view .product-shop .product-name {	margin:0 0 1.6666em; /*20px*/ }
+.product-view .product-shop .product-name {	margin:0 0 0em; /*20px*/ }
 .product-view .product-shop .product-name h1 { margin:0; }
 .product-view .product-shop .ratings-table { margin:15px 0 5px; }
 
@@ -1874,11 +1874,11 @@ a.availability-only { cursor:pointer; }
 /* Product primary column's elements
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 */
-.product-view .short-description { margin:15px 0; line-height:1.25em; /*15px*/ }
+.product-view .short-description { margin:0px 0; line-height:1.25em; /*15px*/ }
 .product-view .short-description ul { margin-top:5px; margin-bottom:5px; }
 
 /* Add-to links */
-.product-view .action-box { margin:20px 0; }
+.product-view .action-box { margin:0px 0; }
 
 	/* Add-to links in different places of the product page */
 	.product-view .add-to-links li { margin-right: 10px; }
@@ -1941,20 +1941,20 @@ a.availability-only { cursor:pointer; }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 */
 /* Product type specific data */
-.product-view .product-type-data { margin:15px 0 0; }
+.product-view .product-type-data { margin:0px 0 0; }
 
 /* Lower part of the container */
 .product-view .container1-wrapper,
 .product-view .container2-wrapper,
 .product-view .add-to-box {
-	padding:0 0 15px;
-	margin:0 0 15px;
+	padding:0 0 5px;
+	margin:0 0 5px;
 	border-bottom:1px solid #e5e5e5;
 }
 
 /* Button container */
 .product-view .add-to-box {
-	margin-top:15px;
+	margin-top:5px;
 }
 
 /* Background color for main containers */
@@ -2495,8 +2495,8 @@ a.availability-only { cursor:pointer; }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 */
 .account-login .new-users,
-.account-login .registered-users { margin-bottom:20px; }
-.account-login p { margin-bottom:20px; }
+.account-login .registered-users { margin-bottom:15px; }
+.account-login p { margin-bottom:1px; }
 .account-login p.required { margin:0; }
 .account-login .buttons-set { clear:none; padding:0; margin:0; }
 
@@ -2514,16 +2514,16 @@ a.availability-only { cursor:pointer; }
 .my-account .title-buttons .link-rss { float:none; margin:0; }
 
 /********** < Dashboard */
-.dashboard .welcome-msg { margin:0 0 1.6666em; }
-.dashboard .welcome-msg .hello { font-size:1.6666em; line-height:1.2em; /*20px, 24px*/ }
+.dashboard .welcome-msg { margin:0 0 0.5em; }
+.dashboard .welcome-msg .hello { font-size:1.2em; line-height:1.2em; /*20px, 24px*/ }
 .dashboard .welcome-msg .hello strong { font-weight: normal; }
 .dashboard .col-1,
 .dashboard .col-2 { margin-bottom:1.5em; }
 
 /* General Box */
-.box-account { margin:0 0 2.5em; }
+.box-account { margin:0 0 0.5em; }
 .box-account .box-head { border-bottom:1px solid #e5e5e5; margin:0 0 10px; padding-bottom:5px; }
-.box-account .box-head a { float:right; margin-top:10px; }
+.box-account .box-head a { float:right; margin-top:5px; }
 .box-account .box-head h2 { float:left; margin:0; background-position:0 0; background-repeat:no-repeat; }
 .box-account.box-info .col-1 { border-right:1px solid #e5e5e5; }
 .box-account.box-info .col-1 .box { padding-right:10px; }
@@ -2857,8 +2857,8 @@ a.availability-only { cursor:pointer; }
 	border-top:1px solid;
 	border-color:#eee;
 	border-color:rgba(0,0,0, 0.05);
-	padding-top:20px;
-	padding-bottom:20px;
+	padding-top:5px;
+	padding-bottom:0px;
 }
 
 
@@ -2873,7 +2873,7 @@ a.availability-only { cursor:pointer; }
 */
 .footer-bottom-container {}
 .footer-bottom {
-	padding-top:10px; /* To counterbalance the bottom margin of footer elements */
+	padding-top:0px; /* To counterbalance the bottom margin of footer elements */
 }
 
 

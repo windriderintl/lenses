@@ -20,12 +20,12 @@
 	/* bw */
 	.icon.i-wishlist-bw {
 		background-image:url(../images/sprite.png);
-		background-position:-7px -7px;
+		background-position:-9px -9px;
 	}
 	.icon-hover:hover.i-wishlist-bw,
 	.feature-icon-hover:hover .icon.i-wishlist-bw {
 		background-image:url(../images/sprite.png);
-		background-position:-7px -57px;
+		background-position:-9px -59px;
 	}
 	
 	/* wb */
@@ -42,7 +42,7 @@
 /* Compare */
 .icon.i-compare {
 	background-image:url(../images/sprite.png);
-	background-position:-57px -7px;
+	background-position:-62px -12px;
 }
 .icon.i-compare-w {
 	background-image:url(../images/sprite.png);
@@ -52,14 +52,14 @@
 	/* bw */
 	.icon.i-compare-bw {
 		background-image:url(../images/sprite.png);
-		background-position:-57px -7px;
+		background-position:-59px -9px;
 	}
 	.icon-hover:hover.i-compare-bw,
 	.feature-icon-hover:hover .icon.i-compare-bw,
 	.open > .dropdown-toggle.cover .icon.i-compare-bw
 	{
 		background-image:url(../images/sprite.png);
-		background-position:-57px -57px;
+		background-position:-59px -59px;
 	}
 	
 	/* wb */
@@ -88,12 +88,12 @@
 	/* bw */
 	.icon.i-recommend-bw {
 		background-image:url(../images/sprite.png);
-		background-position:-107px -7px;
+		background-position:-109px -9px;
 	}
 	.icon-hover:hover.i-recommend-bw,
 	.feature-icon-hover:hover .icon.i-recommend-bw {
 		background-image:url(../images/sprite.png);
-		background-position:-107px -57px;
+		background-position:-109px -59px;
 	}
 	
 	/* wb */
@@ -144,7 +144,7 @@
 /* Cart */
 .icon.i-cart {
 	background-image:url(../images/sprite.png);
-	background-position:-457px -7px;
+	background-position:-457px -12px;
 }
 .icon.i-cart-w {
 	background-image:url(../images/sprite.png);
@@ -183,22 +183,22 @@
 /* Home */
 .icon.i-home {
 	background-image:url(../images/sprite.png);
-	background-position:-7px -107px;
+	background-position:-9px -109px;
 }
 .icon.i-home-w {
 	background-image:url(../images/sprite.png);
-	background-position:-7px -157px;
+	background-position:-9px -159px;
 }
 
 	/* bw */
 	.icon.i-home-bw {
 		background-image:url(../images/sprite.png);
-		background-position:-7px -107px;
+		background-position:-9px -109px;
 	}
 	.icon-hover:hover.i-home-bw,
 	.feature-icon-hover:hover .icon.i-home-bw {
 		background-image:url(../images/sprite.png);
-		background-position:-7px -157px;
+		background-position:-9px -159px;
 	}
 	
 	/* wb */

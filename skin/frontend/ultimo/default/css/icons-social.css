@@ -13,7 +13,7 @@
 /* Phone */
 .icon.i-telephone {
 	background-image:url(../images/sprite-icons-social.png);
-	background-position:-7px -7px;
+	background-position:-9px -12px;
 }
 .icon.i-telephone-w {
 	background-image:url(../images/sprite-icons-social.png);
@@ -70,7 +70,7 @@
 }
 .icon.i-twitter-w {
 	background-image:url(../images/sprite-icons-social.png);
-	background-position:-7px -157px;
+	background-position:-9px -160px;
 }
 
 /* Facebook */
@@ -80,7 +80,7 @@
 }
 .icon.i-facebook-w {
 	background-image:url(../images/sprite-icons-social.png);
-	background-position:-57px -157px;
+	background-position:-59px -160px;
 }
 
 /* Google plus */

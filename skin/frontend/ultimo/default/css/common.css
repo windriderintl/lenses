@@ -11,15 +11,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 */
 .header-top,
-.header .dropdown { line-height:3em; } /* line-height:36px; */
-.header .dropdown { max-height:3em; } /* Set static height to improve layout of inline elements */
+.header .dropdown { line-height:2em; } /* line-height:36px; */
+.header .dropdown { max-height:2em; } /* Set static height to improve layout of inline elements */
 
 
 /* Blocks
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 */
 /**/
-.sidebar .block:first-child { margin-top:6px; } /* To align with page title */
+.sidebar .block:first-child { margin-top:1px; } /* To align with page title */
 .cms-index-index .sidebar .block:first-child { margin-top:0; } /* Remove margin on home page */
 
  
@@ -46,8 +46,8 @@
 .cart .shipping h2
 {
 	/* padding:13px 0 7px; */ /*TODO*/
-	padding-top:7px;
-	padding-bottom:7px;
+	padding-top:0px;
+	padding-bottom:0px;
 	border-bottom:1px solid #e5e5e5;
 	font-weight:normal;
 	font-size:1.5em; /*18px*/
@@ -67,12 +67,12 @@
 .multiple-checkout .col2-set h2.legend,
 .info-set h2.legend
 {
-	font-size:1.5em; /*18px*/
+	font-size:1.3em; /*18px*/
 	line-height:1.3333em; /*24px*/
 	font-weight:normal;
 	text-transform:uppercase;
 	border-bottom:1px solid #e5e5e5;
-	padding-bottom:10px;
+	padding-bottom:0px;
 }
 
 /* Account headings

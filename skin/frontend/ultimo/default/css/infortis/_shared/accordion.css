@@ -123,9 +123,9 @@
 
 .collapsible { position:relative; }
 .collapsible .block-title {
-	padding-top:8px;
+	padding-top:0px;
 	padding-right:35px; /* Space for opener */
-	padding-bottom:8px;
+	padding-bottom:5px;
 	border-bottom:1px solid #f2f2f2;
 	border-color:rgba(0,0,0, 0.05);
 	margin-bottom:0.625em; /*10px*/
@@ -145,7 +145,7 @@
 .collapsible .opener {
 	position:absolute;
 	right:0;
-	top:2px;
+	top:-7px;
 	display:block;
 	cursor:pointer;
 	

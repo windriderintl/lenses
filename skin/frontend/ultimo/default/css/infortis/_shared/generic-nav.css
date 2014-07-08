@@ -42,8 +42,8 @@
 .slider-arrows1 .owl-controls.clickable .owl-buttons .owl-next.disabled:hover	{ background-position:-60px -10px; /* Same as default */ }
 
 /* Position */
-.slider-arrows1-pos-top-right .owl-controls .owl-buttons { top:-40px; right:0px; }
-.slider-arrows1-pos-top-left  .owl-controls .owl-buttons { top:-40px; left:0px; }
+.slider-arrows1-pos-top-right .owl-controls .owl-buttons { top:-32px; right:0px; }
+.slider-arrows1-pos-top-left  .owl-controls .owl-buttons { top:-32px; left:0px; }
 
 
 /* Generic arrows 2
