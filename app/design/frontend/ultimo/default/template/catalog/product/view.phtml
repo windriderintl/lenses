@@ -245,11 +245,14 @@
                     	<div class="margin-top"><?php echo $section['related']; ?></div>
                     <?php endif; ?>
                     <?php */?>
+					
+					
 
 				</div>
+				
             </div> <!-- end: product-secondary-column -->
-        <?php endif; ?>
-
+			<?php endif; ?>
+			
         <?php if ($_product->isSaleable() && $this->hasOptions()): ?>
 			<?php if ($container2_html = $this->getChildChildHtml('container2', '', true, true)): ?>
         		<div class="box-additional <?php echo $container2ColGridClass; ?>">
