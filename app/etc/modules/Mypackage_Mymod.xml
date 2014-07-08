@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Mypackage_Mymod>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Mypackage_Mymod>
+    </modules>
+</config> 

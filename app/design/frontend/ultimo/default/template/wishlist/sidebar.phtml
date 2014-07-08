@@ -29,8 +29,10 @@
 <div class="block block-wishlist">
     <div class="block-title">
         <strong><span><?php echo $this->__('My Wishlist <small>(%d)</small>', $this->getItemCount()) ?></span></strong>
+    	<img id="imgWishlistDiv" src="<?php echo $this->getSkinUrl('images/down-arrow.png') ?>" onclick="showWishlist()" style="width: 8%;cursor: pointer;float: right;
+margin-right: 2%;" />
     </div>
-    <div class="block-content">
+    <div id="wishlistDiv" class="block-content" style="display: none;">
     <p class="block-subtitle"><?php echo $this->__('Last Added Items') ?></p>
     <?php if ($this->hasWishlistItems()): ?>
     <ol class="mini-products-list" id="wishlist-sidebar">
@@ -59,3 +61,18 @@
     </div>
 </div>
 <?php endif ?>
+
+
+<script type="text/javascript">
+
+	function showWishlist(){
+		var isVisible = jQuery('#wishlistDiv').is(':visible');
+		if(isVisible){
+			jQuery('#wishlistDiv').hide();
+			jQuery('#imgWishlistDiv').attr('src','http://localhost/onlinesales/skin/frontend/base/default/images/down-arrow.png' );
+		}else{
+			jQuery('#wishlistDiv').show();
+			jQuery('#imgWishlistDiv').attr('src','http://localhost/onlinesales/skin/frontend/base/default/images/up-arrow.png' );
+		}
+	}
+</script>

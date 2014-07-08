@@ -24,12 +24,14 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-
+<?php $outputMessage = Mage::helper('customer')->getCustomer()->getId() ?>
 <?php $_product = $this->getProduct(); ?>
-<?php $buttonTitle = $this->__('Add to Cart'); ?>
+<?php $buttonTitle = $this->__('Configure'); ?>
 <?php if ($_product->isSaleable()): ?>
 	<div class="add-to-cart v-centered-content">
-    	<button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart v-center" onclick="productAddToCartForm.submit(this)"><span><span><?php echo $buttonTitle ?></span></span></button>
+		<?php if ($outputMessage == ''): ?>
+    		<button type="button" title="" id="addToCartBtn" class="button btn-cart v-center" ><span><span><?php echo $buttonTitle ?></span></span></button>
+		<?php endif; ?>
 		<?php if(!$_product->isGrouped()): ?>
 			<div class="qty-wrapper v-center">
 				<label for="qty"><?php echo $this->__('Qty:') ?></label>

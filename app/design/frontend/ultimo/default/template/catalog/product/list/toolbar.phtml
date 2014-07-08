@@ -43,7 +43,7 @@
 
     <?php if( $this->isExpanded() ): ?>
     <div class="sorter">
-    
+		<p>Products for Category: <?php echo $this->getProductUrl() ?></p>
     	<p class="amount">
             <?php if($this->getLastPageNum()>1): ?>
 				<?php echo $this->__('Items %s to %s of %s total', $this->getFirstNum(), $this->getLastNum(), $this->getTotalNum()) ?>
