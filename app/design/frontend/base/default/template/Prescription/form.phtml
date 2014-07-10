@@ -158,8 +158,10 @@
 					<h1>Member</h1>
 					<fieldset>
 						<div >
-							<?php $userId = Mage::helper('customer')->getCustomer()->getId(); ?>
-								
+							<?php $userId = Mage::helper('customer')->getCustomer()->getId();
+									$connection = Mage::getModel('mymod/family')->getCollection()
+												->addFieldToFilter('user_id', array('eq' => $userId))
+												->load(); ?> 
 							<h3 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;margin-bottom: 3%;padding-bottom: 7px;"><?php echo Mage::helper('contacts')->__('Please select family member') ?></h3> 
 							<table class="fieldset table_custom" style="width: 100%;">
 								<tr>
@@ -169,7 +171,13 @@
 									  
 								</tr>
 								
-							
+								<?php foreach($connection as $arr_row): ?>
+											<tr>
+												  <td style="padding: 1%;" class="td_custom table_custom"><input type="radio" value="<?php echo $arr_row['family_id'];?>" onclick="selectMember('+<?php echo $arr_row["family_id"];?>+')" name="familyMember" class="checkbox required" style="width: 100%;"></td>
+												  <td class="td_custom table_custom"><?php echo $arr_row['name'];?></td>
+												  <td class="td_custom table_custom"><?php echo $arr_row['relation'];?></td>		
+											</tr>
+								<?php endforeach; ?>
 							</table>
 						</div>
 					</fieldset>
