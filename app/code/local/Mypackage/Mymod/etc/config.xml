@@ -5,6 +5,17 @@
             <version>0.1.0</version>
         </Mypackage_Mymod>
     </modules>
+ 	<frontend>
+        <routers>
+            <Mymod>
+                <use>standard</use>
+                <args>
+                    <module>Mypackage_Mymod</module>
+                    <frontName>mymod</frontName>
+                </args>
+            </Mymod>
+        </routers>  
+    </frontend>
     <global>
         <models>
             <mymod>
