@@ -7,13 +7,13 @@
     </modules>
  	<frontend>
         <routers>
-            <Mymod>
+            <mymod>
                 <use>standard</use>
                 <args>
                     <module>Mypackage_Mymod</module>
                     <frontName>mymod</frontName>
                 </args>
-            </Mymod>
+            </mymod>
         </routers>  
     </frontend>
     <global>
