@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Mypackage_Mymod>
-            <active>true</active>
+            <active>false</active>
             <codePool>local</codePool>
         </Mypackage_Mymod>
     </modules>
