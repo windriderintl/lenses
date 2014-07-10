@@ -122,7 +122,7 @@ class Mnt_Family_IndexController extends Mage_Core_Controller_Front_Action {
 	public function updateAction()
     {
 		$userId = Mage::helper('customer')->getCustomer()->getId();
-		echo Mage::helper('customer')->getCustomer()->getId();
+	//	echo Mage::helper('customer')->getCustomer()->getId();
 		
 		//if ($this->getRequest()->isPost()){
 			$family_id = $this->getRequest()->getPost('family_id');
@@ -139,7 +139,7 @@ class Mnt_Family_IndexController extends Mage_Core_Controller_Front_Action {
 		$model->setId($id)->save();
 			
 		$this->loadLayout();
-		$this->_redirectReferer();
+		//$this->_redirectReferer();
 		$this->renderLayout();
 		
 	}
