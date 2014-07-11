@@ -32,14 +32,17 @@
  */
 ?>
 <div class="account-create">
-    <div class="page-title">
+    <div class="page-title" >
         <h3><?php echo $this->__('Sign Up') ?></h3>
     </div>
     <?php echo $this->getChildHtml('form_fields_before')?>
     <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
     <?php /* Extensions placeholder */ ?>
     <?php echo $this->getChildHtml('customer.form.register.extra')?>
-		<div id="signUpDiv" class="grid12-6">
+		<div id="signUpDiv" class="grid12-8">
+			<div class="fieldset" style="">
+				<h6 for="userName" class="grid12-6 legend" style="float: left;font-size: 1.3333em;font-family: 'Bitter', georgia, serif;">Please create your accout by</h6>
+			</div>
 			<div style="float: left;margin-bottom: 5%;margin-top: 5%;" class="grid-full">
 				<h6 for="userName" class="grid12-6" style="float: left;font-size: 1.3333em;font-family: 'Bitter', georgia, serif;">Create an account</h6>
 				<input type="radio" name="is_Pres" title="Plases Select One Value" id="isNot_Prescrip" value="account" class="checkbox required" style="width:10%;float: left;margin-top: 0.3%;" checked>
@@ -49,7 +52,7 @@
 				<input type="radio" name="is_Pres" title="Plases Select One Value" id="is_Prescrip" value="social" class="checkbox required" style="width:10%;float: left;margin-top: 0.3%;">
 			</div>
 			
-			<div class="buttons-set">
+			<div class="buttons-set" style="float: left;">
 			<!--	<p class="back-link"><a  class="back-link"><small>&laquo; </small><?php echo $this->__('Back') ?></a></p> -->
 				<button type="button" id="signUpBtn1" title="<?php echo $this->__('Next') ?>" class="button"><span><span><?php echo $this->__('Next') ?></span></span></button>
 			</div>
