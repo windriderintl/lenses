@@ -147,7 +147,7 @@ class Mnt_Family_IndexController extends Mage_Core_Controller_Front_Action {
 	public function updateSingleAction()
     {
 		$userId = Mage::helper('customer')->getCustomer()->getId();
-		echo Mage::helper('customer')->getCustomer()->getId();
+	//	echo Mage::helper('customer')->getCustomer()->getId();
 		
 		$family_id = $this->getRequest()->getPost('familySingleId');
 		$userName= $this->getRequest()->getPost('userName');
@@ -180,7 +180,7 @@ class Mnt_Family_IndexController extends Mage_Core_Controller_Front_Action {
 	public function updateProgressiveAction()
     {
 		$userId = Mage::helper('customer')->getCustomer()->getId();
-		echo Mage::helper('customer')->getCustomer()->getId();
+	//	echo Mage::helper('customer')->getCustomer()->getId();
 		
 		$family_id1 = $this->getRequest()->getPost('family_id1');
 		$userName1= $this->getRequest()->getPost('userName1');
@@ -221,7 +221,7 @@ class Mnt_Family_IndexController extends Mage_Core_Controller_Front_Action {
 	public function deleteAction()
     {
 		$userId = Mage::helper('customer')->getCustomer()->getId();
-		echo Mage::helper('customer')->getCustomer()->getId();
+	//	echo Mage::helper('customer')->getCustomer()->getId();
 		
 		$delete_id = $this->getRequest()->getPost('delete_id');
 		$id = $delete_id;	
