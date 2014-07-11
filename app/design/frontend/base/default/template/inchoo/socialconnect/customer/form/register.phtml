@@ -39,16 +39,17 @@
     <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
     <?php /* Extensions placeholder */ ?>
     <?php echo $this->getChildHtml('customer.form.register.extra')?>
-		<div id="signUpDiv" class="grid12-8">
+    <?php $locale = Mage::app()->getLocale()->getLocaleCode(); ?>
+		<div id="signUpDiv" class="grid12-9">
 			<div class="fieldset" style="">
-				<h6 for="userName" class="grid12-6 legend" style="float: left;font-size: 1.3333em;font-family: 'Bitter', georgia, serif;">Please create your accout by</h6>
+				<h6 for="userName" class="grid12-9 legend" style="float: left;font-size: 1.3333em;font-family: 'Bitter', georgia, serif;"><?php echo (($locale == "en_US") ? "Please create your accout by" :"s il vous plaît créer votre compte"); ?></h6>
 			</div>
 			<div style="float: left;margin-bottom: 5%;margin-top: 5%;" class="grid-full">
-				<h6 for="userName" class="grid12-6" style="float: left;font-size: 1.3333em;font-family: 'Bitter', georgia, serif;">Create an account</h6>
+				<h6 for="userName" class="grid12-5" style="float: left;font-size: 1.3333em;font-family: 'Bitter', georgia, serif;"><?php echo (($locale == "en_US") ? "Create an account" :"Créer un compte"); ?></h6>
 				<input type="radio" name="is_Pres" title="Plases Select One Value" id="isNot_Prescrip" value="account" class="checkbox required" style="width:10%;float: left;margin-top: 0.3%;" checked>
 			</div>
 			<div style="float: left;min-height: 100px;" class="grid-full">
-				<h6 for="userName" class="grid12-6" style="float: left;font-size: 1.3333em;font-family: 'Bitter', georgia, serif;" >Sign up with social media</h6>
+				<h6 for="userName" class="grid12-5" style="float: left;font-size: 1.3333em;font-family: 'Bitter', georgia, serif;" ><?php echo (($locale == "en_US") ? "Sign up with social media" :"Inscrivez-vous avec les médias sociaux"); ?></h6>
 				<input type="radio" name="is_Pres" title="Plases Select One Value" id="is_Prescrip" value="social" class="checkbox required" style="width:10%;float: left;margin-top: 0.3%;">
 			</div>
 			
