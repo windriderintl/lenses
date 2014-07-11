@@ -268,10 +268,10 @@
 	
 	<div style='display:none'>
 				<div id='homepage_popup' style='padding:10px;'> 
-					
+					<?php $locale = Mage::app()->getLocale()->getLocaleCode(); ?>
 					<fieldset style="float: left;width: 45%;">
-			        	 <h4 style="border-bottom: 1px solid #e5e5e5;;padding-bottom: 2%;">Guest?</h4>
-			        	 <button type="button" id="guestUser" class="button" style="float: right;margin-right: 5%;margin-top: 10%;"><span><span>Checkout as Guest</span></span></button>
+			        	 <h4 style="border-bottom: 1px solid #e5e5e5;;padding-bottom: 2%;"><?php echo (($locale == "en_US") ? "Guest ?" :"invité ?"); ?></h4>
+			        	 <button type="button" id="guestUser" class="button" style="float: right;margin-right: 5%;margin-top: 10%;"><span><span><?php echo (($locale == "en_US") ? "Checkout as Guest" :"Commander en tant qu'invité"); ?></span></span></button>
 			        	<!--<a id="guestUser" class="button">Checkout as Guest</>-->
 			         </fieldset>
 					
@@ -279,27 +279,27 @@
 			        </fieldset>
 			         
 					<fieldset style="float: right;width: 45%;">
-					       <h4 style="border-bottom: 1px solid #e5e5e5;;padding-bottom: 2%;">Already registered?</h4>
-								<form action="http://chouetteslunettes.com/index.php/default/customer/account/loginPostCustom/" method="post">
+					       <h4 style="border-bottom: 1px solid #e5e5e5;;padding-bottom: 2%;"><?php echo (($locale == "en_US") ? "Already registered?" :"Déjà inscrit?"); ?></h4>
+								<form action="http://localhost/onlinesales/index.php/default/customer/account/loginPostCustom/" method="post">
 					            <ul class="form-list">
 					                <li>
-					                    <label for="login-email" class="required"><em>*</em>Email Address</label>
+					                    <label for="login-email" class="required"><em>*</em><?php echo (($locale == "en_US") ? "Email Address" :"Adresse e-mail"); ?></label>
 					                    <div class="input-box">
 					                        <input type="text" class="input-text required-entry validate-email" id="login-email" name="login[username]" value="" />
 					                        <input type="hidden" id="afterLoginUrl" name="afterLoginUrl" value="" />
 					                    </div>
 					                </li>
 					                <li>
-					                    <label for="login-password" class="required"><em>*</em>Password</label>
+					                    <label for="login-password" class="required"><em>*</em><?php echo (($locale == "en_US") ? "Password" :"mot de passe"); ?></label>
 					                    <div class="input-box">
 					                        <input type="password" class="input-text required-entry" id="login-password" name="login[password]" />
 					                    </div>
 					                </li>
 					              </ul>
 				              
-							  <p class="required" style="margin-right: 26%;">* Required Fields</p>
+							  <p class="required" style="margin-right: 26%;">* <?php echo (($locale == "en_US") ? "Required Fields" :"Les champs obligatoires"); ?></p>
 							           <!-- <a href="http://chouetteslunettes.com/index.php/default/customer/account/forgotpassword/" class="f-left">Forgot your password?</a>-->
-							  <button type="submit" class="button" style="float: right;margin-right: 26%;"><span><span>Login</span></span></button>
+							  <button type="submit" class="button" style="float: right;margin-right: 26%;"><span><span><?php echo (($locale == "en_US") ? "Login" :"Connexion"); ?></span></span></button>
 			        	</form>
 			        <fieldset>
 			        
