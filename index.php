@@ -61,22 +61,22 @@ if (!file_exists($mageFilename)) {
     exit;
 }
 
-$ip = $_SERVER['REMOTE_ADDR'];
+//$ip = $_SERVER['REMOTE_ADDR'];
 
 // these are the IP's that are  allowed to view the site:
-$allowed = array('192.168.2.9', '181.224.143.152');
+//$allowed = array('192.168.2.9', '181.224.143.152');
 
-if (file_exists($maintenanceFile) && !in_array($ip, $allowed)) { 
+//if (file_exists($maintenanceFile) && !in_array($ip, $allowed)) { 
+//    include_once dirname(__FILE__) . '/errors/503.php';
+//    exit;
+//}
+
+
+ if (file_exists($maintenanceFile)) {
+
     include_once dirname(__FILE__) . '/errors/503.php';
-    exit;
-}
-
-
-// if (file_exists($maintenanceFile)) {
-
-    // include_once dirname(__FILE__) . '/errors/503.php';
-    // exit;
-// }
+     exit;
+ }
 
 require_once $mageFilename;
 
