@@ -75,7 +75,7 @@
 /* BreadCrumbs
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 */
-.breadcrumbs { line-height:1.5em; /*18px*/ margin:0 0 5px; }
+.breadcrumbs { line-height:1.5em; /*18px*/ margin:0 10px 5px; }
 /* Breadcrumbs on product page */
 .catalog-product-view .breadcrumbs { margin-bottom:10px; }
 
