@@ -49,7 +49,7 @@
                 <?php foreach ($_filters as $_filter): ?>
                 <?php if($_filter->getItemsCount()): ?>
                     <dt><div style="float: left;width: 90%;cursor: pointer;" onclick="showDrillView('<?php echo $count ?>')"><?php echo $this->__($_filter->getName()) ?></div>
-                    	 <img id="imgDiv<?php echo $count ?>" src="<?php echo $this->getSkinUrl('images/down-arrow.png') ?>" onclick="showDrillView('<?php echo $count ?>')" style="width: 8%;cursor: pointer;" />
+                    	 <img id="imgDiv<?php echo $count ?>" src="<?php echo $this->getSkinUrl('images/down-arrow.png') ?>" onclick="showDrillView('<?php echo $count ?>')" style="width: 6%; cursor: pointer;" />
                     	<!-- <p id="arrows" style="float: right;" onclick="showDrillView('<?php echo $count ?>')"> &#9660; </p>-->
                     </dt>
                     <dd id="optionDiv<?php echo $count ?>" style="display: none;"><?php echo $_filter->getHtml() ?></dd>
