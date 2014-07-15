@@ -28,7 +28,7 @@
 .itemgrid-3col .item:nth-child(3n+1) { clear:left; }
 
 /* Item grid: 4 columns */
-.itemgrid-4col .item { width:23%; }
+.itemgrid-4col .item { width:31%; }
 .itemgrid-4col .item:nth-child(4n+1) { clear:left; }
 .itemgrid-4col .item.dop { width:48%; }
 
