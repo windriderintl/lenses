@@ -107,7 +107,7 @@
 .wizard > .steps .disabled a:hover,
 .wizard > .steps .disabled a:active
 {
-    background: #eee;
+    background: #F7F7F7;
     color: #aaa;
     cursor: default;
 }
@@ -139,7 +139,7 @@
 
 .wizard > .content
 {
-    background: #eee;
+    background: #F7F7F7;
     display: block;
     margin: 0.5em;
     min-height: 27em;
