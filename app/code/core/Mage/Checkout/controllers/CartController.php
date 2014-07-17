@@ -218,6 +218,21 @@ class Mage_Checkout_CartController extends Mage_Core_Controller_Front_Action
                 if (!$cart->getQuote()->getHasError()) {
                     $message = $this->__('%s was added to your shopping cart.', Mage::helper('core')->escapeHtml($product->getName()));
                     $this->_getSession()->addSuccess($message);
+				/*	
+					//custom field Prescription 
+					$userId = Mage::helper('customer')->getCustomer()->getId();		
+					$collection = Mage::getModel('sales/quote_item_option')->getCollection();
+					$collection->getColumnValues('item_id');
+					
+					echo $product;
+					foreach ($collection as $option => $value) {
+					    $val =	unserialize($value['value']);
+						foreach ($val as $key => $value) {
+						   // echo $key .'</br>';
+							//echo $value.'</br>';
+						}
+					}
+					*/
                 }
                 $this->_goBack();
             }

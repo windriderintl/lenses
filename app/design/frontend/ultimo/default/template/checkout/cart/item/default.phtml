@@ -77,6 +77,52 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
         <a href="<?php echo $this->getConfigureUrl() ?>" title="<?php echo $this->__('Edit item parameters') ?>"><?php echo $this->__('Edit') ?></a>
         <?php endif ?>
     </td>
+    
+    <?php 
+					$collection = Mage::getModel('sales/quote_item_option')->getCollection()->addFieldToFilter('item_id', array('eq' => $_item->getId()));
+					$lense_type;
+					$glass_type;
+					$photochromic_type;
+					$correction_type;
+					$color_type;
+					$tinte_type; 
+					$family_member;
+					
+					foreach ($collection as $option => $value) {
+					    $val =	unserialize($value['value']);
+						foreach ($val as $key => $value) {
+						  //  echo $key .'</br>';
+							if($key == 'lenses_type'){
+								if($value == 'normalLenses'){
+									$lense_type = 'Normal Lenses';
+								}else if($value == 'no_correction'){
+									$lense_type = 'No Correction';
+								}else{
+									$lense_type = 'Sunglasses';
+								}
+							}else if($key == 'glass'){
+								if( $value == 'singleVision'){
+									$glass_type = 'Single Vision';
+								}else if($value == 'progress'){
+									$glass_type = 'Progress';
+								}
+							}else if($key == 'photochromic'){
+									$photochromic_type = $value;
+							}else if($key == 'correction'){
+									$correction_type = $value;
+							}else if($key == 'correction'){
+									$correction_type = $value;
+							}else if($key == 'color'){
+									$color_type = $value;
+							}else if($key == 'tinte'){
+									$tinte_type = $value;
+							}
+							//echo $value.'</br>';
+						}
+					}
+		?>
+    
+    
     <?php if ($this->helper('wishlist')->isAllowInCart()) : ?>
     <td class="col-wish a-center">
     
@@ -89,6 +135,15 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
     </td>
     <?php endif ?>
 
+	<td class="a-center" style="width: 20%;>
+		<p style="text-align: left;">Lense Type: <?php echo $lense_type ?></p>
+		<p style="text-align: left;">Glass Type: <?php echo $glass_type ?></p>
+		<p style="text-align: left;">Photochromic Type: <?php echo $photochromic_type ?></p>
+		<p style="text-align: left;">Correction Type: <?php echo $correction_type ?></p>
+		<p style="text-align: left;">Color Type: <?php echo $color_type ?></p>
+		<p style="text-align: left;">Tinte Type: <?php echo $tinte_type ?></p>
+		
+	</td>
     <?php if ($canApplyMsrp): ?>
         <td class="col-msrp a-right"<?php if ($this->helper('tax')->displayCartBothPrices()): ?> colspan="2"<?php endif; ?>>
             <span class="cart-price">
