@@ -62,7 +62,7 @@
 						</div>
 					</fieldset>
 					
-					<h1>photochrom</h1>
+					<h1>photochromic</h1>
 					<fieldset>
 						<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;margin-bottom: 3%;"><?php echo Mage::helper('contacts')->__("S'il vous plaît sélectionner photochromiques") ?></h4> 
 						<div id="yesDiv" style="width:100%;float: left;margin-bottom: 2%;">
@@ -282,7 +282,8 @@
 			text-align: center;
 			font-weight: bold;
 			font-size: 14px;
-			background-color: #DBDBDB;
+			color: #ffffff;
+			background-color: #2184be;
 		}
 		.td_custom{
 			text-align: center;
@@ -406,7 +407,7 @@
 							})
 							//add  Photochromic step
 							jQuery('#form-3').steps("insert",2, {
-							title: "photochrom",
+							title: "photochromic",
 							content: '<fieldset>'+
 										'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;margin-bottom: 3%;"><?php echo Mage::helper("contacts")->__("S il vous plaît sélectionner photochromiques") ?></h4>'+ 
 										'<div id="yesDiv" style="width:100%;float: left;margin-bottom: 2%;">'+
@@ -718,21 +719,8 @@
 											'</div>'+
 										'</fieldset>'
 								})
+								
 								jQuery('#form-3').steps("insert",2, {
-									title: "photochrom",
-									content: '<fieldset>'+
-												'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;margin-bottom: 3%;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper("contacts")->__("S il vous plaît sélectionner photochromiques") ?></h4>'+ 
-												'<div id="polorizedDiv" style="width:100%;float: left;margin-bottom: 2%;">'+
-													'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;">Verres polarises</h6>'+
-													'<input type="radio" name="photochromic" value="polorized" title="Plases sélectionner quune valeur" id="polorized" value="single" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
-												'</div>'+
-												'<div id="nonPolorizedDiv" style="width:100%;float: left;margin-bottom: 2%;">'+
-													'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Verres non polarises</h6>'+
-													'<input type="radio" name="photochromic" title="Plases sélectionner quune valeur" value="nonPolorized" id="nonPolorized" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
-												'</div>'+
-											'</fieldset>'
-								})
-								jQuery('#form-3').steps("insert",3, {
 								title: "Correction",
 								content: '<fieldset>'+
 											'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;margin-bottom: 3%;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper('contacts')->__("S il vous plaît sélectionner correction") ?></h4>'+
@@ -754,7 +742,7 @@
 								
 								var showMember = '<?php echo Mage::helper('customer')->getCustomer()->getId(); ?>';
 								if(showMember != ''){
-									jQuery('#form-3').steps("insert",4, {
+									jQuery('#form-3').steps("insert",3, {
 									title: "Member",
 									content: '<fieldset>'+
 												'<div >'+
@@ -820,23 +808,10 @@
 				jQuery('#form-3').steps('remove', 2, {});
 				jQuery('#form-3').steps('remove', 2, {});
 				jQuery('#form-3').steps('remove', 2, {});
-						jQuery('#form-3').steps("insert",2, {
-							title: "photochrom",
-							content: '<fieldset>'+
-										'<h4 class="legend" style="margin-bottom: 3%;border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper("contacts")->__("S il vous plaît sélectionner photochromiques") ?></h4>'+ 
-										'<div id="polorizedDiv" style="width:100%;float: left;margin-bottom: 2%;">'+
-											'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;">Verres polarises</h6>'+
-											'<input type="radio" name="photochromic" title="Plases sélectionner quune valeur" id="polorized" value="polorized" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
-										'</div>'+
-										'<div id="nonPolorizedDiv" style="width:100%;float: left;margin-bottom: 2%;">'+
-											'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Verres non polarises</h6>'+
-											'<input type="radio" name="photochromic" title="Plases sélectionner quune valeur" id="nonPolorized" value="nonPolorized" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
-										'</div>'+
-									'</fieldset>'
-						})
+						
 						var showMember = '<?php echo Mage::helper('customer')->getCustomer()->getId(); ?>';
 								if(showMember != ''){
-									jQuery('#form-3').steps("insert",3, {
+									jQuery('#form-3').steps("insert",2, {
 									title: "Member",
 									content: '<fieldset>'+
 												'<div >'+
@@ -863,21 +838,8 @@
 				jQuery('#form-3').steps('remove', 2, {});
 				jQuery('#form-3').steps('remove', 2, {});
 				jQuery('#form-3').steps('remove', 2, {});
-				jQuery('#form-3').steps("insert",2, {
-									title: "photochrom",
-									content: '<fieldset>'+
-												'<h4 class="legend" style="margin-bottom: 3%; border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper("contacts")->__("S il vous plaît sélectionner photochromiques") ?></h4>'+ 
-												'<div id="polorizedDiv" style="width:100%;float: left;margin-bottom: 2%;">'+
-													'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;">Verres polarises</h6>'+
-													'<input type="radio" name="photochromic" title="Plases sélectionner quune valeur" value="polorized" id="polorized" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
-												'</div>'+
-												'<div id="nonPolorizedDiv" style="width:100%;float: left;margin-bottom: 2%;">'+
-													'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Verres non polarises</h6>'+
-													'<input type="radio" name="photochromic" title="Plases sélectionner quune valeur" id="nonPolorized" value="nonPolorized" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
-												'</div>'+
-											'</fieldset>'
-								})
-								jQuery('#form-3').steps("insert",3, {
+				
+								jQuery('#form-3').steps("insert",2, {
 								title: "Correction",
 								content: '<fieldset>'+
 											'<h4 class="legend" style="margin-bottom: 3%; border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper('contacts')->__("S il vous plaît sélectionner correction") ?></h4>'+
@@ -899,7 +861,7 @@
 								
 								var showMember = '<?php echo Mage::helper('customer')->getCustomer()->getId(); ?>';
 								if(showMember != ''){
-									jQuery('#form-3').steps("insert",4, {
+									jQuery('#form-3').steps("insert",3, {
 									title: "Member",
 									content: '<fieldset>'+
 												'<div >'+
