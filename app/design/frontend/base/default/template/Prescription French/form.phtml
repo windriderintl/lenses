@@ -104,34 +104,42 @@
 					<fieldset>
 						<h4 class="legend" style="border-bottom: 1px solid #e5e5e5; margin-bottom: 3%;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper('contacts')->__("S'il vous plaît sélectionner lentilles couleur") ?></h4> 
 						<div style="width:100%;float: left;margin-bottom: 2%;">
+							<img src="<?php echo $this->getSkinUrl('images/no_ball.png') ?>" style="width: 3%;float: left; cursor: pointer;float: left;" />
 							<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: 'Bitter', georgia, serif;">Sans couleur</h6>
 							<input type="radio" name="color" title="Plases sélectionner quune valeur" value="noColor" id="noColor" onclick="noColorTab(false)" value="single" class="checkbox required" style="margin-top: 0.5%;float: left;">
 						</div>
 						<div style="width:100%;float: left;margin-bottom: 2%;">
+							<img src="<?php echo $this->getSkinUrl('images/grey_ball.png') ?>" style="width: 3%;float: left; cursor: pointer;float: left;" />
 							<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: 'Bitter', georgia, serif;" >Gris </h6>
 							<input type="radio" name="color" title="Plases sélectionner quune valeur" value="grey" id="grey" onclick="noColorTab(true)" class="checkbox required" style="margin-top: 0.5%;float: left;">
 						</div>
 						<div style="width:100%;float: left;margin-bottom: 2%;">
+							<img src="<?php echo $this->getSkinUrl('images/marron_ball.png') ?>" style="width: 3%;float: left; cursor: pointer;float: left;" />
 							<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: 'Bitter', georgia, serif;" >Marron</h6>
 							<input type="radio" name="color" title="Plases sélectionner quune valeur" value="marron" id="marron" onclick="noColorTab(true)" class="checkbox required" style="margin-top: 0.5%;float: left;">
 						</div>
 						<div style="width:100%;float: left;margin-bottom: 2%;">
+							<img src="<?php echo $this->getSkinUrl('images/blue_ball.png') ?>" style="width: 3%;float: left; cursor: pointer;float: left;" />
 							<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: 'Bitter', georgia, serif;" >Bleu</h6>
 							<input type="radio" name="color" title="Plases sélectionner quune valeur" value="blue" id="blue" onclick="noColorTab(true)" class="checkbox required" style="margin-top: 0.5%;float: left;">
 						</div>
 						<div style="width:100%;float: left;margin-bottom: 2%;">
+							<img src="<?php echo $this->getSkinUrl('images/green_ball.png') ?>" style="width: 3%;float: left; cursor: pointer;float: left;" />
 							<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: 'Bitter', georgia, serif;" >Vert</h6>
 							<input type="radio" name="color" title="Plases sélectionner quune valeur" value="green" id="green" onclick="noColorTab(true)" class="checkbox required" style="margin-top: 0.5%;float: left;">
 						</div>
 						<div style="width:100%;float: left;margin-bottom: 2%;">
+							<img src="<?php echo $this->getSkinUrl('images/black_ball.png') ?>" style="width: 3%;float: left; cursor: pointer;float: left;" />
 							<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: 'Bitter', georgia, serif;" >Noir</h6>
 							<input type="radio" name="color" title="Plases sélectionner quune valeur" value="black" id="black" onclick="noColorTab(true)" class="checkbox required" style="margin-top: 0.5%;float: left;">
 						</div>
 						<div style="width:100%;float: left;margin-bottom: 2%;">
+							<img src="<?php echo $this->getSkinUrl('images/yellow_ball.png') ?>" style="width: 3%;float: left; cursor: pointer;float: left;" />
 							<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: 'Bitter', georgia, serif;" >Jaune</h6>
 							<input type="radio" name="color" title="Plases sélectionner quune valeur" value="yellow" id="yellow" onclick="noColorTab(true)" class="checkbox required" style="margin-top: 0.5%;float: left;">
 						</div>
 						<div style="width:100%;float: left;margin-bottom: 2%;">
+							<img src="<?php echo $this->getSkinUrl('images/pink_ball.png') ?>" style="width: 3%;float: left; cursor: pointer;float: left;" />
 							<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: 'Bitter', georgia, serif;" >Rose</h6>
 							<input type="radio" name="color" title="Plases sélectionner quune valeur" id="pink" onclick="noColorTab(true)" class="checkbox required" style="margin-top: 0.5%;float: left;">
 						</div>
@@ -451,34 +459,42 @@
 							content: '<fieldset>'+ 
 											'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;margin-bottom: 3%;"><?php echo Mage::helper("contacts")->__("S il vous plaît sélectionner lentilles couleur") ?></h4>'+
 											'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+												'<img src="<?php echo $this->getSkinUrl('images/no_ball.png') ?>" style="width: 3%;float: left; cursor: pointer;" />'+
 												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;">Sans couleur</h6>'+
 												'<input type="radio" name="color" title="Plases sélectionner quune valeur" id="noColor" value="noColor" onclick="noColorTab(false)" value="single" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 											'</div>'+
 											'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+												'<img src="<?php echo $this->getSkinUrl('images/grey_ball.png') ?>" style="width: 3%;float: left; cursor: pointer;" />'+
 												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Gris</h6>'+
 												'<input type="radio" name="color" title="Plases sélectionner quune valeur" id="grey" value="grey" onclick="noColorTab(true)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 											'</div>'+
 											'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+											'<img src="<?php echo $this->getSkinUrl('images/marron_ball.png') ?>" style="width: 3%;float: left; cursor: pointer;" />'+
 												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Marron</h6>'+
 												'<input type="radio" name="color" title="Plases sélectionner quune valeur" value="marron" id="marron" onclick="noColorTab(true)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 											'</div>'+
 											'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+											'<img src="<?php echo $this->getSkinUrl('images/blue_ball.png') ?>" style="width: 3%;float: left; cursor: pointer;" />'+
 												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Bleu</h6>'+
 												'<input type="radio" name="color" title="Plases sélectionner quune valeur" value="blue" id="blue" onclick="noColorTab(true)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 											'</div>'+
 											'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+											'<img src="<?php echo $this->getSkinUrl('images/green_ball.png') ?>" style="width: 3%;float: left; cursor: pointer;" />'+
 												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Vert</h6>'+
 												'<input type="radio" name="color" title="Plases sélectionner quune valeur" value="green" id="green" onclick="noColorTab(true)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 											'</div>'+
 											'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+											'<img src="<?php echo $this->getSkinUrl('images/black_ball.png') ?>" style="width: 3%;float: left; cursor: pointer;" />'+
 												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Noir</h6>'+
 												'<input type="radio" name="color" title="Plases sélectionner quune valeur" value="black" id="black" onclick="noColorTab(true)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 											'</div>'+
 											'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+											'<img src="<?php echo $this->getSkinUrl('images/yellow_ball.png') ?>" style="width: 3%;float: left; cursor: pointer;" />'+
 												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Jaune</h6>'+
 												'<input type="radio" name="color" title="Plases sélectionner quune valeur" value="yellow" id="yellow" onclick="noColorTab(true)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 											'</div>'+
 											'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+											'<img src="<?php echo $this->getSkinUrl('images/pink_ball.png') ?>" style="width: 3%;float: left; cursor: pointer;" />'+
 												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Rose</h6>'+
 												'<input type="radio" name="color" title="Plases sélectionner quune valeur" id="pink" value="pink" onclick="noColorTab(true)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 											'</div>'+
@@ -622,34 +638,42 @@
 					content: '<fieldset>'+ 
 									'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;margin-bottom: 3%;padding-bottom: 7px;"><?php echo Mage::helper("contacts")->__("S il vous plaît sélectionner lentilles couleur") ?></h4>'+
 									'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+										'<img src="<?php echo $this->getSkinUrl('images/no_ball.png') ?>" style="width: 3%;float: left; cursor: pointer;" />'+
 										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;">Sans couleur</h6>'+
 										'<input type="radio" name="color" title="Plases sélectionner quune valeur" id="noColor" value="noColor" onclick="noColorTab(false)" value="single" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 									'</div>'+
 									'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+									'<img src="<?php echo $this->getSkinUrl('images/grey_ball.png') ?>" style="width: 3%;float: left; cursor: pointer;" />'+
 										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Gris</h6>'+
 										'<input type="radio" name="color" title="Plases sélectionner quune valeur" value="grey" id="grey" onclick="noColorTab(true)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 									'</div>'+
 									'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+									'<img src="<?php echo $this->getSkinUrl('images/marron_ball.png') ?>" style="width: 3%;float: left; cursor: pointer;" />'+
 										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Marron</h6>'+
 										'<input type="radio" name="color" title="Plases sélectionner quune valeur" value="marron" id="marron" onclick="noColorTab(true)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 									'</div>'+
 									'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+									'<img src="<?php echo $this->getSkinUrl('images/blue_ball.png') ?>" style="width: 3%;float: left; cursor: pointer;" />'+
 										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Bleu</h6>'+
 										'<input type="radio" name="color" title="Plases sélectionner quune valeur" value="blue" id="blue" onclick="noColorTab(true)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 									'</div>'+
 									'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+									'<img src="<?php echo $this->getSkinUrl('images/green_ball.png') ?>" style="width: 3%;float: left; cursor: pointer;" />'+
 										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Vert</h6>'+
 										'<input type="radio" name="color" title="Plases sélectionner quune valeur" value="green" id="green" onclick="noColorTab(true)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 									'</div>'+
 									'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+									'<img src="<?php echo $this->getSkinUrl('images/black_ball.png') ?>" style="width: 3%;float: left; cursor: pointer;" />'+
 										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Noir</h6>'+
 										'<input type="radio" name="color" title="Plases sélectionner quune valeur" value="black" id="black" onclick="noColorTab(true)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 									'</div>'+
 									'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+									'<img src="<?php echo $this->getSkinUrl('images/yellow_ball.png') ?>" style="width: 3%;float: left; cursor: pointer;" />'+
 										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Jaune</h6>'+
 										'<input type="radio" name="color" title="Plases sélectionner quune valeur" value="yellow" id="yellow" onclick="noColorTab(true)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 									'</div>'+
 									'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+									'<img src="<?php echo $this->getSkinUrl('images/pink_ball.png') ?>" style="width: 3%;float: left; cursor: pointer;" />'+
 										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Rose</h6>'+
 										'<input type="radio" name="color" title="Plases sélectionner quune valeur" value="pink" id="pink" onclick="noColorTab(true)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 									'</div>'+
@@ -969,34 +993,42 @@
 					content: '<fieldset>'+ 
 									'<h4 class="legend" style="margin-bottom: 3%;border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper("contacts")->__("S il vous plaît sélectionner lentilles couleur") ?></h4>'+
 									'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+										'<img src="<?php echo $this->getSkinUrl('images/no_ball.png') ?>" style="width: 3%;float: left; cursor: pointer;" />'+
 										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;">Sans couleur</h6>'+
 										'<input type="radio" name="color" title="Plases sélectionner quune valeur" id="noColor" value="noColor" onclick="noColorTab(false)" value="single" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 									'</div>'+
 									'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+									'<img src="<?php echo $this->getSkinUrl('images/grey_ball.png') ?>" style="width: 3%;float: left; cursor: pointer;" />'+
 										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Gris</h6>'+
 										'<input type="radio" name="color" title="Plases sélectionner quune valeur" id="grey" value="grey" onclick="noColorTab(true)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 									'</div>'+
 									'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+									'<img src="<?php echo $this->getSkinUrl('images/marron_ball.png') ?>" style="width: 3%;float: left; cursor: pointer;" />'+
 										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Marron</h6>'+
 										'<input type="radio" name="color" title="Plases sélectionner quune valeur" id="marron" value="marron" onclick="noColorTab(true)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 									'</div>'+
 									'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+									'<img src="<?php echo $this->getSkinUrl('images/blue_ball.png') ?>" style="width: 3%;float: left; cursor: pointer;" />'+
 										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Bleu</h6>'+
 										'<input type="radio" name="color" title="Plases sélectionner quune valeur" id="blue" value="blue" onclick="noColorTab(true)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 									'</div>'+
 									'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+									'<img src="<?php echo $this->getSkinUrl('images/green_ball.png') ?>" style="width: 3%;float: left; cursor: pointer;" />'+
 										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Vert</h6>'+
 										'<input type="radio" name="color" title="Plases sélectionner quune valeur" id="green" value="green" onclick="noColorTab(true)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 									'</div>'+
 									'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+									'<img src="<?php echo $this->getSkinUrl('images/black_ball.png') ?>" style="width: 3%;float: left; cursor: pointer;" />'+
 										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Noir</h6>'+
 										'<input type="radio" name="color" title="Plases sélectionner quune valeur" id="black" value="black" onclick="noColorTab(true)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 									'</div>'+
 									'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+									'<img src="<?php echo $this->getSkinUrl('images/yellow_ball.png') ?>" style="width: 3%;float: left; cursor: pointer;" />'+
 										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Jaune</h6>'+
 										'<input type="radio" name="color" title="Plases sélectionner quune valeur" id="yellow" value="yellow" onclick="noColorTab(true)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 									'</div>'+
 									'<div style="width:100%;float: left;margin-bottom: 2%;">'+
+									'<img src="<?php echo $this->getSkinUrl('images/pink_ball.png') ?>" style="width: 3%;float: left; cursor: pointer;" />'+
 										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Rose</h6>'+
 										'<input type="radio" name="color" title="Plases sélectionner quune valeur" id="pink" value="pink" onclick="noColorTab(true)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 									'</div>'+
