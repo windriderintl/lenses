@@ -10,7 +10,8 @@
 	$_helper = $this->helper('catalog/output');
 	$_product = $this->getProduct();
 	$theme = $this->helper('ultimo');
-
+ 	Mage::register('productPrice', $this->getPriceHtml($_product));
+	//Mage::getSingleton('core/session')->setProductPrice($this->getPriceHtml($_product));
 	//CSS classes based on product type
 	$productTypeId = $_product->getTypeId();
 	$productTypeClasses = '';

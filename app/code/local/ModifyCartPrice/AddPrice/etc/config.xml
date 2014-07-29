@@ -1,0 +1,19 @@
+<config>    
+    <modules>
+        <ModifyCartPrice_AddPrice>
+            <version>0.1.0</version>
+        </ModifyCartPrice_AddPrice>
+    </modules>
+	<frontend>
+        <events>
+            <checkout_cart_product_add_after>
+                <observers>
+                    <company_product_price_observer>
+                        <class>ModifyCartPrice_AddPrice_Model_Observer</class>
+                        <method>modifyPrice</method>
+                    </company_product_price_observer>
+                </observers>
+            </checkout_cart_product_add_after>
+        </events>
+    </frontend>
+</config>   
