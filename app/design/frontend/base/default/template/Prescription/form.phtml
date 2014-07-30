@@ -322,25 +322,20 @@
 		
 		function lensesTab(element) {	
 		//	document.getElementById('customPrice').value = 888;
-		if(!lensesTabBool){
+		//alert(document.getElementById('customPrice').value);
+
 			var price1 = document.getElementById('customPrice').value;
-			alert(price1);
-			price1 = price1.split('class="price"');
-			alert(price1);
-			price2 = price1[1];
-			alert(price2);
+			//price1 = price1.split("â‚¬");
+			//price2 = price1[1];
 			//alert(document.getElementById('customPrice').value);
-			price2 = price2.replace (/[^\d.]/g, '');
+			//price2 = price2.replace ( /[^\d.]/g, '' );
 			//alert(price2);
-			grandTotal = parseFloat(price2);
-			masterTotal = parseFloat(price2);
-			lensesTabBool = true;
-		}else{
-			price2 = masterTotal;
-			grandTotal = parseFloat(price2);
+			grandTotal = parseFloat(price1);
+			masterTotal = parseFloat(price1);
+			//lensesTabBool = true;
 			jQuery('#productValue').text(grandTotal);
 			jQuery('#customPrice').val(grandTotal);
-		}
+
 		//grandTotal = grandTotal + 0.01;
 		//alert(grandTotal);
 		//console.log(document.getElementById('').value);
@@ -359,24 +354,24 @@
 							content: '<fieldset>'+
 										'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;margin-bottom: 3%;"><?php echo Mage::helper("contacts")->__("Please select glass") ?></h4>'+ 
 										'<div style="width:100%;float: left;margin-bottom: 2%;">'+
-											'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;">Single vision lenses premium  -  €11</h6>'+
+											'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;">Single vision lenses premium  -  â‚¬11</h6>'+
 											'<input type="radio" name="glass" title="Plases Select One Value" onclick="isTableSingle(true,11)" id="singleVision"  value="singleVision" class="checkbox required" style="margin-top: 0.5%;float: left;" >'+
 										'</div>'+
 										'<div style="width:100%;float: left;margin-bottom: 2%;">'+
-											'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;">Single vision lenses high quality  -  €12</h6>'+
+											'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;">Single vision lenses high quality  -  â‚¬12</h6>'+
 											'<input type="radio" name="glass" title="Plases Select One Value" onclick="isTableSingle(true,12)" id="singleVision"  value="singleVision" class="checkbox required" style="margin-top: 0.5%;float: left;" >'+
 										'</div>'+
 										'<div style="width:100%;float: left;margin-bottom: 2%;">'+
-											'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Progressive lenses premium  -  €13</h6>'+
+											'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Progressive lenses premium  -  â‚¬13</h6>'+
 											'<input type="radio" name="glass" title="Plases Select One Value" id="progress" value="progress" onclick="isTableSingle(false,13)" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 										'</div>'+
 										'<div style="width:100%;float: left;margin-bottom: 2%;">'+
-											'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Progressive lenses high quality  -  €14</h6>'+
+											'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Progressive lenses high quality  -  â‚¬14</h6>'+
 											'<input type="radio" name="glass" title="Plases Select One Value" id="progress" value="progress" onclick="isTableSingle(false,14)" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 										'</div>'+
 										'<div style="width:100%;float: left;margin-top: 2%;">'+
 											'<h6 for="price1" name="price1" id="price1" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: Bitter, georgia, serif;" ></h6>'+
-											'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">€</span></h6>'+
+											'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">â‚¬</span></h6>'+
 										'</div>'+
 									'</fieldset>'
 							})
@@ -410,7 +405,7 @@
 										'</div>'+
 										'<div style="width:100%;float: left;margin-top: 2%;">'+
 											'<h6 for="price" name="price2" id="price2" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: Bitter, georgia, serif;" ></h6>'+
-											'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">€</span></h6>'+
+											'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">â‚¬</span></h6>'+
 										'</div>'+
 									'</fieldset>'
 							})
@@ -419,20 +414,20 @@
 							content: '<fieldset>'+
 										'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;margin-bottom: 3%;"><?php echo Mage::helper('contacts')->__('Please select correction') ?></h4>'+
 										'<div style="width:100%;float: left;margin-bottom: 2%;">'+
-											'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;">1.57 - Low correction  -  €21</h6>'+
+											'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;">1.57 - Low correction  -  â‚¬21</h6>'+
 											'<input type="radio" name="correction" title="Plases Select One Value" id="low" value="low" onclick="setCorrection(21)" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 										'</div>'+
 										'<div style="width:100%;float: left;margin-bottom: 2%;">'+
-											'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >1.6 - Medium correction  -  €22</h6>'+
+											'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >1.6 - Medium correction  -  â‚¬22</h6>'+
 											'<input type="radio" name="correction" title="Plases Select One Value" id="medium" value="medium" onclick="setCorrection(22)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 										'</div>'+
 										'<div style="width:100%;float: left;margin-bottom: 2%;">'+
-											'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >1.67 - High correction  -  €23</h6>'+
+											'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >1.67 - High correction  -  â‚¬23</h6>'+
 											'<input type="radio" name="correction" title="Plases Select One Value" id="high" value="high" onclick="setCorrection(23)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 										'</div>'+
 										'<div style="width:100%;float: left;margin-top: 2%;">'+
 											'<h6 for="price3" name="price3" id="price3" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: Bitter, georgia, serif;" ></h6>'+
-											'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">€</span></h6>'+
+											'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">â‚¬</span></h6>'+
 										'</div>'+
 									'</fieldset>'
 							})
@@ -447,42 +442,42 @@
 											'</div>'+
 											'<div style="width:100%;float: left;margin-bottom: 2%;">'+
 												'<img src="<?php echo $this->getSkinUrl('images/grey_ball.png') ?>" style="width: 2.5%;float: left; cursor: pointer;" />'+
-												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Grey  - €31</h6>'+
+												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Grey  - â‚¬31</h6>'+
 												'<input type="radio" name="color" title="Plases Select One Value" id="grey" value="grey" onclick="noColorTab(true,31)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 											'</div>'+
 											'<div style="width:100%;float: left;margin-bottom: 2%;">'+
 												'<img src="<?php echo $this->getSkinUrl('images/marron_ball.png') ?>" style="width: 2.5%;float: left; cursor: pointer;" />'+
-												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Marron  - €32</h6>'+
+												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Marron  - â‚¬32</h6>'+
 												'<input type="radio" name="color" title="Plases Select One Value" value="marron" id="marron" onclick="noColorTab(true,32)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 											'</div>'+
 											'<div style="width:100%;float: left;margin-bottom: 2%;">'+
 												'<img src="<?php echo $this->getSkinUrl('images/blue_ball.png') ?>" style="width: 2.5%;float: left; cursor: pointer;" />'+
-												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Blue  - €33</h6>'+
+												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Blue  - â‚¬33</h6>'+
 												'<input type="radio" name="color" title="Plases Select One Value" value="blue" id="blue" onclick="noColorTab(true,33)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 											'</div>'+
 											'<div style="width:100%;float: left;margin-bottom: 2%;">'+
 												'<img src="<?php echo $this->getSkinUrl('images/green_ball.png') ?>" style="width: 2.5%;float: left; cursor: pointer;" />'+
-												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Green  - €34</h6>'+
+												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Green  - â‚¬34</h6>'+
 												'<input type="radio" name="color" title="Plases Select One Value" value="green" id="green" onclick="noColorTab(true,34)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 											'</div>'+
 											'<div style="width:100%;float: left;margin-bottom: 2%;">'+
 												'<img src="<?php echo $this->getSkinUrl('images/black_ball.png') ?>" style="width: 2.5%;float: left; cursor: pointer;" />'+
-												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Black  - €35</h6>'+
+												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Black  - â‚¬35</h6>'+
 												'<input type="radio" name="color" title="Plases Select One Value" value="black" id="black" onclick="noColorTab(true,35)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 											'</div>'+
 											'<div style="width:100%;float: left;margin-bottom: 2%;">'+
 												'<img src="<?php echo $this->getSkinUrl('images/yellow_ball.png') ?>" style="width: 2.5%;float: left; cursor: pointer;" />'+
-												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Yellow  - €36</h6>'+
+												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Yellow  - â‚¬36</h6>'+
 												'<input type="radio" name="color" title="Plases Select One Value" value="yellow" id="yellow" onclick="noColorTab(true,36)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 											'</div>'+
 											'<div style="width:100%;float: left;margin-bottom: 2%;">'+
 												'<img src="<?php echo $this->getSkinUrl('images/pink_ball.png') ?>" style="width: 2.5%;float: left; cursor: pointer;" />'+
-												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Pink  - €37</h6>'+
+												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Pink  - â‚¬37</h6>'+
 												'<input type="radio" name="color" title="Plases Select One Value" id="pink" value="pink" onclick="noColorTab(true,37)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 											'</div>'+
 											'<div style="width:100%;float: left;margin-top: 2%;">'+
 												'<h6 for="price" name="price5" id="price5" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: Bitter, georgia, serif;" >50</h6>'+
-												'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">€</span></h6>'+
+												'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">â‚¬</span></h6>'+
 											'</div>'+
 									'</fieldset>'
 						})
@@ -505,7 +500,7 @@
 										'</div>'+
 										'<div style="width:100%;float: left;margin-top: 2%;">'+
 											'<h6 for="price" name="price6" id="price6" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: Bitter, georgia, serif;" >50</h6>'+
-											'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">€</span></h6>'+
+											'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">â‚¬</span></h6>'+
 										'</div>'+
 									'</fieldset>'
 						})
@@ -527,7 +522,7 @@
 										'</div>'+
 										'<div style="width:100%;float: left;margin-top: 2%;">'+
 											'<h6 for="price" name="price8" id="price8" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: Bitter, georgia, serif;" ></h6>'+
-											'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">€</span></h6>'+
+											'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">â‚¬</span></h6>'+
 										'</div>'+
 									'</fieldset>'
 							})
@@ -618,7 +613,7 @@
 									'</table>'+
 									'<div style="width:100%;float: left;margin-top: 2%;">'+
 											'<h6 for="price4" name="price4" id="price4" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: Bitter, georgia, serif;" >50</h6>'+
-											'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">€</span></h6>'+
+											'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">â‚¬</span></h6>'+
 										'</div>'
 							})
 			}else if(element == 'no_correction'){
@@ -642,42 +637,42 @@
 									'</div>'+
 									'<div style="width:100%;float: left;margin-bottom: 2%;">'+
 										'<img src="<?php echo $this->getSkinUrl('images/grey_ball.png') ?>" style="width: 2.5%;float: left; cursor: pointer;" />'+
-										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Grey  - €31</h6>'+
+										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Grey  - â‚¬31</h6>'+
 										'<input type="radio" name="color" title="Plases Select One Value" value="grey" id="grey" onclick="noColorTab(true,31)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 									'</div>'+
 									'<div style="width:100%;float: left;margin-bottom: 2%;">'+
 										'<img src="<?php echo $this->getSkinUrl('images/marron_ball.png') ?>" style="width: 2.5%;float: left; cursor: pointer;" />'+
-										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Marron  - €32</h6>'+
+										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Marron  - â‚¬32</h6>'+
 										'<input type="radio" name="color" title="Plases Select One Value" value="marron" id="marron" onclick="noColorTab(true,32)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 									'</div>'+
 									'<div style="width:100%;float: left;margin-bottom: 2%;">'+
 									'<img src="<?php echo $this->getSkinUrl('images/blue_ball.png') ?>" style="width: 2.5%;float: left; cursor: pointer;" />'+
-										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Blue  - €33</h6>'+
+										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Blue  - â‚¬33</h6>'+
 										'<input type="radio" name="color" title="Plases Select One Value" value="blue" id="blue" onclick="noColorTab(true,33)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 									'</div>'+
 									'<div style="width:100%;float: left;margin-bottom: 2%;">'+
 									'<img src="<?php echo $this->getSkinUrl('images/green_ball.png') ?>" style="width: 2.5%;float: left; cursor: pointer;" />'+
-										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Green  - €34</h6>'+
+										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Green  - â‚¬34</h6>'+
 										'<input type="radio" name="color" title="Plases Select One Value" value="green" id="green" onclick="noColorTab(true,34)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 									'</div>'+
 									'<div style="width:100%;float: left;margin-bottom: 2%;">'+
 									'<img src="<?php echo $this->getSkinUrl('images/black_ball.png') ?>" style="width: 2.5%;float: left; cursor: pointer;" />'+
-										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Black  - €35</h6>'+
+										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Black  - â‚¬35</h6>'+
 										'<input type="radio" name="color" title="Plases Select One Value" value="black" id="black" onclick="noColorTab(true,35)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 									'</div>'+
 									'<div style="width:100%;float: left;margin-bottom: 2%;">'+
 									'<img src="<?php echo $this->getSkinUrl('images/yellow_ball.png') ?>" style="width: 2.5%;float: left; cursor: pointer;" />'+
-										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Yellow  - €36</h6>'+
+										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Yellow  - â‚¬36</h6>'+
 										'<input type="radio" name="color" title="Plases Select One Value" value="yellow" id="yellow" onclick="noColorTab(true,36)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 									'</div>'+
 									'<div style="width:100%;float: left;margin-bottom: 2%;">'+
 									'<img src="<?php echo $this->getSkinUrl('images/pink_ball.png') ?>" style="width: 2.5%;float: left; cursor: pointer;" />'+
-										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Pink  - €37</h6>'+
+										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Pink  - â‚¬37</h6>'+
 										'<input type="radio" name="color" title="Plases Select One Value" value="pink" id="pink" onclick="noColorTab(true,37)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 									'</div>'+
 									'<div style="width:100%;float: left;margin-top: 2%;">'+
 											'<h6 for="price5" name="price5" id="price5" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: Bitter, georgia, serif;" ></h6>'+
-											'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">€</span></h6>'+
+											'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">â‚¬</span></h6>'+
 										'</div>'+
 							'</fieldset>'
 					})
@@ -686,20 +681,20 @@
 					content: '<fieldset>'+
 								'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;margin-bottom: 3%;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper('contacts')->__('Please select tinte') ?></h4>'+ 
 								'<div style="width:100%;float: left;margin-bottom: 2%;">'+
-									'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;">25% - Light - €41</h6>'+
+									'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;">25% - Light - â‚¬41</h6>'+
 									'<input type="radio" name="tinte" title="Plases Select One Value" id="lightTinte" value="lightTinte" onclick="setTinted(41)" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 								'</div>'+
 								'<div style="width:100%;float: left;margin-bottom: 2%;">'+
-									'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >50% - Medium -  €42</h6>'+
+									'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >50% - Medium -  â‚¬42</h6>'+
 									'<input type="radio" name="tinte" title="Plases Select One Value" id="mediumTinte" value="mediumTinte" onclick="setTinted(42)" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 								'</div>'+
 								'<div style="width:100%;float: left;margin-bottom: 2%;">'+
-									'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >80% - High - €43</h6>'+
+									'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >80% - High - â‚¬43</h6>'+
 									'<input type="radio" name="tinte" title="Plases Select One Value" id="highTinte" value="highTinte" onclick="setTinted(43)" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 								'</div>'+
 								'<div style="width:100%;float: left;margin-top: 2%;">'+
 											'<h6 for="price" name="price6" id="price6" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: Bitter, georgia, serif;" ></h6>'+
-											'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">€</span></h6>'+
+											'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">â‚¬</span></h6>'+
 										'</div>'+
 							'</fieldset>'
 					})
@@ -722,7 +717,7 @@
 										'</div>'+
 										'<div style="width:100%;float: left;margin-top: 2%;">'+
 											'<h6 for="price" name="price8" id="price8" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: Bitter, georgia, serif;" ></h6>'+
-											'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">€</span></h6>'+
+											'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">â‚¬</span></h6>'+
 										'</div>'+
 									'</fieldset>'
 							})
@@ -758,7 +753,7 @@
 											'</div>'+
 											'<div style="width:100%;float: left;margin-top: 2%;">'+
 												'<h6 for="price" name="price7" id="price7" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: Bitter, georgia, serif;" ></h6>'+
-												'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">€</span></h6>'+
+												'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">â‚¬</span></h6>'+
 											'</div>'+
 										'</fieldset>'
 								})
@@ -768,20 +763,20 @@
 								content: '<fieldset>'+
 											'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;margin-bottom: 3%;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper('contacts')->__('Please select correction') ?></h4>'+
 											'<div style="width:100%;float: left;margin-bottom: 2%;">'+
-												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;">1.57 - Low correction - €21</h6>'+
+												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;">1.57 - Low correction - â‚¬21</h6>'+
 												'<input type="radio" name="correction" title="Plases Select One Value" id="low" value="low" onclick="setCorrection(21)" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 											'</div>'+
 											'<div style="width:100%;float: left;margin-bottom: 2%;">'+
-												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >1.6 - Medium correction - €22</h6>'+
+												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >1.6 - Medium correction - â‚¬22</h6>'+
 												'<input type="radio" name="correction" title="Plases Select One Value" id="medium" value="medium" onclick="setCorrection(22)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 											'</div>'+
 											'<div style="width:100%;float: left;margin-bottom: 2%;">'+
-												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >1.67 - High correction - €23</h6>'+
+												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >1.67 - High correction - â‚¬23</h6>'+
 												'<input type="radio" name="correction" title="Plases Select One Value" id="high" value="high" onclick="setCorrection(23)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 											'</div>'+
 											'<div style="width:100%;float: left;margin-top: 2%;">'+
 												'<h6 for="price" name="price3" id="price3" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: Bitter, georgia, serif;" ></h6>'+
-												'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">€</span></h6>'+
+												'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">â‚¬</span></h6>'+
 											'</div>'+
 										'</fieldset>'
 								})
@@ -804,7 +799,7 @@
 												'</div>'+
 												'<div style="width:100%;float: left;margin-top: 2%;">'+
 												'<h6 for="price" name="price8" id="price8" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: Bitter, georgia, serif;" ></h6>'+
-												'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">€</span></h6>'+
+												'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">â‚¬</span></h6>'+
 											'</div>'+
 											'</fieldset>'
 									})
@@ -849,7 +844,7 @@
 									'</table>'+
 									'<div style="width:100%;float: left;margin-top: 2%;">'+
 												'<h6 for="price" name="price4" id="price4" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: Bitter, georgia, serif;" ></h6>'+
-												'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">€</span></h6>'+
+												'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">â‚¬</span></h6>'+
 											'</div>'
 							})
 					jQuery('#price3').text(grandTotal);	
@@ -887,7 +882,7 @@
 												'</div>'+
 												'<div style="width:100%;float: left;margin-top: 2%;">'+
 													'<h6 for="price" name="price8" id="price8" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: Bitter, georgia, serif;" ></h6>'+
-													'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">€</span></h6>'+
+													'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">â‚¬</span></h6>'+
 												'</div>'+
 											'</fieldset>'
 									})
@@ -913,20 +908,20 @@
 								content: '<fieldset>'+
 											'<h4 class="legend" style="margin-bottom: 3%; border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper('contacts')->__('Please select correction') ?></h4>'+
 											'<div style="width:100%;float: left;margin-bottom: 2%;">'+
-												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;">1.57 - Low correction - €21</h6>'+
+												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;">1.57 - Low correction - â‚¬21</h6>'+
 												'<input type="radio" name="correction" title="Plases Select One Value" id="low" value="low" onclick="setCorrection(21)" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 											'</div>'+
 											'<div style="width:100%;float: left;margin-bottom: 2%;">'+
-												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >1.6 - Medium correction - €22</h6>'+
+												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >1.6 - Medium correction - â‚¬22</h6>'+
 												'<input type="radio" name="correction" title="Plases Select One Value" id="medium" value="medium" onclick="setCorrection(22)" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 											'</div>'+
 											'<div style="width:100%;float: left;margin-bottom: 2%;">'+
-												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >1.67 - High correction  - €23</h6>'+
+												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >1.67 - High correction  - â‚¬23</h6>'+
 												'<input type="radio" name="correction" title="Plases Select One Value" id="high" value="high" onclick="setCorrection(23)" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 											'</div>'+
 											'<div style="width:100%;float: left;margin-top: 2%;">'+
 												'<h6 for="price" name="price3" id="price3" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: Bitter, georgia, serif;" ></h6>'+
-												'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">€</span></h6>'+
+												'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">â‚¬</span></h6>'+
 											'</div>'+
 										'</fieldset>'
 								})
@@ -950,7 +945,7 @@
 												'</div>'+
 												'<div style="width:100%;float: left;margin-top: 2%;">'+
 													'<h6 for="price" name="price8" id="price8" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: Bitter, georgia, serif;" ></h6>'+
-													'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">€</span></h6>'+
+													'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">â‚¬</span></h6>'+
 												'</div>'+
 											'</fieldset>'
 									})
@@ -995,7 +990,7 @@
 									'</table>'+
 									'<div style="width:100%;float: left;margin-top: 2%;">'+
 												'<h6 for="price" class="price4" id="price4" name="price" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: Bitter, georgia, serif;" ></h6>'+
-												'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">€</span></h6>'+
+												'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">â‚¬</span></h6>'+
 											'</div>'
 							})
 			}
@@ -1026,20 +1021,20 @@
 					content: '<fieldset>'+
 								'<h4 class="legend" style="margin-bottom: 3%;border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper('contacts')->__('Please select tinte') ?></h4>'+ 
 								'<div style="width:100%;float: left;margin-bottom: 2%;">'+
-									'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;">25% - Light - €41</h6>'+
+									'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;">25% - Light - â‚¬41</h6>'+
 									'<input type="radio" name="tinte" title="Plases Select One Value" value="lightTinte" id="lightTinte" onclick="setTinted(41)" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 								'</div>'+
 								'<div style="width:100%;float: left;margin-bottom: 2%;">'+
-									'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >50% - Medium - €42</h6>'+
+									'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >50% - Medium - â‚¬42</h6>'+
 									'<input type="radio" name="tinte" title="Plases Select One Value" value="mediumTinte" id="mediumTinte" onclick="setTinted(42)" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 								'</div>'+
 								'<div style="width:100%;float: left;margin-bottom: 2%;">'+
-									'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >80% - High - €43</h6>'+
+									'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >80% - High - â‚¬43</h6>'+
 									'<input type="radio" name="tinte" title="Plases Select One Value" value="highTinte" id="highTinte" onclick="setTinted(43)" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 								'</div>'+
 								'<div style="width:100%;float: left;margin-top: 2%;">'+
 												'<h6 for="price6" name="price6" id="price6" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: Bitter, georgia, serif;" ></h6>'+
-												'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">€</span></h6>'+
+												'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">â‚¬</span></h6>'+
 											'</div>'+
 							'</fieldset>'
 				})
@@ -1120,42 +1115,42 @@
 									'</div>'+
 									'<div style="width:100%;float: left;margin-bottom: 2%;">'+
 										'<img src="<?php echo $this->getSkinUrl('images/grey_ball.png') ?>" style="width: 2.5%;float: left; cursor: pointer;" />'+
-										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Grey  - €31</h6>'+
+										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Grey  - â‚¬31</h6>'+
 										'<input type="radio" name="color" title="Plases Select One Value" id="grey" value="grey" onclick="noColorTab(true,31)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 									'</div>'+
 									'<div style="width:100%;float: left;margin-bottom: 2%;">'+
 									'<img src="<?php echo $this->getSkinUrl('images/marron_ball.png') ?>" style="width: 2.5%;float: left; cursor: pointer;" />'+
-										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Marron  - €32</h6>'+
+										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Marron  - â‚¬32</h6>'+
 										'<input type="radio" name="color" title="Plases Select One Value" id="marron" value="marron" onclick="noColorTab(true,32)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 									'</div>'+
 									'<div style="width:100%;float: left;margin-bottom: 2%;">'+
 									'<img src="<?php echo $this->getSkinUrl('images/blue_ball.png') ?>" style="width: 2.5%;float: left; cursor: pointer;" />'+
-										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Blue  - €33</h6>'+
+										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Blue  - â‚¬33</h6>'+
 										'<input type="radio" name="color" title="Plases Select One Value" id="blue" value="blue" onclick="noColorTab(true,33)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 									'</div>'+
 									'<div style="width:100%;float: left;margin-bottom: 2%;">'+
 									'<img src="<?php echo $this->getSkinUrl('images/green_ball.png') ?>" style="width: 2.5%;float: left; cursor: pointer;" />'+
-										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Green  - €34</h6>'+
+										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Green  - â‚¬34</h6>'+
 										'<input type="radio" name="color" title="Plases Select One Value" id="green" value="green" onclick="noColorTab(true,34)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 									'</div>'+
 									'<div style="width:100%;float: left;margin-bottom: 2%;">'+
 									'<img src="<?php echo $this->getSkinUrl('images/black_ball.png') ?>" style="width: 2.5%;float: left; cursor: pointer;" />'+
-										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Black  - €35</h6>'+
+										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Black  - â‚¬35</h6>'+
 										'<input type="radio" name="color" title="Plases Select One Value" id="black" value="black" onclick="noColorTab(true,35)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 									'</div>'+
 									'<div style="width:100%;float: left;margin-bottom: 2%;">'+
 									'<img src="<?php echo $this->getSkinUrl('images/yellow_ball.png') ?>" style="width: 2.5%;float: left; cursor: pointer;" />'+
-										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Yellow  - €36</h6>'+
+										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Yellow  - â‚¬36</h6>'+
 										'<input type="radio" name="color" title="Plases Select One Value" id="yellow" value="yellow" onclick="noColorTab(true,36)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 									'</div>'+
 									'<div style="width:100%;float: left;margin-bottom: 2%;">'+
 									'<img src="<?php echo $this->getSkinUrl('images/pink_ball.png') ?>" style="cursor: pointer;width: 2.5%;float: left;" />'+
-										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Pink  - €37</h6>'+
+										'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Pink  - â‚¬37</h6>'+
 										'<input type="radio" name="color" title="Plases Select One Value" id="pink" value="pink" onclick="noColorTab(true,37)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 									'</div>'+
 									'<div style="width:100%;float: left;margin-top: 2%;">'+
 												'<h6 for="price5" name="price5" id="price5" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: Bitter, georgia, serif;" ></h6>'+
-												'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">€</span></h6>'+
+												'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">â‚¬</span></h6>'+
 											'</div>'+
 							'</fieldset>'
 				})
@@ -1165,20 +1160,20 @@
 					content: '<fieldset>'+
 								'<h4 class="legend" style="margin-bottom: 3%;border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper('contacts')->__('Please select tinte') ?></h4>'+ 
 								'<div style="width:100%;float: left;margin-bottom: 2%;">'+
-									'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;">25% - Light  - €41</h6>'+
+									'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;">25% - Light  - â‚¬41</h6>'+
 									'<input type="radio" name="tinte" title="Plases Select One Value" id="lightTinte" value="lightTinte" onclick="setTinted(41)" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 								'</div>'+
 								'<div style="width:100%;float: left;margin-bottom: 2%;">'+
-									'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >50% - Medium  - €42 </h6>'+
+									'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >50% - Medium  - â‚¬42 </h6>'+
 									'<input type="radio" name="tinte" title="Plases Select One Value" id="mediumTinte" value="mediumTinte" onclick="setTinted(42)" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 								'</div>'+
 								'<div style="width:100%;float: left;margin-bottom: 2%;">'+
-									'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >80% - High  - €43</h6>'+
+									'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >80% - High  - â‚¬43</h6>'+
 									'<input type="radio" name="tinte" title="Plases Select One Value" id="highTinte" value="highTinte" onclick="setTinted(43)" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 								'</div>'+
 								'<div style="width:100%;float: left;margin-top: 2%;">'+
 												'<h6 for="price" name="price6" id="price6" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: Bitter, georgia, serif;" ></h6>'+
-												'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">€</span></h6>'+
+												'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">â‚¬</span></h6>'+
 											'</div>'+
 							'</fieldset>'
 				})
