@@ -11,8 +11,8 @@ class ModifyCartPrice_AddPrice_Model_Observer
 				$custPrice = $value;
 			}
 		}
-		echo $custPrice;
-		$collection1 = Mage::app()->getFrontController()->getRequest()->getParams()->getPrice();
+	//	echo $custPrice;
+//		$collection1 = Mage::app()->getFrontController()->getRequest()->getParams()->getPrice();
         $item = $obs->getQuoteItem();
         // Ensure we have the parent item, if it has one
         $item = ( $item->getParentItem() ? $item->getParentItem() : $item );
