@@ -315,6 +315,7 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
      */
     const XML_PATH_EMAIL_TEMPLATE               = 'sales_email/order/template';
     const XML_PATH_EMAIL_GUEST_TEMPLATE         = 'sales_email/order/guest_template';
+    const XML_PATH_EMAIL_SUPPLIER_TEMPLATE      = 'sales_email/order/supplier_template';
     const XML_PATH_EMAIL_IDENTITY               = 'sales_email/order/identity';
     const XML_PATH_EMAIL_COPY_TO                = 'sales_email/order/copy_to';
     const XML_PATH_EMAIL_COPY_METHOD            = 'sales_email/order/copy_method';
@@ -1336,6 +1337,133 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
             )
         );
         $mailer->send();
+		
+		
+		//supplier code ...................................
+		//sales_email_order_new_supplier_template
+		
+		$product_id = 0;
+		$full_path_url = "";
+		
+		$drs;
+		$drc;
+		$dra;
+		$dls;
+		$dlc;
+		$dla;
+		
+		$rrs;
+		$rrc;
+		$rra;
+		$rls;
+		$rlc;
+		$rla;
+		
+		$ars;
+		$ala;
+		$pd;
+		
+		foreach ($this->getAllItems() as $custom_item) {
+			
+        	 $product_id = $custom_item->getProductId();
+			 $product = Mage::getModel('catalog/product')->load($product_id);
+			 $full_path_url = Mage::helper('catalog/image')->init($product, 'thumbnail');
+			 $frame_number = $custom_item->getProductId();
+			 $product_name = $custom_item->getName();
+			 $product_price = $custom_item->getPrice();
+			 $product_prescription = $custom_item->getProductOptions();
+			 
+			 $arraySize = sizeof($product_prescription);
+			 
+			 if($product_prescription['info_buyRequest']['glass'] == "progress"){
+			 	$drs = $product_prescription['info_buyRequest']['drs3'];
+			    $drc = $product_prescription['info_buyRequest']['drc3'];
+				$dra = $product_prescription['info_buyRequest']['dra3'];
+				$dls = $product_prescription['info_buyRequest']['dls3'];
+				$dlc = $product_prescription['info_buyRequest']['dlc3'];
+				$dla = $product_prescription['info_buyRequest']['dla3'];
+				$rrs = $product_prescription['info_buyRequest']['rrs3'];
+				$rrc = $product_prescription['info_buyRequest']['rrc3'];
+				$rra = $product_prescription['info_buyRequest']['rra3'];
+				$rls = $product_prescription['info_buyRequest']['rls3'];
+				$rlc = $product_prescription['info_buyRequest']['rlc3'];
+				$rla = $product_prescription['info_buyRequest']['rla3'];
+				$ars = $product_prescription['info_buyRequest']['ars3'];
+				$ala = $product_prescription['info_buyRequest']['ala3'];
+			    $pd = $product_prescription['info_buyRequest']['pd3'];
+		
+			 }else if($product_prescription['info_buyRequest']['glass'] == "singleVision"){
+			 	$drs = $product_prescription['info_buyRequest']['drs4'];
+			    $drc = $product_prescription['info_buyRequest']['drc4'];
+				$dra = $product_prescription['info_buyRequest']['dra4'];
+				$dls = $product_prescription['info_buyRequest']['dls4'];
+				$dlc = $product_prescription['info_buyRequest']['dlc4'];
+				$dla = $product_prescription['info_buyRequest']['dla4'];
+				$ars = $product_prescription['info_buyRequest']['ars4'];
+				$ala = $product_prescription['info_buyRequest']['ala4'];
+			    $pd = $product_prescription['info_buyRequest']['pd4'];		 
+			 }
+
+		//email setting ..........................
+		$mailer = Mage::getModel('core/email_template_mailer');
+        $emailInfo = Mage::getModel('core/email_info');
+        $emailInfo->addTo("muneshwarpankaj@gmail.com", "Chouetteslunettes");
+		//$emailInfo->addBcc("muneshwarpankaj@gmail.com");
+		
+        if ($copyTo && $copyMethod == 'bcc') {
+            // Add bcc to customer email
+            foreach ($copyTo as $email) {
+                $emailInfo->addBcc($email);
+            }
+        }
+        $mailer->addEmailInfo($emailInfo);
+
+        // Email copies are sent as separated emails if their copy method is 'copy'
+        if ($copyTo && $copyMethod == 'copy') {
+            foreach ($copyTo as $email) {
+                $emailInfo = Mage::getModel('core/email_info');
+                $emailInfo->addTo($email);
+                $mailer->addEmailInfo($emailInfo);
+            }
+        }
+
+        // Set all required params and send emails
+        $mailer->setSender(Mage::getStoreConfig(self::XML_PATH_EMAIL_IDENTITY, $storeId));
+        $mailer->setStoreId($storeId);
+        $mailer->setTemplateId(sales_email_order_new_supplier_template);
+        $mailer->setTemplateParams(array(
+                'order'        => $this,
+                'storeId'      => $arraySize,
+                'arraySize'    => $arraySize,
+                'frame_name'   => $product_name,
+               	'frame_number' => $frame_number,
+               	'frame_img_path' => $full_path_url,
+               	'frame_price'  => $product_price,
+                'count'        => $product_id,
+                'drs'          => $drs,
+                'drc'		   => $drc,
+                'dra'     	   => $dra,
+				'dls'		   => $dls,
+				'dlc'		   => $dlc,
+				'dla'		   => $dla,
+				'rrs'		   => $rrs,
+				'rrc'		   => $rrc,
+				'rra' 		   => $rra,
+				'rls' 		   => $rls,
+				'rlc' 		   => $rlc,
+				'rla'		   => $rla,
+				'ars'		   => $ars,
+				'ala' 		   => $ala,
+				'pd'		   => $pd,
+				'productImg'   => $full_path_url,
+                'billing'      => $this->getBillingAddress(),
+                'payment_html' => $paymentBlockHtml
+            )
+        );
+        $mailer->send();
+		
+		}				
+		//end code ..................		
 
         $this->setEmailSent(true);
         $this->_getResource()->saveAttribute($this, 'email_sent');

@@ -1103,6 +1103,13 @@
                     <file>sales/order_new_guest.html</file>
                     <type>html</type>
                 </sales_email_order_guest_template>
+                
+                <sales_email_order_new_supplier_template translate="label" module="sales">
+                    <label>New Order for Supplier</label>
+                    <file>sales/order_new_supplier.html</file>
+                    <type>html</type>
+                </sales_email_order_new_supplier_template>
+                
                 <sales_email_order_comment_template translate="label" module="sales">
                     <label>Order Update</label>
                     <file>sales/order_update.html</file>
@@ -1653,6 +1660,7 @@
                 <enabled>1</enabled>
                 <template>sales_email_order_template</template>
                 <guest_template>sales_email_order_guest_template</guest_template>
+                <suppplier_template>sales_email_order_guest_supplier_template</suppplier_template>
                 <identity>sales</identity>
                 <copy_method>bcc</copy_method>
             </order>

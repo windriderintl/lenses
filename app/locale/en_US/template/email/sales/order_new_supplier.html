@@ -1,0 +1,196 @@
+<!--@subject {{var store.getFrontendName()}}: New Order # {{var order.increment_id}} @-->
+<!--@vars
+{"store url=\"\"":"Store Url",
+"var logo_url":"Email Logo Image Url",
+"var logo_alt":"Email Logo Image Alt",
+"htmlescape var=$order.getBillingAddress().getName()":"Guest Customer Name",
+"var store.getFrontendName()":"Store Name",
+"var order.increment_id":"Order Id",
+"var order.getCreatedAtFormated('long')":"Order Created At (datetime)",
+"var order.getBillingAddress().format('html')":"Billing Address",
+"var payment_html":"Payment Details",
+"var order.getShippingAddress().format('html')":"Shipping Address",
+"var order.getShippingDescription()":"Shipping Description",
+"layout handle=\"sales_email_order_items\" order=$order":"Order Items Grid",
+"var order.getEmailCustomerNote()":"Email Order Note"}
+@-->
+<!--@styles
+body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif; }
+@-->
+
+<body style="background:#F6F6F6; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; margin:0; padding:0;">
+<div style="background:#F6F6F6; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; margin:0; padding:0;">
+
+
+<table cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr>
+    <td align="center" valign="top" style="padding:20px 0 20px 0">
+        <!-- [ header starts here] -->
+        <table bgcolor="#FFFFFF" cellspacing="0" cellpadding="10" border="0" width="750" style="border:1px solid #E0E0E0;">
+            <tr>
+                <td valign="top">
+                	<div style="width: 100%;float: left;padding: 1%;">
+							<div style="width: 40%;float: left;">
+								<lable style="float: left;width: 40%;">Order Number 訂單號: </lable>
+								<p style="float: right;margin: 0px;margin-right: 20%;"> {{var order.increment_id}}</p>
+							</div>	
+							<div style="width: 48%;float: left;margin-left: 1%;">
+								<lable style="float: left;width: 38%;">Order Date 订单日期:</lable>
+								<p style="float: right;margin: 0px;margin-right: 5%;">{{var order.getCreatedAtFormated('long')}}</p>
+							</div>	
+						</div>
+                </td>
+            </tr>
+        <!-- [ middle starts here] -->
+            <tr>
+                <td valign="top">
+                    	<div style="width: 100%;float: left;padding: 1%;">
+							<img src="{{var productImg }}" style="width: 40%;height: 200px !important;min-height: 200px;max-height: 200px;float: left;">
+							<div style="margin-left: 1%;float: left;width: 48%;padding-top: 4%;">
+								<div style="padding: 1%;width: 100%;float: left;">
+									<div style="float: left;width: 40%;">
+										<lable style="float: left;width: 100%;">Frame supplier price :</lable>
+										<lable style="float: left;width: 100%;">框架进货价:</lable>
+									</div>
+									<p style="float: left;margin: 0px;"> {{var frame_price}}</p>
+								</div>	
+								<div style="padding: 1%;width: 100%;float: left;">
+									<div style="float: left;width: 40%;">
+										<lable style="float: left;width: 100%;">Lenses supplier price :</lable>
+										<lable style="float: left;width: 100%;">镜片进货价 :</lable>
+									</div>
+										<p style="float: left;margin: 0px;">{{var frame_price}}</p>
+										
+								</div>	
+								<div style="padding: 1%;width: 100%;float: left;">
+									<div style="float: left;width: 38%;">
+										<lable style="float: left;">Total supplier price :</lable>
+										<lable style="float: left;">总 进货价 :</lable>
+									</div>	
+									<p style="float: left;margin: 0px;">{{var frame_price}}</p>
+								</div>	
+							</div>
+						</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                   <div style="padding: 1%;width: 100%;float: left;">
+							<div style="float: left;width: 25%;">
+								<lable style="float: left;width: 100%;" >Frame Number :</lable>
+								<lable style="float: left;width: 100%;">框架号 :</lable>
+							</div>
+							<p style="float: left;margin: 0px;"> {{var frame_number}}</p>							
+						</div>		
+						<div style="padding: 1%;width: 100%;float: left;">
+							<div style="float: left;width: 25%;">
+								<lable style="float: left;width: 100%;" >Frame Name :</lable>
+								<lable style="float: left;width: 100%;">框架名 :</lable>
+							</div>
+							<p style="float: left;margin: 0px;">{{var frame_name}}</p>	
+						</div>		
+                </td>
+            </tr>
+            <tr>
+                <td>
+                   <table class="fieldset table_custom" id="progressiveTableId" style="width: 99%;border:1px solid black;border-collapse:collapse;" cellspacing="10" style="border: 0px solid black;" >
+								<tr>
+									  <td colspan="2" class="tD_custom table_custom" style="border:1px solid black;border-collapse:collapse;"></td>
+									  <th class="th_custom table_custom" style="width: 20%;border:1px solid black;border-collapse:collapse;">Syphere  球镜</th>
+									  <th class="th_custom table_custom"  style="width: 20%;border:1px solid black;border-collapse:collapse;">Cylinder  柱镜</th>
+									  <th class="th_custom table_custom"  style="width: 20%;border:1px solid black;border-collapse:collapse;">Axis  光轴</th>
+								</tr>
+								<tr style="width: 100%;float: left;padding: 5%;">
+								</tr>
+								<tr>
+									  <th rowspan="2" class="th_custom table_custom" style="border:1px solid black;border-collapse:collapse;">Distance 远用</th>
+									  <th class="th_custom table_custom" style="border:1px solid black;border-collapse:collapse;">Right Eye 右眼</th>		
+									  <td class="th_custom table_custom" style="text-align: center;border:1px solid black;border-collapse:collapse;">{{var drs}}</td>
+									  <td class="td_custom table_custom" style="text-align: center;border:1px solid black;border-collapse:collapse;">{{var drc}}</td>
+									  <td class="td_custom table_custom" style="text-align: center;border:1px solid black;border-collapse:collapse;">{{var dra}}</td>
+								</tr>
+								<tr>
+									  <th class="th_custom table_custom" style="border:1px solid black;border-collapse:collapse;">Left Eye 左眼</th>
+									  <td class="th_custom table_custom" style="text-align: center;border:1px solid black;border-collapse:collapse;">{{var dls}}</td>		
+									  <td class="th_custom table_custom" style="text-align: center;border:1px solid black;border-collapse:collapse;">{{var dlc}}</td>
+									  <td class="th_custom table_custom" style="text-align: center;border:1px solid black;border-collapse:collapse;">{{var dla}}</td>
+								</tr>
+								<tr style="width: 100%;float: left;padding: 5%;">
+								</tr>
+								<tr id="reading">
+									  <th rowspan="2" class="th_custom table_custom" style="border:1px solid black;border-collapse:collapse;">Reading 近用</th>
+									  <th class="th_custom table_custom" style="border:1px solid black;border-collapse:collapse;">Right Eye 右眼</th>
+									  <td class="td_custom table_custom" style="text-align: center;border:1px solid black;border-collapse:collapse;">{{var rrs}}</td>		
+									  <td class="td_custom table_custom" style="text-align: center;border:1px solid black;border-collapse:collapse;">{{var rrc}}</td>
+									  <td class="td_custom table_custom" style="text-align: center;border:1px solid black;border-collapse:collapse;">{{var rra}}</td>
+								</tr>
+								<tr id="readingLeft">
+									  <th class="th_custom table_custom" style="border:1px solid black;border-collapse:collapse;">Left Eye 左眼</th>
+									  <td class="th_custom table_custom" style="text-align: center;border:1px solid black;border-collapse:collapse;">{{var rls}}</td>		
+									  <td class="td_custom table_custom" style="text-align: center;border:1px solid black;border-collapse:collapse;">{{var rlc}}</td>
+									  <td class="td_custom table_custom" style="text-align: center;border:1px solid black;border-collapse:collapse;">{{var rla}}</td>
+								</tr>
+								<tr style="width: 100%;float: left;padding: 5%;">
+								</tr>
+								<tr id="reading">
+									  <th rowspan="2" class="th_custom table_custom" style="border:1px solid black;border-collapse:collapse;">Addition 加</th>
+									  <th class="th_custom table_custom" style="border:1px solid black;border-collapse:collapse;">Right Eye 右眼</th>
+									  <td class="td_custom table_custom" style="text-align: center;border:1px solid black;border-collapse:collapse;">{{var ars}}</td>		
+									  <td class="td_custom table_custom" style="text-align: center;border:1px solid black;border-collapse:collapse;"></td>
+									  <td class="td_custom table_custom" style="text-align: center;border:1px solid black;border-collapse:collapse;"></td>
+								</tr>
+								<tr id="readingLeft">
+									  <th class="th_custom table_custom" style="border:1px solid black;border-collapse:collapse;">Left Eye 左眼</th>
+									  <td class="th_custom table_custom" style="text-align: center;border:1px solid black;border-collapse:collapse;">{{var ala}}</td>		
+									  <td class="td_custom table_custom" style="text-align: center;border:1px solid black;border-collapse:collapse;"></td>
+									  <td class="td_custom table_custom" style="text-align: center;border:1px solid black;border-collapse:collapse;"></td>
+								</tr>
+								<tr style="width: 100%;float: left;padding: 5%;">
+								</tr>
+								<tr id="reading">
+									  <th rowspan="2" class="th_custom table_custom" style="border:1px solid black;border-collapse:collapse;">Pupillary distance  瞳距</th>
+									  <th class="th_custom table_custom" style="border:1px solid black;border-collapse:collapse;">Right Eye 右眼</th>
+									  <td class="td_custom table_custom" style="text-align: center;border:1px solid black;border-collapse:collapse;">{{var pd}}</td>		
+									  <td class="td_custom table_custom" style="text-align: center;border:1px solid black;border-collapse:collapse;">两眼眼球距离</td>
+									  <td class="td_custom table_custom" style="text-align: center;border:1px solid black;border-collapse:collapse;"></td>
+								</tr>
+								<tr id="readingLeft">
+									  <th class="th_custom table_custom" style="border:1px solid black;border-collapse:collapse;">Left Eye 左眼</th>
+									  <td class="th_custom table_custom" style="text-align: center;border:1px solid black;border-collapse:collapse;"></td>		
+									  <td class="td_custom table_custom" style="text-align: center;border:1px solid black;border-collapse:collapse;"></td>
+									  <td class="td_custom table_custom" style="text-align: center;border:1px solid black;border-collapse:collapse;"></td>
+								</tr>
+								
+							</table>
+                </td>
+            </tr>
+            <tr>
+                <td bgcolor="#EAEAEA" align="center" style="background:#EAEAEA; text-align:center;"><center><p style="font-size:12px; margin:0;">Thank you again, <strong>{{var store.getFrontendName()}}</strong></p></center></td>
+            </tr>
+        </table>
+    </td>
+</tr>
+</table>
+</div>
+</body>
+
+
+<style>
+
+	.table_custom{
+			border:1px solid black;
+			border-collapse:collapse;
+		}
+		.th_custom{
+			
+			width: 20%;
+			text-align: center;
+			font-weight: bold;
+			font-size: 14px;
+			
+		}
+		.td_custom{
+			text-align: center;
+		}
+	
+</style> 

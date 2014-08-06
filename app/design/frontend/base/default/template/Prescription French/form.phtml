@@ -322,20 +322,14 @@
 		
 		
 		function lensesTab(element) {	
-		//	document.getElementById('customPrice').value = 888;
-		//if(!lensesTabBool){
 			var price1 = document.getElementById('customPrice').value;
-			alert(price1);
+			//alert(price1);
 			grandTotal = parseFloat(price1);
 			masterTotal = parseFloat(price1);
 			jQuery('#productValue').text(grandTotal);
 			jQuery('#customPrice').val(grandTotal);
-		
-		//grandTotal = grandTotal + 0.01;
-		//alert(grandTotal);
-		//console.log(document.getElementById('').value);
 			if(element == 'normalLenses'){
-			alert("in normal ...");
+			//alert("in normal ...");
 				jQuery('#form-3').steps('remove', 1, {});
 				jQuery('#form-3').steps('remove', 1, {});
 				jQuery('#form-3').steps('remove', 1, {});

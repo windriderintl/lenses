@@ -49,6 +49,7 @@
 						<div style="width:100%;float: left;margin-top: 2%;">
 							<h6 for="price" name="productValue" id="productValue" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: 'Bitter', georgia, serif;" ><?php echo Mage::registry("productPrice") ?></h6>
 							<input type="text" id='customPrice' name='customPrice' value='<?php echo Mage::registry("productPrice") ?>' style='display: none;'>
+							<h6 for="price" style="float: right;font-size: 1.4em;font-family: 'Bitter', georgia, serif;color: #00a9c7;" > € </h6>
 							<h6 for="price" style="float: right;font-size: 1.4em;font-family: 'Bitter', georgia, serif;" >Total Price :  </h6>
 						</div>
 					</fieldset>
@@ -325,11 +326,7 @@
 		//alert(document.getElementById('customPrice').value);
 
 			var price1 = document.getElementById('customPrice').value;
-			//price1 = price1.split("€");
-			//price2 = price1[1];
-			//alert(document.getElementById('customPrice').value);
-			//price2 = price2.replace ( /[^\d.]/g, '' );
-			alert(price1);
+			
 			grandTotal = parseFloat(price1);
 			masterTotal = parseFloat(price1);
 			//lensesTabBool = true;
