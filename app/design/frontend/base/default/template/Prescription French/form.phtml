@@ -30,35 +30,36 @@
           <div style="display: none;" id="wizardId">
                 <div id="form-3" class="wizard clearfix" >
 					
-					<h1>Objectifs</h1>
+					<h1>Verres</h1>
 					<fieldset>
 						
-						<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;margin-bottom: 3%;"><?php echo Mage::helper('contacts')->__("S il vous plaît sélectionnez le type de") ?></h4> 
+						<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;margin-bottom: 3%;"><?php echo Mage::helper('contacts')->__("Veuillez sélectionner votre type de verres") ?></h4> 
 						<div style="width:100%;float: left;margin-bottom: 2%;">
-							<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: 'Bitter', georgia, serif;" >Objectifs</h6>
+							<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: 'Bitter', georgia, serif;" >Verres avec correction</h6>
 							<input type="radio" name="lenses_type" title="Plases sélectionner quune valeur" value="normalLenses" name="normalLenses"  id="normalLenses" onclick="lensesTab('normalLenses')" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">
 						</div>
 						<div style="width:100%;float: left;margin-bottom: 2%;">
-							<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: 'Bitter', georgia, serif;" >Normal / Pas de correction</h6>
+							<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: 'Bitter', georgia, serif;" >Verres sans correction</h6>
 							<input type="radio" name="lenses_type" title="Plases sélectionner quune valeur" value="no_correction" id="no_correction" onclick="lensesTab('no_correction')" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">
 						</div>
 						<div style="width:100%;float: left;margin-bottom: 2%;">
-							<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: 'Bitter', georgia, serif;" >lunettes de soleil</h6>
+							<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: 'Bitter', georgia, serif;" >Lunettes de soleil</h6>
 							<input type="radio" name="lenses_type" title="Plases sélectionner quune valeur" value="sunglasses" id="sunglasses" onclick="lensesTab('sunglasses')" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">
 						</div>
 						<div style="width:100%;float: left;margin-top: 2%;">
 							<h6 for="price" name="productValue" id="productValue" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: 'Bitter', georgia, serif;" ><?php echo Mage::registry("productPrice") ?></h6>
 							<input type="text" id='customPrice' name='customPrice' value='<?php echo Mage::registry("productPrice") ?>' style='display: none;'>
-							<h6 for="price" style="float: right;font-size: 1.4em;font-family: 'Bitter', georgia, serif;" >Total Price :  </h6>
+							<h6 for="price" style="float: right;font-size: 1.4em;font-family: 'Bitter', georgia, serif;color: #00a9c7;" > € </h6>
+							<h6 for="price" style="float: right;font-size: 1.4em;font-family: 'Bitter', georgia, serif;" >Prix total:  </h6>
 						</div>
 					</fieldset>
 				
-					<h1>verre</h1>
+					<h1>Verres</h1>
 					<fieldset>
 						
 					</fieldset>
 					
-					<h1>photochromic</h1>
+					<h1>Photochromie</h1>
 					<fieldset>
 						
 					</fieldset>
@@ -68,7 +69,7 @@
 						
 					</fieldset>
 	 
-					<h1>Couleur</h1>
+					<h1>Couleurs</h1>
 					<fieldset>
 						
 					</fieldset>
@@ -342,26 +343,26 @@
 				jQuery('#form-3').steps("insert",1, {
 							title: "verre",
 							content: '<fieldset>'+
-										'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;margin-bottom: 3%;"><?php echo Mage::helper("contacts")->__("S il vous plaît sélectionner verre") ?></h4>'+ 
+										'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;margin-bottom: 3%;"><?php echo Mage::helper("contacts")->__("Quels verres vous conviennent le mieux?") ?></h4>'+ 
 										'<div style="width:100%;float: left;margin-bottom: 2%;">'+
-											'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;">Single vision lenses premium  -  €11</h6>'+
+											'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;">Unifocaux normaux -  €11</h6>'+
 											'<input type="radio" name="glass" title="Plases Select One Value" onclick="isTableSingle(true,11)" id="singleVision"  value="singleVision" class="checkbox required" style="margin-top: 0.5%;float: left;" >'+
 										'</div>'+
 										'<div style="width:100%;float: left;margin-bottom: 2%;">'+
-											'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;">Single vision lenses high quality  -  €12</h6>'+
+											'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;">Unifocaux de qualité  -  €12</h6>'+
 											'<input type="radio" name="glass" title="Plases Select One Value" onclick="isTableSingle(true,12)" id="singleVision"  value="singleVision" class="checkbox required" style="margin-top: 0.5%;float: left;" >'+
 										'</div>'+
 										'<div style="width:100%;float: left;margin-bottom: 2%;">'+
-											'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Progressive lenses premium  -  €13</h6>'+
+											'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Progressifs normaux -  €13</h6>'+
 											'<input type="radio" name="glass" title="Plases Select One Value" id="progress" value="progress" onclick="isTableSingle(false,13)" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 										'</div>'+
 										'<div style="width:100%;float: left;margin-bottom: 2%;">'+
-											'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Progressive lenses high quality  -  €14</h6>'+
+											'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Progressifs de qualité -  €14</h6>'+
 											'<input type="radio" name="glass" title="Plases Select One Value" id="progress" value="progress" onclick="isTableSingle(false,14)" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 										'</div>'+
 										'<div style="width:100%;float: left;margin-top: 2%;">'+
 											'<h6 for="price1" name="price1" id="price1" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: Bitter, georgia, serif;" ></h6>'+
-											'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">€</span></h6>'+
+											'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Prix total: : <span style="color: #00a9c7;">€</span></h6>'+
 										'</div>'+
 									'</fieldset>'
 							})
@@ -374,11 +375,11 @@
 							//document.getElementById('price1').value = grandTotal;
 							//add  Photochromic step
 							jQuery('#form-3').steps("insert",2, {
-							title: "photochromic",
+							title: "Photochromie",
 							content: '<fieldset>'+
-										'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;margin-bottom: 3%;"><?php echo Mage::helper("contacts")->__("S il vous plaît sélectionner photochromiques") ?></h4>'+ 
+										'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;margin-bottom: 3%;"><?php echo Mage::helper("contacts")->__("Voulez-vous des verres photochromiques?") ?></h4>'+ 
 										'<div id="yesDiv" style="width:100%;float: left;margin-bottom: 2%;">'+
-											'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;">oui</h6>'+
+											'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;">Oui</h6>'+
 											'<input type="radio" name="photochromic" title="Plases sélectionner quune valeur" value="yes" id="yes" onclick="yesTab()" value="single" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 										'</div>'+
 										'<div id="noDiv" style="width:100%;float: left;margin-bottom: 2%;">'+
@@ -395,20 +396,20 @@
 										'</div>'+
 										'<div style="width:100%;float: left;margin-top: 2%;">'+
 											'<h6 for="price" name="price2" id="price2" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: Bitter, georgia, serif;" ></h6>'+
-											'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">€</span></h6>'+
+											'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Prix total: : <span style="color: #00a9c7;">€</span></h6>'+
 										'</div>'+
 									'</fieldset>'
 							})
 							jQuery('#form-3').steps("insert",3, {
 							title: "Correction",
 							content: '<fieldset>'+
-										'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;margin-bottom: 3%;"><?php echo Mage::helper('contacts')->__("S il vous plaît sélectionner correction") ?></h4>'+
+										'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;margin-bottom: 3%;"><?php echo Mage::helper('contacts')->__("Sélectionner votre correction") ?></h4>'+
 										'<div style="width:100%;float: left;margin-bottom: 2%;">'+
 											'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;">1.57 - Faible correction - €21</h6>'+
 											'<input type="radio" name="correction" title="Plases sélectionner quune valeur" id="low" value="low" onclick="setCorrection(21)" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 										'</div>'+
 										'<div style="width:100%;float: left;margin-bottom: 2%;">'+
-											'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >1.6 - Moyenne correction - €22</h6>'+
+											'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >1.6 - Correction moyenne - €22</h6>'+
 											'<input type="radio" name="correction" title="Plases sélectionner quune valeur" id="medium" value="medium" onclick="setCorrection(22)"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 										'</div>'+
 										'<div style="width:100%;float: left;margin-bottom: 2%;">'+
@@ -417,14 +418,14 @@
 										'</div>'+
 										'<div style="width:100%;float: left;margin-top: 2%;">'+
 											'<h6 for="price3" name="price3" id="price3" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: Bitter, georgia, serif;" ></h6>'+
-											'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">€</span></h6>'+
+											'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Prix total : <span style="color: #00a9c7;">€</span></h6>'+
 										'</div>'+
 									'</fieldset>'
 							})
 							jQuery('#form-3').steps("insert",4, {
-							title: "Couleur",
+							title: "Couleurs",
 							content: '<fieldset>'+ 
-											'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;margin-bottom: 3%;"><?php echo Mage::helper("contacts")->__("Please select lenses color") ?></h4>'+
+											'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;margin-bottom: 3%;"><?php echo Mage::helper("contacts")->__("S il vous plaît choisir la couleur des lentilles") ?></h4>'+
 											'<div style="width:100%;float: left;margin-bottom: 2%;">'+
 												'<img src="<?php echo $this->getSkinUrl('images/no_ball.png') ?>" style="width: 2.5%;float: left; cursor: pointer;" />'+
 												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;">No color</h6>'+
@@ -467,7 +468,7 @@
 											'</div>'+
 											'<div style="width:100%;float: left;margin-top: 2%;">'+
 												'<h6 for="price" name="price5" id="price5" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: Bitter, georgia, serif;" >50</h6>'+
-												'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">€</span></h6>'+
+												'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Prix total: : <span style="color: #00a9c7;">€</span></h6>'+
 											'</div>'+
 									'</fieldset>'
 						})
@@ -475,22 +476,22 @@
 						jQuery('#form-3').steps("insert",5, {
 							title: "Teintées",
 							content: '<fieldset>'+
-										'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;margin-bottom: 3%;"><?php echo Mage::helper('contacts')->__('Please select tinte') ?></h4>'+ 
+										'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;margin-bottom: 3%;"><?php echo Mage::helper('contacts')->__('Sélectionner votre teinte') ?></h4>'+ 
 										'<div style="width:100%;float: left;margin-bottom: 2%;">'+
-											'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;">25% - Light</h6>'+
+											'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;">25% - Légère - €41</h6>'+
 											'<input type="radio" name="tinte" title="Plases Select One Value" id="lightTinte" value="lightTinte" onclick="setTinted(41)" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 										'</div>'+
 										'<div style="width:100%;float: left;margin-bottom: 2%;">'+
-											'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >50% - Medium</h6>'+
+											'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >50% - Moyenne - €42</h6>'+
 											'<input type="radio" name="tinte" title="Plases Select One Value" id="mediumTinte" value="mediumTinte" onclick="setTinted(42)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 										'</div>'+
 										'<div style="width:100%;float: left;margin-bottom: 2%;">'+
-											'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >80% - High</h6>'+
+											'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >80% - Forte - €43</h6>'+
 											'<input type="radio" name="tinte" title="Plases Select One Value" id="highTinte" value="highTinte" onclick="setTinted(43)" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 										'</div>'+
 										'<div style="width:100%;float: left;margin-top: 2%;">'+
 											'<h6 for="price" name="price6" id="price6" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: Bitter, georgia, serif;" >50</h6>'+
-											'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">€</span></h6>'+
+											'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Prix total : <span style="color: #00a9c7;">€</span></h6>'+
 										'</div>'+
 									'</fieldset>'
 						})
@@ -512,7 +513,7 @@
 										'</div>'+
 										'<div style="width:100%;float: left;margin-top: 2%;">'+
 											'<h6 for="price" name="price8" id="price8" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: Bitter, georgia, serif;" ></h6>'+
-											'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">€</span></h6>'+
+											'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Prix total : <span style="color: #00a9c7;">€</span></h6>'+
 										'</div>'+
 									'</fieldset>'
 							})
@@ -521,13 +522,13 @@
 									
 							jQuery('#form-3').steps("add", {
 								title: "Prescription",
-								content:'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper('contacts')->__('Please select prescription') ?></h4>'+
+								content:'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper('contacts')->__('Quelle est votre ordonnance?') ?></h4>'+
 										'<table class="fieldset table_custom" id="progressiveTableId" cellspacing="10" style="display: none;border: 0px solid black;" >'+
 										'<tr>'+
 											  '<td colspan="2" class="td_custom table_custom" ></td>'+
 											  '<th class="th_custom table_custom">Sphere</th>'+	
-											  '<th class="th_custom table_custom">Cylinder</th>'+
-											  '<th class="th_custom table_custom">Axis</th>'+
+											  '<th class="th_custom table_custom">Cylindre</th>'+
+											  '<th class="th_custom table_custom">Axe</th>'+
 										'</tr>'+
 										'<tr>'+
 											  '<th rowspan="2" class="th_custom table_custom" style="padding-top: 6%;">Distance</th>'+
@@ -563,7 +564,7 @@
 											  '<td class="th_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="ala3" name="ala3" type="number" min="0.75" max="3.5" step="0.25" value="0.75"></td>'+	
 										'</tr>'+
 										'<tr>'+
-											  '<th class="th_custom table_custom" colspan="2">Pupillary distance</th>'+
+											  '<th class="th_custom table_custom" colspan="2">Distance pupillaire</th>'+
 											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;" id="pd3" name="pd3" type="number" value="0"  min="0" max="100" step="0.5"></td>'+	
 											  '<td class="td_custom table_custom" colspan="2"></td>'+
 										'</tr>'+
@@ -572,8 +573,8 @@
 										'<tr>'+
 											  '<td class="td_custom table_custom" colspan="2" ></td>'+
 											  '<th class="th_custom table_custom">Sphere</th>'+	
-											  '<th class="th_custom table_custom">Cylinder</th>'+
-											  '<th class="th_custom table_custom">Axis</th>'+
+											  '<th class="th_custom table_custom">Cylindre</th>'+
+											  '<th class="th_custom table_custom">Axe</th>'+
 										'</tr>'+
 										'<tr>'+
 											  '<th rowspan="2" class="th_custom table_custom" style="padding-top: 6%;">Distance</th>'+
@@ -596,14 +597,14 @@
 											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="ala4" name="ala4" type="number" min="0.75" max="3.5" step="0.25" value="0.75"></td>'+	
 										'</tr>'+
 										'<tr>'+
-											  '<th class="th_custom table_custom" colspan="2">Pupillary distance</th>'+
+											  '<th class="th_custom table_custom" colspan="2">Distance pupillaire</th>'+
 											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;" id="pd4" name="pd4" type="number" value="0"  min="0" max="100" step="0.5"></td>'+	
 											  '<td class="td_custom table_custom" colspan="2"></td>'+
 										'</tr>'+
 									'</table>'+
 									'<div style="width:100%;float: left;margin-top: 2%;">'+
 											'<h6 for="price4" name="price4" id="price4" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: Bitter, georgia, serif;" >50</h6>'+
-											'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">€</span></h6>'+
+											'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Prix total : <span style="color: #00a9c7;">€</span></h6>'+
 										'</div>'
 							})
 			}else if(element == 'no_correction'){
@@ -617,7 +618,7 @@
 				jQuery('#form-3').steps('remove', 1, {});
 				
 					jQuery('#form-3').steps("insert",1, {
-					title: "Couleur",
+					title: "Couleurs",
 					content: '<fieldset>'+ 
 									'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;margin-bottom: 3%;padding-bottom: 7px;"><?php echo Mage::helper("contacts")->__("S il vous plaît sélectionner lentilles couleur") ?></h4>'+
 									'<div style="width:100%;float: left;margin-bottom: 2%;">'+
@@ -662,14 +663,14 @@
 									'</div>'+
 									'<div style="width:100%;float: left;margin-top: 2%;">'+
 											'<h6 for="price5" name="price5" id="price5" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: Bitter, georgia, serif;" ></h6>'+
-											'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">€</span></h6>'+
+											'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Prix total : <span style="color: #00a9c7;">€</span></h6>'+
 										'</div>'+
 							'</fieldset>'
 					})
 					jQuery('#form-3').steps("insert",2, {
 					title: "Teintées",
 					content: '<fieldset>'+
-								'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;margin-bottom: 3%;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper('contacts')->__("S il vous plaît sélectionner tinte") ?></h4>'+ 
+								'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;margin-bottom: 3%;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper('contacts')->__("Sélectionner votre teinte") ?></h4>'+ 
 								'<div style="width:100%;float: left;margin-bottom: 2%;">'+
 									'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;">25% - Legere - €41</h6>'+
 									'<input type="radio" name="tinte" title="Plases sélectionner quune valeur" id="lightTinte" value="lightTinte" onclick="setTinted(41)" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
@@ -684,7 +685,7 @@
 								'</div>'+
 								'<div style="width:100%;float: left;margin-top: 2%;">'+
 											'<h6 for="price" name="price6" id="price6" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: Bitter, georgia, serif;" ></h6>'+
-											'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">€</span></h6>'+
+											'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Prix total : <span style="color: #00a9c7;">€</span></h6>'+
 										'</div>'+
 							'</fieldset>'
 					})
@@ -706,7 +707,7 @@
 										'</div>'+
 										'<div style="width:100%;float: left;margin-top: 2%;">'+
 											'<h6 for="price" name="price8" id="price8" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: Bitter, georgia, serif;" ></h6>'+
-											'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">€</span></h6>'+
+											'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Prix total : <span style="color: #00a9c7;">€</span></h6>'+
 										'</div>'+
 									'</fieldset>'
 							})
@@ -741,7 +742,7 @@
 											'</div>'+
 											'<div style="width:100%;float: left;margin-top: 2%;">'+
 												'<h6 for="price" name="price7" id="price7" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: Bitter, georgia, serif;" ></h6>'+
-												'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">€</span></h6>'+
+												'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Prix total : <span style="color: #00a9c7;">€</span></h6>'+
 											'</div>'+
 										'</fieldset>'
 								})
@@ -749,13 +750,13 @@
 								jQuery('#form-3').steps("insert",2, {
 								title: "Correction",
 								content: '<fieldset>'+
-											'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;margin-bottom: 3%;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper('contacts')->__("S il vous plaît sélectionner correction") ?></h4>'+
+											'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;margin-bottom: 3%;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper('contacts')->__("Sélectionner votre correction") ?></h4>'+
 											'<div style="width:100%;float: left;margin-bottom: 2%;">'+
 												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;">1.57 - Faible correction  - €21</h6>'+
 												'<input type="radio" name="correction" title="Plases sélectionner quune valeur" id="low" value="low" onclick="setCorrection(21)"  class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 											'</div>'+
 											'<div style="width:100%;float: left;margin-bottom: 2%;">'+
-												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >1.6 -Moyenne correction  - €22</h6>'+
+												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >1.6 - Correction moyenne - €22</h6>'+
 												'<input type="radio" name="correction" title="Plases sélectionner quune valeur" id="medium" value="medium" onclick="setCorrection(22)"  class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 											'</div>'+ 
 											'<div style="width:100%;float: left;margin-bottom: 2%;">'+
@@ -764,7 +765,7 @@
 											'</div>'+
 											'<div style="width:100%;float: left;margin-top: 2%;">'+
 												'<h6 for="price" name="price3" id="price3" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: Bitter, georgia, serif;" ></h6>'+
-												'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">€</span></h6>'+
+												'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Prix total : <span style="color: #00a9c7;">€</span></h6>'+
 											'</div>'+
 										'</fieldset>'
 								})
@@ -787,7 +788,7 @@
 												'</div>'+
 												'<div style="width:100%;float: left;margin-top: 2%;">'+
 												'<h6 for="price" name="price8" id="price8" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: Bitter, georgia, serif;" ></h6>'+
-												'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">€</span></h6>'+
+												'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Prix total : <span style="color: #00a9c7;">€</span></h6>'+
 											'</div>'+
 											'</fieldset>'
 									})
@@ -796,13 +797,13 @@
 								
 								jQuery('#form-3').steps("add", {
 								title: "Prescription",
-								content:'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper('contacts')->__('Please select prescription') ?></h4>'+
+								content:'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper('contacts')->__('Quelle est votre ordonnance?') ?></h4>'+
 										'<table class="fieldset table_custom" cellspacing="10" style="border: 0px solid black;" >'+
 										'<tr>'+
 											  '<td class="th_custom table_custom" colspan="2" ></td>'+
 											  '<th class="th_custom table_custom">Sphere</th>'+	
-											  '<th class="th_custom table_custom">Cylinder</th>'+
-											  '<th class="th_custom table_custom">Axis</th>'+
+											  '<th class="th_custom table_custom">Cylindre</th>'+
+											  '<th class="th_custom table_custom">Axe</th>'+
 										'</tr>'+
 										'<tr>'+
 											  '<th rowspan="2" class="th_custom table_custom" style="padding-top: 6%;">Distance</th>'+
@@ -825,14 +826,14 @@
 											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="ala" name="ala" type="number" min="0.75" max="3.5" step="0.25" value="0.75"></td>'+	
 										'</tr>'+
 										'<tr>'+
-											  '<th class="th_custom table_custom" colspan="2">Pupillary distance</th>'+
+											  '<th class="th_custom table_custom" colspan="2">Distance pupillaire</th>'+
 											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;" id="pd" name="pd" type="number" value="0"  min="0" max="100" step="0.5"></td>'+	
 											  '<td class="td_custom table_custom" colspan="2"></td>'+
 										'</tr>'+
 									'</table>'+
 									'<div style="width:100%;float: left;margin-top: 2%;">'+
 												'<h6 for="price" name="price4" id="price4" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: Bitter, georgia, serif;" ></h6>'+
-												'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">€</span></h6>'+
+												'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Prix total : <span style="color: #00a9c7;">€</span></h6>'+
 											'</div>'
 							})
 					jQuery('#price3').text(grandTotal);	
@@ -869,7 +870,7 @@
 												'</div>'+
 												'<div style="width:100%;float: left;margin-top: 2%;">'+
 													'<h6 for="price" name="price8" id="price8" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: Bitter, georgia, serif;" ></h6>'+
-													'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">€</span></h6>'+
+													'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Prix total : <span style="color: #00a9c7;">€</span></h6>'+
 												'</div>'+
 											'</fieldset>'
 									})
@@ -893,13 +894,13 @@
 								jQuery('#form-3').steps("insert",2, {
 								title: "Correction",
 								content: '<fieldset>'+
-											'<h4 class="legend" style="margin-bottom: 3%; border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper('contacts')->__("S il vous plaît sélectionner correction") ?></h4>'+
+											'<h4 class="legend" style="margin-bottom: 3%; border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper('contacts')->__("Sélectionner votre correction") ?></h4>'+
 											'<div style="width:100%;float: left;margin-bottom: 2%;">'+
 												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;">1.57 - Faible correction - €21</h6>'+
 												'<input type="radio" name="correction" title="Plases sélectionner quune valeur" id="low" value="low" onclick="setCorrection(21)" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 											'</div>'+
 											'<div style="width:100%;float: left;margin-bottom: 2%;">'+
-												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >1.6 - Moyenne correction -  €22</h6>'+
+												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >1.6 - Correction moyenne -  €22</h6>'+
 												'<input type="radio" name="correction" title="Plases sélectionner quune valeur" id="medium" value="medium" onclick="setCorrection(22)" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 											'</div>'+
 											'<div style="width:100%;float: left;margin-bottom: 2%;">'+
@@ -908,11 +909,10 @@
 											'</div>'+
 											'<div style="width:100%;float: left;margin-top: 2%;">'+
 												'<h6 for="price" name="price3" id="price3" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: Bitter, georgia, serif;" ></h6>'+
-												'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">€</span></h6>'+
+												'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Prix total : <span style="color: #00a9c7;">€</span></h6>'+
 											'</div>'+
 										'</fieldset>'
 								})
-								
 								
 								var showMember = '<?php echo Mage::helper('customer')->getCustomer()->getId(); ?>';
 								if(showMember != ''){
@@ -932,7 +932,7 @@
 												'</div>'+
 												'<div style="width:100%;float: left;margin-top: 2%;">'+
 													'<h6 for="price" name="price8" id="price8" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: Bitter, georgia, serif;" ></h6>'+
-													'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">€</span></h6>'+
+													'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Prix total : <span style="color: #00a9c7;">€</span></h6>'+
 												'</div>'+
 											'</fieldset>'
 									})
@@ -941,13 +941,13 @@
 								
 								jQuery('#form-3').steps("add", {
 								title: "Prescription",
-								content:'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper('contacts')->__('Please select prescription') ?></h4>'+
+								content:'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper('contacts')->__('Quelle est votre ordonnance?') ?></h4>'+
 										'<table class="fieldset table_custom" cellspacing="10" style="border: 0px solid black;" >'+
 										'<tr>'+
 											  '<td class="td_custom table_custom" colspan="2" ></td>'+
 											  '<th class="th_custom table_custom">Sphere</th>'+	
-											  '<th class="th_custom table_custom">Cylinder</th>'+
-											  '<th class="th_custom table_custom">Axis</th>'+
+											  '<th class="th_custom table_custom">Cylindre</th>'+
+											  '<th class="th_custom table_custom">Axe</th>'+
 										'</tr>'+
 										'<tr>'+
 											  '<th class="th_custom table_custom" rowspan="2" style="padding-top: 6%;">Distance</th>'+
@@ -970,14 +970,14 @@
 											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="ala5" name="ala5" type="number" min="0.75" max="3.5" step="0.25" value="0.75"></td>'+	
 										'</tr>'+
 										'<tr>'+
-											  '<th class="th_custom table_custom" colspan="2">Pupillary distance</th>'+
+											  '<th class="th_custom table_custom" colspan="2">Distance pupillaire</th>'+
 											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;" id="pd5" name="pd5" type="number" value="0"  min="0" max="100" step="0.5"></td>'+	
 											  '<td class="td_custom table_custom" colspan="2"></td>'+
 										'</tr>'+
 									'</table>'+
 									'<div style="width:100%;float: left;margin-top: 2%;">'+
 												'<h6 for="price" class="price4" id="price4" name="price" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: Bitter, georgia, serif;" ></h6>'+
-												'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">€</span></h6>'+
+												'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Prix total :: <span style="color: #00a9c7;">€</span></h6>'+
 											'</div>'
 							})
 			}
@@ -1006,7 +1006,7 @@
 					jQuery('#form-3').steps("insert",count, {
 					title: "Teintées",
 					content: '<fieldset>'+
-								'<h4 class="legend" style="margin-bottom: 3%;border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper('contacts')->__("S il vous plaît sélectionner tinte") ?></h4>'+ 
+								'<h4 class="legend" style="margin-bottom: 3%;border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper('contacts')->__("Sélectionner votre teinte") ?></h4>'+ 
 								'<div style="width:100%;float: left;margin-bottom: 2%;">'+
 									'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;">25% - Legere - €41</h6>'+
 									'<input type="radio" name="tinte" title="Plases sélectionner quune valeur" value="lightTinte" id="lightTinte" value="single" onclick="setTinted(41)" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
@@ -1021,7 +1021,7 @@
 								'</div>'+
 								'<div style="width:100%;float: left;margin-top: 2%;">'+
 												'<h6 for="price6" name="price6" id="price6" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: Bitter, georgia, serif;" ></h6>'+
-												'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">€</span></h6>'+
+												'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Prix total : <span style="color: #00a9c7;">€</span></h6>'+
 											'</div>'+
 							'</fieldset>'
 				})
@@ -1092,7 +1092,7 @@
 			if(checkPhotoChromic == true){
 				checkPhotoChromic = false;
 				jQuery('#form-3').steps("insert",4, {
-					title: "Couleur",
+					title: "Couleurs",
 					content: '<fieldset>'+ 
 									'<h4 class="legend" style="margin-bottom: 3%;border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper("contacts")->__("S il vous plaît sélectionner lentilles couleur") ?></h4>'+
 									'<div style="width:100%;float: left;margin-bottom: 2%;">'+
@@ -1137,7 +1137,7 @@
 									'</div>'+
 									'<div style="width:100%;float: left;margin-top: 2%;">'+
 												'<h6 for="price5" name="price5" id="price5" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: Bitter, georgia, serif;" ></h6>'+
-												'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">€</span></h6>'+
+												'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Prix total : <span style="color: #00a9c7;">€</span></h6>'+
 											'</div>'+
 							'</fieldset>'
 				})
@@ -1145,7 +1145,7 @@
 				jQuery('#form-3').steps("insert",5, {
 					title: "Teintées",
 					content: '<fieldset>'+
-								'<h4 class="legend" style="margin-bottom: 3%;border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper('contacts')->__("S il vous plaît sélectionner tinte") ?></h4>'+ 
+								'<h4 class="legend" style="margin-bottom: 3%;border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper('contacts')->__("Sélectionner votre teinte") ?></h4>'+ 
 								'<div style="width:100%;float: left;margin-bottom: 2%;">'+
 									'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;">25% - Legere  - €41</h6>'+
 									'<input type="radio" name="tinte" title="Plases sélectionner quune valeur" id="lightTinte" value="lightTinte" onclick="setTinted(41)" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
@@ -1160,7 +1160,7 @@
 								'</div>'+
 								'<div style="width:100%;float: left;margin-top: 2%;">'+
 												'<h6 for="price" name="price6" id="price6" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: Bitter, georgia, serif;" ></h6>'+
-												'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">€</span></h6>'+
+												'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Prix total: <span style="color: #00a9c7;">€</span></h6>'+
 											'</div>'+
 							'</fieldset>'
 				})
