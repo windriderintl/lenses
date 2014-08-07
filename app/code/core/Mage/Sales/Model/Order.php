@@ -1345,23 +1345,23 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
 		$product_id = 0;
 		$full_path_url = "";
 		
-		$drs;
-		$drc;
-		$dra;
-		$dls;
-		$dlc;
-		$dla;
+		$drs = 0;
+		$drc = 0;
+		$dra = 0;
+		$dls = 0;
+		$dlc = 0;
+		$dla = 0;
 		
-		$rrs;
-		$rrc;
-		$rra;
-		$rls;
-		$rlc;
-		$rla;
+		$rrs = 0;
+		$rrc = 0;
+		$rra = 0;
+		$rls = 0;
+		$rlc = 0;
+		$rla = 0;
 		
-		$ars;
-		$ala;
-		$pd;
+		$ars = 0;
+		$ala = 0;
+		$pd = 0;
 		
 		foreach ($this->getAllItems() as $custom_item) {
 			
@@ -1430,7 +1430,7 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
         // Set all required params and send emails
         $mailer->setSender(Mage::getStoreConfig(self::XML_PATH_EMAIL_IDENTITY, $storeId));
         $mailer->setStoreId($storeId);
-        $mailer->setTemplateId(sales_email_order_new_supplier_template);
+        $mailer->setTemplateId(sales_email_order_guest_template);
         $mailer->setTemplateParams(array(
                 'order'        => $this,
                 'storeId'      => $arraySize,

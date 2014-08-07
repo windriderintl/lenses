@@ -26,7 +26,8 @@
 ?>
 <?php $outputMessage = Mage::helper('customer')->getCustomer()->getId() ?>
 <?php $_product = $this->getProduct(); ?>
-<?php $buttonTitle = $this->__('Configure'); ?>
+<?php $locale = Mage::app()->getLocale()->getLocaleCode(); ?>
+<?php $buttonTitle = (($locale == "en_US") ? "Configure" :"Personnaliser") ?>
 <?php if ($_product->isSaleable()): ?>
 	<div class="add-to-cart v-centered-content">
 		<?php if ($outputMessage == ''): ?>
