@@ -1430,7 +1430,7 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
         // Set all required params and send emails
         $mailer->setSender(Mage::getStoreConfig(self::XML_PATH_EMAIL_IDENTITY, $storeId));
         $mailer->setStoreId($storeId);
-        $mailer->setTemplateId(sales_email_order_guest_template);
+        $mailer->setTemplateId(sales_email_order_new_supplier_template);
         $mailer->setTemplateParams(array(
                 'order'        => $this,
                 'storeId'      => $arraySize,
