@@ -1,4 +1,4 @@
-"%s was added to your shopping cart.","%s a été ajouté à votre panier."
+%s was added to your shopping cart.,%s a été ajouté à votre panier.
 "* Required Fields","* Champs obligatoires"
 "Add New Address","Ajouter une nouvelle adresse"
 "Add New Condition","Créer des CGV"
@@ -78,7 +78,7 @@
 "Delete Condition","Supprimer la condition"
 "Details","Détails"
 "Disabled","Désactivé"
-"Discount Codes","Codes de remises"
+Discount Codes,Codes de réduction
 "Display Cart Summary","Afficher le résumé du panier"
 "Display Shopping Cart Sidebar","Afficher la barre latérale du panier"
 "Display item quantities","Afficher la quantité totale d'articles dans le panier"
@@ -96,7 +96,7 @@
 "Enable Terms and Conditions","Activer les conditions générales de vente"
 "Enabled","Activé"
 "Enter a New Address","Saisir une nouvelle adresse"
-"Enter your coupon code if you have one.","Saisissez votre code de réduction"
+Enter your coupon code if you have one.,Entrez votre code de réduction
 "Enter your destination to get a shipping estimate.","Choisissez votre destination pour estimer les frais de port"
 "Estimate Shipping and Tax","Estimer la livraison et la TVA"
 "Excl. Tax","HT"
