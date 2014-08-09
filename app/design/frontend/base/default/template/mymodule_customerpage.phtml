@@ -118,9 +118,11 @@
 									  <td><input class="input-text required-entry" style="float:left;width: 100%;" id="ala" name="ala" type="number" min="0.75" max="3.5" step="0.25" value="0"></td>	
 								</tr>
 								<tr>
-									  <th colspan="2">Pupillary distance</th>
+									  <th >Pupillary distance</th>
+									  <th>Right Eye</th>
 									  <td><input class="input-text required-entry" style="float:left;" id="pd" name="pd" type="number" value="0"  min="0" max="100" step="0.5"></td>	
-									  <td  colspan="2"></td>
+									  <th>Left Eye</th>
+									  <td><input class="input-text required-entry" style="float:left;" id="pdl" name="pdl" type="number" value="0"  min="0" max="100" step="0.5"></td>
 								</tr>
 							</table>
 							
@@ -200,9 +202,11 @@
 									  <td><input class="input-text required-entry" style="float:left;width: 100%;" id="ala1" name="ala1" type="number" min="0.75" max="3.5" step="0.25" value="0"></td>	
 								</tr>
 								<tr>
-									  <th colspan="2">Pupillary distance</th>
+									  <th>Pupillary distance</th>
+									  <th>Right Eye</th>
 									  <td><input class="input-text required-entry" style="float:left;" id="pd1" name="pd1" type="number" value="0"  min="0" max="100" step="0.5"></td>	
-									  <td  colspan="2"></td>
+									  <th>Left Eye</th>
+									  <td ><input class="input-text required-entry" style="float:left;" id="pdl1" name="pdl1" type="number" value="0"  min="0" max="100" step="0.5"></td>
 								</tr>
 							</table>
 							
@@ -313,6 +317,7 @@ var dataFormFamily = new VarienForm('familyForm', true);
 						jQuery("#ars1").val('<?php echo $arr_row['ars']; ?>');
 						jQuery("#ala1").val(<?php echo $arr_row['ala']; ?>);
 						jQuery("#pd1").val('<?php echo $arr_row['pd']; ?>');
+						jQuery("#pdl1").val('<?php echo $arr_row['pdl']; ?>');
 	
 					}else{
 						$('progressiveEditForm').style.display = 'none';
@@ -330,6 +335,7 @@ var dataFormFamily = new VarienForm('familyForm', true);
 						jQuery("#ars").val('<?php echo $arr_row['ars']; ?>');
 						jQuery("#ala").val(<?php echo $arr_row['ala']; ?>);
 						jQuery("#pd").val('<?php echo $arr_row['pd']; ?>');
+						jQuery("#pdl").val('<?php echo $arr_row['pdl']; ?>');
 					}
 				}
 		<?php endforeach; ?>

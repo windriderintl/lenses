@@ -88,6 +88,7 @@ class Mnt_Family_IndexController extends Mage_Core_Controller_Front_Action {
 			$ars = $this->getRequest()->getPost('ars');
 			$ala = $this->getRequest()->getPost('ala');
 			$pd = $this->getRequest()->getPost('pd');
+			$pdl = $this->getRequest()->getPost('pdl');
 			
 		//}
 			
@@ -112,6 +113,7 @@ class Mnt_Family_IndexController extends Mage_Core_Controller_Front_Action {
 			->setArs($ars)
 			->setAla($ala)
 			->setPd($pd)
+			->setPdl($pdl)
 			->save();
 			
 		$this->loadLayout();
@@ -164,6 +166,7 @@ class Mnt_Family_IndexController extends Mage_Core_Controller_Front_Action {
 			$ars = $this->getRequest()->getPost('ars');
 			$ala = $this->getRequest()->getPost('ala');
 			$pd = $this->getRequest()->getPost('pd');
+			$pdl = $this->getRequest()->getPost('pdl');
 
 		$id = $family_id;	
 		$data = array('name'=>$userName,'relation'=>$relation,'drs'=>$drs,'drc'=>$drc,'dra'=>$dra,'dls'=>$dls,'dlc'=>$dlc
@@ -204,11 +207,12 @@ class Mnt_Family_IndexController extends Mage_Core_Controller_Front_Action {
 			$ars1 = $this->getRequest()->getPost('ars1');
 			$ala1 = $this->getRequest()->getPost('ala1');
 			$pd1 = $this->getRequest()->getPost('pd1');
+			$pdl1 = $this->getRequest()->getPost('pdl1');
 
 		$id = $family_id1;	
 		$data = array('name'=>$userName1,'relation'=>$relation1,'drs'=>$drs1,'drc'=>$drc1,'dra'=>$dra1,'dls'=>$dls1,'dlc'=>$dlc1
 		,'dla'=>$dla1,'rrs'=>$rrs1,'rrc'=>$rrc1,'rra'=>$rra1,'rls'=>$rls1,'rlc'=>$rlc1,'rla'=>$rla1,'ars'=>$ars1,'ala'=>$ala1
-		,'pd'=>$pd1);
+		,'pd'=>$pd1,'pdl'=>$pdl1);
 		$model = Mage::getModel('mymod/family')->load($id)->addData($data);
 		$model->setId($id)->save();
 			

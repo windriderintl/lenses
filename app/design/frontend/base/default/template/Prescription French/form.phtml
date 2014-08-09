@@ -109,6 +109,7 @@
 			background-color: #2184be;
 		}
 		.td_custom{
+			vertical-align: inherit;
 			text-align: center;
 		}
 	
@@ -234,6 +235,8 @@
 		}
 		
 		function selectMember(element){
+			
+			<?php $userId = Mage::helper("customer")->getCustomer()->getId(); $connection = Mage::getModel("mymod/family")->getCollection()->addFieldToFilter("user_id", array("eq" => $userId))->load(); ?>
 			<?php foreach($connection as $arr_row): ?>
 			if('<?php echo $arr_row['family_id'];?>' == element){
 				if(checkSingleVision){
@@ -247,6 +250,7 @@
 					$("ars4").value = <?php echo $arr_row['ars'];?>;  
 					$("ala4").value = <?php echo $arr_row['ala'];?>; 
 					$("pd4").value = <?php echo $arr_row['pd'];?>;  
+					$("pdl4").value = <?php echo $arr_row['pdl'];?>;  
 								
 				}else{
 					$("drs3").value = <?php echo $arr_row['drs'];?>;  
@@ -265,13 +269,15 @@
 					
 					$("ars3").value = <?php echo $arr_row['ars'];?>; 
 					$("ala3").value = <?php echo $arr_row['ala'];?>;  
-					$("pd3").value = <?php echo $arr_row['pd'];?>;  
+					$("pd3").value = <?php echo $arr_row['pd'];?>; 
+					$("pdl3").value = <?php echo $arr_row['pdl'];?>;   
 				}
 			}
 			<?php endforeach; ?>
 		}
 		
 		function sunSelectMember(element){
+			<?php $userId = Mage::helper("customer")->getCustomer()->getId(); $connection = Mage::getModel("mymod/family")->getCollection()->addFieldToFilter("user_id", array("eq" => $userId))->load(); ?>
 			<?php foreach($connection as $arr_row): ?>
 			if('<?php echo $arr_row['family_id'];?>' == element){
 					$("drs").value = <?php echo $arr_row['drs'];?>; 
@@ -283,7 +289,8 @@
 					
 					$("ars").value = <?php echo $arr_row['ars'];?>;  
 					$("ala").value = <?php echo $arr_row['ala'];?>; 
-					$("pd").value = <?php echo $arr_row['pd'];?>;  
+					$("pd").value = <?php echo $arr_row['pd'];?>; 
+					$("pdl").value = <?php echo $arr_row['pdl'];?>;   
 			}
 			<?php endforeach; ?>
 		}
@@ -564,9 +571,11 @@
 											  '<td class="th_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="ala3" name="ala3" type="number" min="0.75" max="3.5" step="0.25" value="0.75"></td>'+	
 										'</tr>'+
 										'<tr>'+
-											  '<th class="th_custom table_custom" colspan="2">Distance pupillaire</th>'+
+											  '<th class="th_custom table_custom">Distance pupillaire</th>'+
+											  '<th class="th_custom table_custom">oeil droit</th>'+
 											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;" id="pd3" name="pd3" type="number" value="0"  min="0" max="100" step="0.5"></td>'+	
-											  '<td class="td_custom table_custom" colspan="2"></td>'+
+											  '<th class="th_custom table_custom">oeil gauche</th>'+
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;" id="pdl3" name="pdl3" type="number" value="0"  min="0" max="100" step="0.5"></td>'+
 										'</tr>'+
 									'</table>'+
 									'<table id="singleTableId" class="fieldset table_custom" cellspacing="10" style="display: none;border: 0px solid black;" >'+
@@ -581,13 +590,13 @@
 											  '<th class="th_custom table_custom">oeil droit</th>'+		
 											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="drs4" name="drs4" type="number" min="-10" max="10" step="0.25" value="0"></td>'+
 											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="drc4" name="drc4" type="number" min="-4" max="4" step="0.25" value="0"></td>'+
-											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;" id="dra4" name="dra4" type="number" min="0" max="180" step="1" value="0"></td>'+
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="dra4" name="dra4" type="number" min="0" max="180" step="1" value="0"></td>'+
 										'</tr>'+
 										'<tr>'+
 											  '<th class="th_custom table_custom">oeil gauche</th>'+
 											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="dls4" name="dls4" type="number" min="-10" max="10" step="0.25" value="0"></td>'+		
 											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="dlc4" name="dlc4" type="number" min="-4" max="4" step="0.25" value="0"></td>'+
-											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;" id="dla4" name="dla4" type="number" min="0" max="180" step="1" value="0"></td>'+
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="dla4" name="dla4" type="number" min="0" max="180" step="1" value="0"></td>'+
 										'</tr>'+
 										'<tr>'+
 											  '<th class="th_custom table_custom">Addition</th>'+
@@ -597,9 +606,11 @@
 											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="ala4" name="ala4" type="number" min="0.75" max="3.5" step="0.25" value="0.75"></td>'+	
 										'</tr>'+
 										'<tr>'+
-											  '<th class="th_custom table_custom" colspan="2">Distance pupillaire</th>'+
+											  '<th class="th_custom table_custom">Distance pupillaire</th>'+
+											  '<th class="th_custom table_custom">oeil droit</th>'+
 											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;" id="pd4" name="pd4" type="number" value="0"  min="0" max="100" step="0.5"></td>'+	
-											  '<td class="td_custom table_custom" colspan="2"></td>'+
+											  '<th class="th_custom table_custom">oeil gauche</th>'+
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;" id="pdl4" name="pdl4" type="number" value="0"  min="0" max="100" step="0.5"></td>'+
 										'</tr>'+
 									'</table>'+
 									'<div style="width:100%;float: left;margin-top: 2%;">'+
@@ -810,13 +821,13 @@
 											  '<th class="th_custom table_custom">oeil droit</th>'+		
 											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="drs" name="drs" type="number" min="-10" max="10" step="0.25" value="0"></td>'+
 											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="drc" name="drc" type="number" min="-4" max="4" step="0.25" value="0"></td>'+
-											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;" id="dra" name="dra" type="number" min="0" max="180" step="1" value="0"></td>'+
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="dra" name="dra" type="number" min="0" max="180" step="1" value="0"></td>'+
 										'</tr>'+
 										'<tr>'+
 											  '<th class="th_custom table_custom">oeil gauche</th>'+
 											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="dls" name="dls" type="number" min="-10" max="10" step="0.25" value="0"></td>'+		
 											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="dlc" name="dlc" type="number" min="-4" max="4" step="0.25" value="0"></td>'+
-											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;" id="dla" name="dla" type="number" min="0" max="180" step="1" value="0"></td>'+
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="dla" name="dla" type="number" min="0" max="180" step="1" value="0"></td>'+
 										'</tr>'+
 										'<tr>'+
 											  '<th class="th_custom table_custom">Addition</th>'+
@@ -826,9 +837,11 @@
 											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="ala" name="ala" type="number" min="0.75" max="3.5" step="0.25" value="0.75"></td>'+	
 										'</tr>'+
 										'<tr>'+
-											  '<th class="th_custom table_custom" colspan="2">Distance pupillaire</th>'+
+											  '<th class="th_custom table_custom">Distance pupillaire</th>'+
+											  '<th class="th_custom table_custom">oeil droit</th>'+
 											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;" id="pd" name="pd" type="number" value="0"  min="0" max="100" step="0.5"></td>'+	
-											  '<td class="td_custom table_custom" colspan="2"></td>'+
+											  '<th class="th_custom table_custom">oeil gauche</th>'+
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;" id="pdl" name="pdl" type="number" value="0"  min="0" max="100" step="0.5"></td>'+
 										'</tr>'+
 									'</table>'+
 									'<div style="width:100%;float: left;margin-top: 2%;">'+
@@ -954,13 +967,13 @@
 											  '<th class="th_custom table_custom">oeil droit</th>'+		
 											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="drs5" name="drs5" type="number" min="-10" max="10" step="0.25" value="0"></td>'+
 											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="drc5" name="drc5" type="number" min="-4" max="4" step="0.25" value="0"></td>'+
-											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;" id="dra5" name="dra5" type="number" min="0" max="180" step="1" value="0"></td>'+
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="dra5" name="dra5" type="number" min="0" max="180" step="1" value="0"></td>'+
 										'</tr>'+
 										'<tr>'+
 											  '<th class="th_custom table_custom">oeil gauche</th>'+
 											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="dls5" name="dls5" type="number" min="-10" max="10" step="0.25" value="0"></td>'+		
 											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="dlc5" name="dlc5" type="number" min="-4" max="4" step="0.25" value="0"></td>'+
-											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;" id="dla5" name="dla5" type="number" min="0" max="180" step="1" value="0"></td>'+
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="dla5" name="dla5" type="number" min="0" max="180" step="1" value="0"></td>'+
 										'</tr>'+
 										'<tr>'+
 											  '<th class="th_custom table_custom">Addition</th>'+
@@ -970,9 +983,11 @@
 											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="ala5" name="ala5" type="number" min="0.75" max="3.5" step="0.25" value="0.75"></td>'+	
 										'</tr>'+
 										'<tr>'+
-											  '<th class="th_custom table_custom" colspan="2">Distance pupillaire</th>'+
+											  '<th class="th_custom table_custom">Distance pupillaire</th>'+
+											  '<th class="th_custom table_custom">oeil droit</th>'+
 											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;" id="pd5" name="pd5" type="number" value="0"  min="0" max="100" step="0.5"></td>'+	
-											  '<td class="td_custom table_custom" colspan="2"></td>'+
+											  '<th class="th_custom table_custom">oeil gauche</th>'+
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;" id="pdl5" name="pdl5" type="number" value="0"  min="0" max="100" step="0.5"></td>'+
 										'</tr>'+
 									'</table>'+
 									'<div style="width:100%;float: left;margin-top: 2%;">'+
