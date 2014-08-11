@@ -1362,6 +1362,7 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
 		$ars = 0;
 		$ala = 0;
 		$pd = 0;
+		$pdl = 0;
 		
 		foreach ($this->getAllItems() as $custom_item) {
 			
@@ -1391,6 +1392,7 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
 				$ars = $product_prescription['info_buyRequest']['ars3'];
 				$ala = $product_prescription['info_buyRequest']['ala3'];
 			    $pd = $product_prescription['info_buyRequest']['pd3'];
+				$pdl = $product_prescription['info_buyRequest']['pdl3'];
 		
 			 }else if($product_prescription['info_buyRequest']['glass'] == "singleVision"){
 			 	$drs = $product_prescription['info_buyRequest']['drs4'];
@@ -1401,7 +1403,8 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
 				$dla = $product_prescription['info_buyRequest']['dla4'];
 				$ars = $product_prescription['info_buyRequest']['ars4'];
 				$ala = $product_prescription['info_buyRequest']['ala4'];
-			    $pd = $product_prescription['info_buyRequest']['pd4'];		 
+			    $pd = $product_prescription['info_buyRequest']['pd4'];	
+				$pdl = $product_prescription['info_buyRequest']['pdl4'];		 
 			 }
 
 		//email setting ..........................
