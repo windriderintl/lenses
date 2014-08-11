@@ -80,8 +80,8 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
     
     <?php 
 					$collection = Mage::getModel('sales/quote_item_option')->getCollection()->addFieldToFilter('item_id', array('eq' => $_item->getId()));
-					$lense_type = "Not Applicatable";
-					$glass_type = "Not Applicatable";
+					$lense_type = "Not Applicable";
+					$glass_type = "Not Applicable";
 					$photochromic_type = "Not Applicable";
 					$correction_type = "Not Applicable";
 					$color_type = "Not Applicable";
