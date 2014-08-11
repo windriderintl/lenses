@@ -149,8 +149,9 @@
 		//alert("toatal ="+grandTotal + "price ="+price);
 			if(singlePriceBool == true){
 				//alert("in if..."+singlePrice +" "+price);
-				grandTotal = grandTotal - singlePrice;
-				grandTotal = grandTotal + price;
+				grandTotal = parseFloat(grandTotal) - parseFloat(singlePrice);
+				grandTotal = parseFloat(grandTotal) + parseFloat(price);
+				grandTotal = grandTotal.toFixed(2);
 				jQuery('#price1').text(grandTotal);
 				jQuery('#price2').text(grandTotal);
 				jQuery('#price3').text(grandTotal);
@@ -159,15 +160,17 @@
 					jQuery('#price5').text(grandTotal);
 					jQuery('#price6').text(grandTotal);
 				}
+				
 				jQuery('#price7').text(grandTotal);
 				jQuery('#price8').text(grandTotal);
 				jQuery('#productValue').text(grandTotal);
 				jQuery('#customPrice').val(grandTotal);
-				singlePrice = price;
+				singlePrice = parseFloat(price);
 			}else{
 				//alert("in else..."+singlePrice);
-				singlePrice = price;
-				grandTotal = grandTotal + price;
+				singlePrice = parseFloat(price);
+				grandTotal = parseFloat(grandTotal) + parseFloat(price);
+				grandTotal = grandTotal.toFixed(2);
 				jQuery('#price1').text(grandTotal);
 				jQuery('#price2').text(grandTotal);
 				jQuery('#price3').text(grandTotal);
@@ -199,8 +202,9 @@
 		function setCorrection(price){
 			//alert("toatal ="+grandTotal + "price ="+price);
 			if(correctionPriceBool){
-				grandTotal = grandTotal - correctionPrice;
-				grandTotal = grandTotal + price;
+				grandTotal = parseFloat(grandTotal) - parseFloat(correctionPrice);
+				grandTotal = parseFloat(grandTotal) + parseFloat(price);
+				grandTotal = grandTotal.toFixed(2);
 				jQuery('#price1').text(grandTotal);
 				jQuery('#price2').text(grandTotal);
 				jQuery('#price3').text(grandTotal);
@@ -213,10 +217,11 @@
 				jQuery('#price8').text(grandTotal);	
 				jQuery('#productValue').text(grandTotal);
 				jQuery('#customPrice').val(grandTotal);
-				correctionPrice = price;
+				correctionPrice = parseFloat(price);
 			}else{
-				correctionPrice = price;
-				grandTotal = grandTotal + price;
+				correctionPrice = parseFloat(price);
+				grandTotal = parseFloat(grandTotal) + parseFloat(price);
+				grandTotal = grandTotal.toFixed(2);
 				jQuery('#price1').text(grandTotal);
 				jQuery('#price2').text(grandTotal);
 				jQuery('#price3').text(grandTotal);
@@ -300,8 +305,9 @@
 		function setTinted(price){
 			//alert("toatal ="+grandTotal + "price ="+price);
 				if(tintedPriceBool){
-					grandTotal = grandTotal - tintedPrice;
-					grandTotal = grandTotal + price;
+					grandTotal = parseFloat(grandTotal) - parseFloat(tintedPrice);
+					grandTotal = parseFloat(grandTotal) + parseFloat(price);
+					grandTotal = grandTotal.toFixed(2);
 					jQuery('#price1').text(grandTotal);
 					jQuery('#price2').text(grandTotal);
 					jQuery('#price3').text(grandTotal);
@@ -312,10 +318,11 @@
 					jQuery('#price8').text(grandTotal);
 					jQuery('#productValue').text(grandTotal);
 					jQuery('#customPrice').val(grandTotal);
-					tintedPrice = price;
+					tintedPrice = parseFloat(price);
 				}else{
-					tintedPrice = price;
-					grandTotal = grandTotal + price;
+					tintedPrice = parseFloat(price);
+					grandTotal = parseFloat(grandTotal) + parseFloat(price);
+					grandTotal = grandTotal.toFixed(2);
 					jQuery('#price1').text(grandTotal);
 					jQuery('#price2').text(grandTotal);
 					jQuery('#price3').text(grandTotal);
@@ -340,6 +347,8 @@
 			grandTotal = parseFloat(price1);
 			masterTotal = parseFloat(price1);
 			//lensesTabBool = true;
+			grandTotal = grandTotal.toFixed(2);
+			//alert(grandTotal)
 			jQuery('#productValue').text(grandTotal);
 			jQuery('#customPrice').val(grandTotal);
 
@@ -1025,7 +1034,9 @@
 				if(checkColor == false){
 					checkColor = true;
 					jQuery('#form-3').steps('remove', count, {});
-					grandTotal = grandTotal - tintedPrice;
+					
+					grandTotal = parseFloat(grandTotal) - parseFloat(tintedPrice);
+					grandTotal = grandTotal.toFixed(2);
 					tintedPrice = 0;
 				}
 			}else{
@@ -1058,8 +1069,10 @@
 			
 			if(colorPriceBool){
 				
-				grandTotal = grandTotal - colorPrice;
-				grandTotal = grandTotal + price;
+				grandTotal = parseFloat(grandTotal) - parseFloat(colorPrice);
+				grandTotal = parseFloat(grandTotal) + parseFloat(price);
+				
+				grandTotal = grandTotal.toFixed(2);
 				jQuery('#price1').text(grandTotal);
 				jQuery('#price2').text(grandTotal);
 				jQuery('#price3').text(grandTotal);
@@ -1071,10 +1084,11 @@
 				jQuery('#price8').text(grandTotal);	
 				jQuery('#productValue').text(grandTotal);
 				jQuery('#customPrice').val(grandTotal);
-				colorPrice = price;
+				colorPrice = parseFloat(price);
 			}else{
-				colorPrice = price;
-				grandTotal = grandTotal + price;
+				colorPrice = parseFloat(price);
+				grandTotal = parseFloat(grandTotal) + parseFloat(price);
+				grandTotal = grandTotal.toFixed(2);
 				jQuery('#price1').text(grandTotal);
 				jQuery('#price2').text(grandTotal);
 				jQuery('#price3').text(grandTotal);
@@ -1092,8 +1106,9 @@
 		}
 		
 		function yesTab(element) {	
-				grandTotal = grandTotal - colorPrice;
-				grandTotal = grandTotal - tintedPrice;
+				grandTotal = parseFloat(grandTotal) - parseFloat(colorPrice);
+				grandTotal = parseFloat(grandTotal) - parseFloat(tintedPrice);
+				grandTotal = grandTotal.toFixed(2);
 				jQuery('#price1').text(grandTotal);
 				jQuery('#price2').text(grandTotal);
 				jQuery('#price3').text(grandTotal);
