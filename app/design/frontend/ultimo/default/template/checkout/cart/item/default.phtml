@@ -80,13 +80,13 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
     
     <?php 
 					$collection = Mage::getModel('sales/quote_item_option')->getCollection()->addFieldToFilter('item_id', array('eq' => $_item->getId()));
-					$lense_type;
-					$glass_type;
-					$photochromic_type;
-					$correction_type;
-					$color_type;
-					$tinte_type;
-					$family_member;
+					$lense_type = "Not Applicatable";
+					$glass_type = "Not Applicatable";
+					$photochromic_type = "Not Applicatable";
+					$correction_type = "Not Applicatable";
+					$color_type = "Not Applicatable";
+					$tinte_type = "Not Applicatable";
+					$family_member = "Not Applicatable";
 					$drs = 0;
 					$drc = 0;
 					$dra = 0;
@@ -199,7 +199,7 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
 		<p style="text-align: left;"><a href="#" onclick="getPrescriptionDetail('<?php echo $drs ?>','<?php echo $drc ?>',
 			'<?php echo $dra ?>','<?php echo $dls ?>','<?php echo $dlc ?>','<?php echo $dla ?>','<?php echo $rrs ?>','<?php echo $rrc ?>',
 			'<?php echo $rra ?>','<?php echo $rls ?>','<?php echo $rlc ?>','<?php echo $rla ?>','<?php echo $ars ?>','<?php echo $ala ?>',
-			'<?php echo $pd ?>','<?php echo $pdl ?>')">Prescription Details</a><?php echo $tinte_type ?></p>
+			'<?php echo $pd ?>','<?php echo $pdl ?>')">Prescription Details</a></p>
 	</td>
     <?php if ($canApplyMsrp): ?>
         <td class="col-msrp a-right"<?php if ($this->helper('tax')->displayCartBothPrices()): ?> colspan="2"<?php endif; ?>>
