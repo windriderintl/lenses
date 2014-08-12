@@ -204,3 +204,62 @@
         </div> <!-- end: cart-left-column -->
     </div>
 </div>
+
+
+
+	<div style="display: none;">
+					<div id="homepage_popup"> 
+						<?php $locale = Mage::app()->getLocale()->getLocaleCode(); ?>
+						
+						<h2 class="legend" style="margin-bottom: 5%;"><?php echo (($locale == "en_US") ? "Prescription Details" :"Détails sur ordonnance"); ?> </h2>  
+						<table class="fieldset table_custom" cellspacing="10" style="border: 0px solid black;" >
+										<tr>
+											  <td colspan="2" class="td_custom table_custom" ></td>
+											  <th class="th_custom table_custom">Sphere</th>	
+											  <th class="th_custom table_custom"><?php echo (($locale == "en_US") ? "Cylinder" :"Cylindre");  ?></th>
+											  <th class="th_custom table_custom"><?php echo (($locale == "en_US") ? " Axis " :" Axe ");  ?></th>
+										</tr>
+										<tr>
+											  <th rowspan="2" class="th_custom table_custom" style="padding-top: 6%;"><?php echo (($locale == "en_US") ? "Distance" :"Distance");  ?>Distance</th>
+											  <th class="th_custom table_custom"><?php echo (($locale == "en_US") ? "Right Eye" :"Oeil Droit");  ?></th>	
+											  <td class="td_custom table_custom"><input class="input-text required-entry" readonly style="float:left;width: 100%;" id="drs" name="drs" type="number" min="-10" max="10" step="0.25" value="0"></td>
+											  <td class="td_custom table_custom"><input class="input-text required-entry" readonly style="float:left;width: 100%;" id="drc" name="drc" type="number" min="-4" max="4" step="0.25" value="0"></td>
+											  <td class="td_custom table_custom"><input class="input-text required-entry" readonly style="float:left;width: 100%;" id="dra" name="dra" type="number"  min="0" max="180" step="1" value="0"></td>
+										</tr>
+										<tr>
+											  <th class="th_custom table_custom"><?php echo (($locale == "en_US") ? "Left Eye" :"oeil gauche");  ?></th>
+											  <td class="td_custom table_custom"><input class="input-text required-entry" readonly style="float:left;width: 100%;" id="dls" name="dls" type="number" min="-10" max="10" step="0.25" value="0"></td>	
+											  <td class="td_custom table_custom"><input class="input-text required-entry" readonly style="float:left;width: 100%;" id="dlc" name="dlc" type="number" min="-4" max="4" step="0.25" value="0"></td>
+											  <td class="td_custom table_custom"><input class="input-text required-entry" readonly style="float:left;width: 100%;" id="dla" name="dla" type="number" min="0" max="180" step="1" value="0"></td>
+										</tr>
+										<tr id="reading">
+											  <th rowspan="2" class="th_custom table_custom" style="padding-top: 6%;">Lecture</th>
+											  <th class="th_custom table_custom"><?php echo (($locale == "en_US") ? "Right Eye" :"Oeil Droit");  ?></th>	
+											  <td class="td_custom table_custom"><input class="input-text required-entry" readonly style="float:left;width: 100%;" id="rrs" name="rrs" type="number" min="-10" max="10" step="0.25" value="0"></td>		
+											  <td class="td_custom table_custom"><input class="input-text required-entry" readonly style="float:left;width: 100%;" id="rrc" name="rrc" type="number" min="-4" max="4" step="0.25" value="0"></td>
+											  <td class="td_custom table_custom"><input class="input-text required-entry" readonly style="float:left;width: 100%;" id="rra" name="rra" type="number" min="0" max="180" step="1" value="0"></td>
+										</tr>
+										<tr id="readingLeft">
+											  <th class="th_custom table_custom"><?php echo (($locale == "en_US") ? "Left Eye" :"oeil gauche");  ?></th>
+											  <td class="td_custom table_custom"><input class="input-text required-entry" readonly style="float:left;width: 100%;" id="rls" name="rls" type="number" min="-10" max="10" step="0.25" value="0"></td>			
+											  <td class="td_custom table_custom"><input class="input-text required-entry" readonly style="float:left;width: 100%;" id="rlc" name="rlc" type="number" min="-4" max="4" step="0.25" value="0"></td>
+											  <td class="td_custom table_custom"><input class="input-text required-entry" readonly style="float:left;width: 100%;" id="rla" name="rla" type="number" min="0" max="180" step="1" value="0"></td>
+										</tr>
+										<tr>
+											  <th class="th_custom table_custom"><?php echo (($locale == "en_US") ? "Cylinder" :"Cylindre");  ?>Addition</th>
+											  <th class="th_custom table_custom"><?php echo (($locale == "en_US") ? "Right Eye" :"Oeil Droit");  ?></th>
+											  <td class="td_custom table_custom"><input class="input-text required-entry" readonly style="float:left;width: 100%;" id="ars" name="ars" type="number" min="0.75" max="3.5" step="0.25" value="0.75"></td>	
+											  <th class="th_custom table_custom"><?php echo (($locale == "en_US") ? "Left Eye" :"oeil gauche");  ?></th>
+											  <td class="td_custom table_custom"><input class="input-text required-entry" readonly style="float:left;width: 100%;" id="ala" name="ala" type="number" min="0.75" max="3.5" step="0.25" value="0.75"></td>
+										</tr>
+										<tr>
+											  <th class="th_custom table_custom"><?php echo (($locale == "en_US") ? "Cylinder" :"Cylindre");  ?>Distance pupillaire</th>
+											  <th class="th_custom table_custom"><?php echo (($locale == "en_US") ? "Right Eye" :"Oeil Droit");  ?></th>
+											  <td class="td_custom table_custom"><input class="input-text required-entry" readonly style="float:left;width: 100%;" id="pd" name="pd" type="number" value="0"  min="0" max="100" step="0.5"></td>	
+											  <th class="th_custom table_custom"><?php echo (($locale == "en_US") ? "Left Eye" :"oeil gauche");  ?></th>
+											  <td class="td_custom table_custom"><input class="input-text required-entry" readonly style="float:left;width: 100%;" id="pdl" name="pdl" type="number" value="0"  min="0" max="100" step="0.5"></td>
+										</tr>
+									</table>
+							
+					</div>
+			</div>
