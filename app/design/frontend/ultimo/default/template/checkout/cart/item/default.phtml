@@ -188,7 +188,7 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
         <?php endif ?>
     </td>
     <?php endif ?>
-
+	<?php $locale = Mage::app()->getLocale()->getLocaleCode(); ?>
 	<td class="a-center" style="width: 20%;">
 		<p style="text-align: left;">Lense Type: <?php echo $lense_type ?></p>
 		<p style="text-align: left;">Glass Type: <?php echo $glass_type ?></p>
@@ -199,7 +199,7 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
 		<p style="text-align: left;"><a href="#" onclick="getPrescriptionDetail('<?php echo $drs ?>','<?php echo $drc ?>',
 			'<?php echo $dra ?>','<?php echo $dls ?>','<?php echo $dlc ?>','<?php echo $dla ?>','<?php echo $rrs ?>','<?php echo $rrc ?>',
 			'<?php echo $rra ?>','<?php echo $rls ?>','<?php echo $rlc ?>','<?php echo $rla ?>','<?php echo $ars ?>','<?php echo $ala ?>',
-			'<?php echo $pd ?>','<?php echo $pdl ?>')">Prescription Details</a></p>
+			'<?php echo $pd ?>','<?php echo $pdl ?>')"><?php echo (($locale == "en_US") ? "Prescription Details" :"Détails sur ordonnance"); ?></a></p>
 	</td>
     <?php if ($canApplyMsrp): ?>
         <td class="col-msrp a-right"<?php if ($this->helper('tax')->displayCartBothPrices()): ?> colspan="2"<?php endif; ?>>
