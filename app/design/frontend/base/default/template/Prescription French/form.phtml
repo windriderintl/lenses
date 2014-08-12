@@ -148,7 +148,7 @@
 		function isTableSingle(element,price){
 		//alert("toatal ="+grandTotal + "price ="+price);
 			if(singlePriceBool == true){
-				//alert("in if..."+singlePrice +" "+price);
+			//	alert("in if..."+singlePrice +" "+price);
 				grandTotal = parseFloat(grandTotal) - parseFloat(singlePrice);
 				grandTotal = parseFloat(grandTotal) + parseFloat(price);
 				grandTotal = grandTotal.toFixed(2);
@@ -168,8 +168,9 @@
 			}else{
 				//alert("in else..."+singlePrice);
 				singlePrice = parseFloat(price);
-				grandTotal = parseFloat(grandTotal);grandTotal + parseFloat(price);
+				grandTotal = parseFloat(grandTotal) + parseFloat(price);
 				grandTotal = grandTotal.toFixed(2);
+				//alert(grandTotal);
 				jQuery('#price1').text(grandTotal);
 				jQuery('#price2').text(grandTotal);
 				jQuery('#price3').text(grandTotal);
