@@ -35,7 +35,7 @@
 						
 						<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;margin-bottom: 3%;"><?php echo Mage::helper('contacts')->__("Veuillez sélectionner votre type de verres") ?></h4> 
 						<div style="width:100%;float: left;margin-bottom: 2%;">
-							<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: 'Bitter', georgia, serif;" >Verres avec correction</h6>
+							<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: 'Bitter', georgia, serif;" >Prescription Lenses</h6>
 							<input type="radio" name="lenses_type" title="Plases sélectionner quune valeur" value="normalLenses" name="normalLenses"  id="normalLenses" onclick="lensesTab('normalLenses')" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">
 						</div>
 						<div style="width:100%;float: left;margin-bottom: 2%;">
@@ -340,7 +340,18 @@
 			var price1 = document.getElementById('customPrice').value;
 			//alert(price1);
 			grandTotal = parseFloat(price1);
-			masterTotal = parseFloat(price1);
+			
+			grandTotal = parseFloat(price1);
+			if(lensesTabBool == true){
+				grandTotal = masterTotal;
+				singlePrice = 0;
+				correctionPrice = 0;
+		 		colorPrice = 0;
+		    	tintedPrice = 0;
+			}else{
+				masterTotal = parseFloat(price1);
+				lensesTabBool = true;
+			}
 			grandTotal = grandTotal.toFixed(2);
 			jQuery('#productValue').text(grandTotal);
 			jQuery('#customPrice').val(grandTotal);
@@ -574,9 +585,9 @@
 										'<tr>'+
 											  '<th class="th_custom table_custom">Addition</th>'+
 											  '<th class="th_custom table_custom">oeil droit</th>'+
-											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="ars3" name="ars3" type="number" min="0.75" max="3.5" step="0.25" value="0.75"></td>'+		
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="ars3" name="ars3" type="number" min="0" max="3.5" step="0.25" value="0"></td>'+		
 											  '<th class="th_custom table_custom">oeil gauche</th>'+
-											  '<td class="th_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="ala3" name="ala3" type="number" min="0.75" max="3.5" step="0.25" value="0.75"></td>'+	
+											  '<td class="th_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="ala3" name="ala3" type="number" min="0" max="3.5" step="0.25" value="0"></td>'+	
 										'</tr>'+
 										'<tr>'+
 											  '<th class="th_custom table_custom">Distance pupillaire</th>'+
@@ -609,9 +620,9 @@
 										'<tr>'+
 											  '<th class="th_custom table_custom">Addition</th>'+
 											  '<th class="th_custom table_custom">oeil droit</th>'+
-											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="ars4" name="ars4" type="number" min="0.75" max="3.5" step="0.25" value="0.75"></td>'+		
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="ars4" name="ars4" type="number" min="0" max="3.5" step="0.25" value="0"></td>'+		
 											  '<th class="th_custom table_custom">oeil gauche</th>'+
-											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="ala4" name="ala4" type="number" min="0.75" max="3.5" step="0.25" value="0.75"></td>'+	
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="ala4" name="ala4" type="number" min="0" max="3.5" step="0.25" value="0"></td>'+	
 										'</tr>'+
 										'<tr>'+
 											  '<th class="th_custom table_custom">Distance pupillaire</th>'+
@@ -738,6 +749,7 @@
 					jQuery('#price8').text(grandTotal);	
 				
 			}else if(element == 'sunglasses'){
+				//alert("in here....");
 				jQuery('#form-3').steps('remove', 1, {});
 				jQuery('#form-3').steps('remove', 1, {});
 				jQuery('#form-3').steps('remove', 1, {});
@@ -765,8 +777,25 @@
 											'</div>'+
 										'</fieldset>'
 								})
-								
 								jQuery('#form-3').steps("insert",2, {
+								title: "Photochromie",
+								content: '<fieldset>'+
+											'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;margin-bottom: 3%;"><?php echo Mage::helper("contacts")->__("Voulez-vous des verres photochromiques?") ?></h4>'+
+											'<div id="polorizedDiv" style="width:100%;float: left;margin-bottom: 2%;">'+
+												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;">Verres polarises </h6>'+
+												'<input type="radio" name="photochromic" title="Please select an option" id="polorized" value="polorized" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+											'</div>'+
+											'<div id="nonPolorizedDiv" style="width:100%;float: left;margin-bottom: 2%;">'+
+												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Verres non polarises </h6>'+
+												'<input type="radio" name="photochromic" title="Please select an option" id="nonPolorized" value="nonPolorized" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+											'</div>'+
+											'<div style="width:100%;float: left;margin-top: 2%;">'+
+												'<h6 for="price" name="price2" id="price2" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: Bitter, georgia, serif;" ></h6>'+
+												'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">€</span></h6>'+
+											'</div>'+
+										'</fieldset>'
+								})
+								jQuery('#form-3').steps("insert",3, {
 								title: "Correction",
 								content: '<fieldset>'+
 											'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;margin-bottom: 3%;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper('contacts')->__("Sélectionner votre correction") ?></h4>'+
@@ -778,10 +807,6 @@
 												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >1.6 - Correction moyenne </h6><span style="float: left;margin-right: 2%;width: 10%;font-size: 1.2em;font-family: Bitter, georgia, serif;">  €22 </span>'+
 												'<input type="radio" name="correction" title="Plases sélectionner quune valeur" id="medium" value="medium" onclick="setCorrection(22)"  class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 											'</div>'+ 
-											'<div style="width:100%;float: left;margin-bottom: 2%;">'+
-												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >1.67 - Forte correction </h6><span style="float: left;margin-right: 2%;width: 10%;font-size: 1.2em;font-family: Bitter, georgia, serif;">  €23 </span>'+
-												'<input type="radio" name="correction" title="Plases sélectionner quune valeur" id="high" value="high" onclick="setCorrection(23)"  class="checkbox required" style="margin-top: 0.5%;float: left;">'+
-											'</div>'+
 											'<div style="width:100%;float: left;margin-top: 2%;">'+
 												'<h6 for="price" name="price3" id="price3" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: Bitter, georgia, serif;" ></h6>'+
 												'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Prix total : <span style="color: #00a9c7;">€</span></h6>'+
@@ -791,7 +816,7 @@
 								
 								var showMember = '<?php echo Mage::helper('customer')->getCustomer()->getId(); ?>';
 								if(showMember != ''){
-									jQuery('#form-3').steps("insert",3, {
+									jQuery('#form-3').steps("insert",4, {
 									title: "Member",
 									content: '<fieldset>'+
 												'<div >'+
@@ -840,9 +865,9 @@
 										'<tr>'+
 											  '<th class="th_custom table_custom">Addition</th>'+
 											  '<th class="th_custom table_custom">oeil droit</th>'+
-											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="ars" name="ars" type="number" min="0.75" max="3.5" step="0.25" value="0.75"></td>'+		
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="ars" name="ars" type="number" min="0" max="3.5" step="0.25" value="0"></td>'+		
 											  '<th class="th_custom table_custom">oeil gauche</th>'+
-											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="ala" name="ala" type="number" min="0.75" max="3.5" step="0.25" value="0.75"></td>'+	
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="ala" name="ala" type="number" min="0" max="3.5" step="0.25" value="0"></td>'+	
 										'</tr>'+
 										'<tr>'+
 											  '<th class="th_custom table_custom">Distance pupillaire</th>'+
@@ -866,6 +891,11 @@
 			}
 		}
 		function isNotPres() {
+			
+			grandTotal = parseFloat(grandTotal) - parseFloat(correctionPrice);
+			correctionPrice = 0;
+			grandTotal = grandTotal.toFixed(2);
+			
 			if(!checkPrescrip){
 				checkPrescrip = true;
 				jQuery('#form-3').steps('remove', 2, {});
@@ -873,9 +903,29 @@
 				jQuery('#form-3').steps('remove', 2, {});
 				jQuery('#form-3').steps('remove', 2, {});
 						
+						
+								jQuery('#form-3').steps("insert",2, {
+								title: "Photochromie",
+								content: '<fieldset>'+
+											'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;margin-bottom: 3%;"><?php echo Mage::helper("contacts")->__("Voulez-vous des verres photochromiques?") ?></h4>'+
+											'<div id="polorizedDiv" style="width:100%;float: left;margin-bottom: 2%;">'+
+												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;">Verres polarises </h6>'+
+												'<input type="radio" name="photochromic" title="Please select an option" id="polorized" value="polorized" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+											'</div>'+
+											'<div id="nonPolorizedDiv" style="width:100%;float: left;margin-bottom: 2%;">'+
+												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Verres non polarises </h6>'+
+												'<input type="radio" name="photochromic" title="Please select an option" id="nonPolorized" value="nonPolorized" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+											'</div>'+
+											'<div style="width:100%;float: left;margin-top: 2%;">'+
+												'<h6 for="price" name="price2" id="price2" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: Bitter, georgia, serif;" ></h6>'+
+												'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">€</span></h6>'+
+											'</div>'+
+										'</fieldset>'
+								})
+						
 						var showMember = '<?php echo Mage::helper('customer')->getCustomer()->getId(); ?>';
 								if(showMember != ''){
-									jQuery('#form-3').steps("insert",2, {
+									jQuery('#form-3').steps("insert",3, {
 									title: "Member",
 									content: '<fieldset>'+
 												'<div >'+
@@ -898,6 +948,7 @@
 									
 								}
 			}
+					jQuery('#price2').text(grandTotal);	
 					jQuery('#price3').text(grandTotal);	
 					jQuery('#price4').text(grandTotal);	
 					jQuery('#price7').text(grandTotal);
@@ -911,8 +962,28 @@
 				jQuery('#form-3').steps('remove', 2, {});
 				jQuery('#form-3').steps('remove', 2, {});
 				jQuery('#form-3').steps('remove', 2, {});
-					
+				
+				
 								jQuery('#form-3').steps("insert",2, {
+								title: "Photochromie",
+								content: '<fieldset>'+
+											'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;margin-bottom: 3%;"><?php echo Mage::helper("contacts")->__("Voulez-vous des verres photochromiques?") ?></h4>'+
+											'<div id="polorizedDiv" style="width:100%;float: left;margin-bottom: 2%;">'+
+												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;">Verres polarises </h6>'+
+												'<input type="radio" name="photochromic" title="Please select an option" id="polorized" value="polorized" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+											'</div>'+
+											'<div id="nonPolorizedDiv" style="width:100%;float: left;margin-bottom: 2%;">'+
+												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >Verres non polarises </h6>'+
+												'<input type="radio" name="photochromic" title="Please select an option" id="nonPolorized" value="nonPolorized" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
+											'</div>'+
+											'<div style="width:100%;float: left;margin-top: 2%;">'+
+												'<h6 for="price" name="price2" id="price2" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: Bitter, georgia, serif;" ></h6>'+
+												'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : <span style="color: #00a9c7;">€</span></h6>'+
+											'</div>'+
+										'</fieldset>'
+								})
+					
+								jQuery('#form-3').steps("insert",3, {
 								title: "Correction",
 								content: '<fieldset>'+
 											'<h4 class="legend" style="margin-bottom: 3%; border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper('contacts')->__("Sélectionner votre correction") ?></h4>'+
@@ -924,10 +995,6 @@
 												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >1.6 - Correction moyenne </h6><span style="float: left;margin-right: 2%;width: 10%;font-size: 1.2em;font-family: Bitter, georgia, serif;">  €22 </span>'+
 												'<input type="radio" name="correction" title="Plases sélectionner quune valeur" id="medium" value="medium" onclick="setCorrection(22)" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
 											'</div>'+
-											'<div style="width:100%;float: left;margin-bottom: 2%;">'+
-												'<h6 for="userName" style="float: left;width: 50%;font-size: 1.2em;font-family: Bitter, georgia, serif;" >1.67 - Forte correction </h6><span style="float: left;margin-right: 2%;width: 10%;font-size: 1.2em;font-family: Bitter, georgia, serif;">  €23 </span>'+
-												'<input type="radio" name="correction" title="Plases sélectionner quune valeur" id="high" value="high" onclick="setCorrection(23)" class="checkbox required" style="margin-top: 0.5%;float: left;">'+
-											'</div>'+
 											'<div style="width:100%;float: left;margin-top: 2%;">'+
 												'<h6 for="price" name="price3" id="price3" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: Bitter, georgia, serif;" ></h6>'+
 												'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Prix total : <span style="color: #00a9c7;">€</span></h6>'+
@@ -937,7 +1004,7 @@
 								
 								var showMember = '<?php echo Mage::helper('customer')->getCustomer()->getId(); ?>';
 								if(showMember != ''){
-									jQuery('#form-3').steps("insert",3, {
+									jQuery('#form-3').steps("insert",4, {
 									title: "Member",
 									content: '<fieldset>'+
 												'<div >'+
@@ -986,9 +1053,9 @@
 										'<tr>'+
 											  '<th class="th_custom table_custom">Addition</th>'+
 											  '<th class="th_custom table_custom">oeil droit</th>'+
-											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="ars5" name="ars5" type="number" min="0.75" max="3.5" step="0.25" value="0.75"></td>'+		
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="ars5" name="ars5" type="number" min="0" max="3.5" step="0.25" value="0"></td>'+		
 											  '<th class="th_custom table_custom">oeil gauche</th>'+
-											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="ala5" name="ala5" type="number" min="0.75" max="3.5" step="0.25" value="0.75"></td>'+	
+											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;" id="ala5" name="ala5" type="number" min="0" max="3.5" step="0.25" value="0"></td>'+	
 										'</tr>'+
 										'<tr>'+
 											  '<th class="th_custom table_custom">Distance pupillaire</th>'+
@@ -1004,6 +1071,7 @@
 											'</div>'
 							})
 			}
+			jQuery('#price2').text(grandTotal);	
 			jQuery('#price3').text(grandTotal);	
 			jQuery('#price4').text(grandTotal);
 			jQuery('#price7').text(grandTotal);	
