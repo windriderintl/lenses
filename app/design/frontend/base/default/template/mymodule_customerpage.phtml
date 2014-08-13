@@ -63,7 +63,11 @@
 					<?php endforeach; ?>
 				</table>
 				</ul>
+			<?php if($locale == "en_US"): ?>
 				<a style="float: right;margin-top: 2%;" href="http://chouetteslunettes.com/index.php/pre-prescription"><button class="button" type="button"><span><span><?php echo Mage::helper('contacts')->__('Add Family Member') ?></span></span></button> </a>
+			<?php else: ?>
+            			<a style="float: right;margin-top: 2%;" href="http://chouetteslunettes.com/index.php/pre-prescription"><button class="button" type="button"><span><span><?php echo Mage::helper('contacts')->__('Ajouter un membre de la famille') ?></span></span></button> </a>
+            		<?php endif; ?>
             </div>
         </div>
     </div>
