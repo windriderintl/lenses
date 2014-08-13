@@ -65,7 +65,7 @@ class Mnt_Family_IndexController extends Mage_Core_Controller_Front_Action {
     {
 		$userId = Mage::helper('customer')->getCustomer()->getId();
 		//echo Mage::helper('customer')->getCustomer()->getId();
-		
+		Mage::getSingleton('core/session')->setMessage("true");
 		//if ($this->getRequest()->isPost()){
 			$userName = $this->getRequest()->getPost('userName');
 			$relation = $this->getRequest()->getPost('relation');

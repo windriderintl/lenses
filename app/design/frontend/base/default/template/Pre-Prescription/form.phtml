@@ -24,10 +24,17 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-<?php $locale = Mage::app()->getLocale()->getLocaleCode(); ?>
+
+<?php $showSMS = Mage::getSingleton('core/session')->getMessage(); ?>
+	<?php if ($showSMS == "true"): ?>
+		<ul class="messages"><li class="success-msg"><ul><li><span>Family member added successfully </span></li></ul></li></ul>
+	<?php endif; ?>
+<?php Mage::getSingleton('core/session')->unsMessage();?>
+
 			
+			<?php $locale = Mage::app()->getLocale()->getLocaleCode(); ?>
               <div id="presDiv" style="margin-top: 8px;">
-				<div id="preQueDiv" class=" class="fieldset"">
+				<div id="preQueDiv" class="fieldset"">
 						<h3 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;"><?php echo (($locale == "en_US") ? "Do you need single vision lenses or progressive?" :"Avez-vous besoin verres unifocaux ou progressifs?"); ?></h3> 
 					<!--	<h6 style="font-weight: bold;margin-bottom: 4%;float: left;font-size: 1.3333em;font-family: 'Bitter', georgia, serif;">Do you need single vision lenses or progressive?</h6> -->
 					<div style="width:100%;float: left;margin-top: 5%;">
