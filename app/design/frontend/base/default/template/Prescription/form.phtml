@@ -896,6 +896,7 @@
 					jQuery('#price4').text(grandTotal);	
 					jQuery('#price7').text(grandTotal);
 					jQuery('#price8').text(grandTotal);
+					jQuery('#productValue').val(grandTotal);
 					jQuery('#customPrice').val(grandTotal);	
 					
 			}
@@ -905,7 +906,8 @@
 			grandTotal = parseFloat(grandTotal) - parseFloat(correctionPrice);
 			correctionPrice = 0;
 			grandTotal = grandTotal.toFixed(2);
-			
+			jQuery('#productValue').val(grandTotal);
+			//alert(grandTotal);
 			if(!checkPrescrip){
 				checkPrescrip = true;
 				jQuery('#form-3').steps('remove', 2, {});
@@ -962,6 +964,7 @@
 			        jQuery('#price3').text(grandTotal);	
 					jQuery('#price4').text(grandTotal);	
 					jQuery('#price7').text(grandTotal);
+					jQuery('#productValue').val(grandTotal);
 					jQuery('#customPrice').val(grandTotal);
 					jQuery('#price8').text(grandTotal);	
 		}
@@ -1087,6 +1090,7 @@
 			jQuery('#price3').text(grandTotal);	
 			jQuery('#price4').text(grandTotal);
 			jQuery('#price7').text(grandTotal);	
+			jQuery('#productValue').val(grandTotal);
 			jQuery('#customPrice').val(grandTotal);	
 			jQuery('#price8').text(grandTotal);				
 		}
