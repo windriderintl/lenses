@@ -1410,9 +1410,9 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
 		//email setting ..........................
 		$mailer = Mage::getModel('core/email_template_mailer');
         $emailInfo = Mage::getModel('core/email_info');
-	$emailInfo->addTo("nicolas.gaultier1983@gmail.com", "Chouetteslunettes");
-		//$emailInfo->addBcc("muneshwarpankaj@gmail.com");
-		
+		$emailInfo->addTo("nicolas.gaultier1983@gmail.com", "Chouetteslunettes");
+        //	$emailInfo->addTo("muneshwarpankaj@gmail.com", "Chouetteslunettes");
+	//	$emailInfo->addBcc("muneshwarpankaj@gmail.com");
         if ($copyTo && $copyMethod == 'bcc') {
             // Add bcc to customer email
             foreach ($copyTo as $email) {
