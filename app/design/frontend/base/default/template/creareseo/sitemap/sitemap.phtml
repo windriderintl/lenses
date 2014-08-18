@@ -28,7 +28,7 @@
                 <?php if (Mage::helper('creareseositemap')->showAccount()): ?>
                     <?php
                     if ($this->helper('customer')->isLoggedIn()) {
-                        echo '<li><a href="' . Mage::getBaseUrl() . 'customer/account/index/" title="Account">Account</a></li>';
+                        echo '<li><a href="' . Mage::getBaseUrl() . 'customer/account/index/" title="My Account">My Account</a></li>';
                         echo '<li><a href="' . Mage::getBaseUrl() . 'customer/account/logout/" title="Log Out">Log Out</a></li>';
                     } else {
                         echo '<li><a href="' . Mage::getBaseUrl() . 'customer/account/" title="Register/Log In">Register/Log In</a></li>';
