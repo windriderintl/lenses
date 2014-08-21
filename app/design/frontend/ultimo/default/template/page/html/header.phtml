@@ -306,13 +306,13 @@
 	var language = '<?php echo Mage::app()->getLocale()->getLocaleCode(); ?>';
 	//alert(language);
 	if(language == "en_US"){
-		
+		jQuery('#link-sign-up').children().text("Sign Up");
+		jQuery('#link-sign-up').children().prop('title', 'Sign Up');
 	}else{
 		jQuery('#link-sign-up').children().text("Enregistrez-vous");
+		jQuery('#link-sign-up').children().prop('title', 'Enregistrez-vous');
 	}	
 	
-	//<?php echo (($locale == "en_US") ? "Email Address" :"Adresse e-mail"); ?>
-	//jQuery('#link-sign-up').children().text("Enregistrez-vous");
 </script>
 
 
