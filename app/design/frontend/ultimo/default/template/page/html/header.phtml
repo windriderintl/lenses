@@ -299,3 +299,20 @@
 </div> <!-- end: header-container3 -->
 </div> <!-- end: header-container2 -->
 </div> <!-- end: header-container -->
+
+
+
+<script type="text/javascript">
+	var language = '<?php echo Mage::app()->getLocale()->getLocaleCode(); ?>';
+	//alert(language);
+	if(language == "en_US"){
+		
+	}else{
+		jQuery('#link-sign-up').children().text("Enregistrez-vous");
+	}	
+	
+	//<?php echo (($locale == "en_US") ? "Email Address" :"Adresse e-mail"); ?>
+	//jQuery('#link-sign-up').children().text("Enregistrez-vous");
+</script>
+
+
