@@ -44,7 +44,7 @@
     <?php if( $this->isExpanded() ): ?>
     <div class="sorter">
     	<?php $locale = Mage::app()->getLocale()->getLocaleCode(); ?>
-		<p><?php echo (($locale == "en_US") ? "Products for Category:" :"Produits par categories:"); ?> <?php echo $this->getProductUrl() ?></p>
+		<p style="display: none;"><?php echo (($locale == "en_US") ? "Products for Category:" :"Produits par categories:"); ?> <?php echo $this->getProductUrl() ?></p>
     	<p class="amount">
             <?php if($this->getLastPageNum()>1): ?>
 				<?php echo $this->__('Items %s to %s of %s total', $this->getFirstNum(), $this->getLastNum(), $this->getTotalNum()) ?>

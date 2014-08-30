@@ -307,9 +307,12 @@
 	//alert(language);
 	if(language == "en_US"){
 		jQuery('#link-sign-up').children().text("Sign Up");
+		jQuery("li:eq(3)").children().prop('title', 'Wishlist');
 		jQuery('#link-sign-up').children().prop('title', 'Sign Up');
 	}else{
+		
 		jQuery('#link-sign-up').children().text("Enregistrez-vous");
+		jQuery("li:eq(3)").children().prop('title', 'Connectez-vous pour accéder à cette option');
 		jQuery('#link-sign-up').children().prop('title', 'Enregistrez-vous');
 	}	
 	
