@@ -68,7 +68,7 @@
     <div class="feature-icon-hover">
     
     	<span class="first close-to-text icon i-cart<?php echo $iconSuffix; ?> force-no-bg-color">&nbsp;</span>
-        <div class="hide-below-960"><?php echo $this->__('Cart'); ?></div>
+        <div class="hide-below-960" style="font-size: large;"><?php echo $this->__('Cart'); ?></div>
 		<?php if ($_cartQty > 0): ?>
         	<div class="label amount">(<?php echo $_cartQty; ?>)</div>
         	<a class="summary" href="<?php echo $this->getUrl('checkout/cart') ?>" title="<?php echo $this->__('View all items in your shopping cart') ?>">
@@ -81,7 +81,7 @@
 				</span>
 			</a>
         <?php else: //no products ?>
-        	<div class="empty"><?php echo Mage::helper('checkout')->formatPrice(0); ?></div>
+        	<div class="empty" style="font-size: large;"><?php echo Mage::helper('checkout')->formatPrice(0); ?></div>
         <?php endif; ?>
         <span class="caret">&nbsp;</span>
 
