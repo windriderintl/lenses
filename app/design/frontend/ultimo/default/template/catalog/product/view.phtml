@@ -273,7 +273,9 @@
 					<?php $locale = Mage::app()->getLocale()->getLocaleCode(); ?>
 					<fieldset style="float: left;width: 45%;">
 			        	 <h4 style="border-bottom: 1px solid #e5e5e5;;padding-bottom: 2%;"><?php echo (($locale == "en_US") ? "Guest ?" :"Invit&egrave;?"); ?></h4>
-			        	 <button type="button" id="guestUser" class="button" style="float: right;margin-right: 5%;margin-top: 10%;"><span><span><?php echo (($locale == "en_US") ? "Order as a guest" :"Commander en tant qu'invité"); ?></span></span></button>
+			        	 <p>Beneficier d’un code de reduction a votre premiere commande et profitez de tous les avantages reserves a nos membes. 
+			        	 	En creant votre compte, accedez a pleins d’autres fonctionnalites telle que la possibilite d’enregistrer vos montures preferees ou d’enregistrer les donnees de nombreux utilisateurs.</p>
+			        	 <button type="button" id="guestUser" class="button" style="float: right;margin-right: 5%;margin-top: 10%;"><span><span><?php echo (($locale == "en_US") ? "Order as a guest" :"Commander en tant qu'invit&egrave;"); ?></span></span></button>
 			        	<!--<a id="guestUser" class="button">Checkout as Guest</>-->
 			         </fieldset>
 					
@@ -281,7 +283,7 @@
 			        </fieldset>
 			         
 					<fieldset style="float: right;width: 45%;">
-					       <h4 style="border-bottom: 1px solid #e5e5e5;;padding-bottom: 2%;"><?php echo (($locale == "en_US") ? "Already registered?" :"deja inscrit?"); ?></h4>
+					       <h4 style="border-bottom: 1px solid #e5e5e5;;padding-bottom: 2%;"><?php echo (($locale == "en_US") ? "Already registered?" :"D&egrave;j&aacute; inscrit?"); ?></h4>
 								<form action="http://chouetteslunettes.com/index.php/default/customer/account/loginPostCustom/" method="post">
 					            <ul class="form-list">
 					                <li>
@@ -292,7 +294,7 @@
 					                    </div>
 					                </li>
 					                <li>
-					                    <label for="login-password" class="required"><em>*</em><?php echo (($locale == "en_US") ? "Password" :"mot de passe"); ?></label>
+					                    <label for="login-password" class="required"><em>*</em><?php echo (($locale == "en_US") ? "Password" :"Mot de passe"); ?></label>
 					                    <div class="input-box">
 					                        <input type="password" class="input-text required-entry" id="login-password" name="login[password]" />
 					                    </div>
