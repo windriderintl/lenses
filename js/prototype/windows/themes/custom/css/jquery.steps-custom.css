@@ -120,6 +120,7 @@
     background: #00a9c7;
     color: #fff;
     cursor: default;
+    box-shadow: 5px 5px 5px #888888;
 }
 
 .wizard > .steps .done a,
@@ -266,6 +267,7 @@
     border-radius: 0px;
     padding: 0px 40px;
 	line-height: 45px;
+	box-shadow: 5px 5px 5px #888888;
 }
 
 .wizard > .actions .disabled a,

@@ -49,11 +49,11 @@
 			{
 				$currStoreName = $storeName;
 				$currStoreCode = $storeCode;
-				$html[] = '<li class="current"><span style="display:none;" class="label dropdown-icon" '. $css .'>&nbsp;</span>'. $storeName .'</li>';
+				$html[] = '<li class="current"><span class="label dropdown-icon" '. $css .'>&nbsp;</span>'. $storeName .'</li>';
 			}
 			else
 			{
-				$html[] = '<li><a href="'. $_store->getCurrentUrl() .'"><span style="display:none;" class="label dropdown-icon" '. $css .'>&nbsp;</span>'. $storeName .'</a></li>';
+				$html[] = '<li><a href="'. $_store->getCurrentUrl() .'"><span class="label dropdown-icon" '. $css .'>&nbsp;</span>'. $storeName .'</a></li>';
 			}
 		}
 		$html[] = '</ul>';
@@ -63,7 +63,7 @@
         <div class="dropdown-toggle cover">
             <div>
             	<div class="label dropdown-icon flag"
-                style="display:none; background-image:url(<?php echo $this->getSkinUrl('images/flags/'. $currStoreCode .'.png'); ?>)">&nbsp;</div>
+                style="background-image:url(<?php echo $this->getSkinUrl('images/flags/'. $currStoreCode .'.png'); ?>)">&nbsp;</div>
                 <?php /*?> <p class="label hide-below-1280"><?php echo $this->__('Language'); ?>:</p> <?php */?>
                 <div class="value"><?php echo $currStoreName; ?></div>
                 <span class="caret">&nbsp;</span>
