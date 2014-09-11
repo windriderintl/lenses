@@ -34,7 +34,7 @@ body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif;
 								<lable style="float: left;width: 40%;">Order Number 訂單號: </lable>
 								<p style="float: right;margin: 0px;margin-right: 20%;"> {{var order.increment_id}}</p>
 							</div>	
-							<div style="width: 48%;float: left;margin-left: 1%;">
+							<div style="width: 55%;float: left;margin-left: 1%;">
 								<lable style="float: left;width: 38%;">Order Date 订单日期:</lable>
 								<p style="float: right;margin: 0px;margin-right: 5%;">{{var order.getCreatedAtFormated('long')}}</p>
 							</div>	
@@ -75,20 +75,57 @@ body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif;
             </tr>
             <tr>
                 <td>
-                   <div style="padding: 1%;width: 100%;float: left;">
-							<div style="float: left;width: 25%;">
+                                        <div style="width:100%;float:left;"> 
+                                               <div style="padding: 1%;width: 30%;float: left;">
+							<div style="float: left;width: 100%;">
 								<lable style="float: left;width: 100%;" >Frame Number :</lable>
 								<lable style="float: left;width: 100%;">框架号 :</lable>
 							</div>
 							<p style="float: left;margin: 0px;"> {{var frame_number}}</p>							
 						</div>		
-						<div style="padding: 1%;width: 100%;float: left;">
-							<div style="float: left;width: 25%;">
+						<div style="padding: 1%;width: 30%;float: left;">
+							<div style="float: left;width: 100%;">
 								<lable style="float: left;width: 100%;" >Frame Name :</lable>
 								<lable style="float: left;width: 100%;">框架名 :</lable>
 							</div>
 							<p style="float: left;margin: 0px;">{{var frame_name}}</p>	
+						</div>	
+                                                <div style="padding: 1%;width: 30%;float: left;">
+							<div style="float: left;width: 100%;">
+								<lable style="float: left;width: 100%;" >Photochromic :</lable>
+								<lable style="float: left;width: 100%;">框架名 :</lable>
+							</div>
+							<p style="float: left;margin: 0px;">{{var frame_phtochromic}}</p>	
+						</div>	
+                                          </div>	
+
+
+                                      <div style="width:100%;float:left;"> 
+                                               <div style="padding: 1%;width: 30%;float: left;">
+							<div style="float: left;width: 100%;">
+								<lable style="float: left;width: 100%;" >Color :</lable>
+								<lable style="float: left;width: 100%;">框架号 :</lable>
+							</div>
+							<p style="float: left;margin: 0px;"> {{var frame_color}}</p>							
 						</div>		
+						<div style="padding: 1%;width: 30%;float: left;">
+							<div style="float: left;width: 100%;">
+								<lable style="float: left;width: 100%;" >Teinted % :</lable>
+								<lable style="float: left;width: 100%;">框架名 :</lable>
+							</div>
+							<p style="float: left;margin: 0px;">{{var frame_teinted}}</p>	
+						</div>	
+                                                <div style="padding: 1%;width: 30%;float: left;">
+							<div style="float: left;width: 100%;">
+								<lable style="float: left;width: 100%;" >Addition :</lable>
+								<lable style="float: left;width: 100%;">框架名 :</lable>
+							</div>
+							<p style="float: left;margin: 0px;"> Right : {{var ars}} , Left : {{var ala}} </p>	
+						</div>	
+                                          </div>	
+
+
+
                 </td>
             </tr>
             <tr>

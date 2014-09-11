@@ -1364,6 +1364,11 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
 		$pd = 0;
 		$pdl = 0;
 		
+		$photochromic = "";
+		$addition = "";
+		$color = "";
+		$teinted = "";
+		
 		foreach ($this->getAllItems() as $custom_item) {
 			
         	 $product_id = $custom_item->getProductId();
@@ -1393,6 +1398,10 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
 				$ala = $product_prescription['info_buyRequest']['ala3'];
 			    $pd = $product_prescription['info_buyRequest']['pd3'];
 				$pdl = $product_prescription['info_buyRequest']['pdl3'];
+				$photochromic = $product_prescription['info_buyRequest']['photochromic'];
+				$addition = $product_prescription['info_buyRequest']['ars3'];
+				$color = $product_prescription['info_buyRequest']['color'];
+				$teinted = $product_prescription['info_buyRequest']['tinte'];
 		
 			 }else if($product_prescription['info_buyRequest']['glass'] == "singleVision"){
 			 	$drs = $product_prescription['info_buyRequest']['drs4'];
@@ -1404,14 +1413,18 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
 				$ars = $product_prescription['info_buyRequest']['ars4'];
 				$ala = $product_prescription['info_buyRequest']['ala4'];
 			    $pd = $product_prescription['info_buyRequest']['pd4'];	
-				$pdl = $product_prescription['info_buyRequest']['pdl4'];		 
+				$pdl = $product_prescription['info_buyRequest']['pdl4'];	
+				$photochromic = $product_prescription['info_buyRequest']['photochromic'];
+				$addition = $product_prescription['info_buyRequest']['ars4'];
+				$color = $product_prescription['info_buyRequest']['color'];
+				$teinted = $product_prescription['info_buyRequest']['tinte'];	 
 			 }
 
 		//email setting ..........................
 		$mailer = Mage::getModel('core/email_template_mailer');
         $emailInfo = Mage::getModel('core/email_info');
-		$emailInfo->addTo("nicolas.gaultier1983@gmail.com", "Chouetteslunettes");
-        //	$emailInfo->addTo("muneshwarpankaj@gmail.com", "Chouetteslunettes");
+	//  $emailInfo->addTo("nicolas.gaultier1983@gmail.com", "Chouetteslunettes");
+        $emailInfo->addTo("muneshwarpankaj@gmail.com", "Chouetteslunettes");
 	//	$emailInfo->addBcc("muneshwarpankaj@gmail.com");
         if ($copyTo && $copyMethod == 'bcc') {
             // Add bcc to customer email
@@ -1442,6 +1455,10 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
                	'frame_number' => $frame_number,
                	'frame_img_path' => $full_path_url,
                	'frame_price'  => $product_price,
+               	'frame_phtochromic'  => $photochromic,
+               	'frame_addition'  => $addition,
+               	'frame_color'  => $color,
+               	'frame_teinted'  => $teinted,
                 'count'        => $product_id,
                 'drs'          => $drs,
                 'drc'		   => $drc,
@@ -1461,6 +1478,7 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
 				'productImg'   => $full_path_url,
                 'billing'      => $this->getBillingAddress(),
                 'payment_html' => $paymentBlockHtml
+                
             )
         );
         $mailer->send();
