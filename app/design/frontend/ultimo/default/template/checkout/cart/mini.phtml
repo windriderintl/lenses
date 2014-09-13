@@ -61,6 +61,17 @@
 		$cartClasses .= ' is-not-empty';
 	}
 ?>
+<?php $locale = Mage::app()->getLocale()->getLocaleCode(); ?>
+<?php if($locale == "en_US"): ?>
+
+	<ul class="links">
+		<li class="first" style="margin-left: 45%;"><a href="http://localhost/lenses/index.php/default/customer/account/" title="My Account">My Account</a></li>
+	</ul>
+<?php else: ?>
+	<ul class="links">
+		<li class="first" style="margin-left: 28%;"><a href="http://localhost/lenses/index.php/french/customer/account/" title="Mon compte">Mon compte</a></li>
+	</ul>
+<?php endif; ?>
 
 <div id="mini-cart" class="dropdown<?php echo $cartClasses; ?>">
 
