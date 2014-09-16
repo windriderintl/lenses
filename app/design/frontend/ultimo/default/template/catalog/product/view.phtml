@@ -155,14 +155,14 @@
 			}
 		?>
 
-        <div class="product-img-column <?php echo $imgColGridClass; ?>">
+        <div class="product-img-column <?php echo $imgColGridClass; ?>" style="width: 45%;">
             <?php echo $this->getChildHtml('media') ?>
             <?php //Product labels
 				echo $this->helper('ultimo/labels')->getLabels($_product);
 			?>
         </div>
         
-        <div class="product-shop <?php echo $primaryColGridClass; ?>">
+        <div class="product-shop <?php echo $primaryColGridClass; ?>" style="width: 45%;">
 
             <div class="product-name">
                 <h3><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h3>
@@ -222,7 +222,7 @@
         </div> <!-- end: product-shop -->
         
         <?php if ($secondaryColUnits): //(!empty($secondaryColUnits)): ?>
-            <div class="product-secondary-column <?php echo $secondaryColGridClass; ?> custom-sidebar-right">
+            <div class="product-secondary-column <?php echo $secondaryColGridClass; ?> custom-sidebar-right" style="width: 3%;">
             	<div class="inner">
 
 					<?php //Placeholder for extensions ?>
@@ -412,3 +412,10 @@
     <?php endif; ?>
     
 </div> <!-- end: product-view -->
+
+<style>
+	
+.product-image{
+	max-width: 100% !important;
+}	
+</style>

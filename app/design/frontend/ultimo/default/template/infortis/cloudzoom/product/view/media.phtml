@@ -72,7 +72,7 @@
         <p class="product-image<?php echo $zoomClasses; ?>" style="max-width: <?php echo $imgWidth; ?>px;">
         
             <a href="<?php echo $helpImg->getImg($_product, $bigImageWidth, $bigImageHeight); ?>" class="cloud-zoom" id="zoom1" rel="<?php echo $helpZoom->getCloudZoomOptions(); ?>">
-                <img src="<?php echo $helpImg->getImg($_product, $imgWidth, $imgHeight); ?>" alt="<?php echo $this->escapeHtml($this->getImageLabel());?>" title="<?php echo $this->escapeHtml($this->getImageLabel());?>" />
+                <img src="<?php echo $helpImg->getImg($_product, $imgWidth, $imgHeight); ?>" style="width: 100%;" alt="<?php echo $this->escapeHtml($this->getImageLabel());?>" title="<?php echo $this->escapeHtml($this->getImageLabel());?>" />
             </a>
             
             <?php if($helpZoom->useLightbox()): ?>
