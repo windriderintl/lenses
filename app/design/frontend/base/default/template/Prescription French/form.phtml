@@ -198,6 +198,9 @@
 		var checkUserLogged = false;
 		var checkVision = false;
 		
+		var checkWithPres = false;
+		var checkSingleLenses = false;
+		
 		// new variables
 		var checkColor = false;
 		var checkLenses = false;
@@ -252,10 +255,14 @@
 				checkSingleVision = true;
 				$('progressiveTableId').style.display = 'none';
 				$('singleTableId').style.display = 'block';
+				$('addtionRow2').style.display = 'none';
+				//var glass = jQuery("input[name='glass']:checked").val();
+				
 			}else{
 				checkSingleVision =false;
 				$('progressiveTableId').style.display = 'block';
 				$('singleTableId').style.display = 'none';
+				$('addtionRow2').style.display = 'block';
 			}
 			singlePriceBool = true;
 		}
@@ -523,8 +530,9 @@
 							})
 							jQuery('#form-3').steps("insert",4, {
 							title: "Couleur des verres",
-							content: '<fieldset style="overflow-y: scroll;height: 350px;">'+ 
+							content: '<fieldset >'+ 
 											'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;margin-bottom: 3%;"><?php echo Mage::helper("contacts")->__("S il vous plaît choisir la couleur des lentilles") ?></h4>'+
+											'<div style="overflow-y: scroll;height: 270px;">'+
 											'<div class="customDiv">'+
 												'<img src="<?php echo $this->getSkinUrl('images/no_ball.png') ?>" style="width: 10%;float: left; cursor: pointer;margin-top: 5%;margin-left: 15%;" />'+
 												'<h6 for="userName" class="custom-header" style="width:50%;">Aucune</h6><span style="margin-right: 2%;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;">  €0 </span>'+
@@ -580,6 +588,7 @@
 												'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 												'<div  class="custom-footer"></div>'+
 												'<input type="radio" name="color" title="Vous devez sélectionner une option" id="pink" value="pink" onclick="noColorTab(true,37)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
+											'</div>'+
 											'</div>'+
 											'<div style="width:100%;float: left;margin-top: 2%;">'+
 											'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;color: #00a9c7;" > € </h6>'+
@@ -682,7 +691,7 @@
 											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;padding-bottom: 0px;padding-right: 0px;padding-top: 0px;" id="rla3" name="rla3" type="number" min="0" max="180" step="1" value="0"></td>'+
 										'</tr>'+
 										'<tr style="float: left;height: 5px;width: 100%;"> </tr>'+
-										'<tr>'+
+										'<tr id="addtionRow1">'+
 											  '<th class="th_custom table_custom">Addition</th>'+
 											  '<th class="th_custom table_custom">oeil droit</th>'+
 											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;padding-bottom: 0px;padding-right: 0px;padding-top: 0px;" id="ars3" name="ars3" type="number" min="0" max="3.5" step="0.25" value="0"></td>'+		
@@ -720,7 +729,7 @@
 											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;padding-bottom: 0px;padding-right: 0px;padding-top: 0px;" id="dla4" name="dla4" type="number" min="0" max="180" step="1" value="0"></td>'+
 										'</tr>'+
 										'<tr style="float: left;height: 5px;width: 100%;"> </tr>'+
-										'<tr>'+
+										'<tr id="addtionRow2">'+
 											  '<th class="th_custom table_custom">Addition</th>'+
 											  '<th class="th_custom table_custom">oeil droit</th>'+
 											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;padding-bottom: 0px;padding-right: 0px;padding-top: 0px;" id="ars4" name="ars4" type="number" min="0" max="3.5" step="0.25" value="0"></td>'+		
@@ -742,6 +751,9 @@
 											'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Prix total : </h6>'+
 										'</div>'
 							})
+							
+						//var glass = jQuery("input[name='glass']:checked").val();
+						//alert("glass = "+glass);	
 			}else if(element == 'no_correction'){
 				jQuery('#form-3').steps('remove', 1, {});
 				jQuery('#form-3').steps('remove', 1, {});
@@ -754,8 +766,9 @@
 				
 					jQuery('#form-3').steps("insert",1, {
 					title: "Couleur des verres",
-					content: '<fieldset style="overflow-y: scroll;height: 350px;">'+ 
+					content: '<fieldset >'+ 
 									'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;margin-bottom: 3%;padding-bottom: 7px;"><?php echo Mage::helper("contacts")->__("S&eacute;lectionner la couleur de votre choix") ?></h4>'+
+									'<div style="overflow-y: scroll;height: 270px;">'+
 									'<div class="customDiv">'+
 										'<img src="<?php echo $this->getSkinUrl('images/no_ball.png') ?>" style="width: 10%;float: left; cursor: pointer;margin-top: 5%;margin-left: 15%;" />'+
 										'<h6 for="userName" class="custom-header" style="width:50%;">Aucune</h6><span style="margin-right: 2%;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;">  €0 </span>'+
@@ -812,6 +825,7 @@
 										'<div  class="custom-footer"></div>'+
 										'<input type="radio" name="color" title="Vous devez sélectionner une option" value="pink" id="pink" onclick="noColorTab(true,37)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 									'</div>'+
+									'</div>'+	
 									'<div style="width:100%;float: left;margin-top: 2%;">'+
 									'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;color: #00a9c7;" > € </h6>'+
 											'<h6 for="price5" name="price5" id="price5" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: Bitter, georgia, serif;margin-left: 1%;margin-right: 1%;" ></h6>'+
@@ -1010,7 +1024,7 @@
 											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;padding-bottom: 0px;padding-right: 0px;padding-top: 0px;" id="dla" name="dla" type="number" min="0" max="180" step="1" value="0"></td>'+
 										'</tr>'+
 										'<tr style="float: left;height: 5px;width: 100%;"> </tr>'+
-										'<tr>'+
+										'<tr id="addtionRow3">'+
 											  '<th class="th_custom table_custom">Addition</th>'+
 											  '<th class="th_custom table_custom">oeil droit</th>'+
 											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;padding-bottom: 0px;padding-right: 0px;padding-top: 0px;" id="ars" name="ars" type="number" min="0" max="3.5" step="0.25" value="0"></td>'+		
@@ -1220,7 +1234,7 @@
 											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;padding-bottom: 0px;padding-right: 0px;padding-top: 0px;" id="dla5" name="dla5" type="number" min="0" max="180" step="1" value="0"></td>'+
 										'</tr>'+
 										'<tr style="float: left;height: 5px;width: 100%;"> </tr>'+
-										'<tr>'+
+										'<tr id="addtionRow4">'+
 											  '<th class="th_custom table_custom">Addition</th>'+
 											  '<th class="th_custom table_custom">oeil droit</th>'+
 											  '<td class="td_custom table_custom"><input class="input-text required-entry" style="float:left;width: 100%;padding-bottom: 0px;padding-right: 0px;padding-top: 0px;" id="ars5" name="ars5" type="number" min="0" max="3.5" step="0.25" value="0"></td>'+		
@@ -1368,8 +1382,9 @@
 				checkPhotoChromic = false;
 				jQuery('#form-3').steps("insert",4, {
 					title: "Couleur des verres",
-					content: '<fieldset style="overflow-y: scroll;height: 350px;">'+ 
+					content: '<fieldset >'+ 
 									'<h4 class="legend" style="margin-bottom: 3%;border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper("contacts")->__("S&eacute;lectionner la couleur de votre choix") ?></h4>'+
+									'<div style="overflow-y: scroll;height: 270px;">'+
 									'<div class="customDiv">'+
 										'<img src="<?php echo $this->getSkinUrl('images/no_ball.png') ?>" style="width: 10%;float: left; cursor: pointer;margin-top: 5%;margin-left: 15%;" />'+
 										'<h6 for="userName" class="custom-header" style="width:50%;">Aucune</h6><span style="margin-right: 2%;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;">  €0 </span>'+
@@ -1426,6 +1441,7 @@
 										'<div  class="custom-footer"></div>'+
 										'<input type="radio" name="color" title="Vous devez sélectionner une option" id="pink" value="pink" onclick="noColorTab(true,37)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 									'</div>'+
+									'</div>'+	
 									'<div style="width:100%;float: left;margin-top: 2%;">'+
 									'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;color: #00a9c7;" > € </h6>'+
 												'<h6 for="price5" name="price5" id="price5" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: Bitter, georgia, serif;margin-left: 1%;margin-right: 1%;" ></h6>'+
