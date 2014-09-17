@@ -228,10 +228,12 @@ class Mage_Catalog_Helper_Product_Compare extends Mage_Core_Helper_Url
      */
     public function calculate($logout = false)
     {
+        /*
         // first visit
-        if (!$this->_getSession()->hasCatalogCompareItemsCount() && !$this->_customerId) {
-            $count = 0;
-        } else {
+                if (!$this->_getSession()->hasCatalogCompareItemsCount() && !$this->_customerId) {
+                    $count = 0;
+                } else {*/
+        
             /** @var $collection Mage_Catalog_Model_Resource_Eav_Mysql4_Product_Compare_Item_Collection */
             $collection = Mage::getResourceModel('catalog/product_compare_item_collection')
                 ->useProductItem(true);
@@ -250,7 +252,7 @@ class Mage_Catalog_Helper_Product_Compare extends Mage_Core_Helper_Url
                 ->addVisibleInSiteFilterToCollection($collection);
 
             $count = $collection->getSize();
-        }
+       // }
 
         $this->_getSession()->setCatalogCompareItemsCount($count);
 
