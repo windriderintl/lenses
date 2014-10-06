@@ -35,20 +35,24 @@
 			<?php $locale = Mage::app()->getLocale()->getLocaleCode(); ?>
               <div id="presDiv" style="margin-top: 8px;">
 				<div id="preQueDiv" class="fieldset"">
-						<h3 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;"><?php echo (($locale == "en_US") ? "Do you need single vision lenses or progressive?" :"Avez-vous besoin verres unifocaux ou progressifs?"); ?></h3> 
-					<!--	<h6 style="font-weight: bold;margin-bottom: 4%;float: left;font-size: 1.3333em;font-family: 'Bitter', georgia, serif;">Do you need single vision lenses or progressive?</h6> -->
-					<div style="width:100%;float: left;margin-top: 5%;">
-						<h6 for="userName" style="float: left;width: 35%;font-size: 1.3333em;font-family: 'Bitter', georgia, serif;">Single vision </h6>
+						<h3 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;"><?php echo (($locale == "en_US") ? "Do you need single vision lenses or progressive?" :"Sélectionner votre type de verres ?"); ?></h3> 
+					<div style="width:100%;float: left;margin-top: 5%;margin-bottom: 2%;">
+						<h6 for="userName" style="float: left;width: 35%;font-size: 1.3333em;font-family: 'Bitter', georgia, serif;">Verresunifocaux</h6>
 						<input type="radio" name="is_Pres1" title="Plases Select One Value" id="isNot_Prescrip" value="single" class="checkbox required" style="margin-top: 0.5%;float: left;" checked>
 					</div>
-					<div style="width:100%;float: left;min-height: 50px;">
-						<h6 for="userName" style="float: left;width: 35%;font-size: 1.3333em;font-family: 'Bitter', georgia, serif;" >Progressive</h6>
+					<div style="width:100%;float: left;margin-bottom: 2%;">
+						<h6 for="userName" style="float: left;width: 35%;font-size: 1.3333em;font-family: 'Bitter', georgia, serif;" >Verresprogressifs</h6>
 						<input type="radio" name="is_Pres1" title="Plases Select One Value" id="is_Prescrip" value="progresive" class="checkbox required" style="margin-top: 0.5%;float: left;">
+					</div>
+					
+					<div style="width:100%;float: left;margin-bottom: 2%;">
+						<h6 for="userName" style="float: left;width: 35%;font-size: 1.3333em;font-family: 'Bitter', georgia, serif;">Verres sans correction</h6>
+						<input type="radio" name="is_Pres1" title="Plases Select One Value" id="no_coorection" value="coorection" class="checkbox required" style="margin-top: 0.5%;float: left;">
 					</div>
 					
 					<div class="buttons-set">
 						<button type="button" id="preQueBtn" title="<?php echo $this->__('Next') ?>" class="button"><span><span><?php echo $this->__('Next') ?></span></span></button>
-						<a href="customer/account/"><button title="<?php echo Mage::helper('contacts')->__('Skip') ?>" class="button"><span><span><?php echo Mage::helper('contacts')->__('Skip') ?></span></span></button></a>
+						<a href="customer/account/"><button title="<?php echo Mage::helper('contacts')->__('Passer cetteétape') ?>" class="button"><span><span><?php echo Mage::helper('contacts')->__('Passer cetteétape') ?></span></span></button></a>
 					</div>
 				</div>
 				
@@ -90,36 +94,36 @@
 									  <th><?php echo (($locale == "en_US") ? "Right Eye" :"Oeil droit"); ?></th>		
 									  <td><input class="input-text required-entry" style="float:left;width: 100%;" id="drs" name="drs" type="number" min="-10" max="10" step="0.25" value="0"></td>
 									  <td><input class="input-text required-entry" style="float:left;width: 100%;" id="drc" name="drc" type="number" min="-4" max="4" step="0.25" value="0"></td>
-									  <td><input class="input-text required-entry" style="float:left;" id="dra" name="dra" type="number" min="0" max="180" step="1" value="0"></td>
+									  <td><input class="input-text required-entry" style="float:left;width: 100%;" id="dra" name="dra" type="number" min="0" max="180" step="1" value="0"></td>
 								</tr>
 								<tr>
 									  <th><?php echo (($locale == "en_US") ? "Left Eye" :"Oeil gauche"); ?></th>
 									  <td><input class="input-text required-entry" style="float:left;width: 100%;" id="dls" name="dls" type="number" min="-10" max="10" step="0.25" value="0"></td>		
 									  <td><input class="input-text required-entry" style="float:left;width: 100%;" id="dlc" name="dlc" type="number" min="-4" max="4" step="0.25" value="0"></td>
-									   <td><input class="input-text required-entry" style="float:left;" id="dla" name="dla" type="number" min="0" max="180" step="1" value="0"></td>
+									   <td><input class="input-text required-entry" style="float:left;width: 100%;" id="dla" name="dla" type="number" min="0" max="180" step="1" value="0"></td>
 								</tr>
 								<tr id="reading">
-									  <th rowspan="2" style="padding-top: 6%;">Reading</th>
+									  <th rowspan="2" style="padding-top: 6%;"><?php echo (($locale == "en_US") ? "Reading" :"Lecture"); ?></th>
 									  <th><?php echo (($locale == "en_US") ? "Right Eye" :"Oeil droit"); ?></th>		
 									  <td><input class="input-text required-entry" style="float:left;width: 100%;" id="rrs" name="rrs" type="number" min="-10" max="10" step="0.25" value="0"></td>		
 									  <td><input class="input-text required-entry" style="float:left;width: 100%;" id="rrc" name="rrc" type="number" min="-4" max="4" step="0.25" value="0"></td>
-									   <td><input class="input-text required-entry" style="float:left;" id="rra" name="rra" type="number" min="0" max="180" step="1" value="0"></td>
+									   <td><input class="input-text required-entry" style="float:left;width: 100%;" id="rra" name="rra" type="number" min="0" max="180" step="1" value="0"></td>
 								</tr>
 								<tr id="readingLeft">
 									  <th><?php echo (($locale == "en_US") ? "Left Eye" :"Oeil gauche"); ?></th>
 									  <td><input class="input-text required-entry" style="float:left;width: 100%;" id="rls" name="rls" type="number" min="-10" max="10" step="0.25" value="0"></td>			
 									  <td><input class="input-text required-entry" style="float:left;width: 100%;" id="rlc" name="rlc" type="number" min="-4" max="4" step="0.25" value="0"></td>
-									   <td><input class="input-text required-entry" style="float:left;" id="rla" name="rla" type="number" min="0" max="180" step="1" value="0"></td>
+									   <td><input class="input-text required-entry" style="float:left;width: 100%;" id="rla" name="rla" type="number" min="0" max="180" step="1" value="0"></td>
 								</tr>
 								<tr>
 									  <th>Addition</th>
 									  <th><?php echo (($locale == "en_US") ? "Right Eye" :"Oeil droit"); ?></th>		
-									  <td><input class="input-text required-entry" style="float:left;width: 100%;" id="ars" name="ars" type="number" min="0.75" max="3.5" step="0.25" value="0.75"></td>		
+									  <td><input class="input-text required-entry" style="float:left;width: 100%;" id="ars" name="ars" type="number" min="0" max="3.5" step="0.25" value="0"></td>		
 									  <th><?php echo (($locale == "en_US") ? "Left Eye" :"Oeil gauche"); ?></th>
-									  <td><input class="input-text required-entry" style="float:left;width: 100%;" id="ala" name="ala" type="number" min="0.75" max="3.5" step="0.25" value="0.75"></td>	
+									  <td><input class="input-text required-entry" style="float:left;width: 100%;" id="ala" name="ala" type="number" min="0" max="3.5" step="0.25" value="0"></td>	
 								</tr>
 								<tr>
-									  <th>Pupillary distance</th>
+									  <th><?php echo (($locale == "en_US") ? "Pupillary distance" :"Distance pupillaire"); ?></th>
 									  <th><?php echo (($locale == "en_US") ? "Right Eye" :"Oeil droit"); ?></th>	
 									  <td><input class="input-text required-entry" style="float:left;" id="pd" name="pd" type="number" value="0"  min="0" max="100" step="0.5"></td>	
 									  <th><?php echo (($locale == "en_US") ? "Left Eye" :"Oeil gauche"); ?></th>
@@ -176,23 +180,23 @@
 									  <th><?php echo (($locale == "en_US") ? "Right Eye" :"Oeil droit"); ?></th>		
 									  <td><input class="input-text required-entry" style="float:left;width: 100%;" id="drs" name="drs" type="number" min="-10" max="10" step="0.25" value="0"></td>
 									  <td><input class="input-text required-entry" style="float:left;width: 100%;" id="drc" name="drc" type="number" min="-4" max="4" step="0.25" value="0"></td>
-									  <td><input class="input-text required-entry" style="float:left;" id="dra" name="dra" type="number" min="0" max="180" step="1" value="0"></td>
+									  <td><input class="input-text required-entry" style="float:left;width: 100%;" id="dra" name="dra" type="number" min="0" max="180" step="1" value="0"></td>
 								</tr>
 								<tr>
 									  <th><?php echo (($locale == "en_US") ? "Left Eye" :"Oeil gauche"); ?></th>
 									  <td><input class="input-text required-entry" style="float:left;width: 100%;" id="dls" name="dls" type="number" min="-10" max="10" step="0.25" value="0"></td>		
 									  <td><input class="input-text required-entry" style="float:left;width: 100%;" id="drc" name="drc" type="number" min="-4" max="4" step="0.25" value="0"></td>
-									   <td><input class="input-text required-entry" style="float:left;" id="dla" name="dla" type="number" min="0" max="180" step="1" value="0"></td>
+									   <td><input class="input-text required-entry" style="float:left;width: 100%;" id="dla" name="dla" type="number" min="0" max="180" step="1" value="0"></td>
 								</tr>
 								<tr>
 									  <th>Addition</th>
 									  <th><?php echo (($locale == "en_US") ? "Right Eye" :"Oeil droit"); ?></th>		
-									  <td><input class="input-text required-entry" style="float:left;width: 100%;" id="ars" name="ars" type="number" min="0.75" max="3.5" step="0.25" value="0.75"></td>		
+									  <td><input class="input-text required-entry" style="float:left;width: 100%;" id="ars" name="ars" type="number" min="0" max="3.5" step="0.25" value="0"></td>		
 									  <th><?php echo (($locale == "en_US") ? "Left Eye" :"Oeil gauche"); ?></th>
-									  <td><input class="input-text required-entry" style="float:left;width: 100%;" id="ala" name="ala" type="number" min="0.75" max="3.5" step="0.25" value="0.75"></td>	
+									  <td><input class="input-text required-entry" style="float:left;width: 100%;" id="ala" name="ala" type="number" min="0" max="3.5" step="0.25" value="0"></td>	
 								</tr>
 								<tr>
-									  <th >Pupillary distance</th>
+									  <th ><?php echo (($locale == "en_US") ? "Pupillary distance" :"Distance pupillaire"); ?></th>
 									  <th><?php echo (($locale == "en_US") ? "Right Eye" :"Oeil droit"); ?></th>
 									  <td><input class="input-text required-entry" style="float:left;" id="pd" name="pd" type="number" value="0"  min="0" max="100" step="0.5"></td>	
 									  <th><?php echo (($locale == "en_US") ? "Left Eye" :"Oeil gauche"); ?></th>
@@ -211,6 +215,46 @@
 					</div>
 					</form>
 				</div>
+				
+				<div id='no_corrt' style="display: none;" > 
+					<!-- BEGIN #homepage-container --> 
+					<form id='familyForm' action="<?php echo Mage::getUrl('family') ?>" method="post">
+					<div id="formId1">
+						<div class="fieldset">
+							<h2 class="legend"><?php echo Mage::helper('contacts')->__('Prescription') ?></h2> 
+							<div class="fields">
+								<div style="margin-bottom: 2%;">
+									<div class="field" style="float: left;margin-right: 5%;margin-bottom: 5%;">
+										<label for="email_address" class="required"><em></em><?php echo (($locale == "en_US") ? "Name" :"Nom"); ?></label>
+										<div class="input-box">
+											<input type="text" style="width: 100%;" id="userName" name="userName" value=" <?php echo Mage::getSingleton('customer/session')->getCustomer()->getName();?>"  title="<?php echo $this->__('Name') ?>" class="input-text required-entry" />
+											<input class="input-text" id="vision" name="vision" type="hidden" value="singleVision" >
+											<input class="input-text" style="display:none" id="vision_type" name="vision_type" type="number" value="1" >
+										</div>
+									</div>
+									<div class="field" style="float: left;margin-right: 5%;margin-bottom: 5%;">
+										<label class="required"><em></em><?php echo (($locale == "en_US") ? "Relation" :"Rapport"); ?></label>
+										<div class="input-box">
+											<input type="text" style="width: 100%;" id="relation" name="relation" value="Self" title="<?php echo $this->__('Relation') ?>" class="input-text required-entry" />
+											<input class="input-text required-entry" id="vision" name="vision" type="hidden" value="singleVision" >
+											<input class="input-text"  style="display:none" id="vision_type" name="vision_type" type="number" value="0" >
+										</div>
+									</div>
+								</div>	
+							</div>
+						</div>
+						
+						<div class="buttons-set" style="margin-top: 2%;">
+							<p class="back-link"><a id="backBtn3" class="back-link"><small>&laquo; </small><?php echo $this->__('Back') ?></a></p>
+							<input type="text" name="hideit" id="hideit" value="" style="display:none !important;" />
+							<button type="submit" title="<?php echo Mage::helper('contacts')->__('Save') ?>" class="button"><span><span><?php echo Mage::helper('contacts')->__('Save') ?></span></span></button>
+							<!--<a href="/pre-prescription"><button type="button" title="<?php echo Mage::helper('contacts')->__('Add Family Member') ?>" class="button"><span><span><?php echo Mage::helper('contacts')->__('Add Family Member') ?></span></span></button> </a>-->
+						</div>
+					</div>
+					</form>
+				</div>
+				
+				
 				
 			</div>	
 			
@@ -241,12 +285,19 @@ td{
 			var proVal = jQuery("input[name='is_Pres1']:checked").val();
 			if(proVal == 'single'){
 				$('preQueDiv').style.display = 'none';
+				$('no_corrt').style.display = 'none';
 				$('singleVisionForm').style.display = 'block';
 				$('prescripForm').style.display = 'none';
-			}else{
+			}else if(proVal == 'progresive'){
 				$('preQueDiv').style.display = 'none';
+				$('no_corrt').style.display = 'none';
 				$('singleVisionForm').style.display = 'none';
 				$('prescripForm').style.display = 'block';
+			}else{
+				$('preQueDiv').style.display = 'none';
+				$('no_corrt').style.display = 'block';
+				$('singleVisionForm').style.display = 'none';
+				$('prescripForm').style.display = 'none';
 			}
 				
 		});
@@ -260,6 +311,12 @@ td{
 			$('preQueDiv').style.display = 'block';
 			$('prescripForm').style.display = 'none';
 			$('singleVisionForm').style.display = 'none';
+		});
+		$('backBtn3').observe('click', function(event) {
+			$('preQueDiv').style.display = 'block';
+			$('prescripForm').style.display = 'none';
+			$('singleVisionForm').style.display = 'none';
+			$('no_corrt').style.display = 'none';
 		});
 
 </script>

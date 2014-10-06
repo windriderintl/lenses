@@ -87,7 +87,7 @@ Create,Créer
 Create New Account Options,Options de création de nouveaux comptes
 Create New Customer Account,Créer un nouveau compte client
 Create Order,Créer une commande
-Create an Account,Créer un compte
+Create an Account,Créervotrecomptemanuellement
 Create customer,Créer un client
 Create customer address,Créer une adresse
 Current Password,Mot de passe actuel
@@ -202,7 +202,7 @@ Login and password are required.,L'identifiant et le mot de passe sont obligatoi
 Login or Create an Account,Identifiez-vous ou créez un compte
 M.I.,Deuxième prénom
 MM,MM
-Manage Addresses,Gérer les adresses
+Manage Addresses,Editer
 Manage Customers,Gérer les clients
 "Missing email, skipping the record.","Email manquant, ligne ignorée."
 "Missing firstname, skipping the record.","Prénom manquant, ligne igorée."
