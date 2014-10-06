@@ -42,15 +42,15 @@
     <?php echo $this->getChildHtml('customer.form.register.extra')?>
     <?php $locale = Mage::app()->getLocale()->getLocaleCode(); ?>
 		<div id="signUpDiv" class="grid12-9">
-			<div class="fieldset" style="">
+			<div class="fieldset" style="display: none;">
 				<h6 for="userName" class="grid12-9 legend" style="float: left;font-size: 1.3333em;font-family: 'Bitter', georgia, serif;"><?php echo (($locale == "en_US") ? "Please create your accout by" :"s il vous plait creer votre compte"); ?></h6>
 			</div>
 			<div style="float: left;margin-bottom: 5%;margin-top: 5%;" class="grid-full">
-				<h6 for="userName" class="grid12-5" style="float: left;font-size: 1.3333em;font-family: 'Bitter', georgia, serif;"><?php echo (($locale == "en_US") ? "Create an account" :"Creer un compte"); ?></h6>
+				<h6 for="userName" class="grid12-5" style="float: left;font-size: 1.3333em;font-family: 'Bitter', georgia, serif;"><?php echo (($locale == "en_US") ? "Create an account" :"Confirmation de votre e-mail"); ?></h6>
 				<input type="radio" name="is_Pres" title="Plases Select One Value" id="isNot_Prescrip" value="account" class="checkbox required" style="width:10%;float: left;margin-top: 0.3%;" checked>
 			</div>
 			<div style="float: left;min-height: 100px;" class="grid-full">
-				<h6 for="userName" class="grid12-5" style="float: left;font-size: 1.3333em;font-family: 'Bitter', georgia, serif;" ><?php echo (($locale == "en_US") ? "Sign up with social media" :"Inscrivez-vous avec les medias sociaux"); ?></h6>
+				<h6 for="userName" class="grid12-5" style="float: left;font-size: 1.3333em;font-family: 'Bitter', georgia, serif;" ><?php echo (($locale == "en_US") ? "Sign up with social media" :"Création rapide de votre compte à l’aide de vos réseaux sociaux"); ?></h6>
 				<input type="radio" name="is_Pres" title="Plases Select One Value" id="is_Prescrip" value="social" class="checkbox required" style="width:10%;float: left;margin-top: 0.3%;">
 			</div>
 			
@@ -79,7 +79,7 @@
 								</div>
 							</div>
 							<div class="field">
-								<label class="required" for="email_address"><em>*</em>CONFIRM EMAIL</label>
+								<label class="required" for="email_address"><em>*</em>Confirmation de votre e-mail</label>
 									<div class="input-box"> <input class="input-text required-entry validate-cemail" title="Email Address" value="" id="email2" name="email2" type="text">
 									</div>
 							</div>

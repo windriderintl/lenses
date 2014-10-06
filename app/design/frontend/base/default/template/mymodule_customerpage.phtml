@@ -357,13 +357,13 @@ var dataFormFamily = new VarienForm('familyForm', true);
 		  var fifteenDays = 1000*60*60*24*15; 
 		  var expires = new Date((new Date()).valueOf() + fifteenDays);
 		  document.cookie = "visited=true;expires=" + expires.toUTCString(); 
-		  jQuery.colorbox({width:"600px", inline:true, href:"#homepage_popup"});
+		  //jQuery.colorbox({width:"600px", inline:true, href:"#homepage_popup"});
 		  }
 		if (document.cookie.indexOf('visited=true') == -1){
 		  var fifteenDays = 1000*60*60*24*15; 
 		  var expires = new Date((new Date()).valueOf() + fifteenDays);
 		  document.cookie = "visited=true;expires=" + expires.toUTCString(); 
-		  jQuery.colorbox({width:"600px", inline:true, href:"#deletepage_popup"});
+		  //jQuery.colorbox({width:"600px", inline:true, href:"#deletepage_popup"});
 		  }  
 		 // jQuery(".open_popup").colorbox({width:"580px", inline:true, href:"#homepage_popup"});
 	});
