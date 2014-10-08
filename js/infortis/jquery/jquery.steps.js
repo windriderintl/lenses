@@ -1980,7 +1980,7 @@ var defaults = $.fn.steps.defaults = {
          * @default "Finish"
          * @for defaults
          **/
-        finish: "Add To Cart",
+        finish: "Ajouter &agrave; mon panier",
 
         /**
          * Label for the next button.
