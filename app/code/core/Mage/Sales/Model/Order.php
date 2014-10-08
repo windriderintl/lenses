@@ -1368,6 +1368,9 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
 		$addition = "";
 		$color = "";
 		$teinted = "";
+		$supplier_frame_price = "";
+		$supplier_lenses_price = "";
+		$supplier_add_price = "";
 		
 		foreach ($this->getAllItems() as $custom_item) {
 			
@@ -1375,6 +1378,13 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
 			 $product = Mage::getModel('catalog/product')->load($product_id);
 			 $full_path_url = Mage::helper('catalog/image')->init($product, 'thumbnail');
 			 $frame_number = $custom_item->getProductId();
+			 $supplier_frame_price = $product->getData('supplier_frame_price');
+			 $supplier_lenses_price = $product->getData('supplier_lenses_price');
+			 $supplier_add_price = (float)$supplier_frame_price + (float)$supplier_lenses_price;
+			 
+			 //file_put_contents("productopt.txt",print_r($product ,true), FILE_APPEND );
+			 //file_put_contents("productopt.txt",print_r($supplier_add_price ,true), FILE_APPEND );
+			// file_put_contents("productopt.txt",print_r($custom_item ,true), FILE_APPEND );
 			 $product_name = $custom_item->getName();
 			 $product_price = $custom_item->getPrice();
 			 $product_prescription = $custom_item->getProductOptions();
@@ -1459,6 +1469,9 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
                	'frame_price'  => $product_price,
                	'frame_phtochromic'  => $photochromic,
                	'frame_addition'  => $addition,
+               	'supplier_frame_price' => $supplier_frame_price,
+               	'supplier_lenses_price' => $supplier_lenses_price,
+               	'supplier_add_price' => $supplier_add_price,
                	'frame_color'  => $color,
                	'frame_teinted'  => $teinted,
                 'count'        => $product_id,
