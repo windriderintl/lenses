@@ -63,17 +63,18 @@
 ?>
 
 <?php $locale = Mage::app()->getLocale()->getLocaleCode(); ?>
+<!--
 <?php if($locale == "en_US"): ?>
 
-	<ul class="links">
-		<li class="" style="margin-left: 45%;"><a href="http://localhost/lenses/index.php/default/customer/account/" title="My Account">My Account</a></li>
+	<ul class="links" style="display: none;">
+		<li class="" style="margin-left: 45%;"><a href="http://chouetteslunettes.com/index.php/default/customer/account/" title="My Account">My Account</a></li>
 	</ul>
 <?php else: ?>
-	<ul class="links">
+	<ul class="links" style="display: none;">
 		<li class="" style="margin-left: 25%;"><a href="http://chouetteslunettes.com/index.php/french/customer/account/" title="Mon compte">Mon compte</a></li>
 	</ul>
 <?php endif; ?>
-
+-->
 <div id="mini-cart" class="dropdown<?php echo $cartClasses; ?>">
 
     <div class="dropdown-toggle cover" title="<?php echo $mainTitle; ?>">
@@ -146,5 +147,37 @@
     <?php endif ?>
 
 </div> <!-- end: mini-cart -->
+<?php $userId = Mage::helper('customer')->getCustomer()->getId(); ?>
+<div class="dropdown lang-switcher item item-right">
+        <div class="dropdown-toggle cover">
+            <div>
+            	<div class="label dropdown-icon flag" >&nbsp;</div>
+                                <div class="value">Mon compte</div>
+                <span class="caret">&nbsp;</span>
+            </div>
+        </div>
+        <ul class="dropdown-menu left-hand" style="display: none;">
+        	<?php if (empty($userId)): ?>
+        	<div>
+	        	<li>
+	        		<a href="http://chouetteslunettes.com/index.php/french/customer/account/">
+	        			Connexion <?php echo $userId ?>
+	        		</a>
+	        	</li>
+	        		<a href="http://chouetteslunettes.com/index.php/french/customer/account/">
+	        			Signer
+	        		</a>
+	        	</li>
+        	</div>
+        	<?php else: ?>
+        	<div>
+	        	<li>
+	        		<a href="http://chouetteslunettes.com/index.php/french/customer/account/logout/">
+	        			Déconnexion
+	        	</li>
+        	</div>
+        	<?php endif ?>
+        </ul>    
+    </div>
 
 <?php endif;?>
