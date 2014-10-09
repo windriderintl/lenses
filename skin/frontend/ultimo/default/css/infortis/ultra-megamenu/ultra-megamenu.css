@@ -90,7 +90,7 @@
 -------------------------------------------------------------- */
 #nav li { text-align:left; }
 #nav li a { display:block; text-decoration:none; }
-#nav li a span { display:block; white-space:nowrap; }
+#nav li a span {white-space:nowrap; }
 #nav li ul a span { white-space:normal; }
 
 /* 1st level only
