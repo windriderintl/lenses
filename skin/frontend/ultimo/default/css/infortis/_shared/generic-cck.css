@@ -62,7 +62,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
 
 .links > li,
-.links > li > a { line-height:2em; } /* line-height:36px; */ /*2.6666em = 32px;*/
+.links > li > a { line-height:3em; } /* line-height:36px; */ /*2.6666em = 32px;*/
 .links > li > a { padding:0 0.5833em; } /* padding:0 7px; */
 .links > li.label { padding-right:0.5833em; } /* 7px */
 

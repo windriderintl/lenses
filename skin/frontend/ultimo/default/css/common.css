@@ -46,8 +46,8 @@
 .cart .shipping h2
 {
 	/* padding:13px 0 7px; */ /*TODO*/
-	padding-top:0px;
-	padding-bottom:0px;
+	padding-top:7px;
+	padding-bottom:7px;
 	border-bottom:1px solid #e5e5e5;
 	font-weight:normal;
 	font-size:1.5em; /*18px*/
