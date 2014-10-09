@@ -43,9 +43,9 @@
 "Sorry, could not retrieve your Twitter last name. Please try again.","Sorry, could not retrieve your Twitter last name. Please try again."
 "Your Twitter account is now connected to your new user accout at our store. Now you can login using our Twitter Connect button.","Your Twitter account is now connected to your new user accout at our store. Now you can login using our Twitter Connect button."
 "Since Twitter doesn\'t support third-party access to your email address, we were unable to send you your store accout credentials. To be able to login using store account credentials you will need to update your email address and password using our <a href="%s">Edit Account Information</a>.","Since Twitter doesn\'t support third-party access to your email address, we were unable to send you your store accout credentials. To be able to login using store account credentials you will need to update your email address and password using our <a href="%s">Edit Account Information</a>."
-"Google Connect","Google Connect"
-"Facebook Connect","Facebook Connect"
-"Twitter Connect","Twitter Connect"
+Google Connect,Connection via Google
+Facebook Connect,Connection via Facebook
+Twitter Connect,Connection via Twitter
 "Customer My Account Google Connect","Customer My Account Google Connect"
 "Customer My Account Facebook Connect","Customer My Account Facebook Connect"
 "Customer My Account Twitter Connect","Customer My Account Twitter Connect"
@@ -62,9 +62,9 @@
 "You can continue with checkout using your <strong>Google</strong> account.","You can continue with checkout using your <strong>Google</strong> account."
 "You can continue with checkout using your <strong>Facebook</strong> account.","You can continue with checkout using your <strong>Facebook</strong> account."
 "You can continue with checkout using your <strong>Twitter</strong> account.","You can continue with checkout using your <strong>Twitter</strong> account."
-"You can login using your Google account.","You can login using your Google account."
-"You can login using your Facebook account.","You can login using your Facebook account."
-"You can login using your Twitter account.","You can login using your Twitter account."
-"You can register using your Google account.","You can register using your Google account."
-"You can register using your Facebook account.","You can register using your Facebook account."
-"You can register using your Twitter account.","You can register using your Twitter account."
+You can login using your Google account.,Vouspouvezvous connecter via Google account.
+You can login using your Facebook account.,Vouspouvezvous connecter via Facebook account.
+You can login using your Twitter account.,Vouspouvezvous connecter via Twitter account.
+You can register using your Google account.,Vouspouvezvous connecter via Google account.
+You can register using your Facebook account.,Vouspouvezvous connecter via Facebook account.
+You can register using your Twitter account.,Vouspouvezvous connecter via Twitter account.
