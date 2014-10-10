@@ -334,9 +334,10 @@
 				//alert('Guest User ....');
 				jQuery('#form-3').steps('remove', 6, {});
 				$('wizardId').style.display = 'block';
+				//jQuery(window).scrollTop(550,0);
 				parent.jQuery.colorbox.close();
 				//$('addToCartBtn').style.display = 'none';
-				
+				setTimeout(function(){jQuery(window).scrollTop(550,0)}, 1000);
 			});
 		
     

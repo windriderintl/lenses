@@ -1625,6 +1625,7 @@
  			var showWizard = '<?php echo Mage::helper('customer')->getCustomer()->getId(); ?>';
  			if(showWizard != ''){
 				$('wizardId').style.display = 'block';
+				setTimeout(function(){jQuery(window).scrollTop(550,0)}, 1000);
  			}else {
  				$('wizardId').style.display = 'none';
  			}
