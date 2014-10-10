@@ -34,23 +34,24 @@
 					<fieldset>
 						
 						<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;margin-bottom: 3%;"><?php echo Mage::helper('contacts')->__("S&eacute;lectionner votre type de verres") ?></h4> 
-						<div class="customDiv">
+						<div class="customDiv" onclick="normalLensesDiv()">
 							<h6 for="userName" class="custom-header">Verres avec correction</h6>
-							<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>
+							<p style="height: 110px;padding: 5%;float: left;">Personnaliser vos verres selon votre vision Trait&eacute;s anti-rayures et antireflets</p>
 							<div  class="custom-footer"></div>
-							<input type="radio" style="width: 100%;margin-bottom: 1%;float: left;" name="lenses_type" title="Vous devez sélectionner une option" value="normalLenses" name="normalLenses"  id="normalLenses" onclick="lensesTab('normalLenses')" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;">
+							<input type="radio" style="width: 100%;margin-bottom: 1%;float: left;" name="lenses_type" title="Vous devez sélectionner une option" value="normalLenses" name="normalLenses"  id="normalLenses" class="checkbox required" style="margin-top: 0.5%;float: left;">
+						
 						</div>
-						<div class="customDiv">
+						<div class="customDiv" onclick="no_correctionDiv()">
 							<h6 for="userName" class="custom-header" >Verres sans correction</h6>
 							<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>
 							<div  class="custom-footer"></div>
-							<input type="radio" style="width: 100%;margin-bottom: 1%;float: left;"  name="lenses_type" title="Vous devez sélectionner une option" value="no_correction" id="no_correction" onclick="lensesTab('no_correction')" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">
+							<input type="radio" style="width: 100%;margin-bottom: 1%;float: left;"  name="lenses_type" title="Vous devez sélectionner une option" value="no_correction" id="no_correction" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">
 						</div>
-						<div class="customDiv">
+						<div class="customDiv" onclick="sunglassesDiv()">
 							<h6 for="userName" class="custom-header" >Verres solaires</h6>
 							<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>
 							<div  class="custom-footer"></div>
-							<input type="radio" style="width: 100%;margin-bottom: 1%;float: left;"  name="lenses_type" title="Vous devez sélectionner une option" value="sunglasses" id="sunglasses" onclick="lensesTab('sunglasses')" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">
+							<input type="radio" style="width: 100%;margin-bottom: 1%;float: left;"  name="lenses_type" title="Vous devez sélectionner une option" value="sunglasses" id="sunglasses" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">
 						</div>
 						<div style="width:100%;float: left;margin-top: 2%;">
 							<input type="text" id='customPrice' name='customPrice' value='<?php echo Mage::registry("productPrice") ?>' style='display: none;'>
@@ -207,6 +208,117 @@
 		var checkNoCorrection = false;
 		var checkPrescrip = false;
 		var checkSingleVision = false;
+		
+		
+		function normalLensesDiv(){
+			jQuery("#normalLenses").attr('checked', true);
+			lensesTab('normalLenses');
+		}
+		function no_correctionDiv(){
+			jQuery("#no_correction").attr('checked', true);
+			lensesTab('no_correction');
+		}
+		function sunglassesDiv(){
+			jQuery("#sunglasses").attr('checked', true);
+			lensesTab('sunglasses');
+		}
+		
+		function singleVisionPDiv(){
+			jQuery(".singleVisionP").attr('checked', true);
+			isTableSingle(true,11);
+		}
+		function singleVisionHDiv(){
+			jQuery(".singleVisionH").attr('checked', true);
+			isTableSingle(true,12);
+		}
+		function progressPDiv(){
+			jQuery(".progressP").attr('checked', true);
+			isTableSingle(false,13);
+		}
+		function progressHDiv(){
+			jQuery(".progressH").attr('checked', true);
+			isTableSingle(false,14);
+		}
+		function yesTabClick(){
+			jQuery("#yes").attr('checked', true);
+			yesTab();
+		}
+		function noTabClick(){
+			jQuery("#no").attr('checked', true);
+			noTab();
+		}
+		function lowDiv(){
+			jQuery("#low").attr('checked', true);
+			setCorrection(21);
+		}
+		function mediumDiv(){
+			jQuery("#medium").attr('checked', true);
+			setCorrection(22);
+		}
+		function highDiv(){
+			jQuery("#high").attr('checked', true);
+			setCorrection(23);
+		}
+		function noColorDiv(){
+			jQuery("#noColor").attr('checked', true);
+			noColorTab(false,0);
+		}
+		function greyDiv(){
+			jQuery("#grey").attr('checked', true);
+			noColorTab(true,31);
+		}
+		function marronDiv(){
+			jQuery("#marron").attr('checked', true);
+			noColorTab(true,32);
+		}
+		function blueDiv(){
+			jQuery("#blue").attr('checked', true);
+			noColorTab(true,33);
+		}
+		function greenDiv(){
+			jQuery("#green").attr('checked', true);
+			noColorTab(true,34);
+		}
+		function blackDiv(){
+			jQuery("#black").attr('checked', true);
+			noColorTab(true,35);
+		}
+		function yellowDiv(){
+			jQuery("#yellow").attr('checked', true);
+			noColorTab(true,36);
+		}
+		function pinkDiv(){
+			jQuery("#pink").attr('checked', true);
+			noColorTab(true,37);
+		}
+		function lightTinteDiv(){
+			jQuery("#lightTinte").attr('checked', true);
+			setTinted(41);
+		}
+		function mediumTinteDiv(){
+			jQuery("#mediumTinte").attr('checked', true);
+			setTinted(42);
+		}
+		function highTinteDiv(){
+			jQuery("#highTinte").attr('checked', true);
+			setTinted(43);
+		}
+		
+		function isNot_PrescripDiv(){
+			jQuery("#isNot_Prescrip").attr('checked', true);
+			isNotPres();
+		}
+		function is_PrescripDiv(){
+			jQuery("#is_Prescrip").attr('checked', true);
+			isPres();
+		}
+		function polorizedDiv(){
+			jQuery("#polorized").attr('checked', true);
+		}
+		function nonPolorizedDiv(){
+			jQuery("#nonPolorized").attr('checked', true);
+		}
+		
 		
 		function isTableSingle(element,price){
 		//alert("toatal ="+grandTotal + "price ="+price);
@@ -437,29 +549,29 @@
 							title: "verre",
 							content: '<fieldset>'+
 										'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;margin-bottom: 3%;"><?php echo Mage::helper("contacts")->__(" S&egrave;lectionner votre gamme de verres") ?></h4>'+ 
-										'<div class="customDiv">'+
+										'<div class="customDiv" onclick="singleVisionPDiv()">'+
 											'<h6 for="userName" class="custom-header">Unifocaux&eacute;co</h6><span style="margin-right: 2%;width: 10%;font-size: 1.2em;font-family: Bitter, georgia, serif;">  11 € </span>'+
 											'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 											'<div  class="custom-footer"></div>'+
-											'<input type="radio" style="width: 100%;margin-bottom: 1%;float: left;" name="glass" title="Vous devez sélectionner une option" onclick="isTableSingle(true,11)" id="singleVision"  value="singleVision" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;" >'+
+											'<input type="radio" style="width: 100%;margin-bottom: 1%;float: left;" name="glass" title="Vous devez sélectionner une option" id="singleVision"  value="singleVision" class="singleVisionP checkbox required" style="margin-top: 0.5%;float: left;width: 100%;" >'+
 										'</div>'+
-										'<div class="customDiv">'+
+										'<div class="customDiv" onclick="singleVisionHDiv()">'+
 											'<h6 for="userName" class="custom-header" >Unifocaux premium</h6><span style="margin-right: 2%;width: 10%;font-size: 1.2em;font-family: Bitter, georgia, serif;">  12 € </span>'+
 											'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 											'<div  class="custom-footer"></div>'+
-											'<input type="radio" style="width: 100%;margin-bottom: 1%;float: left;" name="glass" title="Vous devez sélectionner une option" onclick="isTableSingle(true,12)" id="singleVision"  value="singleVision" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;" >'+
+											'<input type="radio" style="width: 100%;margin-bottom: 1%;float: left;" name="glass" title="Vous devez sélectionner une option" id="singleVision"  value="singleVision" class="singleVisionH checkbox required" style="margin-top: 0.5%;float: left;width: 100%;" >'+
 										'</div>'+
-										'<div class="customDiv">'+
+										'<div class="customDiv" onclick="progressPDiv()">'+
 											'<h6 for="userName" class="custom-header" >Progressifs&eacute;co</h6><span style="margin-right: 2%;width: 10%;font-size: 1.2em;font-family: Bitter, georgia, serif;">  13 € </span>'+
 											'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 											'<div  class="custom-footer"></div>'+
-											'<input type="radio" style="width: 100%;margin-bottom: 1%;float: left;" name="glass" title="Vous devez sélectionner une option" id="progress" value="progress" onclick="isTableSingle(false,13)" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
+											'<input type="radio" style="width: 100%;margin-bottom: 1%;float: left;" name="glass" title="Vous devez sélectionner une option" id="progress" value="progress" class="progressP checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 										'</div>'+
-										'<div class="customDiv">'+
+										'<div class="customDiv" onclick="progressHDiv()">'+
 											'<h6 for="userName" class="custom-header" >Progressifs premium</h6><span style="margin-right: 2%;width: 10%;font-size: 1.2em;font-family: Bitter, georgia, serif;">  14 € </span>'+
 											'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 											'<div  class="custom-footer"></div>'+
-											'<input type="radio" style="width: 100%;margin-bottom: 1%;float: left;" name="glass" title="Vous devez sélectionner une option" id="progress" value="progress" onclick="isTableSingle(false,14)" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
+											'<input type="radio" style="width: 100%;margin-bottom: 1%;float: left;" name="glass" title="Vous devez sélectionner une option" id="progress" value="progress" class="progressH checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 										'</div>'+
 										'<div style="width:100%;float: left;margin-top: 2%;">'+
 										'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;color: #00a9c7;" > € </h6>'+
@@ -480,17 +592,17 @@
 							title: "Photochromie",
 							content: '<fieldset>'+
 										'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;margin-bottom: 3%;"><?php echo Mage::helper("contacts")->__("Souhaitez-vous des verres photochromiques ?") ?></h4>'+ 
-										'<div id="yesDiv" class="customDiv">'+
+										'<div id="yesDiv" class="customDiv" onclick="yesTabClick()">'+
 											'<h6 for="userName" class="custom-header">Oui</h6>'+
 											'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 											'<div  class="custom-footer"></div>'+
-											'<input type="radio" name="photochromic" title="Vous devez sélectionner une option" value="yes" id="yes" onclick="yesTab()" value="single" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
+											'<input type="radio" name="photochromic" title="Vous devez sélectionner une option" value="yes" id="yes" value="single" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 										'</div>'+
-										'<div id="noDiv" class="customDiv">'+
+										'<div id="noDiv" class="customDiv" onclick="noTabClick()">'+
 											'<h6 for="userName" class="custom-header">Non</h6>'+
 											'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 											'<div  class="custom-footer"></div>'+
-											'<input type="radio" name="photochromic" title="Vous devez sélectionner une option" id="no" value="no" onclick="noTab()" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
+											'<input type="radio" name="photochromic" title="Vous devez sélectionner une option" id="no" value="no" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 										'</div>'+
 										'<div style="width:100%;float: left;margin-top: 2%;">'+
 										'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;color: #00a9c7;" > € </h6>'+
@@ -503,19 +615,19 @@
 							title: "&Eacute;paisseur",
 							content: '<fieldset>'+
 										'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;margin-bottom: 3%;"><?php echo Mage::helper('contacts')->__("S&eacute;lectionner l&rsquo;&eacute;paisseur de votre verre") ?></h4>'+
-										'<div class="customDiv">'+
+										'<div class="customDiv" onclick="lowDiv()">'+
 											'<h6 for="userName" class="custom-header">Indice 1.5 – Verres fins</h6><span style="margin-right: 2%;width: 10%;font-size: 1.2em;font-family: Bitter, georgia, serif;">  21 € </span>'+
 											'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 											'<div  class="custom-footer"></div>'+
-											'<input type="radio" name="correction" title="Vous devez sélectionner une option" id="medium" value="medium" onclick="setCorrection(21)"class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
+											'<input type="radio" name="correction" title="Vous devez sélectionner une option" id="low" value="low" onclick="setCorrection(21)"class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 										'</div>'+
-										'<div class="customDiv">'+
+										'<div class="customDiv" onclick="mediumDiv()">'+
 											'<h6 for="userName" class="custom-header">Indice 1.57 – Verres non-amincis</h6><span style="margin-right: 2%;width: 10%;font-size: 1.2em;font-family: Bitter, georgia, serif;">  22 € </span>'+
 											'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 											'<div  class="custom-footer"></div>'+
-											'<input type="radio" name="correction" title="Vous devez sélectionner une option" id="low" value="low" onclick="setCorrection(22)" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
+											'<input type="radio" name="correction" title="Vous devez sélectionner une option" id="medium" value="medium" onclick="setCorrection(22)" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 										'</div>'+
-										'<div class="customDiv">'+
+										'<div class="customDiv" onclick="highDiv()">'+
 											'<h6 for="userName" class="custom-header"> Indice 1.67 – Verres très fins</h6><span style="margin-right: 2%;width: 10%;font-size: 1.2em;font-family: Bitter, georgia, serif;">  23 € </span>'+
 											'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 											'<div  class="custom-footer"></div>'+
@@ -533,56 +645,56 @@
 							content: '<fieldset >'+ 
 											'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;margin-bottom: 3%;"><?php echo Mage::helper("contacts")->__("Choisissez la couleur de vos verres") ?></h4>'+
 											'<div style="overflow-y: scroll;height: 270px;">'+
-											'<div class="customDiv">'+
+											'<div class="customDiv" onclick="noColorDiv()">'+
 												'<img src="<?php echo $this->getSkinUrl('images/no_ball.png') ?>" style="width: 10%;float: left; cursor: pointer;margin-top: 5%;margin-left: 15%;" />'+
 												'<h6 for="userName" class="custom-header" style="width:50%;">Aucune</h6><span style="margin-right: 2%;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;">  0 € </span>'+
 												'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 											    '<div  class="custom-footer"></div>'+
 												'<input type="radio" name="color" title="Vous devez sélectionner une option" id="noColor" value="noColor" onclick="noColorTab(false,0)" value="single" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 											'</div>'+
-											'<div class="customDiv">'+
+											'<div class="customDiv" onclick="greyDiv()">'+
 												'<img src="<?php echo $this->getSkinUrl('images/grey_ball.png') ?>" style="width: 10%;float: left; cursor: pointer;margin-top: 5%;margin-left: 15%;" />'+
 												'<h6 for="userName" class="custom-header" style="width:50%;">Gris</h6><span style="margin-right: 2%;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;">  31 € </span>'+
 												'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 												'<div  class="custom-footer"></div>'+
 												'<input type="radio" name="color" title="Vous devez sélectionner une option" id="grey" value="grey" onclick="noColorTab(true,31)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 											'</div>'+
-											'<div class="customDiv">'+
+											'<div class="customDiv" onclick="marronDiv()">'+
 												'<img src="<?php echo $this->getSkinUrl('images/marron_ball.png') ?>" style="width: 10%;float: left; cursor: pointer;margin-top: 5%;margin-left: 15%;" />'+
 												'<h6 for="userName" class="custom-header" style="width:50%;" >Marron</h6><span style="margin-right: 2%;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;">  32 € </span>'+
 												'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 												'<div  class="custom-footer"></div>'+
 												'<input type="radio" name="color" title="Vous devez sélectionner une option" value="marron" id="marron" onclick="noColorTab(true,32)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 											'</div>'+
-											'<div class="customDiv">'+
+											'<div class="customDiv" onclick="blueDiv()">'+
 												'<img src="<?php echo $this->getSkinUrl('images/blue_ball.png') ?>" style="width: 10%;float: left; cursor: pointer;margin-top: 5%;margin-left: 15%;" />'+
 												'<h6 for="userName" class="custom-header" style="width:50%;">Bleu</h6><span style="margin-right: 2%;width: 100%;float: left;ont-size: 1.2em;font-family: Bitter, georgia, serif;">  33 € </span>'+
 												'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 												'<div  class="custom-footer"></div>'+
 												'<input type="radio" name="color" title="Vous devez sélectionner une option" value="blue" id="blue" onclick="noColorTab(true,33)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 											'</div>'+
-											'<div class="customDiv">'+
+											'<div class="customDiv" onclick="greenDiv()">'+
 												'<img src="<?php echo $this->getSkinUrl('images/green_ball.png') ?>" style="width: 10%;float: left; cursor: pointer;margin-top: 5%;margin-left: 15%;" />'+
 												'<h6 for="userName" class="custom-header" style="width:50%;">Vert</h6><span style="margin-right: 2%;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;">  34 € </span>'+
 												'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 												'<div  class="custom-footer"></div>'+
 												'<input type="radio" name="color" title="Vous devez sélectionner une option" value="green" id="green" onclick="noColorTab(true,34)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 											'</div>'+
-											'<div class="customDiv">'+
+											'<div class="customDiv" onclick="blackDiv()">'+
 												'<img src="<?php echo $this->getSkinUrl('images/black_ball.png') ?>" style="width: 10%;float: left; cursor: pointer;margin-top: 5%;margin-left: 15%;" />'+
 												'<h6 for="userName" class="custom-header" style="width:50%;">Noir</h6><span style="margin-right: 2%;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;">  35 € </span>'+
 												'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 												'<div  class="custom-footer"></div>'+
 												'<input type="radio" name="color" title="Vous devez sélectionner une option" value="black" id="black" onclick="noColorTab(true,35)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 											'</div>'+
-											'<div class="customDiv">'+
+											'<div class="customDiv" onclick="yellowDiv()">'+
 												'<img src="<?php echo $this->getSkinUrl('images/yellow_ball.png') ?>" style="width: 10%;float: left; cursor: pointer;margin-top: 5%;margin-left: 15%;" />'+
 												'<h6 for="userName" class="custom-header" style="width:50%;">Jaune</h6><span style="margin-right: 2%;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;">  36 € </span>'+
 												'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 												'<div  class="custom-footer"></div>'+
 												'<input type="radio" name="color" title="Vous devez sélectionner une option" value="yellow" id="yellow" onclick="noColorTab(true,36)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 											'</div>'+
-											'<div class="customDiv">'+
+											'<div class="customDiv" onclick="pinkDiv()">'+
 												'<img src="<?php echo $this->getSkinUrl('images/pink_ball.png') ?>" style="width: 10%;float: left; cursor: pointer;margin-top: 5%;margin-left: 15%;" />'+
 												'<h6 for="userName" class="custom-header" style="width:50%;">Rose</h6><span style="margin-right: 2%;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;">  37 € </span>'+
 												'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
@@ -602,18 +714,18 @@
 							title: "Niveau de teinte",
 							content: '<fieldset>'+
 										'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;margin-bottom: 3%;"><?php echo Mage::helper('contacts')->__('Sélectionner votre teinte') ?></h4>'+ 
-										'<div class="customDiv">'+
+										'<div class="customDiv" onclick="lightTinteDiv()">'+
 											'<h6 for="userName" class="custom-header">25% - Légère</h6><span style="margin-right: 2%;width: 10%;font-size: 1.2em;font-family: Bitter, georgia, serif;">  41 € </span>'+
 											'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 											'<div  class="custom-footer"></div>'+'<input type="radio" name="tinte" title="Vous devez sélectionner une option" id="lightTinte" value="lightTinte" onclick="setTinted(41)" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 										'</div>'+
-										'<div class="customDiv">'+
+										'<div class="customDiv" onclick="mediumTinteDiv()">'+
 											'<h6 for="userName" class="custom-header">50% Medium</h6><span style="margin-right: 2%;width: 10%;font-size: 1.2em;font-family: Bitter, georgia, serif;">  42 € </span>'+
 											'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 											'<div  class="custom-footer"></div>'+
 											'<input type="radio" name="tinte" title="Vous devez sélectionner une option" id="mediumTinte" value="mediumTinte" onclick="setTinted(42)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 										'</div>'+
-										'<div class="customDiv">'+
+										'<div class="customDiv" onclick="highTinteDiv()">'+
 											'<h6 for="userName" class="custom-header">80% Fonc&eacute; </h6><span style="margin-right: 2%;width: 10%;font-size: 1.2em;font-family: Bitter, georgia, serif;">  43 € </span>'+
 											'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 											'<div  class="custom-footer"></div>'+
@@ -769,56 +881,56 @@
 					content: '<fieldset >'+ 
 									'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;margin-bottom: 3%;padding-bottom: 7px;"><?php echo Mage::helper("contacts")->__("Choisissez la couleur de vos verres") ?></h4>'+
 									'<div style="overflow-y: scroll;height: 270px;">'+
-									'<div class="customDiv">'+
+									'<div class="customDiv" onclick="noColorDiv()">'+
 										'<img src="<?php echo $this->getSkinUrl('images/no_ball.png') ?>" style="width: 10%;float: left; cursor: pointer;margin-top: 5%;margin-left: 15%;" />'+
 										'<h6 for="userName" class="custom-header" style="width:50%;">Aucune</h6><span style="margin-right: 2%;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;">  0 € </span>'+
 										'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 										'<div  class="custom-footer"></div>'+
 										'<input type="radio" name="color" title="Vous devez sélectionner une option" id="noColor" value="noColor" onclick="noColorTab(false,0)" value="single" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 									'</div>'+
-									'<div class="customDiv">'+
+									'<div class="customDiv" onclick="greyDiv()">'+
 										'<img src="<?php echo $this->getSkinUrl('images/grey_ball.png') ?>" style="width: 10%;float: left; cursor: pointer;margin-top: 5%;margin-left: 15%;" />'+
 										'<h6 for="userName" class="custom-header" style="width:50%;">Gris</h6><span style="margin-right: 2%;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;">  31 € </span>'+
 										'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 										'<div  class="custom-footer"></div>'+
 										'<input type="radio" name="color" title="Vous devez sélectionner une option" value="grey" id="grey" onclick="noColorTab(true,31)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 									'</div>'+
-									'<div class="customDiv">'+
+									'<div class="customDiv" onclick="marronDiv()">'+
 										'<img src="<?php echo $this->getSkinUrl('images/marron_ball.png') ?>" style="width: 10%;float: left; cursor: pointer;margin-top: 5%;margin-left: 15%;" />'+
 										'<h6 for="userName" class="custom-header" style="width:50%;">Marron</h6><span style="margin-right: 2%;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;">  32 € </span>'+
 										'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 										'<div  class="custom-footer"></div>'+
 										'<input type="radio" name="color" title="Vous devez sélectionner une option" value="marron" id="marron" onclick="noColorTab(true,32)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 									'</div>'+
-									'<div class="customDiv">'+
+									'<div class="customDiv" onclick="blueDiv()">'+
 									'<img src="<?php echo $this->getSkinUrl('images/blue_ball.png') ?>" style="width: 10%;float: left; cursor: pointer;margin-top: 5%;margin-left: 15%;" />'+
 										'<h6 for="userName" class="custom-header" style="width:50%;">Bleu </h6><span style="margin-right: 2%;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;">  33 € </span>'+
 										'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 										'<div  class="custom-footer"></div>'+
 										'<input type="radio" name="color" title="Vous devez sélectionner une option" value="blue" id="blue" onclick="noColorTab(true,33)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 									'</div>'+
-									'<div class="customDiv">'+
+									'<div class="customDiv" onclick="greenDiv()">'+
 									'<img src="<?php echo $this->getSkinUrl('images/green_ball.png') ?>" style="width: 10%;float: left; cursor: pointer;margin-top: 5%;margin-left: 15%;" />'+
 										'<h6 for="userName" class="custom-header" style="width:50%;">Vert </h6><span style="margin-right: 2%;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;">  34 € </span>'+
 										'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 										'<div  class="custom-footer"></div>'+
 										'<input type="radio" name="color" title="Vous devez sélectionner une option" value="green" id="green" onclick="noColorTab(true,34)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 									'</div>'+
-									'<div class="customDiv">'+
+									'<div class="customDiv" onclick="blackDiv()">'+
 									'<img src="<?php echo $this->getSkinUrl('images/black_ball.png') ?>" style="width: 10%;float: left; cursor: pointer;margin-top: 5%;margin-left: 15%;" />'+
 										'<h6 for="userName" class="custom-header" style="width:50%;">Noir</h6><span style="margin-right: 2%;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;">  35 € </span>'+
 										'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 										'<div  class="custom-footer"></div>'+
 										'<input type="radio" name="color" title="Vous devez sélectionner une option" value="black" id="black" onclick="noColorTab(true,35)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 									'</div>'+
-									'<div class="customDiv">'+
+									'<div class="customDiv" onclick="yellowDiv()">'+
 									'<img src="<?php echo $this->getSkinUrl('images/yellow_ball.png') ?>" style="width: 10%;float: left; cursor: pointer;margin-top: 5%;margin-left: 15%;" />'+
 										'<h6 for="userName" class="custom-header" style="width:50%;">Jaune </h6><span style="margin-right: 2%;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;">  36 € </span>'+
 										'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 										'<div  class="custom-footer"></div>'+
 										'<input type="radio" name="color" title="Vous devez sélectionner une option" value="yellow" id="yellow" onclick="noColorTab(true,36)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 									'</div>'+
-									'<div class="customDiv">'+
+									'<div class="customDiv" onclick="pinkDiv()">'+
 									'<img src="<?php echo $this->getSkinUrl('images/pink_ball.png') ?>" style="width: 10%;float: left; cursor: pointer;margin-top: 5%;margin-left: 15%;" />'+
 										'<h6 for="userName" class="custom-header" style="width:50%;">Rose</h6><span style="margin-right: 2%;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;">  37 € </span>'+
 										'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
@@ -837,19 +949,19 @@
 					title: "Niveau de teinte",
 					content: '<fieldset>'+
 								'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;margin-bottom: 3%;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper('contacts')->__("Sélectionner votre teinte") ?></h4>'+ 
-								'<div class="customDiv">'+
+								'<div class="customDiv" onclick="lightTinteDiv()">'+
 									'<h6 for="userName" class="custom-header">25% Clair</h6><span style="margin-right: 2%;width: 10%;font-size: 1.2em;font-family: Bitter, georgia, serif;">  41 € </span>'+
 									'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 									'<div  class="custom-footer"></div>'+
 									'<input type="radio" name="tinte" title="Vous devez sélectionner une option" id="lightTinte" value="lightTinte" onclick="setTinted(41)" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 								'</div>'+
-								'<div class="customDiv">'+
+								'<div class="customDiv" onclick="mediumTinteDiv()">'+
 									'<h6 for="userName" class="custom-header">50% Medium</h6><span style="margin-right: 2%;width: 10%;font-size: 1.2em;font-family: Bitter, georgia, serif;">  42 € </span>'+
 									'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 									'<div  class="custom-footer"></div>'+
 									'<input type="radio" name="tinte" title="Vous devez sélectionner une option" id="mediumTinte" value="mediumTinte" onclick="setTinted(42)"class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 								'</div>'+
-								'<div class="customDiv">'+
+								'<div class="customDiv" onclick="highTinteDiv()">'+
 									'<h6 for="userName" class="custom-header">80% Fonc&eacute; </h6><span style="margin-right: 2%;width: 10%;font-size: 1.2em;font-family: Bitter, georgia, serif;">  43 € </span>'+
 									'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 									'<div  class="custom-footer"></div>'+
@@ -893,7 +1005,7 @@
 					jQuery('#price8').text(grandTotal);	
 				
 			}else if(element == 'sunglasses'){
-				//alert("in here....");
+				//alert("in here....sunglasses");
 				jQuery('#form-3').steps('remove', 1, {});
 				jQuery('#form-3').steps('remove', 1, {});
 				jQuery('#form-3').steps('remove', 1, {});
@@ -907,15 +1019,15 @@
 								title: "Type",
 								content: '<fieldset>'+
 											'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;margin-bottom: 3%;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper("contacts")->__("Besoin de verres correcteurs ou pour le style ?") ?></h4>'+
-											'<div id="noPrescDiv" class="customDiv">'+
+											'<div class="customDiv" onclick="isNot_PrescripDiv()">'+
 												'<h6 for="userName" class="custom-header">Verres sans correction </h6>'+
 												'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 												'<div  class="custom-footer"></div>'+
 												'<input type="radio" name="is_Fix" value="isNot_Prescrip" title="Vous devez sélectionner une option" onclick="isNotPres()" id="isNot_Prescrip" value="single" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 											'</div>'+
-											'<div id="with_prescDiv" class="customDiv">'+
+											'<div class="customDiv" onclick="is_PrescripDiv()">'+
 												'<h6 for="userName" class="custom-header">Verres avec correction</h6>'+
-												'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
+												'<p style="height: 110px;padding: 5%;float: left;">Personnaliser vos verres selon votre vision Trait&eacute;s anti-rayures et antireflets</p>'+
 												'<div  class="custom-footer"></div>'+
 												'<input type="radio" name="is_Fix" value="is_Prescrip" title="Vous devez sélectionner une option" id="is_Prescrip" onclick="isPres()" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 											'</div>'+
@@ -930,13 +1042,13 @@
 								title: "Polarisation",
 								content: '<fieldset>'+
 											'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;margin-bottom: 3%;"><?php echo Mage::helper("contacts")->__(" Souhaitez-vous des verres polaris&eacute;s ?") ?></h4>'+
-											'<div id="polorizedDiv" class="customDiv">'+
+											'<div class="customDiv" onclick="polorizedDiv()">'+
 												'<h6 for="userName" class="custom-header">Verrespolaris&eacute;s</h6>'+
 												'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 												'<div  class="custom-footer"></div>'+	
 												'<input type="radio" name="photochromic" title="Vous devez sélectionner une option" id="polorized" value="polorized" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 											'</div>'+
-											'<div id="nonPolorizedDiv" class="customDiv">'+
+											'<div class="customDiv" onclick="nonPolorizedDiv()">'+
 												'<h6 for="userName" class="custom-header" >Verres non polaris&eacute;s </h6>'+
 												'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 												'<div  class="custom-footer"></div>'+
@@ -953,17 +1065,17 @@
 								title: "&Eacute;paisseur",
 								content: '<fieldset>'+
 											'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;margin-bottom: 3%;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper('contacts')->__("S&eacute;lectionner l&rsquo;&eacute;paisseur de votre verre") ?></h4>'+
-											'<div class="customDiv">'+
+											'<div class="customDiv" onclick="lowDiv()">'+
 												'<h6 for="userName" class="custom-header">Indice 1.5 – Verres fins</h6><span style="margin-right: 2%;width: 10%;font-size: 1.2em;font-family: Bitter, georgia, serif;">  21 € </span>'+
 												'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 												'<div  class="custom-footer"></div>'+
-												'<input type="radio" name="correction" title="Vous devez sélectionner une option" id="medium" value="medium" onclick="setCorrection(21)"  class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
+												'<input type="radio" name="correction" title="Vous devez sélectionner une option" id="low" value="low" onclick="setCorrection(21)"  class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 											'</div>'+ 
-											'<div class="customDiv">'+
+											'<div class="customDiv" onclick="mediumDiv()">'+
 												'<h6 for="userName" class="custom-header">Indice 1.57 – Verres non-amincis</h6><span style="margin-right: 2%;width: 10%;font-size: 1.2em;font-family: Bitter, georgia, serif;">  22 € </span>'+
 												'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 												'<div  class="custom-footer"></div>'+
-												'<input type="radio" name="correction" title="Vous devez sélectionner une option" id="low" value="low" onclick="setCorrection(22)"  class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
+												'<input type="radio" name="correction" title="Vous devez sélectionner une option" id="medium" value="medium" onclick="setCorrection(22)"  class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 											'</div>'+
 											'<div style="width:100%;float: left;margin-top: 2%;">'+
 											'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;color: #00a9c7;" > € </h6>'+
@@ -1072,13 +1184,13 @@
 								title: "Polarisation",
 								content: '<fieldset>'+
 											'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;margin-bottom: 3%;"><?php echo Mage::helper("contacts")->__("  Souhaitez-vous des verres polaris&eacute;s ? ") ?></h4>'+
-											'<div id="polorizedDiv" class="customDiv">'+
+											'<div  class="customDiv" onclick="polorizedDiv()">'+
 												'<h6 for="userName" class="custom-header">Verres polarizes</h6>'+
 												'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 												'<div  class="custom-footer"></div>'+
 												'<input type="radio" name="photochromic" title="Vous devez sélectionner une option" id="polorized" value="polorized" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 											'</div>'+
-											'<div id="nonPolorizedDiv" class="customDiv">'+
+											'<div class="customDiv" onclick="nonPolorizedDiv()">'+
 												'<h6 for="userName" class="custom-header">Verres non polarises </h6>'+
 												'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 												'<div  class="custom-footer"></div>'+
@@ -1139,13 +1251,13 @@
 								title: "Polarisation",
 								content: '<fieldset>'+
 											'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;margin-bottom: 3%;"><?php echo Mage::helper("contacts")->__(" Souhaitez-vous des verres polaris&eacute;s ?") ?></h4>'+
-											'<div id="polorizedDiv" class="customDiv">'+
+											'<div class="customDiv" onclick="polorizedDiv()">'+
 												'<h6 for="userName" class="custom-header">Verres polarizes</h6>'+
 												'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 												'<div  class="custom-footer"></div>'+
 												'<input type="radio" name="photochromic" title="Vous devez sélectionner une option" id="polorized" value="polorized" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 											'</div>'+
-											'<div id="nonPolorizedDiv" class="customDiv">'+
+											'<div class="customDiv" onclick="nonPolorizedDiv()">'+
 												'<h6 for="userName" class="custom-header">Verres non polarises </h6>'+
 												'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 												'<div  class="custom-footer"></div>'+
@@ -1163,17 +1275,17 @@
 								title: "&Eacute;paisseur",
 								content: '<fieldset>'+
 											'<h4 class="legend" style="margin-bottom: 3%; border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper('contacts')->__("S&eacute;lectionner l&rsquo;&eacute;paisseur de votre verre") ?></h4>'+
-											'<div class="customDiv">'+
+											'<div class="customDiv" onclick="lowDiv()">'+
 												'<h6 for="userName" class="custom-header">Indice 1.5 – Verres fins</h6><span style="margin-right: 2%;width: 10%;font-size: 1.2em;font-family: Bitter, georgia, serif;">  21 € </span>'+
 												'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 												'<div  class="custom-footer"></div>'+
-												'<input type="radio" name="correction" title="Vous devez sélectionner une option" id="medium" value="medium" onclick="setCorrection(21)" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
+												'<input type="radio" name="correction" title="Vous devez sélectionner une option" id="low" value="low" onclick="setCorrection(21)" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 											'</div>'+
-											'<div class="customDiv">'+
+											'<div class="customDiv" onclick="mediumDiv()">'+
 												'<h6 for="userName" class="custom-header">Indice 1.57 – Verres non-amincis</h6><span style="margin-right: 2%;width: 10%;font-size: 1.2em;font-family: Bitter, georgia, serif;">  22 € </span>'+
 												'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 												'<div  class="custom-footer"></div>'+
-												'<input type="radio" name="correction" title="Vous devez sélectionner une option" id="low" value="low" onclick="setCorrection(22)" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
+												'<input type="radio" name="correction" title="Vous devez sélectionner une option" id="medium" value="medium" onclick="setCorrection(22)" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 											'</div>'+
 											'<div style="width:100%;float: left;margin-top: 2%;">'+
 											'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;color: #00a9c7;" > € </h6>'+
@@ -1286,19 +1398,19 @@
 					title: "Niveau de teinte",
 					content: '<fieldset>'+
 								'<h4 class="legend" style="margin-bottom: 3%;border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper('contacts')->__("Sélectionner votre teinte") ?></h4>'+ 
-								'<div class="customDiv">'+
+								'<div class="customDiv" onclick="lightTinteDiv()">'+
 									'<h6 for="userName" class="custom-header">25% Clair </h6><span style="margin-right: 2%;width: 10%;font-size: 1.2em;font-family: Bitter, georgia, serif;">  41 € </span>'+
 									'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 									'<div  class="custom-footer"></div>'+
 									'<input type="radio" name="tinte" title="Vous devez sélectionner une option" value="lightTinte" id="lightTinte" value="single" onclick="setTinted(41)" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 								'</div>'+
-								'<div class="customDiv">'+
+								'<div class="customDiv" onclick="mediumTinteDiv()">'+
 									'<h6 for="userName" class="custom-header" >50% Medium</h6><span style="margin-right: 2%;width: 10%;font-size: 1.2em;font-family: Bitter, georgia, serif;">  42 € </span>'+
 									'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 									'<div  class="custom-footer"></div>'+
 									'<input type="radio" name="tinte" title="Vous devez sélectionner une option" value="mediumTinte" id="mediumTinte" onclick="setTinted(42)" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 								'</div>'+
-								'<div class="customDiv">'+
+								'<div class="customDiv" onclick="highTinteDiv()">'+
 									'<h6 for="userName" class="custom-header">80% Fonc&eacute; </h6><span style="margin-right: 2%;width: 10%;font-size: 1.2em;font-family: Bitter, georgia, serif;">  43 € </span>'+
 									'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 									'<div  class="custom-footer"></div>'+
@@ -1316,7 +1428,7 @@
 			
 			if(colorPriceBool){
 				
-				grandTotal = parseFloat(grandTotal) - parseFloat(colorPriceparseFloat);
+				grandTotal = parseFloat(grandTotal) - parseFloat(colorPrice);
 				grandTotal = parseFloat(grandTotal) + parseFloat(price);
 				grandTotal = grandTotal.toFixed(2);
 				jQuery('#price1').text(grandTotal);
@@ -1385,56 +1497,56 @@
 					content: '<fieldset >'+ 
 									'<h4 class="legend" style="margin-bottom: 3%;border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper("contacts")->__("Choisissez la couleur de vos verres") ?></h4>'+
 									'<div style="overflow-y: scroll;height: 270px;">'+
-									'<div class="customDiv">'+
+									'<div class="customDiv" onclick="noColorDiv()">'+
 										'<img src="<?php echo $this->getSkinUrl('images/no_ball.png') ?>" style="width: 10%;float: left; cursor: pointer;margin-top: 5%;margin-left: 15%;" />'+
 										'<h6 for="userName" class="custom-header" style="width:50%;">Aucune</h6><span style="margin-right: 2%;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;">  0 € </span>'+
 										'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 										'<div  class="custom-footer"></div>'+
 										'<input type="radio" name="color" title="Vous devez sélectionner une option" id="noColor" value="noColor" onclick="noColorTab(false,0)" value="single" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 									'</div>'+
-									'<div class="customDiv">'+
+									'<div class="customDiv" onclick="greyDiv()">'+
 									'<img src="<?php echo $this->getSkinUrl('images/grey_ball.png') ?>" style="width: 10%;float: left; cursor: pointer;margin-top: 5%;margin-left: 15%;" />'+
 										'<h6 for="userName" class="custom-header" style="width:50%;">Gris</h6><span style="margin-right: 2%;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;">  31 € </span>'+
 										'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 										'<div  class="custom-footer"></div>'+
 										'<input type="radio" name="color" title="Vous devez sélectionner une option" id="grey" value="grey" onclick="noColorTab(true,0)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 									'</div>'+
-									'<div class="customDiv">'+
+									'<div class="customDiv" onclick="marronDiv()">'+
 									'<img src="<?php echo $this->getSkinUrl('images/marron_ball.png') ?>" style="width: 10%;float: left; cursor: pointer;margin-top: 5%;margin-left: 15%;" />'+
 										'<h6 for="userName" class="custom-header" style="width:50%;">Marron</h6><span style="margin-right: 2%;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;">  32 € </span>'+
 										'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 										'<div  class="custom-footer"></div>'+
 										'<input type="radio" name="color" title="Vous devez sélectionner une option" id="marron" value="marron" onclick="noColorTab(true,32)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 									'</div>'+
-									'<div class="customDiv">'+
+									'<div class="customDiv" onclick="blueDiv()">'+
 									'<img src="<?php echo $this->getSkinUrl('images/blue_ball.png') ?>" style="width: 10%;float: left; cursor: pointer;margin-top: 5%;margin-left: 15%;" />'+
 										'<h6 for="userName" class="custom-header" style="width:50%;">Bleu</h6><span style="margin-right: 2%;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;">  33 € </span>'+
 										'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 										'<div  class="custom-footer"></div>'+
 										'<input type="radio" name="color" title="Vous devez sélectionner une option" id="blue" value="blue" onclick="noColorTab(true,33)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 									'</div>'+
-									'<div class="customDiv">'+
+									'<div class="customDiv" onclick="greenDiv()">'+
 									'<img src="<?php echo $this->getSkinUrl('images/green_ball.png') ?>" style="width: 10%;float: left; cursor: pointer;margin-top: 5%;margin-left: 15%;" />'+
 										'<h6 for="userName" class="custom-header" style="width:50%;">Vert</h6><span style="margin-right: 2%;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;">  34 € </span>'+
 										'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 										'<div  class="custom-footer"></div>'+
 										'<input type="radio" name="color" title="Vous devez sélectionner une option" id="green" value="green" onclick="noColorTab(true,34)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 									'</div>'+
-									'<div class="customDiv">'+
+									'<div class="customDiv" onclick="blackDiv()">'+
 									'<img src="<?php echo $this->getSkinUrl('images/black_ball.png') ?>" style="width: 10%;float: left; cursor: pointer;margin-top: 5%;margin-left: 15%;" />'+
 										'<h6 for="userName" class="custom-header" style="width:50%;">Noir</h6><span style="margin-right: 2%;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;">  35 € </span>'+
 										'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 										'<div  class="custom-footer"></div>'+
 										'<input type="radio" name="color" title="Vous devez sélectionner une option" id="black" value="black" onclick="noColorTab(true,35)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 									'</div>'+
-									'<div class="customDiv">'+
+									'<div class="customDiv" onclick="yellowDiv()">'+
 									'<img src="<?php echo $this->getSkinUrl('images/yellow_ball.png') ?>" style="width: 10%;float: left; cursor: pointer;margin-top: 5%;margin-left: 15%;" />'+
 										'<h6 for="userName" class="custom-header" style="width:50%;">Jaune</h6><span style="margin-right: 2%;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;">  36 € </span>'+
 										'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 										'<div  class="custom-footer"></div>'+
 										'<input type="radio" name="color" title="Vous devez sélectionner une option" id="yellow" value="yellow" onclick="noColorTab(true,36)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 									'</div>'+
-									'<div class="customDiv">'+
+									'<div class="customDiv" onclick="pinkDiv()">'+
 									'<img src="<?php echo $this->getSkinUrl('images/pink_ball.png') ?>" style="width: 10%;float: left; cursor: pointer;margin-top: 5%;margin-left: 15%;" />'+
 										'<h6 for="userName" class="custom-header" style="width:50%;">Rose</h6><span style="margin-right: 2%;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;">  37 € </span>'+
 										'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
@@ -1454,19 +1566,19 @@
 					title: "Niveau de teinte",
 					content: '<fieldset>'+
 								'<h4 class="legend" style="margin-bottom: 3%;border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper('contacts')->__("Sélectionner votre teinte") ?></h4>'+ 
-								'<div class="customDiv">'+
+								'<div class="customDiv" onclick="lightTinteDiv()">'+
 									'<h6 for="userName" class="custom-header">25% Clair</h6><span style="margin-right: 2%;width: 10%;font-size: 1.2em;font-family: Bitter, georgia, serif;">  41 € </span>'+
 									'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 									'<div  class="custom-footer"></div>'+
 									'<input type="radio" name="tinte" title="Vous devez sélectionner une option" id="lightTinte" value="lightTinte" onclick="setTinted(41)" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 								'</div>'+
-								'<div class="customDiv">'+
+								'<div class="customDiv" onclick="mediumTinte()">'+
 									'<h6 for="userName" class="custom-header">50% Medium</h6><span style="margin-right: 2%;width: 10%;font-size: 1.2em;font-family: Bitter, georgia, serif;">  42 € </span>'+
 									'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 									'<div  class="custom-footer"></div>'+
 									'<input type="radio" name="tinte" title="Vous devez sélectionner une option" id="mediumTinte" value="mediumTinte" onclick="setTinted(42)" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 								'</div>'+
-								'<div class="customDiv">'+
+								'<div class="customDiv" onclick="highTinteDiv()">'+
 									'<h6 for="userName" class="custom-header">80% Fonc&eacute; </h6><span style="margin-right: 2%;width: 10%;font-size: 1.2em;font-family: Bitter, georgia, serif;">  43 € </span>'+
 									'<p style="height: 110px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 									'<div  class="custom-footer"></div>'+
