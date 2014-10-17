@@ -1371,6 +1371,7 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
 		$supplier_frame_price = "";
 		$supplier_lenses_price = "";
 		$supplier_add_price = "";
+		$lense_type = "";
 		
 		foreach ($this->getAllItems() as $custom_item) {
 			
@@ -1391,7 +1392,22 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
 			 
 			 $arraySize = sizeof($product_prescription);
 			 
-			 if($product_prescription['info_buyRequest']['glass'] == "progress"){
+			 
+			 if($product_prescription['info_buyRequest']['glass'] == "singleVisionP"){
+			 	$lense_type = "Single vision premium";
+			 }elseif($product_prescription['info_buyRequest']['glass'] == "singleVisionH"){
+			 	$lense_type = "Single vision high quality";
+			 }elseif($product_prescription['info_buyRequest']['glass'] == "progressP"){
+			 	$lense_type = "Progressive lenses premium";
+			 }elseif($product_prescription['info_buyRequest']['glass'] == "progressH"){
+			 	$lense_type = "Progressive lenses high quality";
+			 }
+			 
+			 file_put_contents("productopt.txt",print_r($lense_type,true), FILE_APPEND );
+			 
+			 
+			 if($product_prescription['info_buyRequest']['glass'] == "progressP" || $product_prescription['info_buyRequest']['glass'] == "progressH"){
+			 	
 			 	$drs = $product_prescription['info_buyRequest']['drs3'];
 			    $drc = $product_prescription['info_buyRequest']['drc3'];
 				$dra = $product_prescription['info_buyRequest']['dra3'];
@@ -1413,7 +1429,7 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
 				$color = $product_prescription['info_buyRequest']['color'];
 				$teinted = $product_prescription['info_buyRequest']['tinte'];
 		
-			 }else if($product_prescription['info_buyRequest']['glass'] == "singleVision"){
+			 }else if($product_prescription['info_buyRequest']['glass'] == "singleVisionP" || $product_prescription['info_buyRequest']['glass'] == "singleVisionH"){
 			 	$drs = $product_prescription['info_buyRequest']['drs4'];
 			    $drc = $product_prescription['info_buyRequest']['drc4'];
 				$dra = $product_prescription['info_buyRequest']['dra4'];
@@ -1473,6 +1489,7 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
                	'supplier_lenses_price' => $supplier_lenses_price,
                	'supplier_add_price' => $supplier_add_price,
                	'frame_color'  => $color,
+               	'lense_type' => $lense_type,
                	'frame_teinted'  => $teinted,
                 'count'        => $product_id,
                 'drs'          => $drs,
