@@ -1444,7 +1444,18 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
 				$addition = $product_prescription['info_buyRequest']['ars4'];
 				$color = $product_prescription['info_buyRequest']['color'];
 				$teinted = $product_prescription['info_buyRequest']['tinte'];	 
-			 }
+			 }else{
+				$drs = $product_prescription['info_buyRequest']['drs'];
+			    $drc = $product_prescription['info_buyRequest']['drc'];
+				$dra = $product_prescription['info_buyRequest']['dra'];
+				$dls = $product_prescription['info_buyRequest']['dls'];
+				$dlc = $product_prescription['info_buyRequest']['dlc'];
+				$dla = $product_prescription['info_buyRequest']['dla'];
+				$ars = $product_prescription['info_buyRequest']['ars'];
+				$ala = $product_prescription['info_buyRequest']['ala'];
+			    $pd = $product_prescription['info_buyRequest']['pd'];	
+				$pdl = $product_prescription['info_buyRequest']['pdl'];	
+			}
 
 		//email setting ..........................
 		$mailer = Mage::getModel('core/email_template_mailer');
