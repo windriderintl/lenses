@@ -33,7 +33,7 @@
             <action method="addLink">
                 <name>my_module_section</name>
                 <path>mymodule_customerpage/index/index</path>
-                <label>My family members</label>
+                <label>Mes proches</label>
             </action>
         </reference>
     </customer_account>
