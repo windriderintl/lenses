@@ -32,7 +32,7 @@
         <div class="box-account box-info">
             <div class="box-head">
             	
-              <h3><?php echo (($locale == "en_US") ? "My Family Member" :"Ma famille – Ma fratrie"); ?></h3>
+              <h3><?php echo (($locale == "en_US") ? "My Family Member" :"My Family Member"); ?></h3>
               <?php $userId = Mage::helper('customer')->getCustomer()->getId();
 					$connection = Mage::getModel('mymod/family')->getCollection()
 					->addFieldToFilter('user_id', array('eq' => $userId))
