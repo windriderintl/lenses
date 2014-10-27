@@ -63,7 +63,7 @@ Back to Login,Retour à l'identification
 Bad request.,Non trouvé.
 Bill to Name,Nom (Fact.)
 Bought From,Acheté sur
-"By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.","En créant un compte sur notre boutique, vous pourrez passer vos commandes plus rapidement, enregistrer plusieurs adresses de livraison, consulter et suivre vos commandes, et plein d'autres choses encore."
+"By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.","Cr&eacute;er votre compte et acc&eacute;der &agrave; nos options avanc&eacute;es : enregistrer plusieurs prescriptions, cr&eacute;er votre liste d'envies, suivi de vos commandes et bien d'autres choses encore. "
 CSV,CSV
 Cancel,Annuler
 Cannot save address.,Impossible de sauvegarder l'adresse.
@@ -221,7 +221,7 @@ New Customer,Nouveau client
 New Customer Address,Nouvelle adresse client
 New Customer Group,Nouveau groupe de clients
 New Customer Groups,Nouveaux groupes de clients
-New Customers,Nouveaux clients
+New Customers,Nouveau client
 New Group,Nouveau groupe
 New Password,Nouveau mot de passe
 New account,Nouveau compte
@@ -266,7 +266,7 @@ Per Website,Par site web
 Personal Information,Informations personnelles
 Please enter your email below and we will send you a new password.,Saisissez votre email ci-dessous et nous vous enverrons un nouveau mot de passe.
 Please enter your email below and we\'ll send you confirmation link for it.,Saisissez votre email ci-dessous et nous vous enverrons un lien de confirmation.
-Please enter your email.,Votre adresse e-mail.
+Please enter your email.,Votre adresse e-mail
 Please select,Sélectionnez
 "Please select region, state or province",Sélectionnez un département / état
 "Please, check your email for confirmation key.",Consultez vos emails pour obtenir la clé de confirmation.
@@ -286,7 +286,7 @@ Recent Orders,Commandes récentes
 Records for %s store found.,Des enregistrements ont été trouvés pour le magasin %s
 Redirect Customer to Account Dashboard after Logging in,Rediriger les clients vers leur tableau de bord après connexion
 Refunded,Remboursé
-Registered Customers,Clients enregistrés
+Registered Customers,Client d&eacute;j&agrave; enregistr&eacute;
 Remove,Supprimer
 Require Emails Confirmation,Nécessite la confirmation par email
 Retrieve address data,Récupérer les données d'adresse

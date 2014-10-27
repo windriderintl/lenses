@@ -5,7 +5,7 @@
 "Address Information","Informations d'adresse"
 "Already registered?","Vous avez déjà un compte ?"
 "Back","Retour"
-"By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.","En créant un compte sur notre boutique, vous pourrez passer vos commandes plus rapidement, enregistrer plusieurs adresses de livraison, consulter et suivre vos commandes, et plein d'autres choses encore."
+"By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.","Cr&eacute;er votre compte et acc&eacute;der &agrave; nos options avanc&eacute;es : enregistrer plusieurs prescriptions, cr&eacute;er votre liste d'envies, suivi de vos commandes et bien d'autres choses encore. "
 "Cannot load configuration from file %s.","Impossible de charger la configuration depuis le fichier %s."
 "Checkout as Guest","Régler en tant qu'invité"
 "Checkout as a Guest or Register","Régler en tant qu'invité ou s'enregistrer"
@@ -31,7 +31,7 @@ Create an Account,Cr&eacute;er un compte
 "Login","Connexion"
 "Login Information","Information de connexion"
 "Login or Create an Account","Identifiez-vous ou créez un compte"
-"New Customers","Nouveaux clients"
+New Customers,Nouveau client
 "Password","Mot de passe"
 "Persist Shopping Cart","Panier persistant"
 "Persistence Lifetime (seconds)","Durée de vie de la persistance (secondes)"
@@ -43,7 +43,7 @@ Create an Account,Cr&eacute;er un compte
 "Register and save time!","Gagnez du temps !"
 "Register to Create an Account","Enregistrez-vous pour créer un compte"
 "Register with us for future convenience:","Enregistrez-vous et profitez de nombreux avantages :"
-"Registered Customers","Clients enregistrés"
+Registered Customers,Client d&eacute;j&agrave; enregistr&eacute;
 "Remember Me","Se souvenir de moi"
 "Save in address book","Enregistrer dans le carnet d'adresses"
 "Select State/Province...","Choisissez une région"
