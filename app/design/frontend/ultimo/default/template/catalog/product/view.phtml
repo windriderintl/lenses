@@ -272,10 +272,12 @@
 				<div id='homepage_popup' style='padding:10px;'> 
 					<?php $locale = Mage::app()->getLocale()->getLocaleCode(); ?>
 					<fieldset style="float: left;width: 45%;">
-			        	 <h4 style="border-bottom: 1px solid #e5e5e5;;padding-bottom: 2%;"><?php echo (($locale == "en_US") ? "Guest ?" :"Invit&eacute;?"); ?></h4>
-			        	 <p>B&eacute;n&eacute;ficier d'un code de r&eacute;duction a votre premi&egrave;re commande et profitez de tous les avantages r&eacute;serv&eacute;s&agrave;nos membes. 
-			        	 	En cr&eacute;ant votre compte, acc&eacute;dez a pleins d'autres fonctionnalit&eacute;s telle que la possibilit&eacute; d'enregistrer vos montures pr&eacute;f&eacute;r&eacute;es ou d'enregistrer les donnees de nombreux utilisateurs.</p>
-			        	 <button type="button" id="guestUser" class="button" style="float: right;margin-right: 10%;margin-top: 3%;"><span><span><?php echo (($locale == "en_US") ? "Order as a guest" :"Commander en tantqu'invit&egrave;"); ?></span></span></button>
+			        	 <h4 style="border-bottom: 1px solid #e5e5e5;;padding-bottom: 2%;"><?php echo (($locale == "en_US") ? "Guest ?" :"Nouvel utilisateur ?"); ?></h4>
+			        	 <p>Inscrivez-vous et profitez pleinement de tous nos avantages : enregistrer plusieurs prescriptions, cr&eacute;er votre liste d'envies, suivre vos commandes et bien d'autres choses encore.</p>
+			        	 <a href="http://chouetteslunettes.com/index.php/french/customer/account/">
+			        	 	<button type="button" class="button" style="float: right;margin-right: 25%;margin-top: 3%;"><span><span><?php echo (($locale == "en_US") ? "Create an account" :"Cr&eacute;er un compte "); ?></span></span></button>
+			        	 </a>
+			        	 <a type="button" id="guestUser" style="float: right;margin-right: 23%;margin-top: 3%;"><span><span><?php echo (($locale == "en_US") ? "Order as a guest" :"Commander en tantqu'invit&egrave;"); ?></span></span></a>
 			        	<!--<a id="guestUser" class="button">Checkout as Guest</>-->
 			         </fieldset>
 					
