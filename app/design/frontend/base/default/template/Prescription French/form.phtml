@@ -37,7 +37,11 @@
 						<div class="customDiv" onclick="normalLensesDiv()">
 							<h6 for="userName" class="custom-header">Verres avec correction</h6>
 							<p style="height: 50px;padding: 5%;float: left;">Personnaliser vos verres selon votre vision</p>
-							<p style="height: 50px;padding: 5%;float: left;width: 90%;">Trait&eacute;s anti-rayures et antireflets</p>
+							<div style="height: 50px;padding: 5%;float: left;width: 90%;">
+								<p >Trait&eacute;s anti-rayures</p>
+								<p >Trait&eacute;s antireflets</p>
+							</div>
+						
 							<div  class="custom-footer"></div>
 							<input type="radio" style="width: 100%;margin-bottom: 1%;float: left;" name="lenses_type" title="Vous devez sélectionner une option" value="normalLenses" name="normalLenses"  id="normalLenses" class="checkbox required" style="margin-top: 0.5%;float: left;">
 						
@@ -45,15 +49,18 @@
 						<div class="customDiv" onclick="no_correctionDiv()">
 							<h6 for="userName" class="custom-header" >Verres sans correction</h6>
 							<p style="height: 50px;padding: 5%;float: left;">Accessoiriser votre look d&rsquo;une paire de lunettes</p>
-							<p style="height: 50px;padding: 5%;float: left;width: 90%;">verres color&eacute;s ou blancs</p>
+							<p style="height: 50px;padding: 5%;float: left;width: 90%;">Verres color&eacute;s ou blancs</p>
 							
 							<div  class="custom-footer"></div>
 							<input type="radio" style="width: 100%;margin-bottom: 1%;float: left;"  name="lenses_type" title="Vous devez sélectionner une option" value="no_correction" id="no_correction" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">
 						</div>
 						<div class="customDiv" onclick="sunglassesDiv()">
 							<h6 for="userName" class="custom-header" >Verres solaires</h6>
-							<p style="height: 50px;padding: 5%;float: left;">Pour vous prot&eacute;ger du soleil Verres correcteurs ou non</p>
-							<p style="height: 50px;padding: 5%;float: left;width: 90%;">Filtre anti-UVinclus</p>
+								<p style="height: 50px;padding: 5%;float: left;">Pour vous prot&eacute;ger du soleil </p>
+								<div style="height: 50px;padding: 5%;float: left;width: 90%;">
+									<p> Verres correcteurs ou non</p>
+									<p> Filtre anti-UVinclus</p>
+								</div>	
 							<div  class="custom-footer"></div>
 							<input type="radio" style="width: 100%;margin-bottom: 1%;float: left;"  name="lenses_type" title="Vous devez sélectionner une option" value="sunglasses" id="sunglasses" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">
 						</div>
@@ -1037,15 +1044,17 @@
 											'<div class="customDiv" onclick="isNot_PrescripDiv()">'+
 												'<h6 for="userName" class="custom-header">Verres sans correction </h6>'+
 												'<p style="height: 50px;padding: 5%;float: left;">Accessoiriser votre look d&rsquo;une paire de lunettes</p>'+
-												'<p style="height: 50px;padding: 5%;float: left;width: 90%;">verres color&eacute;s ou blancs</p>'+
+												'<p style="height: 50px;padding: 5%;float: left;width: 90%;">Verres color&eacute;s ou blancs</p>'+
 												'<div  class="custom-footer"></div>'+
 												'<input type="radio" name="is_Fix" value="isNot_Prescrip" title="Vous devez sélectionner une option" onclick="isNotPres()" id="isNot_Prescrip" value="single" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 											'</div>'+
 											'<div class="customDiv" onclick="is_PrescripDiv()">'+
 												'<h6 for="userName" class="custom-header">Verres avec correction</h6>'+
 												'<p style="height: 50px;padding: 5%;float: left;">Personnaliser vos verres selon votre vision</p>'+
-												'<p style="height: 50px;padding: 5%;float: left;width: 90%;">Trait&eacute;s anti-rayures et antireflets</p>'+
-												
+												'<div style="height: 50px;padding: 5%;float: left;width: 90%;">'+
+													'<p >Trait&eacute;s anti-rayures </p>'+
+													'<p >Trait&eacute;s antireflets</p>'+
+												'</div>'+
 												'<div  class="custom-footer"></div>'+
 												'<input type="radio" name="is_Fix" value="is_Prescrip" title="Vous devez sélectionner une option" id="is_Prescrip" onclick="isPres()" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 											'</div>'+
@@ -1061,7 +1070,7 @@
 								content: '<fieldset>'+
 											'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;margin-bottom: 3%;"><?php echo Mage::helper("contacts")->__(" Souhaitez-vous des verres polaris&eacute;s ?") ?></h4>'+
 											'<div class="customDiv" onclick="polorizedDiv()">'+
-												'<h6 for="userName" class="custom-header">Verrespolaris&eacute;s</h6>'+
+												'<h6 for="userName" class="custom-header">Verres polaris&eacute;s</h6>'+
 												'<p style="height: 100px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
 												'<div  class="custom-footer"></div>'+	
 												'<input type="radio" name="photochromic" title="Vous devez sélectionner une option" id="polorized" value="polorized" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
