@@ -148,6 +148,7 @@
 
 </div> <!-- end: mini-cart -->
 <?php $userId = Mage::helper('customer')->getCustomer()->getId(); ?>
+<?php $locale = Mage::app()->getLocale()->getLocaleCode(); ?>
 <div class="dropdown lang-switcher item item-right">
         <div class="dropdown-toggle cover">
             <div>
@@ -156,17 +157,48 @@
                 <span class="caret">&nbsp;</span>
             </div>
         </div>
-        <ul class="dropdown-menu left-hand" style="display: none;">
+        <ul class="dropdown-menu left-hand" style="display: none;width: 300px;">
         	<?php if (empty($userId)): ?>
         	<div>
 	        	<li>
-	        		<a href="http://chouetteslunettes.com/index.php/french/customer/account/">
-	        			Connexion <?php echo $userId ?>
-	        		</a>
+	        	<!--	<a href="http://chouetteslunettes.com/index.php/french/customer/account/">
+	        			Se connecter
+	        	</a> -->
+	        	<fieldset style="">
+					       <h4 style="padding-bottom: 2%;"><?php echo (($locale == "en_US") ? "Already registered?" :"D&Eacute;J&Aacute; CLIENT"); ?></h4>
+								<form action="http://chouetteslunettes.com/index.php/french/customer/account/loginPostCustom/" method="post">
+					            <ul class="form-list">
+					                <li>
+					                    <label for="login-email" class="required"><em>*</em><?php echo (($locale == "en_US") ? "Email Address" :"Adresse e-mail"); ?></label>
+					                    <div class="input-box">
+					                        <input type="text" class="input-text required-entry validate-email" id="login-email" name="login[username]" value="" />
+					                        <input type="hidden" id="afterLoginUrl" name="afterLoginUrl" value="" />
+					                    </div>
+					                </li>
+					                <li>
+					                   <div class="input-box" style="float: left;width: 48%;">
+					                   	 	<label for="login-password" class="required"><em>*</em><?php echo (($locale == "en_US") ? "Password" :"Mot de passe"); ?></label>
+					                        <input type="password" style="width: 100%;" class="input-text required-entry" id="login-password" name="login[password]" />
+					                    	<a href="http://chouetteslunettes.com/index.php/french/customer/account/forgotpassword/" class="f-left">Mot de passe oubli&eacute; ?</a>
+					                    </div>
+					                    <div style="float: right;width: 48%;">
+							  				<p class="required" style="margin-right: 26%;">* <?php echo (($locale == "en_US") ? "Required Fields" :"Champs obligatoires"); ?></p>
+							  				<button type="submit" class="button" style="float: right;margin-right: 26%;"><span><span><?php echo (($locale == "en_US") ? "Login" :"Connexion"); ?></span></span></button>
+			        		  			</div>
+					                </li>
+					              </ul>
+				              
+			        	</form>
+			        <fieldset>
 	        	</li>
-	        		<a href="http://chouetteslunettes.com/index.php/french/customer/account/">
-	        			Signer
-	        		</a>
+	        		
+	        			<div style="margin-top: 5px;float: left;width: 100%;padding-top: 5%;border-top: 1px solid #DBD7D7;">
+		        			<p style="float: left;font-size: large;margin-top: 4%;">Nouveau client </p>
+		        			<a href="http://chouetteslunettes.com/index.php/french/customer/account/">
+				        		<button type="button" class="button" style="float: right;"><span><span><?php echo (($locale == "en_US") ? "Create an account" :"Cr&eacute;er un compte "); ?></span></span></button>
+				       		</a>
+			       		</div>
+	        		
 	        	</li>
         	</div>
         	<?php else: ?>
