@@ -37,11 +37,11 @@
 				<div id="preQueDiv" class="fieldset"">
 						<h3 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;"><?php echo (($locale == "en_US") ? "Do you need single vision lenses or progressive?" :"S&eacute;lectionner votre type de verres ?"); ?></h3> 
 					<div style="width:100%;float: left;margin-top: 5%;margin-bottom: 2%;">
-						<h6 for="userName" style="float: left;width: 35%;font-size: 1.3333em;font-family: 'Bitter', georgia, serif;">Verresunifocaux</h6>
+						<h6 for="userName" style="float: left;width: 35%;font-size: 1.3333em;font-family: 'Bitter', georgia, serif;">Verres unifocaux</h6>
 						<input type="radio" name="is_Pres1" title="Plases Select One Value" id="isNot_Prescrip" value="single" class="checkbox required" style="margin-top: 0.5%;float: left;" checked>
 					</div>
 					<div style="width:100%;float: left;margin-bottom: 2%;">
-						<h6 for="userName" style="float: left;width: 35%;font-size: 1.3333em;font-family: 'Bitter', georgia, serif;" >Verresprogressifs</h6>
+						<h6 for="userName" style="float: left;width: 35%;font-size: 1.3333em;font-family: 'Bitter', georgia, serif;" >Verres progressifs</h6>
 						<input type="radio" name="is_Pres1" title="Plases Select One Value" id="is_Prescrip" value="progresive" class="checkbox required" style="margin-top: 0.5%;float: left;">
 					</div>
 					
@@ -52,7 +52,7 @@
 					
 					<div class="buttons-set">
 						<button type="button" id="preQueBtn" title="<?php echo $this->__('Next') ?>" class="button"><span><span><?php echo $this->__('Next') ?></span></span></button>
-						<a href="customer/account/"><button title="<?php echo Mage::helper('contacts')->__('Passer cette&eacute;tape') ?>" class="button"><span><span><?php echo Mage::helper('contacts')->__('Passer cette&eacute;tape') ?></span></span></button></a>
+						<a href="customer/account/"><button title="<?php echo Mage::helper('contacts')->__('Passer cette &eacute;tape') ?>" class="button"><span><span><?php echo Mage::helper('contacts')->__('Passer cette &eacute;tape') ?></span></span></button></a>
 					</div>
 				</div>
 				
@@ -73,7 +73,7 @@
 										</div>
 									</div>
 									<div class="field" style="float: left;margin-right: 5%;margin-bottom: 2%;">
-										<label class="required"><em></em><?php echo (($locale == "en_US") ? "Relation" :"Rapport"); ?></label>
+										<label class="required"><em></em><?php echo (($locale == "en_US") ? "Relation" :"Relation"); ?></label>
 										<div class="input-box">
 											<input type="text" style="width: 100%;" id="relation" name="relation" value="Self" title="<?php echo $this->__('Relation') ?>" class="input-text required-entry" />
 											<input class="input-text required-entry" id="vision" name="vision" type="hidden" value="progressive" >
