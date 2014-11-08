@@ -36,6 +36,8 @@ function setPLocation(url, setFocus){
         window.opener.focus();
     }
     window.opener.location.href = url;
+    window.opener = self;
+    window.close();
 }
 
 function setLanguageCode(code, fromCode){
