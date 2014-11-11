@@ -136,7 +136,7 @@
             <show_in_store>1</show_in_store>
             <groups>
                 <flatrate translate="label">
-                    <label>Flat Rate</label>
+                    <label>Frais de livraison</label>
                     <frontend_type>text</frontend_type>
                     <sort_order>2</sort_order>
                     <show_in_default>1</show_in_default>

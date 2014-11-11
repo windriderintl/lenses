@@ -144,9 +144,9 @@
                 <active>1</active>
                 <sallowspecific>0</sallowspecific>
                 <model>shipping/carrier_flatrate</model>
-                <name>Fixed</name>
+                <name>Price</name>
                 <price>5.00</price>
-                <title>Flat Rate</title>
+                <title>Frais de livraison</title>
                 <type>I</type>
                 <specificerrmsg>This shipping method is currently unavailable. If you would like to ship using this shipping method, please contact us.</specificerrmsg>
                 <handling_type>F</handling_type>
