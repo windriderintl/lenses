@@ -97,7 +97,7 @@
 						
 					</fieldset>
 					
-					<h1>Member</h1>
+					<h1>Membre</h1>
 					<fieldset>
 						
 					</fieldset>
@@ -824,13 +824,13 @@
 						var showMember = '<?php echo Mage::helper('customer')->getCustomer()->getId(); ?>';
 						if(showMember != ''){
 							jQuery('#form-3').steps("insert",6, {
-							title: "Member",
+							title: "Membre",
 							content: '<fieldset>'+
 										'<div >'+
 											'<?php $userId = Mage::helper("customer")->getCustomer()->getId(); $connection = Mage::getModel("mymod/family")->getCollection()->addFieldToFilter("user_id", array("eq" => $userId))->load(); ?>'+ 
 											'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;margin-bottom: 3%;"><?php echo Mage::helper("contacts")->__("S il vous plaît sélectionnez membre de la famille") ?></h4>'+ 
 											'<table class="fieldset table_custom" style="width: 100%;">'+
-												'<tr><th style="width: 20%;" class="th_custom table_custom">sélectionner</th><th class="th_custom table_custom tableHead" >nom</th><th class="th_custom table_custom">rapport</th></tr>'+
+												'<tr><th style="width: 20%;" class="th_custom table_custom">Sélectionner</th><th class="th_custom table_custom tableHead" >Nom</th><th class="th_custom table_custom">Relation</th></tr>'+
 												'<?php foreach($connection as $arr_row): ?>'+
 															'<tr><td style="padding: 1%;" class="td_custom table_custom"><input type="radio" name="familyMember" value="<?php echo $arr_row['family_id'];?>" onclick="selectMember('+<?php echo $arr_row["family_id"];?>+')" class="checkbox required" style="width: 100%;"></td>'+
 																'<td class="td_custom table_custom"><?php echo $arr_row["name"];?></td><td class="td_custom table_custom"><?php echo $arr_row["relation"];?></td></tr>'+
@@ -1016,13 +1016,13 @@
 					var showMember = '<?php echo Mage::helper('customer')->getCustomer()->getId(); ?>';
 						if(showMember != ''){
 							jQuery('#form-3').steps("insert",3, {
-							title: "Member",
+							title: "Membre",
 							content: '<fieldset>'+
 										'<div >'+
 											'<?php $userId = Mage::helper("customer")->getCustomer()->getId(); $connection = Mage::getModel("mymod/family")->getCollection()->addFieldToFilter("user_id", array("eq" => $userId))->load(); ?>'+ 
 											'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;margin-bottom: 3%;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper("contacts")->__("S il vous plaît sélectionnez membre de la famille") ?></h4>'+ 
 											'<table class="fieldset table_custom" style="width: 100%;" >'+
-												'<tr><th style="width: 20%;">sélectionner</th><th class="tableHead th_custom table_custom" >nom</th><th class="th_custom table_custom">rapport</th></tr>'+
+												'<tr><th style="width: 20%;">Sélectionner</th><th class="tableHead th_custom table_custom" >Nom</th><th class="th_custom table_custom">Relation</th></tr>'+
 												'<?php foreach($connection as $arr_row): ?>'+
 															'<tr><td class="td_custom table_custom" style="padding: 1%;"><input type="radio" name="familyMember" value="<?php echo $arr_row['family_id'];?>" onclick="selectMember('+<?php echo $arr_row["family_id"];?>+')" class="checkbox required" style="width: 100%;"></td>'+
 																'<td class="td_custom table_custom"><?php echo $arr_row["name"];?></td><td class="td_custom table_custom"><?php echo $arr_row["relation"];?></td></tr>'+
@@ -1134,13 +1134,13 @@
 								var showMember = '<?php echo Mage::helper('customer')->getCustomer()->getId(); ?>';
 								if(showMember != ''){
 									jQuery('#form-3').steps("insert",4, {
-									title: "Member",
+									title: "Membre",
 									content: '<fieldset>'+
 												'<div >'+
 													'<?php $userId = Mage::helper("customer")->getCustomer()->getId(); $connection = Mage::getModel("mymod/family")->getCollection()->addFieldToFilter("user_id", array("eq" => $userId))->load(); ?>'+ 
 													'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;margin-bottom: 3%;padding-bottom: 7px;"><?php echo Mage::helper("contacts")->__("S il vous plaît sélectionnez membre de la famille") ?></h4>'+ 
 													'<table class="fieldset table_custom" style="width: 100%;">'+
-														'<tr><th style="width: 20%;" class="th_custom table_custom">sélectionner</th><th class="tableHead th_custom table_custom" >nom</th><th class="th_custom table_custom">rapport</th></tr>'+
+														'<tr><th style="width: 20%;" class="th_custom table_custom">Sélectionner</th><th class="tableHead th_custom table_custom" >Nom</th><th class="th_custom table_custom">Relation</th></tr>'+
 														'<?php foreach($connection as $arr_row): ?>'+
 																	'<tr><td class="td_custom table_custom" style="padding: 1%;"><input type="radio" name="familyMember" value="<?php echo $arr_row['family_id'];?>" onclick="sunSelectMember('+<?php echo $arr_row["family_id"];?>+')" class="checkbox required" style="width: 100%;"></td>'+
 																		'<td class="td_custom table_custom"><?php echo $arr_row["name"];?></td><td class="td_custom table_custom"><?php echo $arr_row["relation"];?></td></tr>'+
@@ -1241,13 +1241,13 @@
 						var showMember = '<?php echo Mage::helper('customer')->getCustomer()->getId(); ?>';
 								if(showMember != ''){
 									jQuery('#form-3').steps("insert",3, {
-									title: "Member",
+									title: "Membre",
 									content: '<fieldset>'+
 												'<div >'+
 													'<?php $userId = Mage::helper("customer")->getCustomer()->getId(); $connection = Mage::getModel("mymod/family")->getCollection()->addFieldToFilter("user_id", array("eq" => $userId))->load(); ?>'+ 
 													'<h4 class="legend" style="margin-bottom: 3%;border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper("contacts")->__("S il vous plaît sélectionnez membre de la famille") ?></h4>'+ 
 													'<table class="fieldset table_custom" style="width: 100%;">'+
-														'<tr><th style="width: 20%;" class="th_custom table_custom">sélectionner</th><th class="tableHead th_custom table_custom" >nom</th><th class="th_custom table_custom">rapport</th></tr>'+
+														'<tr><th style="width: 20%;" class="th_custom table_custom">Sélectionner</th><th class="tableHead th_custom table_custom" >Nom</th><th class="th_custom table_custom">Relation</th></tr>'+
 														'<?php foreach($connection as $arr_row): ?>'+
 																	'<tr><td class="td_custom table_custom" style="padding: 1%;"><input type="radio" name="familyMember" value="<?php echo $arr_row['family_id'];?>" onclick="selectMember('+<?php echo $arr_row["family_id"];?>+')" class="checkbox required" style="width: 100%;"></td>'+
 																		'<td class="td_custom table_custom"><?php echo $arr_row["name"];?></td><td class="td_custom table_custom"><?php echo $arr_row["relation"];?></td></tr>'+
@@ -1334,13 +1334,13 @@
 								var showMember = '<?php echo Mage::helper('customer')->getCustomer()->getId(); ?>';
 								if(showMember != ''){
 									jQuery('#form-3').steps("insert",4, {
-									title: "Member",
+									title: "Membre",
 									content: '<fieldset>'+
 												'<div >'+
 													'<?php $userId = Mage::helper("customer")->getCustomer()->getId(); $connection = Mage::getModel("mymod/family")->getCollection()->addFieldToFilter("user_id", array("eq" => $userId))->load(); ?>'+ 
 													'<h4 class="legend" style="margin-bottom: 3%;border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper("contacts")->__("S il vous plaît sélectionnez membre de la famille") ?></h4>'+ 
 													'<table class="fieldset table_custom" style="width: 100%;">'+
-														'<tr><th style="width: 20%;" class="th_custom table_custom">sélectionner</th><th class="tableHead th_custom table_custom" >nom</th><th class="th_custom table_custom">rapport</th></tr>'+
+														'<tr><th style="width: 20%;" class="th_custom table_custom">Sélectionner</th><th class="tableHead th_custom table_custom" >Nom</th><th class="th_custom table_custom">Relation</th></tr>'+
 														'<?php foreach($connection as $arr_row): ?>'+
 																	'<tr><td class="td_custom table_custom" style="padding: 1%;"><input type="radio" name="familyMember" value="<?php echo $arr_row['family_id'];?>" onclick="sunSelectMember('+<?php echo $arr_row["family_id"];?>+')" class="checkbox required" style="width: 100%;"></td>'+
 																		'<td class="td_custom table_custom"><?php echo $arr_row["name"];?></td><td class="td_custom table_custom"><?php echo $arr_row["relation"];?></td></tr>'+
