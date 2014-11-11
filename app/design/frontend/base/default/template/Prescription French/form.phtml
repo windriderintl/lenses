@@ -59,7 +59,7 @@
 								<p style="height: 50px;padding: 5%;float: left;">Pour vous prot&eacute;ger du soleil </p>
 								<div style="height: 50px;padding: 5%;float: left;width: 90%;">
 									<p> Verres correcteurs ou non</p>
-									<p> Filtre anti-UVinclus</p>
+									<p> Filtre anti-UV inclus</p>
 								</div>	
 							<div  class="custom-footer"></div>
 							<input type="radio" style="width: 100%;margin-bottom: 1%;float: left;"  name="lenses_type" title="Vous devez sélectionner une option" value="sunglasses" id="sunglasses" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">
@@ -624,7 +624,7 @@
 				jQuery('#form-3').steps('remove', 1, {});
 				
 				jQuery('#form-3').steps("insert",1, {
-							title: "Verre",
+							title: "Verres",
 							content: '<fieldset>'+
 										'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;margin-bottom: 3%;"><?php echo Mage::helper("contacts")->__(" S&eacute;lectionner votre gamme de verres") ?></h4>'+ 
 										'<div class="customDiv" onclick="singleVisionPDiv()">'+
@@ -801,15 +801,15 @@
 											'<input type="radio" name="tinte" title="Vous devez sélectionner une option" id="lightTinte" value="25% - Légère" onclick="setTinted(41)" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 										'</div>'+
 										'<div class="customDiv" onclick="mediumTinteDiv()">'+
-											'<h6 for="userName" class="custom-header">50% Medium</h6><span style="margin-right: 2%;width: 10%;font-size: 1.2em;font-family: Bitter, georgia, serif;">  42 € </span>'+
-											'<p style="height: 50px;padding: 5%;float: left;">Recommand&eacute;en cas de faible luminosit&eacute;</p>'+
+											'<h6 for="userName" class="custom-header">50% - Medium</h6><span style="margin-right: 2%;width: 10%;font-size: 1.2em;font-family: Bitter, georgia, serif;">  42 € </span>'+
+											'<p style="height: 50px;padding: 5%;float: left;">Recommand&eacute; en cas de faible luminosit&eacute;</p>'+
 											'<p style="height: 50px;padding: 5%;float: left;width: 90%;">Cat&eacute;gorie 1</p>'+
 											'<div  class="custom-footer"></div>'+
 											'<input type="radio" name="tinte" title="Vous devez sélectionner une option" id="mediumTinte" value="50% Medium" onclick="setTinted(42)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 										'</div>'+
 										'<div class="customDiv" onclick="highTinteDiv()">'+
-											'<h6 for="userName" class="custom-header">80% Fonc&eacute; </h6><span style="margin-right: 2%;width: 10%;font-size: 1.2em;font-family: Bitter, georgia, serif;">  43 € </span>'+
-											'<p style="height: 50px;padding: 5%;float: left;">Recommand&eacute;en cas de forte luminosit&eacute;</p>'+
+											'<h6 for="userName" class="custom-header">80% - Fonc&eacute; </h6><span style="margin-right: 2%;width: 10%;font-size: 1.2em;font-family: Bitter, georgia, serif;">  43 € </span>'+
+											'<p style="height: 50px;padding: 5%;float: left;">Recommand&eacute; en cas de forte luminosit&eacute;</p>'+
 											'<p style="height: 50px;padding: 5%;float: left;width: 90%;">Cat&eacute;gorie 3</p>'+
 											'<div  class="custom-footer"></div>'+
 											'<input type="radio" name="tinte" title="Vous devez sélectionner une option" id="highTinte" value="80% Fonc&eacute;" onclick="setTinted(43)" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
@@ -891,7 +891,7 @@
 										'</div>'+
 										'<hr style="margin-left: 10%;margin-right: 10%;float: left;width: 85%;">'+
 										'<div style="width: 100%; float:left;">'+
-											'<div style="width: 20%;"class="prescription-header">oeil gauche</div>'+
+											'<div style="width: 20%;"class="prescription-header">Oeil gauche</div>'+
 											'<div style="width: 15%; float:left;"><input class="input-text required-entry prescription-input" type="number" id="dls3" name="dls3" type="number" min="-10" max="10" step="0.25" value="0" > </div>'+
 											'<div style="width: 15%; float:left;"><input class="input-text required-entry prescription-input" type="number" id="dlc3" name="dlc3" type="number" min="-4" max="4" step="0.25" value="0" > </div>'+
 											'<div style="width: 15%; float:left;"><input class="input-text required-entry prescription-input" type="number" id="dla3" name="dla3" type="number" min="0" max="180" step="1" value="0" > </div>'+
@@ -1218,15 +1218,15 @@
 								title: "Polarisation",
 								content: '<fieldset>'+
 											'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;margin-bottom: 3%;"><?php echo Mage::helper("contacts")->__("  Souhaitez-vous des verres polaris&eacute;s ? ") ?></h4>'+
-											'<div  class="customDiv" onclick="polorizedDiv()">'+
-												'<h6 for="userName" class="custom-header">Verrespolaris&eacute;s</h6>'+
+											'<div  class="customDiv" onclick="polorizedDiv()">'+ 
+												'<h6 for="userName" class="custom-header">Verres polaris&eacute;s</h6>'+
 												'<p style="height: 100px;padding: 5%;float: left;">Am&eacute;lioration des contrastes et r&eacute;duction de l&rsquo;&eacute;blouissement</p>'+
 												'<div  class="custom-footer"></div>'+
 												'<input type="radio" name="photochromic" title="Vous devez sélectionner une option" id="polorized" value="polorized" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 											'</div>'+
 											'<div class="customDiv" onclick="nonPolorizedDiv()">'+
 												'<h6 for="userName" class="custom-header">Verres non polarises </h6>'+
-												'<p style="height: 100px;padding: 5%;float: left;">Verres solaires</p>'+
+												'<p style="height: 100px;padding: 5%;float: left;width: 90%;">Verres solaires</p>'+
 												'<div  class="custom-footer"></div>'+
 												'<input type="radio" name="photochromic" title="Vous devez sélectionner une option" id="nonPolorized" value="nonPolorized" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 											'</div>'+
@@ -1286,14 +1286,14 @@
 								content: '<fieldset>'+
 											'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;margin-bottom: 3%;"><?php echo Mage::helper("contacts")->__(" Souhaitez-vous des verres polaris&eacute;s ?") ?></h4>'+
 											'<div class="customDiv" onclick="polorizedDiv()">'+
-												'<h6 for="userName" class="custom-header">Verrespolaris&eacute;s</h6>'+
+												'<h6 for="userName" class="custom-header">Verres polaris&eacute;s</h6>'+
 												'<p style="height: 100px;padding: 5%;float: left;">Am&eacute;lioration des contrastes et r&eacute;duction de l&rsquo;&eacute;blouissement</p>'+
 												'<div  class="custom-footer"></div>'+
 												'<input type="radio" name="photochromic" title="Vous devez sélectionner une option" id="polorized" value="polorized" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 											'</div>'+
 											'<div class="customDiv" onclick="nonPolorizedDiv()">'+
 												'<h6 for="userName" class="custom-header">Verres non polarises </h6>'+
-												'<p style="height: 100px;padding: 5%;float: left;">Verres solaires</p>'+
+												'<p style="height: 100px;padding: 5%;float: left;width:90%;">Verres solaires</p>'+
 												'<div  class="custom-footer"></div>'+
 												'<input type="radio" name="photochromic" title="Vous devez sélectionner une option" id="nonPolorized" value="nonPolorized" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 											'</div>'+
@@ -1427,21 +1427,21 @@
 									'<p style="height: 50px;padding: 5%;float: left;width: 90%;">Usage esth&eacute;tique </p>'+
 									'<p style="height: 50px;padding: 5%;float: left;width: 90%;">Cat&eacute;gorie 0</p>'+
 									'<div  class="custom-footer"></div>'+
-									'<input type="radio" name="tinte" title="Vous devez sélectionner une option" value="lightTinte" id="lightTinte" value="25% Clair" onclick="setTinted(41)" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
+									'<input type="radio" name="tinte" title="Vous devez sélectionner une option" value="lightTinte" id="lightTinte" value="25% - Clair" onclick="setTinted(41)" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 								'</div>'+
 								'<div class="customDiv" onclick="mediumTinteDiv()">'+
 									'<h6 for="userName" class="custom-header" >50% - Medium</h6><span style="margin-right: 2%;width: 10%;font-size: 1.2em;font-family: Bitter, georgia, serif;">  42 € </span>'+
 									'<p style="height: 50px;padding: 5%;float: left;">Recommand&eacute; en cas de faible luminosit&eacute;</p>'+
 									'<p style="height: 50px;padding: 5%;float: left;width: 90%;">Cat&eacute;gorie 1</p>'+
 									'<div  class="custom-footer"></div>'+
-									'<input type="radio" name="tinte" title="Vous devez sélectionner une option" value="mediumTinte" id="50% Medium" onclick="setTinted(42)" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
+									'<input type="radio" name="tinte" title="Vous devez sélectionner une option" value="mediumTinte" id="50% - Medium" onclick="setTinted(42)" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 								'</div>'+
 								'<div class="customDiv" onclick="highTinteDiv()">'+
 									'<h6 for="userName" class="custom-header">80% - Fonc&eacute; </h6><span style="margin-right: 2%;width: 10%;font-size: 1.2em;font-family: Bitter, georgia, serif;">  43 € </span>'+
 									'<p style="height: 50px;padding: 5%;float: left;">Recommand&eacute; en cas de forte luminosit&eacute;</p>'+
 									'<p style="height: 50px;padding: 5%;float: left;width: 90%;">Cat&eacute;gorie 3</p>'+
 									'<div  class="custom-footer"></div>'+
-									'<input type="radio" name="tinte" title="Vous devez sélectionner une option" value="highTinte" id="80% Fonc&eacute;"  onclick="setTinted(43)" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
+									'<input type="radio" name="tinte" title="Vous devez sélectionner une option" value="highTinte" id="80% - Fonc&eacute;"  onclick="setTinted(43)" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 								'</div>'+
 								'<div style="width:100%;float: left;margin-top: 1%;">'+
 								'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;color: #00a9c7;" > € </h6>'+
