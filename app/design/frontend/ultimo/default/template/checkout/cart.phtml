@@ -20,7 +20,7 @@
  *
  * @category    design
  * @package     base_default
- * @copyright   Copyright (c) 2010 Magento Inc. (http://www.magentocommerce.com)
+ * @copyright   Copyright (c) 2013 Magento Inc. (http://www.magentocommerce.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
@@ -30,18 +30,11 @@
  *
  * @see Mage_Checkout_Block_Cart
  */
-/**
- * - Removed top "checkout" button
- * - Added table wrapper (to show background image)
- * - Changed "continue shopping" button and "update cart" button
- * - Added class 'last' in table header last cells
- * - Rearranged layout of 'cart-collaterals'
- */
 ?>
 <div class="cart">
     <div class="page-title title-buttons">
         <h1><?php echo $this->__('Shopping Cart') ?></h1>
-        <?php /* if(!$this->hasError()): ?>
+        <?php if(!$this->hasError()): ?>
         <ul class="checkout-types">
         <?php foreach ($this->getMethods('top_methods') as $method): ?>
             <?php if ($methodHtml = $this->getMethodHtml($method)): ?>
@@ -49,57 +42,56 @@
             <?php endif; ?>
         <?php endforeach; ?>
         </ul>
-        <?php endif; */ ?>
+        <?php endif; ?>
     </div>
     <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
     <?php echo $this->getChildHtml('form_before') ?>
-    <form action="<?php echo $this->getUrl('checkout/cart/updatePost') ?>" method="post" class="the-cart-form">
+    <form action="<?php echo $this->getUrl('checkout/cart/updatePost') ?>" method="post">
         <?php echo $this->getBlockHtml('formkey'); ?>
         <fieldset>
-        <div class="cart-table-wrapper">
             <table id="shopping-cart-table" class="data-table cart-table">
-                <col class="col-img" width="1" />
+                <col width="1" />
                 <col />
-                <col class="col-edit" width="1" />
+                <col width="1" />
             <?php if ($this->helper('wishlist')->isAllowInCart()) : ?>
-                <col class="col-wish" width="1" />
+                <col width="1" />
             <?php endif ?>
             <?php if ($this->helper('tax')->displayCartPriceExclTax() || $this->helper('tax')->displayCartBothPrices()): ?>
-                <col class="col-unit-price" width="1" />
+                <col width="1" />
             <?php endif; ?>
             <?php if ($this->helper('tax')->displayCartPriceInclTax() || $this->helper('tax')->displayCartBothPrices()): ?>
-                <col class="col-unit-price" width="1" />
+                <col width="1" />
             <?php endif; ?>
                 <col width="1" />
             <?php if ($this->helper('tax')->displayCartPriceExclTax() || $this->helper('tax')->displayCartBothPrices()): ?>
-                <col class="<?php if($this->helper('tax')->displayCartBothPrices()) echo 'col-total-excl'; else echo 'col-total'; ?>" width="1" />
+                <col width="1" />
             <?php endif; ?>
             <?php if ($this->helper('tax')->displayCartPriceInclTax() || $this->helper('tax')->displayCartBothPrices()): ?>
-                <col class="<?php if($this->helper('tax')->displayCartBothPrices()) echo 'col-total-incl'; else echo 'col-total'; ?>" width="1" />
+                <col width="1" />
             <?php endif; ?>
-                <col class="col-delete" width="1" />
+                <col width="1" />
 
             <?php $mergedCells = ($this->helper('tax')->displayCartBothPrices() ? 2 : 1); ?>
                 <thead>
                     <tr>
-                        <th class="col-img" rowspan="<?php echo $mergedCells; ?>">&nbsp;</th>
+                        <th rowspan="<?php echo $mergedCells; ?>">&nbsp;</th>
                         <th rowspan="<?php echo $mergedCells; ?>"><span class="nobr"><?php echo $this->__('Product Name') ?></span></th>
-                        <th class="col-edit" rowspan="<?php echo $mergedCells; ?>"></th>
+                        <th rowspan="<?php echo $mergedCells; ?>"></th>
                         <?php if ($this->helper('wishlist')->isAllowInCart()) : ?>
-                        <th class="col-wish a-center" rowspan="<?php echo $mergedCells; ?>"><span class="nobr"><?php echo $this->__('Move to Wishlist') ?></span></th>
+                        <th rowspan="<?php echo $mergedCells; ?>" class="a-center"><span class="nobr"><?php echo $this->__('Move to Wishlist') ?></span></th>
                         <?php endif ?>
-			<th><?php echo $this->__('Prescription ') ?></th>
-                        <th class="col-unit-price a-center" colspan="<?php echo $mergedCells; ?>"><span class="nobr"><?php echo $this->__('Unit Price') ?></span></th>
+		    	<th><?php echo $this->__('Prescription ') ?></th>
+                        <th class="a-center" colspan="<?php echo $mergedCells; ?>"><span class="nobr"><?php echo $this->__('Unit Price') ?></span></th>
                         <th rowspan="<?php echo $mergedCells; ?>" class="a-center"><?php echo $this->__('Qty') ?></th>
                         <th class="a-center" colspan="<?php echo $mergedCells; ?>"><?php echo $this->__('Subtotal') ?></th>
-                        <th class="col-delete a-center" rowspan="<?php echo $mergedCells; ?>">&nbsp;</th>
+                        <th rowspan="<?php echo $mergedCells; ?>" class="a-center">&nbsp;</th>
                     </tr>
                     <?php if ($this->helper('tax')->displayCartBothPrices()): ?>
                     <tr>
-                        <th class="col-unit-price a-right"><?php echo $this->helper('tax')->getIncExcTaxLabel(false) ?></th>
-                        <th class="col-unit-price"><?php echo $this->helper('tax')->getIncExcTaxLabel(true) ?></th>
-                        <th class="col-total-excl a-right"><?php echo $this->helper('tax')->getIncExcTaxLabel(false) ?></th>
-                        <th class="col-total-incl"><?php echo $this->helper('tax')->getIncExcTaxLabel(true) ?></th>
+                        <th class="a-right"><?php echo $this->helper('tax')->getIncExcTaxLabel(false) ?></th>
+                        <th><?php echo $this->helper('tax')->getIncExcTaxLabel(true) ?></th>
+                        <th class="a-right"><?php echo $this->helper('tax')->getIncExcTaxLabel(false) ?></th>
+                        <th><?php echo $this->helper('tax')->getIncExcTaxLabel(true) ?></th>
                     </tr>
                     <?php endif; ?>
                 </thead>
@@ -107,22 +99,9 @@
                     <tr>
                         <td colspan="50" class="a-right">
                             <?php if($this->getContinueShoppingUrl()): ?>
-                                <button type="button" title="<?php echo $this->__('Continue Shopping') ?>" class="button btn-continue btn-inline" onclick="setLocation('<?php echo $this->getContinueShoppingUrl() ?>')"><span><span><?php echo $this->__('Continue Shopping') ?></span></span></button>
+                                <button type="button" title="<?php echo $this->__('Continue Shopping') ?>" class="button btn-continue" onclick="setLocation('<?php echo $this->getContinueShoppingUrl() ?>')"><span><span><?php echo $this->__('Continue Shopping') ?></span></span></button>
                             <?php endif; ?>
-                            <button type="submit" name="update_cart_action" value="update_qty" title="<?php echo $this->__('Update Shopping Cart'); ?>" class="button btn-update btn-inline"><span><span><?php echo $this->__('Update Shopping Cart'); ?></span></span></button>
-
-							<?php /*?>
-                            <a id="link-cart-update" href="#">Test submit</a>
-                            <script type="text/javascript">
-                            jQuery(function($){
-                                $('#link-cart-update').click(function() {
-                                    $('.the-cart-form').submit();
-                                });
-                            });
-                            </script>
-							<?php */?>
-                            
-							<?php /*?>
+                            <button type="submit" name="update_cart_action" value="update_qty" title="<?php echo $this->__('Update Shopping Cart'); ?>" class="button btn-update"><span><span><?php echo $this->__('Update Shopping Cart'); ?></span></span></button>
                             <button type="submit" name="update_cart_action" value="empty_cart" title="<?php echo $this->__('Clear Shopping Cart'); ?>" class="button btn-empty" id="empty_cart_button"><span><span><?php echo $this->__('Clear Shopping Cart'); ?></span></span></button>
                             <!--[if lt IE 8]>
                             <input type="hidden" id="update_cart_action_container" />
@@ -146,7 +125,6 @@
                             //]]>
                             </script>
                             <![endif]-->
-                            <?php */?>
                         </td>
                     </tr>
                 </tfoot>
@@ -157,109 +135,89 @@
                 </tbody>
             </table>
             <script type="text/javascript">decorateTable('shopping-cart-table')</script>
-        <!-- end: cart-table-wrapper -->
         </fieldset>
     </form>
-    <div class="cart-collaterals nested-container">
-    	<div class="cart-right-column grid12-4">
-            <div class="totals grid-full alpha omega">
-                <div class="totals-inner">
-                <?php echo $this->getChildHtml('totals'); ?>
-                <?php if(!$this->hasError()): ?>
-                    <ul class="checkout-types">
-                    <?php foreach ($this->getMethods('methods') as $method): ?>
-                    	<?php if ($methodHtml = $this->getMethodHtml($method)): ?>
-                    		<li><?php echo $methodHtml; ?></li>
-                    	<?php endif; ?>
-                    <?php endforeach; ?>
-                    </ul>
-                <?php endif; ?>
-                </div>
-            </div>
-			<?php if ($tmpHtml = $this->getChildHtml('block_cart_below_totals')): ?>
-            	<div class="block_cart_below_totals grid-full alpha omega"><?php echo $tmpHtml; ?></div>
-            <?php endif; ?>
-        </div> <!-- end: cart-right-column -->
-        <div class="cart-left-column grid12-8">
-        	<?php if ($tmpHtml = $this->getChildHtml('checkout.cart.extra')): ?>
-            <div class="grid-full alpha omega">
-                <?php /* Extensions placeholder */ ?>
-                <?php echo $tmpHtml; ?>
-			</div>
-            <?php endif; ?>
-            
-            <?php if ($tmpHtml = $this->getChildHtml('block_cart_below_table')): ?>
-            	<div class="block_cart_below_table grid-full alpha omega" style="display: none;"><?php echo $tmpHtml; ?></div>
-            <?php endif; ?>
-            
-			<div class="grid12-6 mobile-grid-half">
-            	<?php if (!$this->getIsVirtual()): echo $this->getChildHtml('shipping'); endif; ?>
-			</div>
-			<div class="grid12-6 mobile-grid-half">
-            	<?php echo $this->getChildHtml('coupon') ?>
-            </div>
-            <div class="grid-full alpha omega">
+    <div class="cart-collaterals">
+        <div class="col2-set">
+            <div class="col-1">
                 <?php echo $this->getChildHtml('crosssell') ?>
             </div>
-        </div> <!-- end: cart-left-column -->
+            <div class="col-2">
+                <?php /* Extensions placeholder */ ?>
+                <?php echo $this->getChildHtml('checkout.cart.extra') ?>
+                <?php echo $this->getChildHtml('coupon') ?>
+                <?php if (!$this->getIsVirtual()): echo $this->getChildHtml('shipping'); endif; ?>
+            </div>
+        </div>
+        <div class="totals">
+            <?php echo $this->getChildHtml('totals'); ?>
+            <?php if(!$this->hasError()): ?>
+            <ul class="checkout-types">
+            <?php foreach ($this->getMethods('methods') as $method): ?>
+                <?php if ($methodHtml = $this->getMethodHtml($method)): ?>
+                <li><?php echo $methodHtml; ?></li>
+                <?php endif; ?>
+            <?php endforeach; ?>
+            </ul>
+            <?php endif; ?>
+        </div>
     </div>
 </div>
 
 
-
-	<div style="display: none;">
+			<div style="display: none;">
 					<div id="homepage_popup"> 
 						<?php $locale = Mage::app()->getLocale()->getLocaleCode(); ?>
 						
 						<h2 class="legend" style="margin-bottom: 5%;"><?php echo (($locale == "en_US") ? "Prescription Details" :"Revue de votre prescription"); ?> </h2>  
-							<table class="fieldset table_custom" cellspacing="10" style="border: 0px solid black;" >
-										<tr>
-											  <td colspan="2" class="td_custom table_custom" ></td>
-											  <th class="th_custom table_custom">Sphere</th>	
-											  <th class="th_custom table_custom"><?php echo (($locale == "en_US") ? "Cylinder" :"Cylindre");  ?></th>
-											  <th class="th_custom table_custom"><?php echo (($locale == "en_US") ? " Axis " :" Axe ");  ?></th>
-										</tr>
-										<tr>
-											  <th rowspan="2" class="th_custom table_custom" style="padding-top: 6%;"><?php echo (($locale == "en_US") ? "Distance" :"Distance");  ?></th>
-											  <th class="th_custom table_custom"><?php echo (($locale == "en_US") ? "Right Eye" :"Oeil Droit");  ?></th>	
-											  <td class="td_custom table_custom"><input class="input-text required-entry" readonly style="float:left;width: 100%;" id="drs" name="drs" type="number" min="-10" max="10" step="0.25" value="0"></td>
-											  <td class="td_custom table_custom"><input class="input-text required-entry" readonly style="float:left;width: 100%;" id="drc" name="drc" type="number" min="-4" max="4" step="0.25" value="0"></td>
-											  <td class="td_custom table_custom"><input class="input-text required-entry" readonly style="float:left;width: 100%;" id="dra" name="dra" type="number"  min="0" max="180" step="1" value="0"></td>
-										</tr>
-										<tr>
-											  <th class="th_custom table_custom"><?php echo (($locale == "en_US") ? "Left Eye" :"oeil gauche");  ?></th>
-											  <td class="td_custom table_custom"><input class="input-text required-entry" readonly style="float:left;width: 100%;" id="dls" name="dls" type="number" min="-10" max="10" step="0.25" value="0"></td>	
-											  <td class="td_custom table_custom"><input class="input-text required-entry" readonly style="float:left;width: 100%;" id="dlc" name="dlc" type="number" min="-4" max="4" step="0.25" value="0"></td>
-											  <td class="td_custom table_custom"><input class="input-text required-entry" readonly style="float:left;width: 100%;" id="dla" name="dla" type="number" min="0" max="180" step="1" value="0"></td>
-										</tr>
-										<tr id="reading">
-											  <th rowspan="2" class="th_custom table_custom" style="padding-top: 6%;"><?php echo (($locale == "en_US") ? "Reading" :"Lecture");  ?></th>
-											  <th class="th_custom table_custom"><?php echo (($locale == "en_US") ? "Right Eye" :"Oeil Droit");  ?></th>	
-											  <td class="td_custom table_custom"><input class="input-text required-entry" readonly style="float:left;width: 100%;" id="rrs" name="rrs" type="number" min="-10" max="10" step="0.25" value="0"></td>		
-											  <td class="td_custom table_custom"><input class="input-text required-entry" readonly style="float:left;width: 100%;" id="rrc" name="rrc" type="number" min="-4" max="4" step="0.25" value="0"></td>
-											  <td class="td_custom table_custom"><input class="input-text required-entry" readonly style="float:left;width: 100%;" id="rra" name="rra" type="number" min="0" max="180" step="1" value="0"></td>
-										</tr>
-										<tr id="readingLeft">
-											  <th class="th_custom table_custom"><?php echo (($locale == "en_US") ? "Left Eye" :"oeil gauche");  ?></th>
-											  <td class="td_custom table_custom"><input class="input-text required-entry" readonly style="float:left;width: 100%;" id="rls" name="rls" type="number" min="-10" max="10" step="0.25" value="0"></td>			
-											  <td class="td_custom table_custom"><input class="input-text required-entry" readonly style="float:left;width: 100%;" id="rlc" name="rlc" type="number" min="-4" max="4" step="0.25" value="0"></td>
-											  <td class="td_custom table_custom"><input class="input-text required-entry" readonly style="float:left;width: 100%;" id="rla" name="rla" type="number" min="0" max="180" step="1" value="0"></td>
-										</tr>
-										<tr>
-											  <th class="th_custom table_custom"><?php echo (($locale == "en_US") ? "Addition" :"Addition");  ?></th>
-											  <th class="th_custom table_custom"><?php echo (($locale == "en_US") ? "Right Eye" :"Oeil Droit");  ?></th>
-											  <td class="td_custom table_custom"><input class="input-text required-entry" readonly style="float:left;width: 100%;" id="ars" name="ars" type="number" min="0.75" max="3.5" step="0.25" value="0.75"></td>	
-											  <th class="th_custom table_custom"><?php echo (($locale == "en_US") ? "Left Eye" :"oeil gauche");  ?></th>
-											  <td class="td_custom table_custom"><input class="input-text required-entry" readonly style="float:left;width: 100%;" id="ala" name="ala" type="number" min="0.75" max="3.5" step="0.25" value="0.75"></td>
-										</tr>
-										<tr>
-											  <th class="th_custom table_custom"><?php echo (($locale == "en_US") ? "Pupillary distance" :"Distance pupillaire");  ?></th>
-											  <th class="th_custom table_custom"><?php echo (($locale == "en_US") ? "Right Eye" :"Oeil Droit");  ?></th>
-											  <td class="td_custom table_custom"><input class="input-text required-entry" readonly style="float:left;width: 100%;" id="pd" name="pd" type="number" value="0"  min="0" max="100" step="0.5"></td>	
-											  <th class="th_custom table_custom"><?php echo (($locale == "en_US") ? "Left Eye" :"oeil gauche");  ?></th>
-											  <td class="td_custom table_custom"><input class="input-text required-entry" readonly style="float:left;width: 100%;" id="pdl" name="pdl" type="number" value="0"  min="0" max="100" step="0.5"></td>
-										</tr>
-									</table>
+							<div id="progressiveTableId" class="fieldset table_custom" cellspacing="10" style="border: 0px solid black;" >
+								<div style="width: 100%; float:left;margin-left: 18%;">
+									<div style="width: 15%;" class="prescription-header">Sph&egrave;re</div>
+									<div style="width: 15%;" class="prescription-header">Cylindre</div>
+									<div style="width: 15%;" class="prescription-header">Axe</div>
+									<div style="width: 15%;"class="prescription-header">Addition</div>
+									<div style="width: 15%;"class="prescription-header">Distance pupillaire</div>
+								</div>
+								<div style="width: 100%; float:left;margin-top: 1%;">
+									<div style="width: 20%;" class="prescription-header">Oeil droit</div>
+									<div style="width: 15%; float:left;"><input class="input-text required-entry prescription-input" type="number" id="drs" name="drs" type="number" min="-10" max="10" step="0.25" value="0"> </div>
+									<div style="width: 15%; float:left;"><input class="input-text required-entry prescription-input" type="number" id="drc" name="drc" type="number" min="-4" max="4" step="0.25" value="0" > </div>
+									<div style="width: 15%; float:left;"><input class="input-text required-entry prescription-input" type="number" id="dra" name="dra" type="number"  min="0" max="180" step="1" value="0" > </div>
+									<div style="width: 15%; float:left;"><input type="number" class="input-text required-entry prescription-input" id="ars" name="ars" type="number" min="0" max="3.5" step="0.25" value="0"> </div>
+									<div style="width: 15%; float:left;"><input type="number" class="input-text required-entry prescription-input" id="pd" name="pd" type="number" value="0"  min="0" max="100" step="0.5" > </div>
+								</div>
+								<hr style="margin-left: 10%;margin-right: 10%;float: left;width: 85%;">
+								<div style="width: 100%; float:left;">
+									<div style="width: 20%;"class="prescription-header">Oeil gauche</div>
+									<div style="width: 15%; float:left;"><input class="input-text required-entry prescription-input" type="number" id="dls" name="dls" type="number" min="-10" max="10" step="0.25" value="0" > </div>
+									<div style="width: 15%; float:left;"><input class="input-text required-entry prescription-input" type="number" id="dlc" name="dlc" type="number" min="-4" max="4" step="0.25" value="0" > </div>
+									<div style="width: 15%; float:left;"><input class="input-text required-entry prescription-input" type="number" id="dla" name="dla" type="number" min="0" max="180" step="1" value="0" > </div>
+									<div style="width: 15%; float:left;"><input class="input-text required-entry prescription-input" type="number" id="ala" name="ala" type="number" min="0" max="3.5" step="0.25" value="0" > </div>
+									<div style="width: 15%; float:left;"><input class="input-text required-entry prescription-input" type="number" id="pdl" name="pdl" type="number" value="0"  min="0" max="100" step="0.5" > </div>
+								</div>
+							</div>	
 							
 					</div>
 			</div>
+
+<style>
+.prescription-header{
+	float:left;
+	font-weight: bold;
+	font-size: 14px;
+	color: #888888 !important;
+}
+.prescription-input{
+	float:left;
+	width: 80%;
+	height: 30px;
+	padding-bottom: 0px !important;
+	padding-right: 0px !important;
+	padding-top: 0px !important;
+}	
+
+#cboxLoadedContent{
+	overflow: hidden !important;
+}
+
+</style>
