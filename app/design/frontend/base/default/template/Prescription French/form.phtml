@@ -96,18 +96,20 @@
 					<fieldset>
 						
 					</fieldset>
-					
-					<h1>Membre</h1>
-					<fieldset>
-						
-					</fieldset>
-					
+					<!--
+					<?php $userId = Mage::helper("customer")->getCustomer()->getId(); $connection = Mage::getModel("mymod/family")->getCollection()->addFieldToFilter("user_id", array("eq" => $userId))->load(); ?>	
+					<?php $familyCount = sizeof($connection); ?>	
+						<?php if ($userId != '' && $familyCount > 0): ?>
+							<h1>Membre</h1>
+							<fieldset>
+							</fieldset>
+						<?php endif; ?>
+					-->
 					<h1>Prescription</h1>
 					<fieldset >
 						
 					</fieldset>
 				</div>
-					
 				</div>
  			
  	
@@ -822,12 +824,13 @@
 									'</fieldset>'
 						})
 						var showMember = '<?php echo Mage::helper('customer')->getCustomer()->getId(); ?>';
-						if(showMember != ''){
+						<?php $userId = Mage::helper("customer")->getCustomer()->getId(); $connection = Mage::getModel("mymod/family")->getCollection()->addFieldToFilter("user_id", array("eq" => $userId))->load(); ?>	
+						<?php $familyCount = count($connection); ?>	
+							if(showMember != '' && <?php echo $familyCount ?> > 0 ){
 							jQuery('#form-3').steps("insert",6, {
 							title: "Membre",
 							content: '<fieldset>'+
 										'<div >'+
-											'<?php $userId = Mage::helper("customer")->getCustomer()->getId(); $connection = Mage::getModel("mymod/family")->getCollection()->addFieldToFilter("user_id", array("eq" => $userId))->load(); ?>'+ 
 											'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;margin-bottom: 3%;"><?php echo Mage::helper("contacts")->__("S il vous plaît sélectionnez membre de la famille") ?></h4>'+ 
 											'<table class="fieldset table_custom" style="width: 100%;">'+
 												'<tr><th style="width: 20%;" class="th_custom table_custom">Sélectionner</th><th class="th_custom table_custom tableHead" >Nom</th><th class="th_custom table_custom">Relation</th></tr>'+
@@ -1013,31 +1016,6 @@
 										'</div>'+
 							'</fieldset>'
 					})
-					var showMember = '<?php echo Mage::helper('customer')->getCustomer()->getId(); ?>';
-						if(showMember != ''){
-							jQuery('#form-3').steps("insert",3, {
-							title: "Membre",
-							content: '<fieldset>'+
-										'<div >'+
-											'<?php $userId = Mage::helper("customer")->getCustomer()->getId(); $connection = Mage::getModel("mymod/family")->getCollection()->addFieldToFilter("user_id", array("eq" => $userId))->load(); ?>'+ 
-											'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;margin-bottom: 3%;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper("contacts")->__("S il vous plaît sélectionnez membre de la famille") ?></h4>'+ 
-											'<table class="fieldset table_custom" style="width: 100%;" >'+
-												'<tr><th style="width: 20%;">Sélectionner</th><th class="tableHead th_custom table_custom" >Nom</th><th class="th_custom table_custom">Relation</th></tr>'+
-												'<?php foreach($connection as $arr_row): ?>'+
-															'<tr><td class="td_custom table_custom" style="padding: 1%;"><input type="radio" name="familyMember" value="<?php echo $arr_row['family_id'];?>" onclick="selectMember('+<?php echo $arr_row["family_id"];?>+')" class="checkbox required" style="width: 100%;"></td>'+
-																'<td class="td_custom table_custom"><?php echo $arr_row["name"];?></td><td class="td_custom table_custom"><?php echo $arr_row["relation"];?></td></tr>'+
-												'<?php endforeach; ?>'+
-											'</table>'+
-										'</div>'+
-										'<div style="width:100%;float: left;margin-top: 1%;">'+
-										'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;color: #00a9c7;" > € </h6>'+
-											'<h6 for="price" name="price8" id="price8" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: Bitter, georgia, serif;margin-left: 1%;margin-right: 1%;" ></h6>'+
-											'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Prix total : </h6>'+
-										'</div>'+
-									'</fieldset>'
-							})
-							
-						}
 					jQuery('#price5').text(grandTotal);
 					jQuery('#price6').text(grandTotal);
 					jQuery('#price7').text(grandTotal);	
@@ -1132,12 +1110,13 @@
 								})
 								
 								var showMember = '<?php echo Mage::helper('customer')->getCustomer()->getId(); ?>';
-								if(showMember != ''){
+								<?php $userId = Mage::helper("customer")->getCustomer()->getId(); $connection = Mage::getModel("mymod/family")->getCollection()->addFieldToFilter("user_id", array("eq" => $userId))->load(); ?>	
+								<?php $familyCount = count($connection); ?>	
+									if(showMember != '' && <?php echo $familyCount ?> > 0 ){
 									jQuery('#form-3').steps("insert",4, {
 									title: "Membre",
 									content: '<fieldset>'+
 												'<div >'+
-													'<?php $userId = Mage::helper("customer")->getCustomer()->getId(); $connection = Mage::getModel("mymod/family")->getCollection()->addFieldToFilter("user_id", array("eq" => $userId))->load(); ?>'+ 
 													'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;margin-bottom: 3%;padding-bottom: 7px;"><?php echo Mage::helper("contacts")->__("S il vous plaît sélectionnez membre de la famille") ?></h4>'+ 
 													'<table class="fieldset table_custom" style="width: 100%;">'+
 														'<tr><th style="width: 20%;" class="th_custom table_custom">Sélectionner</th><th class="tableHead th_custom table_custom" >Nom</th><th class="th_custom table_custom">Relation</th></tr>'+
@@ -1239,12 +1218,13 @@
 								})
 						
 						var showMember = '<?php echo Mage::helper('customer')->getCustomer()->getId(); ?>';
-								if(showMember != ''){
+						<?php $userId = Mage::helper("customer")->getCustomer()->getId(); $connection = Mage::getModel("mymod/family")->getCollection()->addFieldToFilter("user_id", array("eq" => $userId))->load(); ?>	
+						<?php $familyCount = count($connection); ?>	
+								if(showMember != '' && <?php echo $familyCount ?> > 0 ){
 									jQuery('#form-3').steps("insert",3, {
 									title: "Membre",
 									content: '<fieldset>'+
 												'<div >'+
-													'<?php $userId = Mage::helper("customer")->getCustomer()->getId(); $connection = Mage::getModel("mymod/family")->getCollection()->addFieldToFilter("user_id", array("eq" => $userId))->load(); ?>'+ 
 													'<h4 class="legend" style="margin-bottom: 3%;border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper("contacts")->__("S il vous plaît sélectionnez membre de la famille") ?></h4>'+ 
 													'<table class="fieldset table_custom" style="width: 100%;">'+
 														'<tr><th style="width: 20%;" class="th_custom table_custom">Sélectionner</th><th class="tableHead th_custom table_custom" >Nom</th><th class="th_custom table_custom">Relation</th></tr>'+
@@ -1332,12 +1312,13 @@
 								})
 								
 								var showMember = '<?php echo Mage::helper('customer')->getCustomer()->getId(); ?>';
-								if(showMember != ''){
+								<?php $userId = Mage::helper("customer")->getCustomer()->getId(); $connection = Mage::getModel("mymod/family")->getCollection()->addFieldToFilter("user_id", array("eq" => $userId))->load(); ?>	
+								<?php $familyCount = count($connection); ?>	
+									if(showMember != '' && <?php echo $familyCount ?> > 0 ){
 									jQuery('#form-3').steps("insert",4, {
 									title: "Membre",
 									content: '<fieldset>'+
 												'<div >'+
-													'<?php $userId = Mage::helper("customer")->getCustomer()->getId(); $connection = Mage::getModel("mymod/family")->getCollection()->addFieldToFilter("user_id", array("eq" => $userId))->load(); ?>'+ 
 													'<h4 class="legend" style="margin-bottom: 3%;border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper("contacts")->__("S il vous plaît sélectionnez membre de la famille") ?></h4>'+ 
 													'<table class="fieldset table_custom" style="width: 100%;">'+
 														'<tr><th style="width: 20%;" class="th_custom table_custom">Sélectionner</th><th class="tableHead th_custom table_custom" >Nom</th><th class="th_custom table_custom">Relation</th></tr>'+
