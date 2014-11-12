@@ -121,7 +121,7 @@
 					<div id="formId1">
 						<div class="fieldset">
 							<h2 class="legend"><?php echo Mage::helper('contacts')->__('Prescription') ?></h2> 
-							<div class="fields">
+							<div class="fields" style="margin-left: 15%;">
 								<div style="margin-bottom: 2%;">
 									<div class="field" style="float: left;margin-right: 5%;margin-bottom: 5%;">
 										<label for="email_address" class="required"><?php echo (($locale == "en_US") ? "Name" :"Nom"); ?></label>
@@ -169,7 +169,7 @@
 							
 						</div>
 						
-						<div class="buttons-set">
+						<div class="buttons-set" style="float: right;">
 							
 							<button type="submit" title="<?php echo Mage::helper('contacts')->__('Save') ?>" class="button"><span><span><?php echo Mage::helper('contacts')->__('Save') ?></span></span></button>
 						</div>
@@ -181,7 +181,7 @@
 					<div id="formId1">
 						<div class="fieldset">
 							<h2 class="legend"><?php echo Mage::helper('contacts')->__('Prescription') ?></h2> 
-							<div class="fields">
+							<div class="fields" style="margin-left: 15%;">
 								<div style="margin-bottom: 2%;">
 									<div class="field" style="float: left;margin-right: 5%;margin-bottom: 5%;">
 										<label for="email_address" class="required"><?php echo (($locale == "en_US") ? "Name" :"Nom"); ?></label>
@@ -232,7 +232,7 @@
 							
 						</div>
 						
-						<div class="buttons-set">
+						<div class="buttons-set" style="float: right;">
 							
 							<button type="submit" id="closePopUp" title="<?php echo Mage::helper('contacts')->__('Save') ?>" class="button"><span><span><?php echo Mage::helper('contacts')->__('Save') ?></span></span></button>
 						</div>
@@ -273,23 +273,43 @@
 
 
 <style>
-		.table_custom{
-			border:1px solid black;
-			border-collapse:collapse;
-		}
-		.th_custom{
-			padding:5px;
-			width: 50%;
-			text-align: center;
-			font-weight: bold;
-			font-size: 14px;
-			color: #000000;
-			background-color: #f8f8f8;
-		}
-		.td_custom{
-			vertical-align: inherit;
-			text-align: center;
-		}
+.table_custom{
+	border:1px solid black;
+	border-collapse:collapse;
+}
+.th_custom{
+	padding:5px;
+	width: 50%;
+	text-align: center;
+	font-weight: bold;
+	font-size: 14px;
+	color: #000000;
+	background-color: #f8f8f8;
+}
+.td_custom{
+	vertical-align: inherit;
+	text-align: center;
+}
+		
+.prescription-header{
+	float:left;
+	font-weight: bold;
+	font-size: 14px;
+	color: #888888 !important;
+}
+.prescription-input{
+	float:left;
+	width: 80%;
+	height: 30px;
+	padding-bottom: 0px !important;
+	padding-right: 0px !important;
+	padding-top: 0px !important;
+}	
+
+#cboxLoadedContent{
+	overflow: hidden !important;
+}
+		
 </style>
 	
 <script type="text/javascript">
