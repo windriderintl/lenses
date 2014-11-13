@@ -164,10 +164,7 @@
         	<?php if (empty($userId)): ?>
         	<div>
 	        	<li>
-	        	<!--	<a href="http://localhost/lenses/index.php/french/customer/account/">
-	        			Se connecter
-	        	</a> -->
-	        	<fieldset style="">
+	        	<fieldset>
 					       <h4 style="padding-bottom: 2%;"><?php echo (($locale == "en_US") ? "Already registered?" :"D&Eacute;J&Aacute; CLIENT"); ?></h4>
 							<!--	<form action="http://localhost/lenses/index.php/french/customer/account/loginPostCustom/" method="post"> -->
 								<form action="<?php echo Mage::getUrl('customer/account/loginPost/') ?>" method="post">
@@ -194,7 +191,6 @@
 					              </ul>
 				              
 			        	</form>
-			        <fieldset>
 	        	</li>
 	        		
 	        			<div style="margin-top: 5px;float: left;width: 100%;padding-top: 5%;border-top: 1px solid #DBD7D7;">
@@ -204,8 +200,7 @@
 				        		<button type="button" class="button" style="float: right;"><span><span><?php echo (($locale == "en_US") ? "Create an account" :"Cr&eacute;er un compte "); ?></span></span></button>
 				       		</a>
 			       		</div>
-	        		
-	        	</li>
+	        	</fieldset>	
         	</div>
         	<?php else: ?>
         	<div>
@@ -217,8 +212,8 @@
 	        	</li>
         	</div>
         	<?php endif ?>
+     
         </ul>    
     </div>
-
 
 <?php endif;?>
