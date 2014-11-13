@@ -170,7 +170,7 @@
 	        	<fieldset style="">
 					       <h4 style="padding-bottom: 2%;"><?php echo (($locale == "en_US") ? "Already registered?" :"D&Eacute;J&Aacute; CLIENT"); ?></h4>
 							<!--	<form action="http://localhost/lenses/index.php/french/customer/account/loginPostCustom/" method="post"> -->
-								<form action="<?php echo Mage::getUrl('customer/account/loginPostCustom/') ?>" method="post">
+								<form action="<?php echo Mage::getUrl('customer/account/loginPost/') ?>" method="post">
 					            <ul class="form-list">
 					                <li>
 					                    <label for="login-email" class="required"><em>*</em><?php echo (($locale == "en_US") ? "Email Address" :"Adresse e-mail"); ?></label>
@@ -210,7 +210,7 @@
         	<?php else: ?>
         	<div>
 	        	<li>
-	        		<a href="<?php echo Mage::getUrl('/customer/account/logout/') ?>">
+	        		<a href="<?php echo Mage::getUrl('customer/account/logout/') ?>">
 	        		<!--<a href="http://localhost/lenses/index.php/french/customer/account/logout/"> -->
 	        			D&eacute;connexion
 	        		</a>
