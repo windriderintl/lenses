@@ -34,15 +34,15 @@
 <div class="cart">
     <div class="page-title title-buttons">
         <h1><?php echo $this->__('Shopping Cart') ?></h1>
-        <?php if(!$this->hasError()): ?>
-        <ul class="checkout-types">
+       <!--  <?php if(!$this->hasError()): ?>
+       <ul class="checkout-types">
         <?php foreach ($this->getMethods('top_methods') as $method): ?>
             <?php if ($methodHtml = $this->getMethodHtml($method)): ?>
             <li><?php echo $methodHtml; ?></li>
             <?php endif; ?>
         <?php endforeach; ?>
-        </ul>
-        <?php endif; ?>
+      </ul> 
+        <?php endif; ?>-->
     </div>
     <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
     <?php echo $this->getChildHtml('form_before') ?>
@@ -138,8 +138,8 @@
         </fieldset>
     </form>
     <div class="cart-collaterals">
-        <div class="col2-set">
-            <div class="col-1">
+        <div class="col2-set" style="width: 70%;float: left;">
+           <div class="col-1">
                 <?php echo $this->getChildHtml('crosssell') ?>
             </div>
             <div class="col-2">
@@ -149,7 +149,7 @@
                 <?php if (!$this->getIsVirtual()): echo $this->getChildHtml('shipping'); endif; ?>
             </div>
         </div>
-        <div class="totals">
+        <div class="totals" style="padding: 3%;float: right;">
             <?php echo $this->getChildHtml('totals'); ?>
             <?php if(!$this->hasError()): ?>
             <ul class="checkout-types">
