@@ -191,7 +191,7 @@
 .wizard > .content > .body input
 {
     display: block;
-    border: 1px solid #ccc;
+    border: 0px solid #ccc;
 }
 
 .wizard > .content > .body input[type="checkbox"]
