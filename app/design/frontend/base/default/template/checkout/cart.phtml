@@ -138,8 +138,8 @@
         </fieldset>
     </form>
     <div class="cart-collaterals">
-        <div class="col2-set">
-            <div class="col-1">
+        <div class="col2-set" style="width: 70%;float: left;">
+           <div class="col-1">
                 <?php echo $this->getChildHtml('crosssell') ?>
             </div>
             <div class="col-2">
@@ -149,7 +149,7 @@
                 <?php if (!$this->getIsVirtual()): echo $this->getChildHtml('shipping'); endif; ?>
             </div>
         </div>
-        <div class="totals">
+        <div class="totals" style="padding: 3%;float: right;">
             <?php echo $this->getChildHtml('totals'); ?>
             <?php if(!$this->hasError()): ?>
             <ul class="checkout-types">
