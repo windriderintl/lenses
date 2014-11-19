@@ -826,7 +826,7 @@
 						var showMember = '<?php echo Mage::helper('customer')->getCustomer()->getId(); ?>';
 						<?php $userId = Mage::helper("customer")->getCustomer()->getId(); $connection = Mage::getModel("mymod/family")->getCollection()->addFieldToFilter("user_id", array("eq" => $userId))->load(); ?>	
 						<?php $familyCount = count($connection); ?>	
-							if(showMember != '' && <?php echo $familyCount ?> > 0 ){
+							if(showMember != '' && <?php echo $familyCount ?> > 1 ){
 							jQuery('#form-3').steps("insert",6, {
 							title: "Membre",
 							content: '<fieldset>'+
@@ -1112,7 +1112,7 @@
 								var showMember = '<?php echo Mage::helper('customer')->getCustomer()->getId(); ?>';
 								<?php $userId = Mage::helper("customer")->getCustomer()->getId(); $connection = Mage::getModel("mymod/family")->getCollection()->addFieldToFilter("user_id", array("eq" => $userId))->load(); ?>	
 								<?php $familyCount = count($connection); ?>	
-									if(showMember != '' && <?php echo $familyCount ?> > 0 ){
+									if(showMember != '' && <?php echo $familyCount ?> > 1 ){
 									jQuery('#form-3').steps("insert",4, {
 									title: "Membre",
 									content: '<fieldset>'+
@@ -1220,7 +1220,7 @@
 						var showMember = '<?php echo Mage::helper('customer')->getCustomer()->getId(); ?>';
 						<?php $userId = Mage::helper("customer")->getCustomer()->getId(); $connection = Mage::getModel("mymod/family")->getCollection()->addFieldToFilter("user_id", array("eq" => $userId))->load(); ?>	
 						<?php $familyCount = count($connection); ?>	
-								if(showMember != '' && <?php echo $familyCount ?> > 0 ){
+								if(showMember != '' && <?php echo $familyCount ?> > 1 ){
 									jQuery('#form-3').steps("insert",3, {
 									title: "Membre",
 									content: '<fieldset>'+
@@ -1314,7 +1314,7 @@
 								var showMember = '<?php echo Mage::helper('customer')->getCustomer()->getId(); ?>';
 								<?php $userId = Mage::helper("customer")->getCustomer()->getId(); $connection = Mage::getModel("mymod/family")->getCollection()->addFieldToFilter("user_id", array("eq" => $userId))->load(); ?>	
 								<?php $familyCount = count($connection); ?>	
-									if(showMember != '' && <?php echo $familyCount ?> > 0 ){
+									if(showMember != '' && <?php echo $familyCount ?> > 1 ){
 									jQuery('#form-3').steps("insert",4, {
 									title: "Membre",
 									content: '<fieldset>'+
