@@ -593,8 +593,8 @@ The email template is not specified by administrator.,Le gabarit d'email n'a pas
 The filters must be an array.,Les filtres doivent être sous forme de tableau.
 The image contents is not valid base64 data.,Le contenu de l'image ne comporte pas des données base64 correctes.
 The image is not specified.,L'image n'est pas spécifiée.
-The product %s has been added to comparison list.,Le produit %s a été ajouté à la liste de comparaison.
-The product %s has been removed from comparison list.,Le produit %s a été enlevé de la liste de comparaison.
+The product %s has been added to comparison list.,Le produit %s a d&eacute;j&agrave; &eacute;t&eacute; choisi
+The product %s has been removed from comparison list.,Le produit %s a d&eacute;j&agrave; &eacute;t&eacute; choisi
 The product attribute has been deleted.,L'attribut de produit a été effacé.
 The product attribute has been saved.,L'attribut de produit a été sauvegardé.
 The product has been created.,Le produit a été créé.
