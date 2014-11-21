@@ -83,6 +83,13 @@
 	background-position:-59px -160px;
 }
 
+/* Instagram */
+.icon.i-instagram-w {
+	background-image:url(../images/instagram.png);
+	background-position-x: 4px;
+	background-position-y: 4px;
+}
+
 /* Google plus */
 .icon.i-googleplus {
 	background-image:url(../images/sprite-icons-social.png);
