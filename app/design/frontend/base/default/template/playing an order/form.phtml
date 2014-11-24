@@ -1,0 +1,241 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2013 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+
+	<div class="col-main grid-full in-col1">
+        <div class="std">
+			<div class="page-head">
+				<h3>Les ordonnances sont compos&eacute;es de nombreuses abr&eacute;viations et donn&eacute;es chiffr&eacute;s que nous allons essayer de d&eacute;coder ci-dessous.</h3>
+			</div>
+			<div class="page-head">
+				<h3>Voici la prescription telle que vous devez la saisir sur ChouettesLunettes, voyons o&ugrave; rechercher l'information sur votre ordonnance.</h3>
+			</div>
+			<div class="col3-set">
+				<div class="col-1">
+					<p style="color:#888; font:1.2em/1.4em georgia, serif;">
+							L'ophtalmologiste diff&eacute;renciera la correction &agrave; apporter &agrave; chaque œil apr&egrave;s lesabr&eacute;viations OD (Œil Droit) et OG (Œil Gauche).
+							Si la correction est similaire l'ophtalmologisteindiquera ODG (Œil droit et gauche).
+ 
+					</p>
+				</div>
+				<div class="col-2">
+					<p style="color:#888; font:1.2em/1.4em georgia, serif;">
+							Cette valeur, indiqu&eacute;e entre parenth&egrave;ses,  g&eacute;n&eacute;ralement entre +/- 0.25 et +/- 4, d&eacute;signe la mesure de la correction de l'astigmatisme 
+					</p>
+				</div>
+				<div class="col-3">
+					<p style="color:#888; font:1.2em/1.4em georgia, serif;">
+							Cette valeur, la même pour chaque œil, g&eacute;n&eacute;ralement entre +0.50 et +3.00, correspond &agrave; la correction de la vision de près en cas de presbytie 
+					</p>
+				</div>
+			</div>
+			
+			<div class="col1-set">
+				<div class="col-1">
+					<div id="progressiveTableId" class="fieldset table_custom" cellspacing="10" style="border: 0px solid black;" >
+							<div style="width: 100%; float:left;margin-left: 20%;">
+								<div style="width: 15%;" class="prescription-header">Sph&egrave;re</div>
+								<div style="width: 15%;" class="prescription-header">Cylindre</div>
+								<div style="width: 15%;" class="prescription-header">Axe</div>
+								<div style="width: 15%;"class="prescription-header">Addition</div>
+								<div style="width: 15%;"class="prescription-header">Distance pupillaire</div>
+							</div>
+							<div style="width: 100%; float:left;margin-top: 1%;">
+								<div style="width: 20%;" class="prescription-header">Oeil droit</div>
+								<div style="width: 15%; float:left;"><input class="input-text required-entry prescription-input" type="number" id="drs3" name="drs3" type="number" min="-10" max="10" step="0.25" value="0"> </div>
+								<div style="width: 15%; float:left;"><input class="input-text required-entry prescription-input" type="number" id="drc3" name="drc3" type="number" min="-4" max="4" step="0.25" value="0" > </div>
+								<div style="width: 15%; float:left;"><input class="input-text required-entry prescription-input" type="number" id="dra3" name="dra3" type="number"  min="0" max="180" step="1" value="0" > </div>
+								<div style="width: 15%; float:left;"><input type="number" class="input-text required-entry prescription-input" id="ars3" name="ars3" type="number" min="0" max="3.5" step="0.25" value="0"> </div>
+								<div style="width: 15%; float:left;"><input type="number" class="input-text required-entry prescription-input" id="pd3" name="pd3" type="number" value="0"  min="0" max="100" step="0.5" > </div>
+							</div>
+							<hr style="margin-left: 10%;margin-right: 10%;float: left;width: 85%;">
+							<div style="width: 100%; float:left;">
+								<div style="width: 20%;"class="prescription-header">Oeil gauche</div>
+								<div style="width: 15%; float:left;"><input class="input-text required-entry prescription-input" type="number" id="dls3" name="dls3" type="number" min="-10" max="10" step="0.25" value="0" > </div>
+								<div style="width: 15%; float:left;"><input class="input-text required-entry prescription-input" type="number" id="dlc3" name="dlc3" type="number" min="-4" max="4" step="0.25" value="0" > </div>
+								<div style="width: 15%; float:left;"><input class="input-text required-entry prescription-input" type="number" id="dla3" name="dla3" type="number" min="0" max="180" step="1" value="0" > </div>
+								<div style="width: 15%; float:left;"><input class="input-text required-entry prescription-input" type="number" id="ala3" name="ala3" type="number" min="0" max="3.5" step="0.25" value="0" > </div>
+								<div style="width: 15%; float:left;"><input class="input-text required-entry prescription-input" type="number" id="pdl3" name="pdl3" type="number" value="0"  min="0" max="100" step="0.5" > </div>
+							</div>
+						</div>
+				</div>
+			</div>
+			
+			<div class="col3-set" style="float: left;margin-top: 10px;">
+				<div class="col-1">
+					<p style="color:#888; font:1.2em/1.4em georgia, serif;">
+						Cette valeur d&eacute;signe la correction de la myopie (-) ou de l'hyperm&eacute;tropie (+) 
+					</p>
+				</div>
+				<div class="col-2">
+					<p style="color:#888; font:1.2em/1.4em georgia, serif;">
+							Cettevaleur, indiqu&eacute;e en degr&eacute;s de 0° à 180°, d&eacute;crit l'orientation de l'astigmatisme 
+					</p>
+				</div>
+				<div class="col-3">
+					<p style="color:#888; font:1.2em/1.4em georgia, serif;">
+							L'&eacute;cart pupillaire s'exprime en millim&egrave;tres (entre 55 et 65mm). Il estsouvent exprim&eacute; en demi-&eacute;cart(distance entre le milieu du nez et chaque pupille). 
+					</p>
+				</div>
+			</div>
+			
+			<div class="page-head" style="text-align: center;">
+				<h3>Pour bien comprendre votre ordonnance, il faut d'abord d&eacute;terminer quel est votre d&eacute;faut de vision.</h3>
+			</div>
+			<div class="page-head" style="text-align: center;">
+				<h3>VL = Vision de loin</h3>
+			</div>
+			<div class="col1-set">
+				<div class="grid-full">
+					<img style="float: left;" src="<?php echo $this->getSkinUrl('images/footer_plus.png') ?>" />
+					<div class="col1-set" style="margin-left: 5%;float: left;margin-left: 12%;">
+						<div class="page-head col-1">
+							<h3 style="float: left;font-weight: bolder;margin-bottom: 0px;font-size: 22px;">Je suis myope</h3>
+							<span style="color:#888;margin-bottom: 0px; font:1.2em/1.4em georgia, serif;margin-top: 3px;float: left;">
+								(le myope voit mal de loin mais bien de pr&egrave;s)
+							</span>
+						</div>
+						<div class="page-head col-1">
+							<h3 style="float: left;margin-bottom: 0px;">La myopie est exprim&eacute;e par un chiffre hors parenthèses pr&eacute;c&eacute;d&eacute; du signe –.</h3>
+						</div>
+						<div class="page-head col-1">
+							<h3 style="float: left;font-weight: lighter;margin-bottom: 0px;">La myopie est exprim&eacute;e par un chiffre hors parenthèses pr&eacute;c&eacute;d&eacute; du signe –.</h3>
+						</div>
+					</div>
+				</div>
+				
+				<div class="grid-full" style="margin-top: 2%;">
+					<img style="float: left;" src="<?php echo $this->getSkinUrl('images/footer_minus.png') ?>" />
+					<div class="cal-set" style="margin-left: 5%;float: left;margin-left: 12%;">
+						<div class="page-head col-1">
+							<h3 style="float: left;font-weight: bolder;margin-bottom: 0px;font-size: 22px;">Je suis hyperm&eacute;trope</h3>
+							<span style="color:#888;margin-bottom: 0px; font:1.2em/1.4em georgia, serif;margin-top: 3px;float: left;">
+								(l'hyperm&eacute;trope voit bien de loin mais mal de pr&egrave;s)
+							</span>
+						</div>
+						<div class="page-head col-1">
+							<h3 style="float: left;margin-bottom: 0px;">L'hyperm&eacute;tropie est exprim&eacute;e par un chiffre hors parenth&egrave;ses pr&eacute;c&eacute;d&eacute; du signe +.</h3>
+						</div>
+						<div class="page-head col-1">
+							<h3 style="float: left;font-weight: lighter;margin-bottom: 0px;">Plus le chiffre est &eacute;lev&eacute;, plus l'hyperm&eacute;tropie est forte.</h3>
+						</div>
+					</div>
+				</div>
+				
+				<div class="grid-full" style="margin-top: 2%;">
+					<img style="float: left;" src="<?php echo $this->getSkinUrl('images/footer_degree.png') ?>" />
+					<div class="cal-set grid12-9" style="margin-left: 5%;float: left;">
+						<div class="page-head col-1" style="float: left;">
+							<h3 style="float: left;font-weight: bolder;margin-bottom: 0px;font-size: 22px;">Je suis astigmate</h3>
+							<span style="color:#888;margin-bottom: 0px; font:1.2em/1.4em georgia, serif;margin-top: 3px;float: left;">
+								(L'astigmate a une vision impr&eacute;cise de pr&egrave;s comme de loin)
+							</span>
+						</div>
+						<div style="color:#888; font:1.2em/1.4em georgia, serif;float: left;">
+							L'astigmate peut &eacute;galement être myope, hyperm&eacute;trope ou presbyte.
+						</div>
+						<div class="page-head col-1">
+							<h3 style="float: left;margin-bottom: 0px;">L'astigmatisme est exprim&eacute; par un chiffre entre parenthèses pr&eacute;c&eacute;d&eacute; du signe + et suivi d'un axe en degr&eacute;s qui correspond &agrave; l'orientation de l'astigmatisme.</h3>
+						</div>
+						<div class="page-head col-1">
+							<h3 style="float: left;font-weight: lighter;margin-bottom: 0px;">Plus le chiffre est &eacute;lev&eacute;, plus l'astigmatisme est fort.</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="grid-full" style="text-align: center;margin-top: 2%;float: left;margin-bottom: 2%;">
+				<h3>VL = Vision de loin</h3>
+			</div>
+			
+			<div class="grid-full">
+				<div class="grid-full">
+					<h3 style="float: left;font-weight: bolder;margin-bottom: 0px;font-size: 22px;">Je suis aussi presbyte</h3>
+					<span style="color:#888;margin-bottom: 0px; font:1.2em/1.4em georgia, serif;margin-top: 3px;float: left;">
+						(Le presbyte a une vision floue de pr&egrave;s ; ce d&eacute;faut visuel apparait vers 40 ans)
+					</span>
+				</div>
+				<div class="grid-full">
+					<h3 style="float: left;margin-bottom: 0px;">La presbytie est exprim&eacute;e par un chiffre hors parenthèses, parfois pr&eacute;c&eacute;d&eacute; du signe +, et de l'abr&eacute;viation « add », pour addition.</h3>
+				</div>
+			</div>
+			
+			<div class="grid-full">
+				<div class="grid-full">
+					<h3 style="float: left;font-weight: bolder;margin-bottom: 0px;font-size: 22px;">L'&eacute;cart pupillaire</h3>
+					<span style="color:#888;margin-bottom: 0px; font:1.2em/1.4em georgia, serif;margin-top: 3px;float: left;">
+						(distanceentre le centre des deux pupilles)
+					</span>
+				</div>
+				<div class="grid-full" style="margin-top: 2%;">
+					<h3 style="float: left;margin-bottom: 0px;">Si votre ordonnance date d'apr&egrave;s septembre 2014, la distance pupillaire y apparait tr&egrave;s certainement. Si ce n'est pas le cas, n'h&eacute;sitez pas &agrave; la demander &agrave; votre ophtalmologiste, cette mention est obligatoire.</h3>
+				</div>
+				<div class="grid-full">
+					<h3 style="float: left;margin-bottom: 0px;">Cette mesure est tr&egrave;s importante pour que nos opticiens puissent centrer correctement vos verres sur la monture que vous avez choisie. </h3>
+				</div>
+			</div>
+			
+			<div class="grid-full" style="margin-top: 2%;">
+				<div class="grid-full">
+					<h3 style="float: left;font-weight: bolder;margin-bottom: 0px;font-size: 22px;">AV = Acuit&eacute; visuelle </h3>
+					<span style="color:#888;margin-bottom: 0px; font:1.2em/1.4em georgia, serif;margin-top: 3px;float: left;">
+						(Capacit&eacute; &agrave; distinguer les d&eacute;tails)
+					</span>
+				</div>
+			</div>
+			<div class="grid-full" style="margin-top: 2%;">
+				<div class="grid-full">
+					<h3 style="float: left;font-weight: bolder;margin-bottom: 0px;font-size: 22px;">Validité</h3>
+				</div>
+				<div class="grid-full">
+					<h3 style="float: left;margin-bottom: 0px;">Sauf indication contraire, l'ordonnance &eacute;mise par votre ophtalmologiste reste valide pendant 3 ans, conservez-la bien.</h3>
+				</div>
+			</div>
+			
+			<div class="grid-full" style="margin-top: 2%;">
+				<div class="grid-full">
+					<h3 style="float: left;margin-bottom: 0px;">Encore des difficult&eacute;s &agrave; comprendre votre ordonnance ? Pas de panique, envoyez-nous vos questions par mail &agrave; l'adresse suivante : contact@chouetteslunettes.com</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+<style type="text/css" media="screen">
+.prescription-header{
+		float:left;
+		font-weight: bold;
+		font-size: 14px;
+		color: #888888 !important;
+	}
+	.prescription-input{
+		float:left;
+		width: 80%;
+		height: 30px;
+		padding-bottom: 0px !important;
+		padding-right: 0px !important;
+		padding-top: 0px !important;
+	}	
+</style>
