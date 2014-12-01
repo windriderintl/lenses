@@ -10,6 +10,9 @@
 "%s order(s) were not released from holding status.","%s commandes n'ont pas été débloquées."
 "* - Enter custom price excluding tax","* - Saisissez le prix hors taxe"
 "* - Enter custom price including tax","* - Saisissez le prix toutes taxes comprises"
+25% - Clair,20
+50% - Medium,30
+80% - Fonce,40
 "-- Please Select --","-- Faites un choix --"
 "-- Please Select Billing Agreement--","-- Veuillez choisir l'entente de facturation--"
 "About This Order:","À propos de cette commande :"
@@ -65,6 +68,7 @@ Add to Cart,Personnaliser
 "Are you sure?","Êtes-vous sûr(e) ?"
 "Are you sure? This order will be canceled and a new one will be created instead","Voulez-vous continuer ? Cette commande sera supprimée et une nouvelle sera créée à la place"
 "At least a payment ID must be set.","Au moins un ID de paiement doit être sélectionné."
+Aucune couleur,0
 "Authorization","Autorisation"
 "Authorized amount of %s.","Montant autorisé de %s."
 "Authorizing amount of %s is pending approval on gateway.","Saisir le montant de %s est en attente d'approbation sur la passerelle."
@@ -220,6 +224,7 @@ Add to Cart,Personnaliser
 "Gift Message for this Order","Message cadeau pour cette commande"
 "Grand Total","Montant global"
 "Grand Total to be Charged","Total à facturer"
+Gris,10
 "Guest","Invité"
 "Hold","Bloquer"
 "Hold action is not available.","L'action bloquer n'est pas disponible"
@@ -286,6 +291,7 @@ Add to Cart,Personnaliser
 "Items options declaration error.","Erreur de déclaration d'options d'articles."
 "Items to Refund","Articles à rembourser"
 "Items to Ship","Articles à expédier"
+Jaune,60
 "Key","Clé"
 "Last Name","Nom"
 "Last Ordered Items","Derniers articles commandés"
@@ -295,6 +301,7 @@ Add to Cart,Personnaliser
 "Logo for HTML documents only. If empty, default will be used.<br />(jpeg, gif, png)","Logo pour les documents HTML seulement. Sinon, c'est le logo par défaut qui sera utilisé.<br />(jpeg, gif, png)"
 "Logo for PDF Print-outs (200x50)","Logo pour les impressions PDF (200x50)"
 "Manage","Gérer"
+Marron,20
 "Maximum shipping amount allowed to refund is: %s","Montant maximum des expéditions permettant le remboursement : %s"
 "Message","Message"
 "Message:","Message :"
@@ -339,6 +346,7 @@ Add to Cart,Personnaliser
 "No ordered items","Aucun article commandé"
 "No shipping information available","Aucune information de livraison disponible"
 "No valid transaction found for this payment review.","Aucune transaction valide n'a été trouvée pour cette révision des paiements."
+Noir,50
 "Nominal Items","Articles nominale"
 "Nominal item can be purchased standalone only. To proceed please remove other items from the quote.","Article nominal peut être acheté uniquement. Pour continuer, s'il vous plaît supprimer les autres éléments de la citation."
 "Nominal order registered.","Commande nominale enregistrée."
@@ -401,6 +409,7 @@ Add to Cart,Personnaliser
 "Ordered","Commandé"
 "Orders","Commandes"
 "Original Price","Prix d'origine"
+Oui,15
 "Original order item that recurring payment profile correspondss to.","Article original d'ordre que le profil périodique de paiement correspond à."
 "PDF Credit Memos","Avoirs en PDF"
 "PDF Invoices","Factures en PDF"
@@ -461,6 +470,12 @@ Add to Cart,Personnaliser
 "Profile Information","Informations sur le profil"
 "Profile State","État de profil"
 "Profit","Bénéfice"
+Progressifs Eco,40
+Progressifs premium,80
+Progressive  Eco Verres finsIndice 1.6,50
+Progressive Eco Verres tres fins Indice 1.67,80
+Progressive premium Verres finsIndice 1.6,70
+Progressive premium Verres tres fins Indice 1.67,130
 "Promotion Coupons Usage Report","Rapport d'utilisation des bons de promotion"
 "Proper payment object must be set.","Le paiement approprié doit être défini."
 "Purchased From","Acheté sur"
@@ -528,6 +543,7 @@ Add to Cart,Personnaliser
 "Return to Stock","Remettre en stock"
 "Returned","Retourné"
 "Revenue","Revenu"
+Rose,70
 "Row Subtotal","Sous-total de la ligne"
 "Row Total","Total ligne"
 "SHIP TO:","LIVRÉ À :"
@@ -614,6 +630,7 @@ Shipping &amp; Handling
 "Subtotal","Sous-total"
 "Subtotal after discount.","Sous-total après remise"
 "Subtotal:","Sous-total :"
+Sunglasess Indice 1.57,30
 "Suspected Fraud","Fraude suspectée"
 "Suspend","Suspendre"
 "Suspended","Suspendu"
@@ -704,6 +721,12 @@ Shipping &amp; Handling
 "Unhold","Débloquer"
 "Unhold action is not available.","L'action débloquer n'est pas disponible."
 "Unhold order","Débloquer la commande"
+Unifocaux Eco,15
+Unifocaux Eco Verres finsIndice 1.6,10
+Unifocaux Eco Verres tres fins Indice 1.67,25
+Unifocaux premium,35
+Unifocaux premium Verres finsIndice 1.6,15
+Unifocaux premium Verres tres fins Indice 1.67,35
 "Unknown State","État inconnu"
 "Unknown Status","Statut inconnu"
 "Unsupported transaction type ""%s"".","Type de transaction non pris en charge ""%s""."
@@ -715,6 +738,9 @@ Shipping &amp; Handling
 "Use Aggregated Data (beta)","Utiliser les données cumulatives (beta)"
 "Validate Each Address Separately in Multi-address Checkout","Valider séparément les adresses lors de commandes multi-adresses"
 "Value","Valeur"
+Verres non polarises,10
+Verres polarises,20
+Vert,40
 "View","Voir"
 "View All","Tout voir"
 "View Order","Visualiser"
@@ -809,6 +835,7 @@ Shipping &amp; Handling
 "Anchor Custom Title","Présenter un titre personnalisé"
 "Billing Last Name","Nom (fact.)"
 "Billing ZIP Code","Code postal (fact.)"
+Bleu,30
 "Contents","Contenu"
 "Continue","Continuer"
 "Create Packages","Créer les paquets"
