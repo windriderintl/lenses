@@ -26,7 +26,7 @@
 ?>
 
 	<?php $outputMessage = Mage::getSingleton('core/session')->getShowWizard(); ?>
-		   //<?php echo $this->__('Unifocaux Eco') ?> </span><span>
+		   
           <div style="display: none;" id="wizardId">
                 <div id="form-3" class="wizard clearfix" >
 					
@@ -35,7 +35,7 @@
 						<p class="error" style="display: none;"> This field is reqiured ...</p>
 						<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;margin-bottom: 3%;"><?php echo Mage::helper('contacts')->__("S&eacute;lectionner votre type de verres") ?></h4> 
 						<div class="customDiv" onclick="normalLensesDiv()">
-							<h6 for="userName" class="custom-header">Verresunifocaux</h6>
+							<h6 for="userName" class="custom-header">Verres avec correction </h6>
 							<p style="height: 50px;padding: 5%;float: left;">Personnaliser vos verres selon votre vision</p>
 							<div style="height: 50px;padding: 5%;float: left;width: 90%;">
 								<p >Trait&eacute;s anti-rayures</p>
@@ -391,15 +391,15 @@
 		}
 		function lightTinteDiv(){
 			jQuery("#lightTinte").attr('checked', true);
-			setTinted(41);
+			setTinted(jQuery("#clairID").text().trim());
 		}
 		function mediumTinteDiv(){
 			jQuery("#mediumTinte").attr('checked', true);
-			setTinted(42);
+			setTinted(jQuery("#mediumID").text().trim());
 		}
 		function highTinteDiv(){
 			jQuery("#highTinte").attr('checked', true);
-			setTinted(43);
+			setTinted(jQuery("#fonceID").text().trim());
 		}
 		
 		function isNot_PrescripDiv(){
@@ -738,7 +738,7 @@
 										'</div>'+
 										'<div id="noDiv" class="customDiv" onclick="noTabClick()">'+
 											'<h6 for="userName" class="custom-header">Non</h6>'+
-											'<p style="height: 100px;padding: 5%;float: left;">Verres blancs ou colores<p>'+
+											'<p style="height: 100px;padding: 5%;float: left;">Verres blancs ou color&eacute;s<p>'+
 											'<div  class="custom-footer"></div>'+
 											'<input type="radio" name="photochromic" title="Vous devez sélectionner une option" id="no" value="no" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 										'</div>'+
@@ -922,7 +922,7 @@
 											'<div style="width: 15%; float:left;"><input class="input-text required-entry prescription-input" type="number" id="pd4" name="pd4" type="number" value="0"  min="0" max="100" step="0.5"> </div>'+
 										'</div>'+
 										'<hr style="margin-left: 10%;margin-right: 10%;float: left;width: 85%;">'+
-										'<div style="width: 100%; float:left;">'+
+										'<div style="width: 100%; float:left;height: 180px;">'+
 											'<div style="width: 20%;" class="prescription-header">Oeil gauche</div>'+
 											'<div style="width: 15%; float:left;"><input class="input-text required-entry prescription-input" type="number" id="dls4" name="dls4" type="number" min="-10" max="10" step="0.25" value="0"> </div>'+
 											'<div style="width: 15%; float:left;"><input class="input-text required-entry prescription-input" type="number" id="dlc4" name="dlc4" type="number" min="-4" max="4" step="0.25" value="0"> </div>'+
@@ -947,7 +947,7 @@
 											'<div style="width: 15%; float:left;"><input type="number" class="input-text required-entry prescription-input" id="pd3" name="pd3" type="number" value="0"  min="0" max="100" step="0.5" > </div>'+
 										'</div>'+
 										'<hr style="margin-left: 10%;margin-right: 10%;float: left;width: 85%;">'+
-										'<div style="width: 100%; float:left;">'+
+										'<div style="width: 100%; float:left;height: 180px;">'+
 											'<div style="width: 20%;"class="prescription-header">Oeil gauche</div>'+
 											'<div style="width: 15%; float:left;"><input class="input-text required-entry prescription-input" type="number" id="dls3" name="dls3" type="number" min="-10" max="10" step="0.25" value="0" > </div>'+
 											'<div style="width: 15%; float:left;"><input class="input-text required-entry prescription-input" type="number" id="dlc3" name="dlc3" type="number" min="-4" max="4" step="0.25" value="0" > </div>'+
@@ -1098,7 +1098,7 @@
 												'<input type="radio" name="is_Fix" value="isNot_Prescrip" title="Vous devez sélectionner une option" onclick="isNotPres()" id="isNot_Prescrip" value="single" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 											'</div>'+
 											'<div class="customDiv" onclick="is_PrescripDiv()">'+
-												'<h6 for="userName" class="custom-header">Verresunifocaux</h6>'+
+												'<h6 for="userName" class="custom-header">Verres unifocaux</h6>'+
 												'<p style="height: 50px;padding: 5%;float: left;">Personnaliser vos verres selon votre vision</p>'+
 												'<div style="height: 50px;padding: 5%;float: left;width: 90%;">'+
 													'<p >Trait&eacute;s anti-rayures </p>'+
@@ -1121,14 +1121,14 @@
 											'<div class="customDiv" onclick="polorizedDiv()">'+
 												'<h6 for="userName" class="custom-header-h6">Verres polaris&eacute;s</h6>'+
 												'<h6 for="userName" class="custom-header-h6" id="verresPolarisesID"><?php echo $this->__('Verres polarises') ?> </span><span> € </h6>'+
-												'<p style="height: 100px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
+												'<p style="height: 100px;padding: 5%;float: left;">Am&eacute;lioration des contrastes et r&eacute;duction de l&rsquo;&eacute;blouissement </p>'+
 												'<div  class="custom-footer"></div>'+	
 												'<input type="radio" name="photochromic" title="Vous devez sélectionner une option" id="polorized" value="polorized" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 											'</div>'+
 											'<div class="customDiv" onclick="nonPolorizedDiv()">'+
 												'<h6 for="userName" class="custom-header-h6" >Verres non polaris&eacute;s </h6>'+
 												'<h6 for="userName" class="custom-header-h6" id="verresNonPolarisesID"> <?php echo $this->__('Verres non polarises') ?> </span><span> € </h6>'+
-												'<p style="height: 100px;padding: 5%;float: left;">Vous avez besoin de verres unifocaux si vous êtes myope, hypermétrope ou astigmate.</p>'+
+												'<p style="width: 90%;height: 100px;padding: 5%;float: left;">Verres solaires</p>'+
 												'<div  class="custom-footer"></div>'+
 												'<input type="radio" name="photochromic" title="Vous devez sélectionner une option" id="nonPolorized" value="nonPolorized" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 											'</div>'+
@@ -1206,7 +1206,7 @@
 											'<div style="width: 15%; float:left;"><input type="number" class="input-text required-entry prescription-input" id="pd" name="pd" type="number" value="0"  min="0" max="100" step="0.5" > </div>'+
 										'</div>'+
 										'<hr style="margin-left: 10%;margin-right: 10%;float: left;width: 85%;">'+
-										'<div style="width: 100%; float:left;">'+
+										'<div style="width: 100%; float:left;height: 180px;">'+
 											'<div style="width: 20%;"class="prescription-header">Oeil gauche</div>'+
 											'<div style="width: 15%; float:left;"><input class="input-text required-entry prescription-input" type="number" id="dls" name="dls" type="number" min="-10" max="10" step="0.25" value="0" > </div>'+
 											'<div style="width: 15%; float:left;"><input class="input-text required-entry prescription-input" type="number" id="dlc" name="dlc" type="number" min="-4" max="4" step="0.25" value="0" > </div>'+
@@ -1352,7 +1352,7 @@
 											'<div style="width: 15%; float:left;"><input type="number" class="input-text required-entry prescription-input" id="pd" name="pd5" type="number" value="0"  min="0" max="100" step="0.5" > </div>'+
 										'</div>'+
 										'<hr style="margin-left: 10%;margin-right: 10%;float: left;width: 85%;">'+
-										'<div style="width: 100%; float:left;">'+
+										'<div style="width: 100%; float:left;height: 180px;">'+
 											'<div style="width: 20%;"class="prescription-header">Oeil gauche</div>'+
 											'<div style="width: 15%; float:left;"><input class="input-text required-entry prescription-input" type="number" id="dls" name="dls" type="number" min="-10" max="10" step="0.25" value="0" > </div>'+
 											'<div style="width: 15%; float:left;"><input class="input-text required-entry prescription-input" type="number" id="dlc" name="dlc" type="number" min="-4" max="4" step="0.25" value="0" > </div>'+
