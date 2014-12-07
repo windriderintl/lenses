@@ -1369,9 +1369,15 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
 		$color = "";
 		$teinted = "";
 		$supplier_frame_price = "";
-		$supplier_lenses_price = "";
+		$supplier_lenses_price = 0;
 		$supplier_add_price = "";
 		$lense_type = "";
+		
+		$supplier_glass_cost = "";
+		$supplier_photochromic_cost = "";
+		$supplier_correction_cost = "";
+		$supplier_color_cost = "";
+		$supplier_tinte_cost = "";
 		
 		foreach ($this->getAllItems() as $custom_item) {
 			
@@ -1379,32 +1385,130 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
 			 $product = Mage::getModel('catalog/product')->load($product_id);
 			 $full_path_url = Mage::helper('catalog/image')->init($product, 'thumbnail');
 			 $frame_number = $custom_item->getProductId();
-			 $supplier_frame_price = $product->getData('supplier_frame_price');
-			 $supplier_lenses_price = $product->getData('supplier_lenses_price');
-			 $supplier_add_price = (float)$supplier_frame_price + (float)$supplier_lenses_price;
+			 //$supplier_lenses_price = $product->getData('supplier_lenses_price');
 			 
 			 //file_put_contents("productopt.txt",print_r($product ,true), FILE_APPEND );
-			 //file_put_contents("productopt.txt",print_r($supplier_add_price ,true), FILE_APPEND );
-			// file_put_contents("productopt.txt",print_r($custom_item ,true), FILE_APPEND );
+			 //file_put_contents("productopt.txt",print_r($supplier_add_price ,true), FILE_APPEND);
+			 //file_put_contents("productopt.txt",print_r($product_prescription['info_buyRequest'] ,true), FILE_APPEND);
+			
 			 $product_name = $custom_item->getName();
 			 $product_price = $custom_item->getPrice();
+			 //$product_price = $product->getPrice();
 			 $product_prescription = $custom_item->getProductOptions();
+			 $supplier_frame_price = $product_price;
+			 //$newValue = Mage::helper('sales')->__('Gris');
+			
+			// file_put_contents("productopt.txt",print_r($product_price,true), FILE_APPEND );
+			 //file_put_contents("productopt.txt",print_r($product_prescription,true), FILE_APPEND );
 			 
 			 $arraySize = sizeof($product_prescription);
 			 
-			 
 			 if($product_prescription['info_buyRequest']['glass'] == "singleVisionP"){
 			 	$lense_type = "Single vision premium";
+			 	$supplier_glass_cost = Mage::helper('sales')->__('Supplier Unifocaux Eco');
+			 	$supplier_lenses_price = (float)$supplier_lenses_price + (float)Mage::helper('sales')->__('Supplier Unifocaux Eco');
 			 }elseif($product_prescription['info_buyRequest']['glass'] == "singleVisionH"){
 			 	$lense_type = "Single vision high quality";
+			 	$supplier_glass_cost = Mage::helper('sales')->__('Supplier Unifocaux premium');
+				$supplier_lenses_price = (float)$supplier_lenses_price + (float)Mage::helper('sales')->__('Supplier Unifocaux premium');
 			 }elseif($product_prescription['info_buyRequest']['glass'] == "progressP"){
 			 	$lense_type = "Progressive lenses premium";
+			 	$supplier_glass_cost = Mage::helper('sales')->__('Supplier Progressifs Eco');
+			 	$supplier_lenses_price = (float)$supplier_lenses_price + (float)Mage::helper('sales')->__('Supplier Progressifs Eco');
 			 }elseif($product_prescription['info_buyRequest']['glass'] == "progressH"){
 			 	$lense_type = "Progressive lenses high quality";
+			 	$supplier_glass_cost = Mage::helper('sales')->__('Supplier Progressifs premium');
+			 	$supplier_lenses_price = (float)$supplier_lenses_price + (float)Mage::helper('sales')->__('Supplier Progressifs premium');
 			 }
 			 
-			 file_put_contents("productopt.txt",print_r($lense_type,true), FILE_APPEND );
+			 if($product_prescription['info_buyRequest']['photochromic'] == "yes"){
+			 	$supplier_photochromic_cost = Mage::helper('sales')->__('Supplier Oui');
+			 	$supplier_lenses_price = (float)$supplier_lenses_price + (float)Mage::helper('sales')->__('Supplier Oui');
+			 }
 			 
+			 if($product_prescription['info_buyRequest']['photochromic'] == "polorized"){
+			 	$supplier_photochromic_cost = Mage::helper('sales')->__('Supplier Verres polarises');
+			 	$supplier_lenses_price = (float)$supplier_lenses_price + (float)Mage::helper('sales')->__('Supplier Verres polarises');
+			 }elseif($product_prescription['info_buyRequest']['photochromic'] == "nonPolorized"){
+			 	$supplier_photochromic_cost = Mage::helper('sales')->__('Supplier Verres non polarises');
+			 	$supplier_lenses_price = (float)$supplier_lenses_price + (float)Mage::helper('sales')->__('Supplier Verres non polarises');
+			 }
+			 
+			 if($product_prescription['info_buyRequest']['correction'] == "low"){
+			 	 $supplier_correction_cost = Mage::helper('sales')->__('Supplier Sunglasess Indice 1.57');
+				 $supplier_lenses_price = (float)$supplier_lenses_price + (float)Mage::helper('sales')->__('Supplier Sunglasess Indice 1.57');
+			 }
+			 
+			 if($product_prescription['info_buyRequest']['correction'] == "medium"){
+			 	 if($product_prescription['info_buyRequest']['glass'] == "singleVisionP"){
+			 	 	$supplier_correction_cost = Mage::helper('sales')->__('Supplier Unifocaux Eco Verres finsIndice 1.6');
+			 		$supplier_lenses_price = (float)$supplier_lenses_price + (float)Mage::helper('sales')->__('Supplier Unifocaux Eco Verres finsIndice 1.6');
+			 	 }elseif($product_prescription['info_buyRequest']['glass'] == "singleVisionH"){
+			 	    $supplier_correction_cost = Mage::helper('sales')->__('Supplier Unifocaux premium Verres finsIndice 1.6');
+					$supplier_lenses_price = (float)$supplier_lenses_price + (float)Mage::helper('sales')->__('Supplier Unifocaux premium Verres finsIndice 1.6');
+				 }elseif($product_prescription['info_buyRequest']['glass'] == "progressP"){
+				 	$supplier_correction_cost = Mage::helper('sales')->__('Supplier Progressive  Eco Verres finsIndice 1.6');
+				 	$supplier_lenses_price = (float)$supplier_lenses_price + (float)Mage::helper('sales')->__('Supplier Progressive  Eco Verres finsIndice 1.6');
+				 }elseif($product_prescription['info_buyRequest']['glass'] == "progressH"){
+				 	$supplier_correction_cost = Mage::helper('sales')->__('Supplier Progressive premium Verres finsIndice 1.6');
+				 	$supplier_lenses_price = (float)$supplier_lenses_price + (float)Mage::helper('sales')->__('Supplier Progressive premium Verres finsIndice 1.6');
+				 }
+			 }
+			 
+			  if($product_prescription['info_buyRequest']['correction'] == "high"){
+			 	 if($product_prescription['info_buyRequest']['glass'] == "singleVisionP"){
+			 	  	$supplier_correction_cost = Mage::helper('sales')->__('Supplier Unifocaux Eco Verres tres fins Indice 1.67');
+			 		$supplier_lenses_price = (float)$supplier_lenses_price + (float)Mage::helper('sales')->__('Supplier Unifocaux Eco Verres tres fins Indice 1.67');
+			 	 }elseif($product_prescription['info_buyRequest']['glass'] == "singleVisionH"){
+			 	    $supplier_correction_cost = Mage::helper('sales')->__('Supplier Unifocaux premium Verres tres fins Indice 1.67');
+					$supplier_lenses_price = (float)$supplier_lenses_price + (float)Mage::helper('sales')->__('Supplier Unifocaux premium Verres tres fins Indice 1.67');
+				 }elseif($product_prescription['info_buyRequest']['glass'] == "progressP"){
+				 	 $supplier_correction_cost = Mage::helper('sales')->__('Supplier Progressive Eco Verres tres fins Indice 1.67');
+				 	$supplier_lenses_price = (float)$supplier_lenses_price + (float)Mage::helper('sales')->__('Supplier Progressive Eco Verres tres fins Indice 1.67');
+				 }elseif($product_prescription['info_buyRequest']['glass'] == "progressH"){
+				 	 $supplier_correction_cost = Mage::helper('sales')->__('Supplier Progressive premium Verres tres fins Indice 1.67');
+				 	$supplier_lenses_price = (float)$supplier_lenses_price + (float)Mage::helper('sales')->__('Supplier Progressive premium Verres tres fins Indice 1.67');
+				 }
+			 }
+			 
+			 if($product_prescription['info_buyRequest']['color'] == "Aucune Couleur"){
+			 	 $supplier_color_cost = Mage::helper('sales')->__('Supplier Aucune couleur');
+				 $supplier_lenses_price = (float)$supplier_lenses_price + (float)Mage::helper('sales')->__('Supplier Aucune couleur');
+			 }elseif($product_prescription['info_buyRequest']['color'] == "Gris"){
+			  	 $supplier_color_cost = Mage::helper('sales')->__('Supplier Gris');
+				 $supplier_lenses_price = (float)$supplier_lenses_price + (float)Mage::helper('sales')->__('Supplier Gris');
+			 }elseif($product_prescription['info_buyRequest']['color'] == "Marron"){
+			 	 $supplier_color_cost = Mage::helper('sales')->__('Supplier Marron');
+				 $supplier_lenses_price = (float)$supplier_lenses_price + (float)Mage::helper('sales')->__('Supplier Marron');
+			 }elseif($product_prescription['info_buyRequest']['color'] == "Bleu"){
+			 	 $supplier_color_cost = Mage::helper('sales')->__('Supplier Bleu');
+				 $supplier_lenses_price = (float)$supplier_lenses_price + (float)Mage::helper('sales')->__('Supplier Bleu');
+			 }elseif($product_prescription['info_buyRequest']['color'] == "Vert"){
+			 	 $supplier_color_cost = Mage::helper('sales')->__('Supplier Vert');
+				 $supplier_lenses_price = (float)$supplier_lenses_price + (float)Mage::helper('sales')->__('Supplier Vert');
+			 }elseif($product_prescription['info_buyRequest']['color'] == "Noir"){
+			 	 $supplier_color_cost = Mage::helper('sales')->__('Supplier Noir');
+				 $supplier_lenses_price = (float)$supplier_lenses_price + (float)Mage::helper('sales')->__('Supplier Noir');
+			 }elseif($product_prescription['info_buyRequest']['color'] == "Jaune"){
+			 	 $supplier_color_cost = Mage::helper('sales')->__('Supplier Jaune');
+				 $supplier_lenses_price = (float)$supplier_lenses_price + (float)Mage::helper('sales')->__('Supplier Jaune');
+			 }elseif($product_prescription['info_buyRequest']['color'] == "Rose"){
+			 	 $supplier_color_cost = Mage::helper('sales')->__('Supplier Rose');
+				 $supplier_lenses_price = (float)$supplier_lenses_price + (float)Mage::helper('sales')->__('Supplier Rose');
+			 }
+			 
+			 if($product_prescription['info_buyRequest']['tinte'] == "25% Clair"){
+			 	 $supplier_tinte_cost = Mage::helper('sales')->__('Supplier 25% - Clair');
+				 $supplier_lenses_price = (float)$supplier_lenses_price + (float)Mage::helper('sales')->__('Supplier 25% - Clair');
+			 }elseif($product_prescription['info_buyRequest']['tinte'] == "50% Medium"){
+			 	 $supplier_tinte_cost = Mage::helper('sales')->__('Supplier 50% Medium');
+				 $supplier_lenses_price = (float)$supplier_lenses_price + (float)Mage::helper('sales')->__('Supplier 50% Medium');
+			 }elseif($product_prescription['info_buyRequest']['tinte'] == "80% Fonce"){
+			 	 $supplier_tinte_cost = Mage::helper('sales')->__('Supplier 80% Fonce');
+				 $supplier_lenses_price = (float)$supplier_lenses_price + (float)Mage::helper('sales')->__('Supplier 80% Fonce');
+			 }
+			 
+			// file_put_contents("productopt.txt",print_r($product_prescription,true), FILE_APPEND );
 			 
 			 if($product_prescription['info_buyRequest']['glass'] == "progressP" || $product_prescription['info_buyRequest']['glass'] == "progressH"){
 			 	
@@ -1456,6 +1560,8 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
 			    $pd = $product_prescription['info_buyRequest']['pd'];	
 				$pdl = $product_prescription['info_buyRequest']['pdl'];	
 			}
+
+		$supplier_add_price = (float)$supplier_frame_price + (float)$supplier_lenses_price;
 
 		//email setting ..........................
 		$mailer = Mage::getModel('core/email_template_mailer');
@@ -1520,7 +1626,12 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
 				'pd'		   => $pd,
 				'productImg'   => $full_path_url,
                 'billing'      => $this->getBillingAddress(),
-                'payment_html' => $paymentBlockHtml
+                'payment_html' => $paymentBlockHtml,
+                'supplier_glass_cost' => $supplier_glass_cost,
+                'supplier_photochromic_cost' => $supplier_photochromic_cost,
+                'supplier_color_cost' => $supplier_color_cost,
+                'supplier_tinte_cost' => $supplier_tinte_cost,
+                'supplier_correction_cost' => $supplier_correction_cost
                 
             )
         );
