@@ -359,23 +359,25 @@
 		}
 		function noColorDiv(){
 			jQuery("#noColor").attr('checked', true);
-			noColorTab(false,jQuery("#aucuneCouleurID").text().trim());
+			//noColorTab(false,jQuery("#aucuneCouleurID").text().trim());
+			noColorTab(false,0);
 		}
 		function greyDiv(){
 			jQuery("#grey").attr('checked', true);
-			noColorTab(true,jQuery("#grisID").text().trim());
+			//noColorTab(true,jQuery("#grisID").text().trim());
+			noColorTab(true,0);
 		}
 		function marronDiv(){
 			jQuery("#marron").attr('checked', true);
-			noColorTab(true,jQuery("#marronID").text().trim());
+			noColorTab(true,0);
 		}
 		function blueDiv(){
 			jQuery("#blue").attr('checked', true);
-			noColorTab(true,jQuery("#bleuID").text().trim());
+			noColorTab(true,0);
 		}
 		function greenDiv(){
 			jQuery("#green").attr('checked', true);
-			noColorTab(true,jQuery("#vertID").text().trim());
+			noColorTab(true,0);
 		}
 		function blackDiv(){
 			jQuery("#black").attr('checked', true);
@@ -383,23 +385,26 @@
 		}
 		function yellowDiv(){
 			jQuery("#yellow").attr('checked', true);
-			noColorTab(true,jQuery("#jauneID").text().trim());
+			noColorTab(true,0);
 		}
 		function pinkDiv(){
 			jQuery("#pink").attr('checked', true);
-			noColorTab(true,jQuery("#roseID").text().trim());
+			noColorTab(true,0);
 		}
 		function lightTinteDiv(){
 			jQuery("#lightTinte").attr('checked', true);
-			setTinted(jQuery("#clairID").text().trim());
+			//setTinted(jQuery("#clairID").text().trim());
+			setTinted(0);
 		}
 		function mediumTinteDiv(){
 			jQuery("#mediumTinte").attr('checked', true);
-			setTinted(jQuery("#mediumID").text().trim());
+			//setTinted(jQuery("#mediumID").text().trim());
+			setTinted(0);
 		}
 		function highTinteDiv(){
 			jQuery("#highTinte").attr('checked', true);
-			setTinted(jQuery("#fonceID").text().trim());
+			//setTinted(jQuery("#fonceID").text().trim());
+			setTinted(0);
 		}
 		
 		function isNot_PrescripDiv(){
@@ -789,50 +794,50 @@
 											'<div style="float: left;width: 100%;height: 130px;">'+
 											'<div class="customColorDiv" onclick="noColorDiv()">'+
 												'<img src="<?php echo $this->getSkinUrl('images/no_ball.png') ?>" style="width: 10%;float: left; cursor: pointer;margin-top: 5%;margin-left: 15%;" />'+
-												'<h6 for="userName" class="custom-header" style="width:50%;">Aucune couleur</h6><div style="margin-right: 2%;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;"><span id="aucuneCouleurID">  <?php echo $this->__('Aucune couleur') ?> </span><span> € </span></div>'+
+												'<h6 for="userName" class="custom-header" style="width:50%;">Aucune couleur</h6><div style="margin-right: 2%;display: none;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;"><span id="aucuneCouleurID">  <?php echo $this->__('Aucune couleur') ?> </span><span> € </span></div>'+
 											    '<div  class="custom-footer"></div>'+
 												'<input type="radio" name="color" title="Vous devez sélectionner une option" id="noColor" value="Aucune Couleur" onclick="noColorTab(false,0)" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 											'</div>'+
 											'<div class="customColorDiv" onclick="greyDiv()">'+
 												'<img src="<?php echo $this->getSkinUrl('images/grey_ball.png') ?>" style="width: 10%;float: left; cursor: pointer;margin-top: 5%;margin-left: 15%;" />'+
-												'<h6 for="userName" class="custom-header" style="width:50%;">Gris</h6><div style="margin-right: 2%;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;"><span id="grisID"><?php echo $this->__('Gris') ?> </span><span> € </span></div>'+
+												'<h6 for="userName" class="custom-header" style="width:50%;">Gris</h6><div style="margin-right: 2%;display: none;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;"><span id="grisID"><?php echo $this->__('Gris') ?> </span><span> € </span></div>'+
 												'<div  class="custom-footer"></div>'+
 												'<input type="radio" name="color" title="Vous devez sélectionner une option" id="grey" value="Gris" onclick="noColorTab(true,31)" "class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 											'</div>'+
 											'<div class="customColorDiv" onclick="marronDiv()">'+
 												'<img src="<?php echo $this->getSkinUrl('images/marron_ball.png') ?>" style="width: 10%;float: left; cursor: pointer;margin-top: 5%;margin-left: 15%;" />'+
-												'<h6 for="userName" class="custom-header" style="width:50%;" >Marron</h6><div style="margin-right: 2%;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;"><span id="marronID"><?php echo $this->__('Marron') ?> </span><span> € </span></div>'+
+												'<h6 for="userName" class="custom-header" style="width:50%;" >Marron</h6><div style="margin-right: 2%;display: none;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;"><span id="marronID"><?php echo $this->__('Marron') ?> </span><span> € </span></div>'+
 												'<div  class="custom-footer"></div>'+
 												'<input type="radio" name="color" title="Vous devez sélectionner une option" value="Marron" id="marron" onclick="noColorTab(true,32)" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 											'</div>'+
 											'<div class="customColorDiv" onclick="blueDiv()">'+
 												'<img src="<?php echo $this->getSkinUrl('images/blue_ball.png') ?>" style="width: 10%;float: left; cursor: pointer;margin-top: 5%;margin-left: 15%;" />'+
-												'<h6 for="userName" class="custom-header" style="width:50%;">Bleu</h6><div style="margin-right: 2%;width: 100%;float: left;ont-size: 1.2em;font-family: Bitter, georgia, serif;"><span id="bleuID"> <?php echo $this->__('Bleu') ?> </span><span> € </span></div>'+
+												'<h6 for="userName" class="custom-header" style="width:50%;">Bleu</h6><div style="margin-right: 2%;display: none;width: 100%;float: left;ont-size: 1.2em;font-family: Bitter, georgia, serif;"><span id="bleuID"> <?php echo $this->__('Bleu') ?> </span><span> € </span></div>'+
 												'<div  class="custom-footer"></div>'+
 												'<input type="radio" name="color" title="Vous devez sélectionner une option" value="Bleu" id="blue" onclick="noColorTab(true,33)" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 											'</div>'+
 											'</div>'+
 											'<div class="customColorDiv" onclick="greenDiv()">'+
 												'<img src="<?php echo $this->getSkinUrl('images/green_ball.png') ?>" style="width: 10%;float: left; cursor: pointer;margin-top: 5%;margin-left: 15%;" />'+
-												'<h6 for="userName" class="custom-header" style="width:50%;">Vert</h6><div style="margin-right: 2%;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;" ><span id="vertID"><?php echo $this->__('Vert') ?> </span><span> € </span></div>'+
+												'<h6 for="userName" class="custom-header" style="width:50%;">Vert</h6><div style="margin-right: 2%;display: none;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;" ><span id="vertID"><?php echo $this->__('Vert') ?> </span><span> € </span></div>'+
 												'<div  class="custom-footer"></div>'+
 												'<input type="radio" name="color" title="Vous devez sélectionner une option" value="Vert" id="green" onclick="noColorTab(true,34)" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 											'</div>'+
 											'<div class="customColorDiv" onclick="blackDiv()">'+
 												'<img src="<?php echo $this->getSkinUrl('images/black_ball.png') ?>" style="width: 10%;float: left; cursor: pointer;margin-top: 5%;margin-left: 15%;" />'+
-												'<h6 for="userName" class="custom-header" style="width:50%;">Noir</h6><div style="margin-right: 2%;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;"> <span id="noirID"><?php echo $this->__('Noir') ?> </span><span> € </span></div>'+
+												'<h6 for="userName" class="custom-header" style="width:50%;">Noir</h6><div style="margin-right: 2%;display: none;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;"> <span id="noirID"><?php echo $this->__('Noir') ?> </span><span> € </span></div>'+
 												'<div  class="custom-footer"></div>'+
 												'<input type="radio" name="color" title="Vous devez sélectionner une option" value="Noir" id="black" onclick="noColorTab(true,35)" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 											'</div>'+
 											'<div class="customColorDiv" onclick="yellowDiv()">'+
 												'<img src="<?php echo $this->getSkinUrl('images/yellow_ball.png') ?>" style="width: 10%;float: left; cursor: pointer;margin-top: 5%;margin-left: 15%;" />'+
-												'<h6 for="userName" class="custom-header" style="width:50%;">Jaune</h6><div style="margin-right: 2%;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;"><span id="jauneID"> <?php echo $this->__('Jaune') ?> </span><span> € </span></div>'+
+												'<h6 for="userName" class="custom-header" style="width:50%;">Jaune</h6><div style="margin-right: 2%;display: none;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;"><span id="jauneID"> <?php echo $this->__('Jaune') ?> </span><span> € </span></div>'+
 												'<div  class="custom-footer"></div>'+
 												'<input type="radio" name="color" title="Vous devez sélectionner une option" value="Jaune" id="yellow" onclick="noColorTab(true,36)" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 											'</div>'+
 											'<div class="customColorDiv" onclick="pinkDiv()">'+
 												'<img src="<?php echo $this->getSkinUrl('images/pink_ball.png') ?>" style="width: 10%;float: left; cursor: pointer;margin-top: 5%;margin-left: 15%;" />'+
-												'<h6 for="userName" class="custom-header" style="width:50%;">Rose</h6><div style="margin-right: 2%;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;"><span id="roseID"> <?php echo $this->__('Rose') ?> </span><span> € </span></div>'+
+												'<h6 for="userName" class="custom-header" style="width:50%;">Rose</h6><div style="margin-right: 2%;display: none;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;"><span id="roseID"> <?php echo $this->__('Rose') ?> </span><span> € </span></div>'+
 												'<div  class="custom-footer"></div>'+
 												'<input type="radio" name="color" title="Vous devez sélectionner une option" id="pink" value="Rose" onclick="noColorTab(true,37)" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 											'</div>'+
@@ -850,21 +855,21 @@
 							content: '<fieldset>'+
 										'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;margin-bottom: 3%;"><?php echo Mage::helper('contacts')->__('Sélectionner votre teinte') ?></h4>'+ 
 										'<div class="customDiv" onclick="lightTinteDiv()">'+
-											'<h6 for="userName" class="custom-header">25% - Clair</h6><span style="margin-right: 2%;width: 10%;font-size: 1.2em;font-family: Bitter, georgia, serif;" id="clairID"> <?php echo $this->__('25% - Clair') ?> </span><span> € </span>'+
+											'<h6 for="userName" class="custom-header">25% - Clair</h6>'+
 											'<p style="height: 50px;padding: 5%;float: left;width: 90%;">Usage esth&eacute;tique</p>'+
 											'<p style="height: 50px;padding: 5%;float: left;width: 90%;">Cat&eacute;gorie 0</p>'+
 											'<div  class="custom-footer"></div>'+
 											'<input type="radio" name="tinte" title="Vous devez sélectionner une option" id="lightTinte" value="25% - Clair" onclick="setTinted(41)" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 										'</div>'+
 										'<div class="customDiv" onclick="mediumTinteDiv()">'+
-											'<h6 for="userName" class="custom-header">50% - Medium</h6><span style="margin-right: 2%;width: 10%;font-size: 1.2em;font-family: Bitter, georgia, serif;" id="mediumID"> <?php echo $this->__('50% - Medium') ?> </span><span> € </span>'+
+											'<h6 for="userName" class="custom-header">50% - Medium</h6>'+
 											'<p style="height: 50px;padding: 5%;float: left;">Recommand&eacute; en cas de faible luminosit&eacute;</p>'+
 											'<p style="height: 50px;padding: 5%;float: left;width: 90%;">Cat&eacute;gorie 1</p>'+
 											'<div  class="custom-footer"></div>'+
 											'<input type="radio" name="tinte" title="Vous devez sélectionner une option" id="mediumTinte" value="50% Medium" onclick="setTinted(42)" class="checkbox required"class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 										'</div>'+
 										'<div class="customDiv" onclick="highTinteDiv()">'+
-											'<h6 for="userName" class="custom-header">80% - Fonc&eacute; </h6><span style="margin-right: 2%;width: 10%;font-size: 1.2em;font-family: Bitter, georgia, serif;" id="fonceID"> <?php echo $this->__('80% - Fonce') ?> </span><span> € </span>'+
+											'<h6 for="userName" class="custom-header">80% - Fonc&eacute; </h6>'+
 											'<p style="height: 50px;padding: 5%;float: left;">Recommand&eacute; en cas de forte luminosit&eacute;</p>'+
 											'<p style="height: 50px;padding: 5%;float: left;width: 90%;">Cat&eacute;gorie 3</p>'+
 											'<div  class="custom-footer"></div>'+
@@ -983,50 +988,50 @@
 											'<div style="float: left;width: 100%;height: 130px;">'+
 											'<div class="customColorDiv" onclick="noColorDiv()">'+
 												'<img src="<?php echo $this->getSkinUrl('images/no_ball.png') ?>" style="width: 10%;float: left; cursor: pointer;margin-top: 5%;margin-left: 15%;" />'+
-												'<h6 for="userName" class="custom-header" style="width:50%;">Aucune couleur</h6><div style="margin-right: 2%;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;"><span id="aucuneCouleurID">  <?php echo $this->__('Aucune couleur') ?> </span><span> € </span></div>'+
+												'<h6 for="userName" class="custom-header" style="width:50%;">Aucune couleur</h6><div style="margin-right: 2%;display: none;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;"><span id="aucuneCouleurID">  <?php echo $this->__('Aucune couleur') ?> </span><span> € </span></div>'+
 											    '<div  class="custom-footer"></div>'+
 												'<input type="radio" name="color" title="Vous devez sélectionner une option" id="noColor" value="Aucune Couleur" onclick="noColorTab(false,0)" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 											'</div>'+
 											'<div class="customColorDiv" onclick="greyDiv()">'+
 												'<img src="<?php echo $this->getSkinUrl('images/grey_ball.png') ?>" style="width: 10%;float: left; cursor: pointer;margin-top: 5%;margin-left: 15%;" />'+
-												'<h6 for="userName" class="custom-header" style="width:50%;">Gris</h6><div style="margin-right: 2%;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;"><span id="grisID"><?php echo $this->__('Gris') ?> </span><span> € </span></div>'+
+												'<h6 for="userName" class="custom-header" style="width:50%;">Gris</h6><div style="margin-right: 2%;display: none;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;"><span id="grisID"><?php echo $this->__('Gris') ?> </span><span> € </span></div>'+
 												'<div  class="custom-footer"></div>'+
 												'<input type="radio" name="color" title="Vous devez sélectionner une option" id="grey" value="Gris" onclick="noColorTab(true,31)" "class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 											'</div>'+
 											'<div class="customColorDiv" onclick="marronDiv()">'+
 												'<img src="<?php echo $this->getSkinUrl('images/marron_ball.png') ?>" style="width: 10%;float: left; cursor: pointer;margin-top: 5%;margin-left: 15%;" />'+
-												'<h6 for="userName" class="custom-header" style="width:50%;" >Marron</h6><div style="margin-right: 2%;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;"><span id="marronID"><?php echo $this->__('Marron') ?> </span><span> € </span></div>'+
+												'<h6 for="userName" class="custom-header" style="width:50%;" >Marron</h6><div style="margin-right: 2%;display: none;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;"><span id="marronID"><?php echo $this->__('Marron') ?> </span><span> € </span></div>'+
 												'<div  class="custom-footer"></div>'+
 												'<input type="radio" name="color" title="Vous devez sélectionner une option" value="Marron" id="marron" onclick="noColorTab(true,32)" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 											'</div>'+
 											'<div class="customColorDiv" onclick="blueDiv()">'+
 												'<img src="<?php echo $this->getSkinUrl('images/blue_ball.png') ?>" style="width: 10%;float: left; cursor: pointer;margin-top: 5%;margin-left: 15%;" />'+
-												'<h6 for="userName" class="custom-header" style="width:50%;">Bleu</h6><div style="margin-right: 2%;width: 100%;float: left;ont-size: 1.2em;font-family: Bitter, georgia, serif;"><span id="bleuID"> <?php echo $this->__('Bleu') ?> </span><span> € </span></div>'+
+												'<h6 for="userName" class="custom-header" style="width:50%;">Bleu</h6><div style="margin-right: 2%;display: none;width: 100%;float: left;ont-size: 1.2em;font-family: Bitter, georgia, serif;"><span id="bleuID"> <?php echo $this->__('Bleu') ?> </span><span> € </span></div>'+
 												'<div  class="custom-footer"></div>'+
 												'<input type="radio" name="color" title="Vous devez sélectionner une option" value="Bleu" id="blue" onclick="noColorTab(true,33)" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 											'</div>'+
 											'</div>'+
 											'<div class="customColorDiv" onclick="greenDiv()">'+
 												'<img src="<?php echo $this->getSkinUrl('images/green_ball.png') ?>" style="width: 10%;float: left; cursor: pointer;margin-top: 5%;margin-left: 15%;" />'+
-												'<h6 for="userName" class="custom-header" style="width:50%;">Vert</h6><div style="margin-right: 2%;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;" ><span id="vertID"><?php echo $this->__('Vert') ?> </span><span> € </span></div>'+
+												'<h6 for="userName" class="custom-header" style="width:50%;">Vert</h6><div style="margin-right: 2%;display: none;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;" ><span id="vertID"><?php echo $this->__('Vert') ?> </span><span> € </span></div>'+
 												'<div  class="custom-footer"></div>'+
 												'<input type="radio" name="color" title="Vous devez sélectionner une option" value="Vert" id="green" onclick="noColorTab(true,34)" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 											'</div>'+
 											'<div class="customColorDiv" onclick="blackDiv()">'+
 												'<img src="<?php echo $this->getSkinUrl('images/black_ball.png') ?>" style="width: 10%;float: left; cursor: pointer;margin-top: 5%;margin-left: 15%;" />'+
-												'<h6 for="userName" class="custom-header" style="width:50%;">Noir</h6><div style="margin-right: 2%;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;"> <span id="noirID"><?php echo $this->__('Noir') ?> </span><span> € </span></div>'+
+												'<h6 for="userName" class="custom-header" style="width:50%;">Noir</h6><div style="margin-right: 2%;display: none;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;"> <span id="noirID"><?php echo $this->__('Noir') ?> </span><span> € </span></div>'+
 												'<div  class="custom-footer"></div>'+
 												'<input type="radio" name="color" title="Vous devez sélectionner une option" value="Noir" id="black" onclick="noColorTab(true,35)" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 											'</div>'+
 											'<div class="customColorDiv" onclick="yellowDiv()">'+
 												'<img src="<?php echo $this->getSkinUrl('images/yellow_ball.png') ?>" style="width: 10%;float: left; cursor: pointer;margin-top: 5%;margin-left: 15%;" />'+
-												'<h6 for="userName" class="custom-header" style="width:50%;">Jaune</h6><div style="margin-right: 2%;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;"><span id="jauneID"> <?php echo $this->__('Jaune') ?> </span><span> € </span></div>'+
+												'<h6 for="userName" class="custom-header" style="width:50%;">Jaune</h6><div style="margin-right: 2%;display: none;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;"><span id="jauneID"> <?php echo $this->__('Jaune') ?> </span><span> € </span></div>'+
 												'<div  class="custom-footer"></div>'+
 												'<input type="radio" name="color" title="Vous devez sélectionner une option" value="Jaune" id="yellow" onclick="noColorTab(true,36)" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 											'</div>'+
 											'<div class="customColorDiv" onclick="pinkDiv()">'+
 												'<img src="<?php echo $this->getSkinUrl('images/pink_ball.png') ?>" style="width: 10%;float: left; cursor: pointer;margin-top: 5%;margin-left: 15%;" />'+
-												'<h6 for="userName" class="custom-header" style="width:50%;">Rose</h6><div style="margin-right: 2%;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;"><span id="roseID"> <?php echo $this->__('Rose') ?> </span><span> € </span></div>'+
+												'<h6 for="userName" class="custom-header" style="width:50%;">Rose</h6><div style="margin-right: 2%;display: none;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;"><span id="roseID"> <?php echo $this->__('Rose') ?> </span><span> € </span></div>'+
 												'<div  class="custom-footer"></div>'+
 												'<input type="radio" name="color" title="Vous devez sélectionner une option" id="pink" value="Rose" onclick="noColorTab(true,37)" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 											'</div>'+
@@ -1043,21 +1048,21 @@
 					content: '<fieldset>'+
 								'<h4 class="legend" style="border-bottom: 1px solid #e5e5e5;margin-bottom: 3%;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper('contacts')->__("Sélectionner votre teinte") ?></h4>'+ 
 								'<div class="customDiv" onclick="lightTinteDiv()">'+
-									'<h6 for="userName" class="custom-header">25% - Clair</h6><span style="margin-right: 2%;width: 10%;font-size: 1.2em;font-family: Bitter, georgia, serif;" id="clairID"> <?php echo $this->__('25% - Clair') ?> </span><span> € </span>'+
+									'<h6 for="userName" class="custom-header">25% - Clair</h6>'+
 									'<p style="height: 50px;padding: 5%;float: left;width: 90%;">Usage esth&eacute;tique</p>'+
 									'<p style="height: 50px;padding: 5%;float: left;width: 90%;">Cat&eacute;gorie 0</p>'+
 									'<div  class="custom-footer"></div>'+
 									'<input type="radio" name="tinte" title="Vous devez sélectionner une option" id="lightTinte" value="25% Clair" onclick="setTinted(41)" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 								'</div>'+
 								'<div class="customDiv" onclick="mediumTinteDiv()">'+
-									'<h6 for="userName" class="custom-header">50% - Medium</h6><span style="margin-right: 2%;width: 10%;font-size: 1.2em;font-family: Bitter, georgia, serif;" id="mediumID"> <?php echo $this->__('50% - Medium') ?> </span><span> € </span>'+
+									'<h6 for="userName" class="custom-header">50% - Medium</h6>'+
 									'<p style="height: 50px;padding: 5%;float: left;">Recommand&eacute; en cas de faible luminosit&eacute;</p>'+
 									'<p style="height: 50px;padding: 5%;float: left;width: 90%;">Cat&eacute;gorie 1</p>'+
 									'<div  class="custom-footer"></div>'+
 									'<input type="radio" name="tinte" title="Vous devez sélectionner une option" id="mediumTinte" value="50% Medium" onclick="setTinted(42)"class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 								'</div>'+
 								'<div class="customDiv" onclick="highTinteDiv()">'+
-									'<h6 for="userName" class="custom-header">80% - Fonc&eacute; </h6><span style="margin-right: 2%;width: 10%;font-size: 1.2em;font-family: Bitter, georgia, serif;" id="fonceID"> <?php echo $this->__('80% - Fonce') ?> </span><span> € </span>'+
+									'<h6 for="userName" class="custom-header">80% - Fonc&eacute; </h6>'+
 									'<p style="height: 50px;padding: 5%;float: left;">Recommand&eacute; en cas de forte luminosit&eacute;</p>'+
 									'<p style="height: 50px;padding: 5%;float: left;width: 90%;">Cat&eacute;gorie 3</p>'+
 									'<div  class="custom-footer"></div>'+
@@ -1135,7 +1140,7 @@
 											'<div style="width:100%;float: left;margin-top: 1%;">'+
 											'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;color: #00a9c7;" > € </h6>'+
 												'<h6 for="price" name="price2" id="price2" style="float: right;color: #00a9c7;font-size: 1.4em;font-family: Bitter, georgia, serif;" ></h6>'+
-												'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Total Price : </h6>'+
+												'<h6 for="price" style="float: right;font-size: 1.4em;font-family: Bitter, georgia, serif;" >Prix total : </h6>'+
 											'</div>'+
 										'</fieldset>'
 								})
@@ -1398,21 +1403,21 @@
 					content: '<fieldset>'+
 								'<h4 class="legend" style="margin-bottom: 3%;border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper('contacts')->__("Sélectionner votre teinte") ?></h4>'+ 
 								'<div class="customDiv" onclick="lightTinteDiv()">'+
-									'<h6 for="userName" class="custom-header">25% - Clair </h6><span style="margin-right: 2%;width: 10%;font-size: 1.2em;font-family: Bitter, georgia, serif;" id="clairID"> <?php echo $this->__('25% - Clair') ?> </span><span> € </span>'+
+									'<h6 for="userName" class="custom-header">25% - Clair </h6>'+
 									'<p style="height: 50px;padding: 5%;float: left;width: 90%;">Usage esth&eacute;tique </p>'+
 									'<p style="height: 50px;padding: 5%;float: left;width: 90%;">Cat&eacute;gorie 0</p>'+
 									'<div  class="custom-footer"></div>'+
 									'<input type="radio" name="tinte" title="Vous devez sélectionner une option" value="lightTinte" id="lightTinte" value="25% - Clair" onclick="setTinted(41)" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 								'</div>'+
 								'<div class="customDiv" onclick="mediumTinteDiv()">'+
-									'<h6 for="userName" class="custom-header" >50% - Medium</h6><span style="margin-right: 2%;width: 10%;font-size: 1.2em;font-family: Bitter, georgia, serif;" id="mediumID"> <?php echo $this->__('50% - Medium') ?> </span><span> € </span>'+
+									'<h6 for="userName" class="custom-header" >50% - Medium</h6>'+
 									'<p style="height: 50px;padding: 5%;float: left;">Recommand&eacute; en cas de faible luminosit&eacute;</p>'+
 									'<p style="height: 50px;padding: 5%;float: left;width: 90%;">Cat&eacute;gorie 1</p>'+
 									'<div  class="custom-footer"></div>'+
 									'<input type="radio" name="tinte" title="Vous devez sélectionner une option" value="mediumTinte" id="50% - Medium" onclick="setTinted(42)" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 								'</div>'+
 								'<div class="customDiv" onclick="highTinteDiv()">'+
-									'<h6 for="userName" class="custom-header">80% - Fonc&eacute; </h6><span style="margin-right: 2%;width: 10%;font-size: 1.2em;font-family: Bitter, georgia, serif;" id="fonceID"> <?php echo $this->__('80% - Fonce') ?> </span><span> € </span>'+
+									'<h6 for="userName" class="custom-header">80% - Fonc&eacute; </h6>'+
 									'<p style="height: 50px;padding: 5%;float: left;">Recommand&eacute; en cas de forte luminosit&eacute;</p>'+
 									'<p style="height: 50px;padding: 5%;float: left;width: 90%;">Cat&eacute;gorie 3</p>'+
 									'<div  class="custom-footer"></div>'+
@@ -1511,50 +1516,50 @@
 											'<div style="float: left;width: 100%;height: 130px;">'+
 											'<div class="customColorDiv" onclick="noColorDiv()">'+
 												'<img src="<?php echo $this->getSkinUrl('images/no_ball.png') ?>" style="width: 10%;float: left; cursor: pointer;margin-top: 5%;margin-left: 15%;" />'+
-												'<h6 for="userName" class="custom-header" style="width:50%;">Aucune couleur</h6><div style="margin-right: 2%;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;"><span id="aucuneCouleurID">  <?php echo $this->__('Aucune couleur') ?> </span><span> € </span></div>'+
+												'<h6 for="userName" class="custom-header" style="width:50%;">Aucune couleur</h6><div style="margin-right: 2%;display: none;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;"><span id="aucuneCouleurID">  <?php echo $this->__('Aucune couleur') ?> </span><span> € </span></div>'+
 											    '<div  class="custom-footer"></div>'+
 												'<input type="radio" name="color" title="Vous devez sélectionner une option" id="noColor" value="Aucune Couleur" onclick="noColorTab(false,0)" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 											'</div>'+
 											'<div class="customColorDiv" onclick="greyDiv()">'+
 												'<img src="<?php echo $this->getSkinUrl('images/grey_ball.png') ?>" style="width: 10%;float: left; cursor: pointer;margin-top: 5%;margin-left: 15%;" />'+
-												'<h6 for="userName" class="custom-header" style="width:50%;">Gris</h6><div style="margin-right: 2%;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;"><span id="grisID"><?php echo $this->__('Gris') ?> </span><span> € </span></div>'+
+												'<h6 for="userName" class="custom-header" style="width:50%;">Gris</h6><div style="margin-right: 2%;width: 100%;display: none;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;"><span id="grisID"><?php echo $this->__('Gris') ?> </span><span> € </span></div>'+
 												'<div  class="custom-footer"></div>'+
 												'<input type="radio" name="color" title="Vous devez sélectionner une option" id="grey" value="Gris" onclick="noColorTab(true,31)" "class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 											'</div>'+
 											'<div class="customColorDiv" onclick="marronDiv()">'+
 												'<img src="<?php echo $this->getSkinUrl('images/marron_ball.png') ?>" style="width: 10%;float: left; cursor: pointer;margin-top: 5%;margin-left: 15%;" />'+
-												'<h6 for="userName" class="custom-header" style="width:50%;" >Marron</h6><div style="margin-right: 2%;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;"><span id="marronID"><?php echo $this->__('Marron') ?> </span><span> € </span></div>'+
+												'<h6 for="userName" class="custom-header" style="width:50%;" >Marron</h6><div style="margin-right: 2%;display: none;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;"><span id="marronID"><?php echo $this->__('Marron') ?> </span><span> € </span></div>'+
 												'<div  class="custom-footer"></div>'+
 												'<input type="radio" name="color" title="Vous devez sélectionner une option" value="Marron" id="marron" onclick="noColorTab(true,32)" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 											'</div>'+
 											'<div class="customColorDiv" onclick="blueDiv()">'+
 												'<img src="<?php echo $this->getSkinUrl('images/blue_ball.png') ?>" style="width: 10%;float: left; cursor: pointer;margin-top: 5%;margin-left: 15%;" />'+
-												'<h6 for="userName" class="custom-header" style="width:50%;">Bleu</h6><div style="margin-right: 2%;width: 100%;float: left;ont-size: 1.2em;font-family: Bitter, georgia, serif;"><span id="bleuID"> <?php echo $this->__('Bleu') ?> </span><span> € </span></div>'+
+												'<h6 for="userName" class="custom-header" style="width:50%;">Bleu</h6><div style="margin-right: 2%;display: none;width: 100%;float: left;ont-size: 1.2em;font-family: Bitter, georgia, serif;"><span id="bleuID"> <?php echo $this->__('Bleu') ?> </span><span> € </span></div>'+
 												'<div  class="custom-footer"></div>'+
 												'<input type="radio" name="color" title="Vous devez sélectionner une option" value="Bleu" id="blue" onclick="noColorTab(true,33)" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 											'</div>'+
 											'</div>'+
 											'<div class="customColorDiv" onclick="greenDiv()">'+
 												'<img src="<?php echo $this->getSkinUrl('images/green_ball.png') ?>" style="width: 10%;float: left; cursor: pointer;margin-top: 5%;margin-left: 15%;" />'+
-												'<h6 for="userName" class="custom-header" style="width:50%;">Vert</h6><div style="margin-right: 2%;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;" ><span id="vertID"><?php echo $this->__('Vert') ?> </span><span> € </span></div>'+
+												'<h6 for="userName" class="custom-header" style="width:50%;">Vert</h6><div style="margin-right: 2%;display: none;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;" ><span id="vertID"><?php echo $this->__('Vert') ?> </span><span> € </span></div>'+
 												'<div  class="custom-footer"></div>'+
 												'<input type="radio" name="color" title="Vous devez sélectionner une option" value="Vert" id="green" onclick="noColorTab(true,34)" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 											'</div>'+
 											'<div class="customColorDiv" onclick="blackDiv()">'+
 												'<img src="<?php echo $this->getSkinUrl('images/black_ball.png') ?>" style="width: 10%;float: left; cursor: pointer;margin-top: 5%;margin-left: 15%;" />'+
-												'<h6 for="userName" class="custom-header" style="width:50%;">Noir</h6><div style="margin-right: 2%;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;"> <span id="noirID"><?php echo $this->__('Noir') ?> </span><span> € </span></div>'+
+												'<h6 for="userName" class="custom-header" style="width:50%;">Noir</h6><div style="margin-right: 2%;display: none;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;"> <span id="noirID"><?php echo $this->__('Noir') ?> </span><span> € </span></div>'+
 												'<div  class="custom-footer"></div>'+
 												'<input type="radio" name="color" title="Vous devez sélectionner une option" value="Noir" id="black" onclick="noColorTab(true,35)" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 											'</div>'+
 											'<div class="customColorDiv" onclick="yellowDiv()">'+
 												'<img src="<?php echo $this->getSkinUrl('images/yellow_ball.png') ?>" style="width: 10%;float: left; cursor: pointer;margin-top: 5%;margin-left: 15%;" />'+
-												'<h6 for="userName" class="custom-header" style="width:50%;">Jaune</h6><div style="margin-right: 2%;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;"><span id="jauneID"> <?php echo $this->__('Jaune') ?> </span><span> € </span></div>'+
+												'<h6 for="userName" class="custom-header" style="width:50%;">Jaune</h6><div style="margin-right: 2%;display: none;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;"><span id="jauneID"> <?php echo $this->__('Jaune') ?> </span><span> € </span></div>'+
 												'<div  class="custom-footer"></div>'+
 												'<input type="radio" name="color" title="Vous devez sélectionner une option" value="Jaune" id="yellow" onclick="noColorTab(true,36)" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 											'</div>'+
 											'<div class="customColorDiv" onclick="pinkDiv()">'+
 												'<img src="<?php echo $this->getSkinUrl('images/pink_ball.png') ?>" style="width: 10%;float: left; cursor: pointer;margin-top: 5%;margin-left: 15%;" />'+
-												'<h6 for="userName" class="custom-header" style="width:50%;">Rose</h6><div style="margin-right: 2%;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;"><span id="roseID"> <?php echo $this->__('Rose') ?> </span><span> € </span></div>'+
+												'<h6 for="userName" class="custom-header" style="width:50%;">Rose</h6><div style="margin-right: 2%;display: none;width: 100%;float: left;font-size: 1.2em;font-family: Bitter, georgia, serif;"><span id="roseID"> <?php echo $this->__('Rose') ?> </span><span> € </span></div>'+
 												'<div  class="custom-footer"></div>'+
 												'<input type="radio" name="color" title="Vous devez sélectionner une option" id="pink" value="Rose" onclick="noColorTab(true,37)" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 											'</div>'+
@@ -1572,21 +1577,21 @@
 					content: '<fieldset>'+
 								'<h4 class="legend" style="margin-bottom: 3%;border-bottom: 1px solid #e5e5e5;padding-top: 3px;padding-bottom: 7px;"><?php echo Mage::helper('contacts')->__("Sélectionner votre teinte") ?></h4>'+ 
 								'<div class="customDiv" onclick="lightTinteDiv()">'+
-									'<h6 for="userName" class="custom-header">25% - Clair</h6><span style="margin-right: 2%;width: 10%;font-size: 1.2em;font-family: Bitter, georgia, serif;" id="clairID"> <?php echo $this->__('25% - Clair') ?> </span><span> € </span>'+
+									'<h6 for="userName" class="custom-header">25% - Clair</h6>'+
 									'<p style="height: 50px;padding: 5%;float: left;width: 90%;">Usage esth&eacute;tique</p>'+
 									'<p style="height: 50px;padding: 5%;float: left;width: 90%;">Cat&eacute;gorie 0</p>'+
 									'<div  class="custom-footer"></div>'+
 									'<input type="radio" name="tinte" title="Vous devez sélectionner une option" id="lightTinte" value="25% Clair" onclick="setTinted(41)" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 								'</div>'+
 								'<div class="customDiv" onclick="mediumTinteDiv()">'+
-									'<h6 for="userName" class="custom-header">50% - Medium</h6><span style="margin-right: 2%;width: 10%;font-size: 1.2em;font-family: Bitter, georgia, serif;" id="mediumID"> <?php echo $this->__('50% - Medium') ?> </span><span> € </span>'+
+									'<h6 for="userName" class="custom-header">50% - Medium</h6>'+
 									'<p style="height: 50px;padding: 5%;float: left;">Recommand&eacute; en cas de faible luminosit&eacute;</p>'+
 									'<p style="height: 50px;padding: 5%;float: left;width: 90%;">Cat&eacute;gorie 1</p>'+
 									'<div  class="custom-footer"></div>'+
 									'<input type="radio" name="tinte" title="Vous devez sélectionner une option" id="mediumTinte" value="50% Medium" onclick="setTinted(42)" class="checkbox required" style="margin-top: 0.5%;float: left;width: 100%;">'+
 								'</div>'+
 								'<div class="customDiv" onclick="highTinteDiv()">'+
-									'<h6 for="userName" class="custom-header">80% - Fonc&eacute; </h6><span style="margin-right: 2%;width: 10%;font-size: 1.2em;font-family: Bitter, georgia, serif;" id="fonceID"> <?php echo $this->__('80% - Fonce') ?> </span><span> € </span>'+
+									'<h6 for="userName" class="custom-header">80% - Fonc&eacute; </h6>'+
 									'<p style="height: 50px;padding: 5%;float: left;">Recommand&eacute; en cas de forte luminosit&eacute;</p>'+
 									'<p style="height: 50px;padding: 5%;float: left;width: 90%;">Cat&eacute;gorie 3</p>'+
 									'<div  class="custom-footer"></div>'+
