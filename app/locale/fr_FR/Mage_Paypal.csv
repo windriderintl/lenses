@@ -288,8 +288,8 @@
 "Review Order","Vérifier la commande"
 "Reward Voucher Redemption","Rachat de bon de récompense"
 "SFTP Credentials","Informations d'accès SFTP"
-"Sale","Vente"
-"Sales","Ventes"
+Sale,Promo
+Sales,Promo
 "Sandbox Credentials","Informations d'accès en mode Sandbox"
 "Sandbox Mode","Mode Sandbox"
 "Schedule","Programme"
