@@ -452,7 +452,7 @@ p.required,
 */
 .page-title h1,
 .page-title h2 { margin-bottom:0; }
-.page-title { margin-bottom:20px; }
+.page-title { margin-bottom:0px; }
 /*.category-title { margin-bottom:10px; }*/
 
 /* Links in page title */
