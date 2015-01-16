@@ -31,11 +31,11 @@ body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif;
                 <td valign="top">
                 	<div style="width: 100%;float: left;padding: 1%;">
 							<div style="width: 40%;float: left;">
-								<lable style="float: left;width: 40%;">Order Number 訂單號: </lable>
+								<lable style="float: left;width: 40%;">Order Number è¨‚å–®è™Ÿ: </lable>
 								<p style="float: right;margin: 0px;margin-right: 20%;"> {{var order.increment_id}}</p>
 							</div>	
 							<div style="width: 55%;float: left;margin-left: 1%;">
-								<lable style="float: left;width: 38%;">Order Date 订单日期:</lable>
+								<lable style="float: left;width: 38%;">Order Date è®¢å�•æ—¥æœŸ:</lable>
 								<p style="float: right;margin: 0px;margin-right: 5%;">{{var order.getCreatedAtFormated('long')}}</p>
 							</div>	
 						</div>
@@ -50,14 +50,14 @@ body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif;
 								<div style="padding: 1%;width: 100%;float: left;">
 									<div style="float: left;width: 40%;">
 										<lable style="float: left;width: 100%;">Frame supplier price :</lable>
-										<lable style="float: left;width: 100%;">框架进货价:</lable>
+										<lable style="float: left;width: 100%;">æ¡†æž¶è¿›è´§ä»·:</lable>
 									</div>
 									<p style="float: left;margin: 0px;"> {{var supplier_frame_price}}</p>
 								</div>	
 								<div style="padding: 1%;width: 100%;float: left;">
 									<div style="float: left;width: 40%;">
 										<lable style="float: left;width: 100%;">Lenses supplier price :</lable>
-										<lable style="float: left;width: 100%;">镜片进货价 :</lable>
+										<lable style="float: left;width: 100%;">é•œç‰‡è¿›è´§ä»· :</lable>
 									</div>
 										<p style="float: left;margin: 0px;">{{var supplier_lenses_price}}</p>
 										
@@ -65,7 +65,7 @@ body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif;
 								<div style="padding: 1%;width: 100%;float: left;">
 									<div style="float: left;width: 38%;">
 										<lable style="float: left;">Total supplier price :</lable>
-										<lable style="float: left;">总 进货价 :</lable>
+										<lable style="float: left;">æ€» è¿›è´§ä»· :</lable>
 									</div>	
 									<p style="float: left;margin: 0px;">{{var supplier_add_price}}</p>
 								</div>	
@@ -73,6 +73,7 @@ body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif;
 						</div>
                 </td>
             </tr>
+            
             <tr>
              	<td>
 	            	<div style="width:100%;float:left;"> 
@@ -87,14 +88,14 @@ body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif;
                                                <div style="padding: 1%;width: 30%;float: left;">
 							<div style="float: left;width: 100%;">
 								<lable style="float: left;width: 100%;" >Lense Type :</lable>
-								<lable style="float: left;width: 100%;">æ¡†æž¶å�· :</lable>
+								<lable style="float: left;width: 100%;"></lable>
 							</div>
 							<p style="float: left;margin: 0px;"> {{var supplier_glass_cost}}</p>							
 						</div>		
 						<div style="padding: 1%;width: 30%;float: left;">
 							<div style="float: left;width: 100%;">
 								<lable style="float: left;width: 100%;" >Photochromic:</lable>
-								<lable style="float: left;width: 100%;">æ¡†æž¶å�� :</lable>
+								<lable style="float: left;width: 100%;"></lable>
 							</div>
 							<p style="float: left;margin: 0px;">{{var supplier_photochromic_cost}}</p>	
 						</div>	
@@ -102,7 +103,7 @@ body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif;
 							<div style="float: left;width: 100%;">
 							
 								<lable style="float: left;width: 100%;" >Color :</lable>
-								<lable style="float: left;width: 100%;">æ¡†æž¶å�� :</lable>
+								<lable style="float: left;width: 100%;"></lable>
 							</div>
 							<p style="float: left;margin: 0px;">{{var supplier_color_cost}}</p>	
 						</div>	
@@ -112,7 +113,7 @@ body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif;
 	                         <div style="padding: 1%;width: 30%;float: left;">
 								<div style="float: left;width: 100%;">
 									<lable style="float: left;width: 100%;" >Teinted % :</lable>
-									<lable style="float: left;width: 100%;">æ¡†æž¶å�· :</lable>
+									<lable style="float: left;width: 100%;"></lable>
 								</div>
 								<p style="float: left;margin: 0px;"> {{var supplier_tinte_cost}}</p>							
 							</div>	
@@ -120,7 +121,7 @@ body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif;
 							<div style="float: left;width: 100%;">
 							
 								<lable style="float: left;width: 100%;" >Correction :</lable>
-								<lable style="float: left;width: 100%;">æ¡†æž¶å�� :</lable>
+								<lable style="float: left;width: 100%;"></lable>
 							</div>
 							<p style="float: left;margin: 0px;">{{var supplier_correction_cost}}</p>	
 						</div>		
@@ -144,14 +145,14 @@ body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif;
                                                <div style="padding: 1%;width: 30%;float: left;">
 							<div style="float: left;width: 100%;">
 								<lable style="float: left;width: 100%;" >Frame number :</lable>
-								<lable style="float: left;width: 100%;">框架号 :</lable>
+								<lable style="float: left;width: 100%;"></lable>
 							</div>
 							<p style="float: left;margin: 0px;"> {{var frame_number}}</p>							
 						</div>		
 						<div style="padding: 1%;width: 30%;float: left;">
 							<div style="float: left;width: 100%;">
 								<lable style="float: left;width: 100%;" >Frame name :</lable>
-								<lable style="float: left;width: 100%;">框架名 :</lable>
+								<lable style="float: left;width: 100%;"></lable>
 							</div>
 							<p style="float: left;margin: 0px;">{{var frame_name}}</p>	
 						</div>	
@@ -159,7 +160,7 @@ body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif;
 							<div style="float: left;width: 100%;">
 							
 								<lable style="float: left;width: 100%;" >Photochromic :</lable>
-								<lable style="float: left;width: 100%;">框架名 :</lable>
+								<lable style="float: left;width: 100%;"></lable>
 							</div>
 							<p style="float: left;margin: 0px;">{{var frame_phtochromic}}</p>	
 						</div>	
@@ -170,21 +171,21 @@ body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif;
                                                <div style="padding: 1%;width: 30%;float: left;">
 							<div style="float: left;width: 100%;">
 								<lable style="float: left;width: 100%;" >Color :</lable>
-								<lable style="float: left;width: 100%;">框架号 :</lable>
+								<lable style="float: left;width: 100%;"></lable>
 							</div>
 							<p style="float: left;margin: 0px;"> {{var frame_color}}</p>							
 						</div>		
 						<div style="padding: 1%;width: 30%;float: left;">
 							<div style="float: left;width: 100%;">
 								<lable style="float: left;width: 100%;" >Teinted % :</lable>
-								<lable style="float: left;width: 100%;">框架名 :</lable>
+								<lable style="float: left;width: 100%;"></lable>
 							</div>
 							<p style="float: left;margin: 0px;">{{var frame_teinted}}</p>	
 						</div>	
                                                 <div style="padding: 1%;width: 30%;float: left;">
 							<div style="float: left;width: 100%;">
 								<lable style="float: left;width: 100%;" >Addition :</lable>
-								<lable style="float: left;width: 100%;">框架名 :</lable>
+								<lable style="float: left;width: 100%;"></lable>
 							</div>
 							<p style="float: left;margin: 0px;"> Right : {{var ars}} , Left : {{var ala}} </p>	
 						</div>	
@@ -194,7 +195,7 @@ body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif;
                        		<div style="padding: 1%;width: 30%;float: left;">
 								<div style="float: left;width: 100%;">
 									<lable style="float: left;width: 100%;" >Lenses Type:</lable>
-									<lable style="float: left;width: 100%;">框架号 :</lable>
+									<lable style="float: left;width: 100%;"></lable>
 								</div>
 								<p style="float: left;margin: 0px;"> {{var lense_type}}</p>							
 							</div>		
@@ -207,21 +208,21 @@ body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif;
                    <table class="fieldset table_custom" id="progressiveTableId" style="width: 99%;border:1px solid black;border-collapse:collapse;" cellspacing="10" style="border: 0px solid black;" >
 								<tr>
 									  <td colspan="2" class="tD_custom table_custom" style="border:1px solid black;border-collapse:collapse;"></td>
-									  <th class="th_custom table_custom" style="width: 20%;border:1px solid black;border-collapse:collapse;">Syphere  球镜</th>
-									  <th class="th_custom table_custom"  style="width: 20%;border:1px solid black;border-collapse:collapse;">Cylinder  柱镜</th>
-									  <th class="th_custom table_custom"  style="width: 20%;border:1px solid black;border-collapse:collapse;">Axis  光轴</th>
+									  <th class="th_custom table_custom" style="width: 20%;border:1px solid black;border-collapse:collapse;">Sph&egrave;re  ç�ƒé•œ</th>
+									  <th class="th_custom table_custom"  style="width: 20%;border:1px solid black;border-collapse:collapse;">Cylinder  æŸ±é•œ</th>
+									  <th class="th_custom table_custom"  style="width: 20%;border:1px solid black;border-collapse:collapse;">Axis  å…‰è½´</th>
 								</tr>
 								<tr style="width: 100%;float: left;padding: 5%;">
 								</tr>
 								<tr>
-									  <th rowspan="2" class="th_custom table_custom" style="border:1px solid black;border-collapse:collapse;">Distance 远用</th>
-									  <th class="th_custom table_custom" style="border:1px solid black;border-collapse:collapse;">Right Eye 右眼</th>		
+									  <th rowspan="2" class="th_custom table_custom" style="border:1px solid black;border-collapse:collapse;">Distance è¿œç”¨</th>
+									  <th class="th_custom table_custom" style="border:1px solid black;border-collapse:collapse;">Right Eye å�³çœ¼</th>		
 									  <td class="th_custom table_custom" style="text-align: center;border:1px solid black;border-collapse:collapse;">{{var drs}}</td>
 									  <td class="td_custom table_custom" style="text-align: center;border:1px solid black;border-collapse:collapse;">{{var drc}}</td>
 									  <td class="td_custom table_custom" style="text-align: center;border:1px solid black;border-collapse:collapse;">{{var dra}}</td>
 								</tr>
 								<tr>
-									  <th class="th_custom table_custom" style="border:1px solid black;border-collapse:collapse;">Left Eye 左眼</th>
+									  <th class="th_custom table_custom" style="border:1px solid black;border-collapse:collapse;">Left Eye å·¦çœ¼</th>
 									  <td class="th_custom table_custom" style="text-align: center;border:1px solid black;border-collapse:collapse;">{{var dls}}</td>		
 									  <td class="th_custom table_custom" style="text-align: center;border:1px solid black;border-collapse:collapse;">{{var dlc}}</td>
 									  <td class="th_custom table_custom" style="text-align: center;border:1px solid black;border-collapse:collapse;">{{var dla}}</td>
@@ -229,14 +230,14 @@ body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif;
 								<tr style="width: 100%;float: left;padding: 5%;">
 								</tr>
 								<tr id="reading">
-									  <th rowspan="2" class="th_custom table_custom" style="border:1px solid black;border-collapse:collapse;">Reading 近用</th>
-									  <th class="th_custom table_custom" style="border:1px solid black;border-collapse:collapse;">Right Eye 右眼</th>
+									  <th rowspan="2" class="th_custom table_custom" style="border:1px solid black;border-collapse:collapse;">Reading è¿‘ç”¨</th>
+									  <th class="th_custom table_custom" style="border:1px solid black;border-collapse:collapse;">Right Eye å�³çœ¼</th>
 									  <td class="td_custom table_custom" style="text-align: center;border:1px solid black;border-collapse:collapse;">{{var rrs}}</td>		
 									  <td class="td_custom table_custom" style="text-align: center;border:1px solid black;border-collapse:collapse;">{{var rrc}}</td>
 									  <td class="td_custom table_custom" style="text-align: center;border:1px solid black;border-collapse:collapse;">{{var rra}}</td>
 								</tr>
 								<tr id="readingLeft">
-									  <th class="th_custom table_custom" style="border:1px solid black;border-collapse:collapse;">Left Eye 左眼</th>
+									  <th class="th_custom table_custom" style="border:1px solid black;border-collapse:collapse;">Left Eye å·¦çœ¼</th>
 									  <td class="th_custom table_custom" style="text-align: center;border:1px solid black;border-collapse:collapse;">{{var rls}}</td>		
 									  <td class="td_custom table_custom" style="text-align: center;border:1px solid black;border-collapse:collapse;">{{var rlc}}</td>
 									  <td class="td_custom table_custom" style="text-align: center;border:1px solid black;border-collapse:collapse;">{{var rla}}</td>
@@ -244,14 +245,14 @@ body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif;
 								<tr style="width: 100%;float: left;padding: 5%;">
 								</tr>
 								<tr id="reading">
-									  <th rowspan="2" class="th_custom table_custom" style="border:1px solid black;border-collapse:collapse;">Addition 加</th>
-									  <th class="th_custom table_custom" style="border:1px solid black;border-collapse:collapse;">Right Eye 右眼</th>
+									  <th rowspan="2" class="th_custom table_custom" style="border:1px solid black;border-collapse:collapse;">Addition åŠ </th>
+									  <th class="th_custom table_custom" style="border:1px solid black;border-collapse:collapse;">Right Eye å�³çœ¼</th>
 									  <td class="td_custom table_custom" style="text-align: center;border:1px solid black;border-collapse:collapse;">{{var ars}}</td>		
 									  <td class="td_custom table_custom" style="text-align: center;border:1px solid black;border-collapse:collapse;"></td>
 									  <td class="td_custom table_custom" style="text-align: center;border:1px solid black;border-collapse:collapse;"></td>
 								</tr>
 								<tr id="readingLeft">
-									  <th class="th_custom table_custom" style="border:1px solid black;border-collapse:collapse;">Left Eye 左眼</th>
+									  <th class="th_custom table_custom" style="border:1px solid black;border-collapse:collapse;">Left Eye å·¦çœ¼</th>
 									  <td class="th_custom table_custom" style="text-align: center;border:1px solid black;border-collapse:collapse;">{{var ala}}</td>		
 									  <td class="td_custom table_custom" style="text-align: center;border:1px solid black;border-collapse:collapse;"></td>
 									  <td class="td_custom table_custom" style="text-align: center;border:1px solid black;border-collapse:collapse;"></td>
@@ -259,14 +260,14 @@ body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif;
 								<tr style="width: 100%;float: left;padding: 5%;">
 								</tr>
 								<tr id="reading">
-									  <th rowspan="2" class="th_custom table_custom" style="border:1px solid black;border-collapse:collapse;">Pupillary distance  瞳距</th>
-									  <th class="th_custom table_custom" style="border:1px solid black;border-collapse:collapse;">Right Eye 右眼</th>
+									  <th rowspan="2" class="th_custom table_custom" style="border:1px solid black;border-collapse:collapse;">Pupillary distance  çž³è·�</th>
+									  <th class="th_custom table_custom" style="border:1px solid black;border-collapse:collapse;">Right Eye å�³çœ¼</th>
 									  <td class="td_custom table_custom" style="text-align: center;border:1px solid black;border-collapse:collapse;">{{var pd}}</td>		
-									  <td class="td_custom table_custom" style="text-align: center;border:1px solid black;border-collapse:collapse;">两眼眼球距离</td>
+									  <td class="td_custom table_custom" style="text-align: center;border:1px solid black;border-collapse:collapse;">ä¸¤çœ¼çœ¼ç�ƒè·�ç¦»</td>
 									  <td class="td_custom table_custom" style="text-align: center;border:1px solid black;border-collapse:collapse;"></td>
 								</tr>
 								<tr id="readingLeft">
-									  <th class="th_custom table_custom" style="border:1px solid black;border-collapse:collapse;">Left Eye 左眼</th>
+									  <th class="th_custom table_custom" style="border:1px solid black;border-collapse:collapse;">Left Eye å·¦çœ¼</th>
 									  <td class="th_custom table_custom" style="text-align: center;border:1px solid black;border-collapse:collapse;">{{var pdl}}</td>		
 									  <td class="td_custom table_custom" style="text-align: center;border:1px solid black;border-collapse:collapse;"></td>
 									  <td class="td_custom table_custom" style="text-align: center;border:1px solid black;border-collapse:collapse;"></td>
