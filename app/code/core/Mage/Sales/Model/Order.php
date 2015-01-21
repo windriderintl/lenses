@@ -1385,6 +1385,7 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
 			 $product = Mage::getModel('catalog/product')->load($product_id);
 			 $full_path_url = Mage::helper('catalog/image')->init($product, 'thumbnail');
 			 $frame_number = $custom_item->getProductId();
+			 $supplier_frame_price = $product->getData('supplier_frame_price');
 			 //$supplier_lenses_price = $product->getData('supplier_lenses_price');
 			 
 			 //file_put_contents("productopt.txt",print_r($product ,true), FILE_APPEND );
@@ -1395,7 +1396,7 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
 			 $product_price = $custom_item->getPrice();
 			 //$product_price = $product->getPrice();
 			 $product_prescription = $custom_item->getProductOptions();
-			 $supplier_frame_price = $product_price;
+			 //$supplier_frame_price = $product_price;
 			 //$newValue = Mage::helper('sales')->__('Gris');
 			
 			// file_put_contents("productopt.txt",print_r($product_price,true), FILE_APPEND );
