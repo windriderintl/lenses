@@ -631,15 +631,15 @@ Shipping &amp; Handling
 "Subtotal after discount.","Sous-total après remise"
 "Subtotal:","Sous-total :"
 Sunglasess Indice 1.57,30
-Supplier 25% - Clair,2
-Supplier 50% - Medium,3
-Supplier 80% - Fonce,4
+Supplier 25% - Clair,0
+Supplier 50% - Medium,0
+Supplier 80% - Fonce,0
 Supplier Aucune couleur,0
-Supplier Bleu,3
-Supplier Gris,1
-Supplier Jaune,6
-Supplier Marron,2
-Supplier Noir,5
+Supplier Bleu,0
+Supplier Gris,0
+Supplier Jaune,0
+Supplier Marron,0
+Supplier Noir,0
 Supplier Oui,3
 Supplier Progressifs Eco,10
 Supplier Progressifs premium,22
@@ -647,7 +647,7 @@ Supplier Progressive  Eco Verres finsIndice 1.6,50
 Supplier Progressive Eco Verres tres fins Indice 1.67,80
 Supplier Progressive premium Verres finsIndice 1.6,7
 Supplier Progressive premium Verres tres fins Indice 1.67,13
-Supplier Rose,7
+Supplier Rose,0
 Supplier Sunglasess Indice 1.57,10
 Supplier Unifocaux Eco,3
 Supplier Unifocaux Eco Verres finsIndice 1.6,10
@@ -657,7 +657,7 @@ Supplier Unifocaux premium Verres finsIndice 1.6,15
 Supplier Unifocaux premium Verres tres fins Indice 1.67,35
 Supplier Verres non polarises,2
 Supplier Verres polarises,4.5
-Supplier Vert,4
+Supplier Vert,0
 "Suspected Fraud","Fraude suspectée"
 "Suspend","Suspendre"
 "Suspended","Suspendu"
